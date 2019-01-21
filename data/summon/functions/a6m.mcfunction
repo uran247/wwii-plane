@@ -33,8 +33,8 @@ scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-retracting 540
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-pull-out 530
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] w1-reload 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] w2-reload 0
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] ammunition1 200
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] ammunition1 1000
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] ammunition1 100
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] ammunition2 500
 
 
 execute store result score @e[tag=a6m-init,tag=a6m-root,limit=1] PosX run data get entity @e[tag=a6m-init,tag=a6m-root,limit=1] Pos[0] 100000

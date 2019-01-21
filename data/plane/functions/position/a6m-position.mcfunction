@@ -29,20 +29,21 @@ execute as @e[tag=plane-indicator,tag=a6m-position-target,distance=..6] store re
 #角度スコアが変化していた場合rootをindicatorの方向に向ける
 execute if entity @s[tag=!angle-not-changed] run teleport @s ^ ^ ^ facing entity @e[tag=plane-indicator,tag=a6m-position-target,distance=..6,limit=1]
 
-#角度スコアが変化していた場合indicatorをrootに対して90度の方向に向ける
-#execute if entity @s[tag=!angle-not-changed] at @e[tag=plane-indicator,tag=a6m-position-target,distance=..6,limit=1] run teleport @e[tag=plane-indicator,tag=a6m-position-target,distance=..6,limit=1] ^ ^ ^ facing entity @s
-#execute if entity @s[tag=!angle-not-changed] at @e[tag=plane-indicator,tag=a6m-position-target,distance=..6,limit=1] run teleport @e[tag=plane-indicator,tag=a6m-position-target,distance=..6,limit=1] ~ ~ ~ ~90 ~
-
 #自分と同じIDのパーツを自分の位置へ
-execute as @s at @s run tp @e[tag=a6m,tag=a6m-position-target,tag=!plane-indicator] ^ ^-0.2 ^1
+execute as @s at @s run tp @e[tag=a6m,tag=a6m-position-target,tag=!plane-indicator] ^ ^-0.2 ^1 ~90 ~
 
 #角度スコアが変化していた場合NBT補正
-execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2] run data merge entity @s {Pose:{RightArm:[-12.0f,0.0f,0.0f]}}
+execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2] run data merge entity @s {Pose:{RightArm:[0.0f,-90.0f,-102.0f]}}
 
 #角度スコアが変化していた場合自分と同じIDのパーツの角度をスコア分にする
-execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2,tag=!plane-indicator] at @s store result entity @s Pose.RightArm[0] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..2] AngX
-execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2,tag=!plane-indicator] at @s store result entity @s Pose.RightArm[2] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..2] AngZ
-execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2,tag=!plane-indicator] at @s store result entity @s Rotation[0] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..2] AngY
+scoreboard players operation @s reg1 = @s AngX
+scoreboard players remove @s reg1 9000
+execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2,tag=!plane-indicator] at @s store result entity @s Pose.RightArm[2] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..2] reg1
+scoreboard players operation @s reg1 = @s AngZ
+scoreboard players remove @s reg1 9000
+execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2,tag=!plane-indicator] at @s store result entity @s Pose.RightArm[1] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..2] reg1
+#execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..2,tag=!plane-indicator] at @s store result entity @s Rotation[0] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..2] AngY
+#execute as @e[tag=a6m,tag=a6m-position-target,distance=..2] run data merge entity @s {Pose:{RightArm:[0.0f,-90.0f,-102.0f]}}
 
 #Rootの向き修正
 execute if entity @s[tag=!angle-not-changed] at @s store result entity @s Rotation[0] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..2] AngY

@@ -82,5 +82,6 @@ scoreboard players set #-1000000 Num -1000000
 scoreboard players set #-100000 Num -100000
 scoreboard players set #100000 Num 100000
 
+
 scoreboard players set @e[tag=Trigonometric,limit=1,x=0,y=0,z=0,distance=..3] input1 235
 execute as @e[tag=Trigonometric,limit=1,x=0,y=0,z=0,distance=..3] run function plane:math/rand-init

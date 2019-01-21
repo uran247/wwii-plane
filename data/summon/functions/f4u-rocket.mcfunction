@@ -26,22 +26,22 @@ scoreboard players set @e[tag=f4u-init,tag=f4u-rocket] AngZ 0
 
 #パーツのオフセット位置設定
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket1] offsetX -2620
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket1] offsetY -780
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket1] offsetY 1100
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init] offsetZ 0
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket2] offsetX 2620
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket2] offsetY -780
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket2] offsetY 1100
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket3] offsetX -3120
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket3] offsetY -680
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket3] offsetY 1000
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket4] offsetX 3120
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket4] offsetY -680
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket4] offsetY 1000
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket5] offsetX -3620
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket5] offsetY -580
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket5] offsetY 900
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket6] offsetX 3620
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket6] offsetY -580
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket6] offsetY 900
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket7] offsetX -4120
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket7] offsetY -480
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket7] offsetY 800
 scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket8] offsetX 4120
-scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket8] offsetY -480
+scoreboard players set @e[tag=f4u-rocket,tag=f4u-init,tag=rocket8] offsetY 800
 
 #処理終了
 tag @e[tag=f4u-init] remove f4u-init

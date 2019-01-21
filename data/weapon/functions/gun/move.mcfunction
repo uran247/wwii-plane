@@ -4,6 +4,9 @@
 #実行者にタグ付け
 tag @s add gun-move-executer
 
+#自分と同じID持ちのエンティティにタグ付け
+execute as @e[distance=..2] if score @s plane-id = @e[tag=gun-move-executer,distance=..2,limit=1] plane-id run tag @s add gunner
+
 #進行方向上にいるエンティティにタグ付け
 #execute if entity @s[scores={age=..199}] as @e[tag=!gun,distance=..20] unless score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id positioned ^ ^ ^-10 facing entity @s feet positioned ^ ^ ^10 if entity @e[tag=gun-move-executer,distance=..2] run tag @s add hit-gun-cand
 
@@ -48,26 +51,26 @@ execute if score @s reg1 >= #17 Num at @s positioned ^ ^ ^17 unless block ~ ~ ~ 
 execute if score @s reg1 >= #18 Num at @s positioned ^ ^ ^18 unless block ~ ~ ~ minecraft:air run scoreboard players set reg1 18
 execute if score @s reg1 >= #19 Num at @s positioned ^ ^ ^19 unless block ~ ~ ~ minecraft:air run scoreboard players set reg1 19
 execute if score @s reg1 >= #20 Num at @s positioned ^ ^ ^20 unless block ~ ~ ~ minecraft:air run scoreboard players set reg1 20
-execute if score @s reg1 >= #1 Num at @s positioned ^ ^ ^1 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 1
-execute if score @s reg1 >= #2 Num at @s positioned ^ ^ ^2 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 2
-execute if score @s reg1 >= #3 Num at @s positioned ^ ^ ^3 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 3
-execute if score @s reg1 >= #4 Num at @s positioned ^ ^ ^4 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 4
-execute if score @s reg1 >= #5 Num at @s positioned ^ ^ ^5 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 5
-execute if score @s reg1 >= #6 Num at @s positioned ^ ^ ^6 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 6
-execute if score @s reg1 >= #7 Num at @s positioned ^ ^ ^7 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 7
-execute if score @s reg1 >= #8 Num at @s positioned ^ ^ ^8 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 8
-execute if score @s reg1 >= #9 Num at @s positioned ^ ^ ^9 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 9
-execute if score @s reg1 >= #10 Num at @s positioned ^ ^ ^10 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 10
-execute if score @s reg1 >= #11 Num at @s positioned ^ ^ ^11 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 11
-execute if score @s reg1 >= #12 Num at @s positioned ^ ^ ^12 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 12
-execute if score @s reg1 >= #13 Num at @s positioned ^ ^ ^13 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 13
-execute if score @s reg1 >= #14 Num at @s positioned ^ ^ ^14 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 14
-execute if score @s reg1 >= #15 Num at @s positioned ^ ^ ^15 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 15
-execute if score @s reg1 >= #16 Num at @s positioned ^ ^ ^16 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 16
-execute if score @s reg1 >= #17 Num at @s positioned ^ ^ ^17 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 17
-execute if score @s reg1 >= #18 Num at @s positioned ^ ^ ^18 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 18
-execute if score @s reg1 >= #19 Num at @s positioned ^ ^ ^19 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 19
-execute if score @s reg1 >= #20 Num at @s positioned ^ ^ ^20 if entity @e[tag=!gun,distance=..2] run scoreboard players set reg1 20
+execute if score @s reg1 >= #1 Num at @s positioned ^ ^ ^1 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 1
+execute if score @s reg1 >= #2 Num at @s positioned ^ ^ ^2 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 2
+execute if score @s reg1 >= #3 Num at @s positioned ^ ^ ^3 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 3
+execute if score @s reg1 >= #4 Num at @s positioned ^ ^ ^4 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 4
+execute if score @s reg1 >= #5 Num at @s positioned ^ ^ ^5 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 5
+execute if score @s reg1 >= #6 Num at @s positioned ^ ^ ^6 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 6
+execute if score @s reg1 >= #7 Num at @s positioned ^ ^ ^7 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 7
+execute if score @s reg1 >= #8 Num at @s positioned ^ ^ ^8 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 8
+execute if score @s reg1 >= #9 Num at @s positioned ^ ^ ^9 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 9
+execute if score @s reg1 >= #10 Num at @s positioned ^ ^ ^10 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 10
+execute if score @s reg1 >= #11 Num at @s positioned ^ ^ ^11 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 11
+execute if score @s reg1 >= #12 Num at @s positioned ^ ^ ^12 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 12
+execute if score @s reg1 >= #13 Num at @s positioned ^ ^ ^13 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 13
+execute if score @s reg1 >= #14 Num at @s positioned ^ ^ ^14 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 14
+execute if score @s reg1 >= #15 Num at @s positioned ^ ^ ^15 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 15
+execute if score @s reg1 >= #16 Num at @s positioned ^ ^ ^16 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 16
+execute if score @s reg1 >= #17 Num at @s positioned ^ ^ ^17 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 17
+execute if score @s reg1 >= #18 Num at @s positioned ^ ^ ^18 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 18
+execute if score @s reg1 >= #19 Num at @s positioned ^ ^ ^19 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 19
+execute if score @s reg1 >= #20 Num at @s positioned ^ ^ ^20 if entity @e[tag=!gun,tag=!gunner,distance=..2] run scoreboard players set reg1 20
 execute if score @s reg1 = #1 Num at @s run tp @s ^ ^ ^1
 execute if score @s reg1 = #2 Num at @s run tp @s ^ ^ ^2
 execute if score @s reg1 = #3 Num at @s run tp @s ^ ^ ^3
@@ -89,8 +92,10 @@ execute if score @s reg1 = #18 Num at @s run tp @s ^ ^ ^18
 execute if score @s reg1 = #19 Num at @s run tp @s ^ ^ ^19
 execute if score @s reg1 = #20 Num at @s run tp @s ^ ^ ^20
 
+
 #hitしたか判定
-execute at @s[tag=!gun-nohit] if entity @e[tag=!gun,distance=..2] run tag @e[tag=!gun,distance=..2] add hit-gun
+#execute at @s[tag=!gun-nohit] if entity @e[tag=!gun,distance=..2] run tag @e[tag=!gun,distance=..2] add hit-gun
+execute at @s if entity @e[tag=!gun,distance=..2] run tag @e[tag=!gun,distance=..2] add hit-gun
 execute at @s if entity @e[tag=!gun,distance=..2] run tag @s add hit-executer
 execute at @s unless block ~ ~ ~ minecraft:air run tag @s[tag=!gun-nohit] add hit-executer
 
@@ -108,7 +113,7 @@ execute at @s[tag=hit-executer] run effect give @e[tag=hit-gun,distance=..2] min
 execute at @s[tag=hit-executer] run kill @e[tag=hit-gun,distance=..2]
 
 #曳光弾ならパーティクル
-execute as @s[tag=!hit-executer,tag=tracer] at @s run particle minecraft:dust 0 1 1 1 ~ ~ ~ 0 0 0 0 1 force
+execute as @s[tag=!hit-executer,tag=tracer] at @s run particle minecraft:dust 0 1 1 2 ~ ~ ~ 0 0 0 1 1 force
 
 #hitしてたら弾を削除
 kill @s[tag=hit-executer]
@@ -121,6 +126,7 @@ kill @s[scores={age=..0}]
 #タグ削除
 execute at @s run tag @e[tag=hit-gun,distance=..2] remove hit-gun
 execute at @s run tag @s remove gun-move-executer
+tag @e[tag=gunner,distance=..25] remove gunner
 
 #gun-nohitタグを削除
 tag @s remove gun-nohit

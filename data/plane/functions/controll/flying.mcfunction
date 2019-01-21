@@ -44,9 +44,9 @@ execute if entity @s[scores={reg2=-17800..-300}] as @e[tag=controll-target,dista
 
 execute if entity @s[scores={reg2=200..17800}] as @e[tag=controll-target,distance=..3,limit=1] at @s run scoreboard players operation @s AngX += @s pitch-speed
 
-execute if entity @s[scores={reg1=-17800..-200}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=-9000..}] if score @p reg1 < @s AngZ at @s run scoreboard players operation @s AngZ -= @s roll-speed
+execute if entity @s[scores={reg1=-17800..-200}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=..9000}] if score @p reg1 < @s AngZ at @s run scoreboard players operation @s AngZ += @s roll-speed
 
-execute if entity @s[scores={reg1=300..17800}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=..9000}] if score @p reg1 > @s AngZ at @s run scoreboard players operation @s AngZ += @s roll-speed
+execute if entity @s[scores={reg1=300..17800}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=-9000..}] if score @p reg1 > @s AngZ at @s run scoreboard players operation @s AngZ -= @s roll-speed
 
 execute if entity @s[scores={reg1=-200..300}] as @e[tag=controll-target,distance=..3,limit=1] if entity @s[scores={AngZ=100..18000}] at @s run scoreboard players operation @s AngZ -= @s roll-speed
 execute if entity @s[scores={reg1=-200..300}] as @e[tag=controll-target,distance=..3,limit=1] if entity @s[scores={AngZ=-18000..-100}] at @s run scoreboard players operation @s AngZ += @s roll-speed
