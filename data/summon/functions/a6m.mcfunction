@@ -16,6 +16,7 @@ scoreboard players set @e[tag=a6m-init,tag=a6m-root] speed 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] rolling 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] accelerate 5
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] max-speed 1960
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] cruise-speed 1215
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] takeoff-speed 520
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] landing-pitch -1200
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngX -1200
@@ -27,10 +28,14 @@ scoreboard players set @e[tag=a6m-init,tag=a6m-root] roll-speed 400
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] parking-udvm 7
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] rolling-udvm 8
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] flying-udvm 9
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] propeller-start 150
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] propeller-stop 140
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-retracting 540
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-pull-out 530
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] plpr-start-min 150
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] plpr-start-max 154
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] plpr-stop-min 140
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] plpr-stop-max 144
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-retract-min 540
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-retract-max 544
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-pullout-min 530
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] gear-pullout-max 534
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] w1-reload 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] w2-reload 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] ammunition1 100

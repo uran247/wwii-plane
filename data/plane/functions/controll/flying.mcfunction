@@ -32,21 +32,17 @@ scoreboard players remove @s[scores={reg2=18100..}] reg2 36000
 scoreboard players add @s[scores={reg2=..-18100}] reg2 36000
 
 #プレイヤーの向きに応じてAngXYZのスコア変更
-#execute if entity @s[scores={reg1=-178..-3}] as @e[tag=controll-target,distance=..3,limit=1] if entity @s[scores={AngX=-90..90}] at @s run scoreboard players operation @s AngY -= @s yaw-speed
-#execute if entity @s[scores={reg1=-178..-3}] as @e[tag=controll-target,distance=..3,limit=1] unless entity @s[scores={AngX=-90..90}] at @s run scoreboard players operation @s AngY += @s yaw-speed
 execute if entity @s[scores={reg1=200..}] as @e[tag=controll-target,distance=..3,limit=1] at @s run scoreboard players operation @s AngY -= @s yaw-speed
 
-#execute if entity @s[scores={reg1=2..178}] as @e[tag=controll-target,distance=..3,limit=1] if entity @s[scores={AngX=-90..90}] at @s run scoreboard players operation @s AngY += @s yaw-speed
-#execute if entity @s[scores={reg1=3..178}] as @e[tag=controll-target,distance=..3,limit=1] unless entity @s[scores={AngX=-90..90}] at @s run scoreboard players operation @s AngY -= @s yaw-speed
 execute if entity @s[scores={reg1=..-200}] as @e[tag=controll-target,distance=..3,limit=1] at @s run scoreboard players operation @s AngY += @s yaw-speed
 
 execute if entity @s[scores={reg2=-17800..-300}] as @e[tag=controll-target,distance=..3,limit=1] at @s run scoreboard players operation @s AngX -= @s pitch-speed
 
 execute if entity @s[scores={reg2=200..17800}] as @e[tag=controll-target,distance=..3,limit=1] at @s run scoreboard players operation @s AngX += @s pitch-speed
 
-execute if entity @s[scores={reg1=-17800..-200}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=..9000}] if score @p reg1 < @s AngZ at @s run scoreboard players operation @s AngZ += @s roll-speed
+execute if entity @s[scores={reg1=-17800..-200}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=..9000}] at @s run scoreboard players operation @s AngZ += @s roll-speed
 
-execute if entity @s[scores={reg1=300..17800}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=-9000..}] if score @p reg1 > @s AngZ at @s run scoreboard players operation @s AngZ -= @s roll-speed
+execute if entity @s[scores={reg1=300..17800}] as @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=-9000..}] at @s run scoreboard players operation @s AngZ -= @s roll-speed
 
 execute if entity @s[scores={reg1=-200..300}] as @e[tag=controll-target,distance=..3,limit=1] if entity @s[scores={AngZ=100..18000}] at @s run scoreboard players operation @s AngZ -= @s roll-speed
 execute if entity @s[scores={reg1=-200..300}] as @e[tag=controll-target,distance=..3,limit=1] if entity @s[scores={AngZ=-18000..-100}] at @s run scoreboard players operation @s AngZ += @s roll-speed
@@ -62,13 +58,21 @@ scoreboard players add @e[tag=controll-target,distance=..3,limit=1,scores={AngY=
 scoreboard players remove @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=18100..}] AngZ 36000
 scoreboard players add @e[tag=controll-target,distance=..3,limit=1,scores={AngZ=..-18100}] AngZ 36000
 
-#スロット8選択でspeed増，6選択で減
-execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed < @s max-speed at @s run scoreboard players operation @s speed += @s accelerate
+#スロット8選択でspeed増，6選択で減、増で巡航速度を超えてた場合加速量を減少
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed > @s cruise-speed at @s run scoreboard players operation @s reg1 = @s max-speed
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed > @s cruise-speed at @s run scoreboard players operation @s reg1 -= @s speed
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed > @s cruise-speed at @s run scoreboard players operation @s reg1 *= @s accelerate
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed > @s cruise-speed at @s run scoreboard players operation @s reg2 = @s max-speed
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed > @s cruise-speed at @s run scoreboard players operation @s reg2 -= @s cruise-speed
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed > @s cruise-speed at @s run scoreboard players operation @s reg1 /= @s reg2
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed > @s cruise-speed at @s run scoreboard players operation @s speed += @s reg1
+
+execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed <= @s cruise-speed at @s run scoreboard players operation @s speed += @s accelerate
 execute if entity @s[scores={plane-key-input=7}] as @e[tag=controll-target,distance=..3,limit=1] if score @s speed >= @s takeoff-speed at @s run scoreboard players operation @s speed -= @s accelerate
 
 #speedがgear-pull-outだったら滑走モデル、gear-retractingだったら飛行モデルに切り替え
-execute if score @e[tag=controll-target,limit=1,distance=..3] speed = @e[tag=controll-target,limit=1,distance=..3] gear-pull-out as @e[tag=controll-target,limit=1,distance=..3] store result entity @e[tag=plane-body,limit=1,sort=nearest,distance=..5] HandItems[0].tag.Damage int 1 run scoreboard players get @s rolling-udvm
-execute if score @e[tag=controll-target,limit=1,distance=..3] speed = @e[tag=controll-target,limit=1,distance=..3] gear-retracting as @e[tag=controll-target,limit=1,distance=..3] store result entity @e[tag=plane-body,limit=1,sort=nearest,distance=..5] HandItems[0].tag.Damage int 1 run scoreboard players get @s flying-udvm
+execute as @e[tag=controll-target,limit=1,distance=..3] if score @s speed >= @s gear-pullout-min if score @s speed <= @s gear-pullout-max store result entity @e[tag=plane-body,limit=1,sort=nearest,distance=..5] HandItems[0].tag.Damage int 1 run scoreboard players get @s rolling-udvm
+execute as @e[tag=controll-target,limit=1,distance=..3] if score @s speed >= @s gear-retract-min if score @s speed <= @s gear-retract-max store result entity @e[tag=plane-body,limit=1,sort=nearest,distance=..5] HandItems[0].tag.Damage int 1 run scoreboard players get @s flying-udvm
 
 #1ブロック下が空気以外かつspeedが100未満ならなら着陸モードへ
 execute as @e[tag=controll-target,distance=..3,limit=1] at @s if score @s takeoff-speed > @s speed unless block ~ ~-2 ~ minecraft:air run data merge entity @e[tag=plane-seat,distance=..5,limit=1] {Invulnerable:1b}

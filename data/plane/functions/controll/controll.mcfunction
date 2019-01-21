@@ -8,9 +8,11 @@ effect give @s minecraft:invisibility 1
 tag @s add controller
 tag @e[tag=plane-root,limit=1,sort=nearest,distance=..3] add controll-target
 
-#移動、武器function実行
+#移動操作
 execute if entity @e[tag=controll-target,tag=!flying,limit=1,sort=nearest,distance=..3] run function plane:controll/rolling
 execute if entity @e[tag=controll-target,tag=flying,limit=1,sort=nearest,distance=..3] run function plane:controll/flying
+
+#武器使用
 function plane:controll/weapon
 
 #スコア情報をActionbarに表示

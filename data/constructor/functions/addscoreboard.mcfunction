@@ -101,10 +101,14 @@ scoreboard objectives add takeoff-speed dummy
 scoreboard objectives add parking-udvm dummy
 scoreboard objectives add rolling-udvm dummy
 scoreboard objectives add flying-udvm dummy
-scoreboard objectives add propeller-start dummy
-scoreboard objectives add propeller-stop dummy
-scoreboard objectives add gear-retracting dummy
-scoreboard objectives add gear-pull-out dummy
+scoreboard objectives add plpr-start-max dummy
+scoreboard objectives add plpr-start-min dummy
+scoreboard objectives add plpr-stop-max dummy
+scoreboard objectives add plpr-stop-min dummy
+scoreboard objectives add gear-retract-max dummy
+scoreboard objectives add gear-retract-min dummy
+scoreboard objectives add gear-pullout-min dummy
+scoreboard objectives add gear-pullout-max dummy
 scoreboard objectives add plane-key-input dummy
 scoreboard objectives add sound dummy
 scoreboard objectives add rand dummy
@@ -137,3 +141,4 @@ scoreboard objectives add offsetZ dummy
 scoreboard objectives add offsetNowX dummy
 scoreboard objectives add offsetNowY dummy
 scoreboard objectives add offsetNowZ dummy
+scoreboard objectives add cruise-speed dummy
