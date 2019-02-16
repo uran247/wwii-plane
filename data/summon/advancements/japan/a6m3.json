@@ -1,0 +1,30 @@
+{
+  "parent": "summon:japan/a6m2",
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_sword",
+      "nbt":"{HideFlags:4,Damage:0}"
+    },
+    "title": {
+      "translate": "零式艦上戦闘機三二型"
+    },
+    "description": {
+      "translate": "A6M3"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_a5m": {
+      "trigger": "minecraft:location",
+      "conditions": {}
+    }    
+  },
+  "requirements": [
+    [
+      "get_a5m"
+    ]
+  ]
+}

@@ -97,6 +97,7 @@ scoreboard objectives add landing-yaw dummy
 scoreboard objectives add landing-roll dummy
 scoreboard objectives add max-speed dummy
 scoreboard objectives add accelerate dummy
+scoreboard objectives add deaccelerate dummy
 scoreboard objectives add takeoff-speed dummy
 scoreboard objectives add parking-udvm dummy
 scoreboard objectives add rolling-udvm dummy
@@ -133,7 +134,7 @@ scoreboard objectives add no-hit dummy
 scoreboard objectives add ammunition1 dummy
 scoreboard objectives add ammunition2 dummy
 scoreboard objectives add ammunition3 dummy
-scoreboard objectives add gtime minecraft.custom:minecraft.minecart_one_cm
+scoreboard objectives add gtime minecraft.custom:minecraft.play_one_minute
 scoreboard objectives add shootdown dummy {"text":"撃墜数"}
 scoreboard objectives add offsetX dummy
 scoreboard objectives add offsetY dummy
@@ -142,3 +143,14 @@ scoreboard objectives add offsetNowX dummy
 scoreboard objectives add offsetNowY dummy
 scoreboard objectives add offsetNowZ dummy
 scoreboard objectives add cruise-speed dummy
+scoreboard objectives add stall-speed dummy
+scoreboard objectives add hp dummy
+scoreboard objectives add max-entity dummy
+scoreboard objectives add controll-yaw dummy
+scoreboard objectives add controll-pitch dummy
+scoreboard objectives add plane-parts dummy
+scoreboard objectives add radder dummy
+scoreboard objectives add elevetor dummy
+scoreboard objectives add aileron dummy
+scoreboard objectives add engine dummy
+scoreboard objectives add body dummy

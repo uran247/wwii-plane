@@ -31,8 +31,10 @@ execute store result score @s reg3 run data get entity @s Pos[2] 100
 
 
 #X方向の単位ベクトル算出
-summon minecraft:area_effect_cloud ^1 ^ ^ {Tags:[indicatorX]}
-summon minecraft:area_effect_cloud ^ ^1 ^ {Tags:[indicatorY]}
+summon minecraft:area_effect_cloud ^1 ^ ^ {Tags:[indicatorX,entity-nohit,entity-nohit],UUIDMost:0,UUIDLeast:1L}
+summon minecraft:area_effect_cloud ^ ^1 ^ {Tags:[indicatorY,entity-nohit,entity-nohit],UUIDMost:0,UUIDLeast:2L}
+tp 00000000-0000-0000-0000-00000001 ^1 ^ ^
+tp 00000000-0000-0000-0000-00000002 ^ ^1 ^
 
 execute store result score @s reg4 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorX,limit=1,sort=nearest] Pos[0] 100
 execute store result score @s reg5 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorX,limit=1,sort=nearest] Pos[1] 100

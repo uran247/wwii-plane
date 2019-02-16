@@ -2,18 +2,18 @@
 #実行者：機体
 
 #召喚
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,right,gun-nohit],Invisible:1,Marker:1}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,left,gun-nohit],Invisible:1,Marker:1}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,right,gun-nohit,tracer-lightblue,entity-nohit],Duration:200}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,left,gun-nohit,tracer-lightblue,entity-nohit],Duration:200}
 
 #スコア付与
-scoreboard players set @e[tag=gun-init,distance=..5] age 200
+scoreboard players set @e[tag=gun-init,distance=..5] age 65
 scoreboard players set @e[tag=gun-init,distance=..5] speed 94
 scoreboard players set @e[tag=gun-init,distance=..5] damage 20
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 2300
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY 0
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ 0
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -1700
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -2300
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY 0
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 0
 

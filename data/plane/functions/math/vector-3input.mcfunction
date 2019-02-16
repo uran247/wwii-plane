@@ -10,9 +10,9 @@ execute store result score @s reg2 run data get entity @s Pos[1] 100
 execute store result score @s reg3 run data get entity @s Pos[2] 100
 
 #向いてる方向にAEC召喚
-summon area_effect_cloud ^ ^ ^1 {Particle:"ambient_entity_effect",Duration:1,Tags:[weapon-indicator1]}
-summon area_effect_cloud ^1 ^ ^ {Particle:"ambient_entity_effect",Duration:1,Tags:[weapon-indicator2]}
-summon area_effect_cloud ^ ^1 ^ {Particle:"ambient_entity_effect",Duration:1,Tags:[weapon-indicator3]}
+summon area_effect_cloud ^ ^ ^1 {Particle:"ambient_entity_effect",Duration:1,Tags:[weapon-indicator1],CustomName:"{\"text\":\"ind1\",\"color\":\"aqua\"}"}
+summon area_effect_cloud ^1 ^ ^ {Particle:"ambient_entity_effect",Duration:1,Tags:[weapon-indicator2],CustomName:"{\"text\":\"ind2\",\"color\":\"aqua\"}"}
+summon area_effect_cloud ^ ^1 ^ {Particle:"ambient_entity_effect",Duration:1,Tags:[weapon-indicator3],CustomName:"{\"text\":\"ind3\",\"color\":\"aqua\"}"}
 
 #AECの現在座標取得
 execute store result score @s output2 run data get entity @e[tag=weapon-indicator1,limit=1,distance=..1.5] Pos[0] 100

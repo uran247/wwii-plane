@@ -12,6 +12,7 @@ scoreboard players set #500 Num 500
 scoreboard players set #2850000 Num 2850000
 scoreboard players set #50000 Num 50000
 scoreboard players set #-9000 Num -9000
+scoreboard players set #9000 Num 9000
 scoreboard players set #100 Num 100
 scoreboard players set #-18000 Num -18000
 scoreboard players set #-100 Num -100
@@ -81,6 +82,7 @@ scoreboard players set #-1000 Num -1000
 scoreboard players set #-1000000 Num -1000000
 scoreboard players set #-100000 Num -100000
 scoreboard players set #100000 Num 100000
+#scoreboard players set #max max-entity 10
 
 
 scoreboard players set @e[tag=Trigonometric,limit=1,x=0,y=0,z=0,distance=..3] input1 235

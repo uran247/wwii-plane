@@ -13,20 +13,6 @@ execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @
 #角度スコアが変化していた場合ベクトル計算
 execute if entity @s[tag=!angle-not-changed] run function plane:math/vector
 
-#indicatorの位置を機体の向いてる方向へ移動
-execute store result score @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] reg1 run data get entity @s Pos[0] 20
-scoreboard players operation @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] reg1 += @s speedX
-execute as @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] store result entity @s Pos[0] double 0.05 run scoreboard players get @s reg1
-
-execute store result score @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] reg1 run data get entity @s Pos[1] 20
-scoreboard players operation @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] reg1 += @s speedY
-execute as @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] store result entity @s Pos[1] double 0.05 run scoreboard players get @s reg1
-
-execute store result score @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] reg1 run data get entity @s Pos[2] 20
-scoreboard players operation @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] reg1 += @s speedZ
-execute as @e[tag=plane-indicator,tag=f4u-position-target,distance=..6] store result entity @s Pos[2] double 0.05 run scoreboard players get @s reg1
-#tellraw @a ["",{"text":"X:"},{"score":{"name":"@e[tag=f4u-position-executer,limit=1]","objective":"speedX"}},{"text":"Y:"},{"score":{"name":"@e[tag=f4u-position-executer,limit=1]","objective":"speedY"}},{"text":" Z:"},{"score":{"name":"@e[tag=f4u-position-executer,limit=1]","objective":"speedZ"}}]
-
 #角度スコアが変化していた場合rootをindicatorの方向に向ける
 execute if entity @s[tag=!angle-not-changed] run teleport @s ^ ^ ^ facing entity @e[tag=plane-indicator,tag=f4u-position-target,distance=..6,limit=1]
 
