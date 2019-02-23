@@ -82,8 +82,8 @@ execute store result entity @s Motion[2] double 0.00001 run scoreboard players g
 
 #プレイヤーの方を向いたら射撃
 #execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind] run say lockon
-execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind] at @s[scores={ammunition1=1..,w1-reload=..0}] run function mob:weapon/phantom1/7p7mm
-execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind] at @s[scores={ammunition1=1..,w1-reload=..0}] run scoreboard players remove @s ammunition1 1
+execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run function mob:weapon/phantom1/7p7mm
+execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run scoreboard players remove @s ammunition1 1
 scoreboard players remove @s[scores={ammunition1=1..,w1-reload=1..}] w1-reload 1
 
 #particle

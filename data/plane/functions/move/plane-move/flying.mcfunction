@@ -3,6 +3,9 @@
 #条件:tickで実行 execute as @e[type=armor_stand,tag=plane-root,scores={speed=1..}] at @s run function plane:move/move
 #実行者：機体
 
+#実行者にタグ付け
+tag @s add flying-executer
+
 #ピッチによってスピード調整
 scoreboard players operation @s[scores={AngX=..0}] reg1 *= @s AngX
 scoreboard players operation @s[scores={AngX=..0}] reg1 /= #9000 Num
@@ -12,6 +15,9 @@ scoreboard players operation @s[scores={AngX=1..}] reg1 = @s accelerate
 scoreboard players operation @s[scores={AngX=1..}] reg1 *= @s AngX
 scoreboard players operation @s[scores={AngX=1..}] reg1 /= #9000 Num
 scoreboard players operation @s[scores={AngX=1..}] speed += @s reg1
+
+#speedが0未満だったら0にする
+scoreboard players set @e[scores={speed=..-1}] speed 0
 
 #x方向ベクトル×speedをPosに代入
 scoreboard players operation @s reg1 = @s speedX
@@ -47,10 +53,14 @@ tag @s[scores={aileron=..1}] add destroyed
 tag @s[scores={plane-parts=..4}] add destroyed
 tag @s[scores={body=..0}] add destroyed
 
-#墜落してたらピッチを下げる(ピッチ速度の5分の1の速度で下がる)
+#墜落してたらピッチを下げる(ピッチ速度の2分の1の速度で下がる)
 execute at @s[tag=destroyed] run scoreboard players operation @s reg1 = @s pitch-speed
-execute at @s[tag=destroyed] run scoreboard players operation @s reg1 /= #5 Num
+execute at @s[tag=destroyed] run scoreboard players operation @s reg1 /= #2 Num
 execute at @s[tag=destroyed] run scoreboard players operation @s AngX += @s reg1
+
+#登場者がいるか判定して、いないならピッチを下げる
+execute at @s as @a[tag=plane-rider] if score @e[tag=flying-executer,limit=1,distance=..1] plane-id = @s plane-id run tag @e[tag=flying-executer,limit=1,distance=..1] add exist-rider
+execute at @s[tag=!exist-rider] run scoreboard players operation @s[scores={AngX=..9000}] AngX += @s pitch-speed
 
 #音
 scoreboard players set @s[scores={sound=30..}] sound 0
@@ -65,3 +75,14 @@ execute at @s unless block ~ ~1 ~ air run playsound minecraft:entity.generic.exp
 execute at @s unless block ~ ~1 ~ air run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
 execute at @s unless block ~ ~1 ~ air run kill @s
 execute at @s unless block ~ ~1 ~ air run kill @e[tag=plane-move-parts,distance=..20]
+
+#登場者無しで奈落に行ったらキル
+execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 16 0
+execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
+execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run kill @s
+execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run kill @e[tag=plane-move-parts,distance=..20]
+
+
+#タグ解除
+tag @s remove exist-rider
+tag @s remove flying-executer

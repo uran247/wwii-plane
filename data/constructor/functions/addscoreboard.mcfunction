@@ -34,19 +34,9 @@ scoreboard objectives add atanY dummy
 scoreboard objectives add X dummy
 scoreboard objectives add Y dummy
 scoreboard objectives add Z dummy
-scoreboard objectives add trueX dummy
-scoreboard objectives add trueY dummy
-scoreboard objectives add trueZ dummy
-scoreboard objectives add squareX dummy
-scoreboard objectives add squareY dummy
-scoreboard objectives add squareZ dummy
 scoreboard objectives add PosX dummy
 scoreboard objectives add PosY dummy
 scoreboard objectives add PosZ dummy
-scoreboard objectives add absY dummy
-scoreboard objectives add absZ dummy
-scoreboard objectives add dis2D dummy
-scoreboard objectives add ans dummy
 scoreboard objectives add input1 dummy
 scoreboard objectives add input2 dummy
 scoreboard objectives add input3 dummy
@@ -60,22 +50,11 @@ scoreboard objectives add speedX dummy
 scoreboard objectives add speedY dummy
 scoreboard objectives add speedZ dummy
 scoreboard objectives add speed dummy
-scoreboard objectives add factor dummy
-scoreboard objectives add ans1 dummy
-scoreboard objectives add ans2 dummy
-scoreboard objectives add ans3 dummy
-scoreboard objectives add index dummy
 scoreboard objectives add roll dummy
 scoreboard objectives add pitch dummy
 scoreboard objectives add yaw dummy
 scoreboard objectives add age dummy
 scoreboard objectives add HP dummy
-scoreboard objectives add scoretp-int-x dummy
-scoreboard objectives add scoretp-dec-x dummy
-scoreboard objectives add scoretp-int-y dummy
-scoreboard objectives add scoretp-dec-y dummy
-scoreboard objectives add scoretp-x dummy
-scoreboard objectives add scoretp-y dummy
 scoreboard objectives add rolling dummy
 scoreboard objectives add travelX dummy
 scoreboard objectives add travelY dummy
@@ -88,7 +67,6 @@ scoreboard objectives add cosZ dummy
 scoreboard objectives add sinZ dummy
 scoreboard objectives add input dummy
 scoreboard objectives add plane-id dummy
-scoreboard objectives add zero-rotate dummy
 scoreboard objectives add pitch-speed dummy
 scoreboard objectives add yaw-speed dummy
 scoreboard objectives add roll-speed dummy
@@ -135,7 +113,7 @@ scoreboard objectives add ammunition1 dummy
 scoreboard objectives add ammunition2 dummy
 scoreboard objectives add ammunition3 dummy
 scoreboard objectives add gtime minecraft.custom:minecraft.play_one_minute
-scoreboard objectives add shootdown dummy {"text":"撃墜数"}
+scoreboard objectives add shootdown dummy {"text":"スコア"}
 scoreboard objectives add offsetX dummy
 scoreboard objectives add offsetY dummy
 scoreboard objectives add offsetZ dummy
@@ -154,3 +132,5 @@ scoreboard objectives add elevetor dummy
 scoreboard objectives add aileron dummy
 scoreboard objectives add engine dummy
 scoreboard objectives add body dummy
+scoreboard objectives add stage-id dummy
+scoreboard objectives add clear-score dummy

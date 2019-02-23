@@ -82,6 +82,7 @@ scoreboard players set #-1000 Num -1000
 scoreboard players set #-1000000 Num -1000000
 scoreboard players set #-100000 Num -100000
 scoreboard players set #100000 Num 100000
+scoreboard players set #150 Num 150
 #scoreboard players set #max max-entity 10
 
 

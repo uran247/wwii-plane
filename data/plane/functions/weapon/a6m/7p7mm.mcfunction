@@ -26,8 +26,9 @@ execute if score @s reg1 matches 0 run tag @e[tag=gun-init,distance=..10] add tr
 execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
 
 #向きを機体方向に向ける
-execute rotated as @s as @e[tag=gun-init,limit=2,distance=..20] positioned as @s run tp @s ~ ~ ~ ~ ~
-#execute rotated as @s as @e[tag=gun-init,limit=1,distance=..20,tag=right] positioned as @s run tp @s ~ ~ ~ ~ ~
+#execute rotated as @s as @e[tag=gun-init,limit=2,distance=..20] positioned as @s run tp @s ~ ~ ~ ~ ~
+summon minecraft:area_effect_cloud ^ ^ ^200  {Duration:0,Tags:[gun-indicator,entity-nohit],CustomName:"{\"text\":\"gun-indicator\",\"color\":\"aqua\"}"}
+execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing entity @e[tag=gun-indicator,distance=..220,limit=1]
 
 #発射したならreload時間設定
 #execute if entity @e[tag=gun-init,distance=..20] run scoreboard players set @s w1-reload 1

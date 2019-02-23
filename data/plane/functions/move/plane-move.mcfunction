@@ -13,4 +13,3 @@ execute if entity @s[tag=flying] run function plane:move/plane-move/flying
 #タグ解除
 execute at @s run tag @e[distance=..20,tag=plane-move-parts] remove plane-move-parts
 tag @s remove plane-move-executer
-

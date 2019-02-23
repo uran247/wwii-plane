@@ -1,2 +1,2 @@
 #phantom用スポナー
-summon spawner_minecart ~ ~ ~ {NoGravity:1b,SpawnCount:5,SpawnRange:50,Delay:0,MinSpawnDelay:200,MaxSpawnDelay:1200,MaxNearbyEntities:10,RequiredPlayerRange:64,Glowing:1,Tags:[spawner-phantom1],SpawnData:{id:"minecraft:armor_stand",Invisible:1,Tags:[mob-seed,phantom1-seed]}}
+summon spawner_minecart ~ ~ ~ {NoGravity:1b,SpawnCount:5,SpawnRange:64,Delay:0,MinSpawnDelay:100,MaxSpawnDelay:400,MaxNearbyEntities:80,RequiredPlayerRange:96,Glowing:0,Tags:[spawner-phantom1,game-spawner],SpawnData:{id:"minecraft:armor_stand",Invisible:1,Tags:[mob-seed,phantom1-seed]}}

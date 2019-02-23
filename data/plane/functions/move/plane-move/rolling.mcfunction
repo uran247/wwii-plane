@@ -2,6 +2,9 @@
 #条件:tickで実行 execute as @e[type=armor_stand,tag=plane-root,scores={speed=1..}] at @s run function plane:move/move
 #実行者：機体
 
+#実行者にタグ付け
+tag @s add flying-executer
+
 #x方向ベクトル×speedをMotionに代入
 scoreboard players operation @s reg1 = @s speedX
 scoreboard players operation @s reg1 *= @s speed
@@ -26,3 +29,11 @@ scoreboard players add @s sound 1
 
 #speedが0なら音停止
 execute if entity @s[scores={speed=..0}] at @s run stopsound @a[distance=..10] * minecraft:plane.engine.recipro-rolling
+
+#登場者がいるか判定して、いないならスピードを下げる
+execute at @s as @a[tag=plane-rider] if score @e[tag=flying-executer,limit=1,distance=..1] plane-id = @s plane-id run tag @e[tag=flying-executer,limit=1,distance=..1] add exist-rider
+execute at @s[tag=!exist-rider] run scoreboard players remove @s[scores={speed=1..}] speed 1
+
+#タグ解除
+tag @s remove exist-rider
+tag @s remove flying-executer
