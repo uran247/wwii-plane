@@ -5,6 +5,35 @@
 #実行者にタグ付け
 tag @s add flying-executer
 
+#### 基本加速量決定 reg1に代入される ####
+scoreboard players set @s reg1 0
+#throttle1で増
+execute if entity @s[scores={throttle=1}] run scoreboard players operation @s reg1 += @s accelerate
+#throttle0で減
+execute if entity @s[scores={throttle=0}] run scoreboard players operation @s reg1 -= @s accelerate
+
+
+####減速量決定　reg4に代入される ####
+#基本原則量決定　現在速度÷巡航速度*減速度　
+scoreboard players operation @s reg2 = @s cruise-speed
+scoreboard players operation @s reg3 = @s speed
+scoreboard players operation @s reg4 = @s deaccelerate
+scoreboard players operation @s reg4 *= @s reg3
+scoreboard players operation @s reg4 /= @s reg2
+#ピッチによって減速量調整
+#y方向単位ベクトル×減速量
+scoreboard players operation @s reg4 *= @s speedY
+scoreboard players operation @s reg4 /= #100 Num
+
+
+#### speed決定 ####
+#speed+reg1-reg4
+scoreboard players operation @s speed += @s reg1
+scoreboard players operation @s speed -= @s reg4
+#speedが0未満だったら0にする
+scoreboard players set @s[scores={speed=..-1}] speed 0
+
+
 #x方向ベクトル×speedをMotionに代入
 scoreboard players operation @s reg1 = @s speedX
 scoreboard players operation @s reg1 *= @s speed
@@ -17,7 +46,6 @@ execute store result entity @s Motion[1] double -0.05 run scoreboard players get
 scoreboard players operation @s reg1 = @s speedZ
 scoreboard players operation @s reg1 *= @s speed
 execute store result entity @s Motion[2] double 0.00001 run scoreboard players get @s reg1
-
 
 #音
 scoreboard players set @s[scores={sound=33..}] sound 0

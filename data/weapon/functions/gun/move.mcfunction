@@ -7,9 +7,6 @@ tag @s add gun-move-executer
 #自分と同じID持ちのエンティティにタグ付け
 execute as @e[distance=..20] if score @s plane-id = @e[tag=gun-move-executer,distance=..20,limit=1] plane-id run tag @s add gunner
 
-#進行方向上にいるエンティティにタグ付け
-#execute if entity @s[scores={age=..199}] as @e[tag=!gun,distance=..20] unless score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id positioned ^ ^ ^-10 facing entity @s feet positioned ^ ^ ^10 if entity @e[tag=gun-move-executer,distance=..2] run tag @s add hit-gun-cand
-
 #移動&ヒット判定
 #0.1-0.9移動させる
 scoreboard players operation @s reg1 = @s speed
@@ -32,7 +29,7 @@ scoreboard players operation @s reg1 /= #10 Num
 #ブロック、エンティティ衝突判定
 execute at @s run function weapon:gun/hit/hit
 
-#移動
+#命中エンティティがいないなら衝突位置のブロックか到達地点まで移動
 execute if score @s reg1 = #1 Num at @s run tp @s ^ ^ ^1
 execute if score @s reg1 = #2 Num at @s run tp @s ^ ^ ^2
 execute if score @s reg1 = #3 Num at @s run tp @s ^ ^ ^3

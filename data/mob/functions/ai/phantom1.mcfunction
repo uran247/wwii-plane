@@ -98,6 +98,6 @@ tag @s remove AngXminus
 tag @s remove existbehind
 tag @s remove ai-executer
 tag @e[tag=phantom1-rider,sort=nearest,distance=..3] remove ai-rider
-execute at @p[tag=ai-target] run tag @e[tag=ai-target-plane,distance=..10] remove ai-target-plane
-tag @p[tag=ai-target] remove ai-target
+execute at @a[tag=ai-target] run tag @e[tag=ai-target-plane,distance=..20] remove ai-target-plane
+tag @a[tag=ai-target] remove ai-target
 

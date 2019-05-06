@@ -51,6 +51,8 @@ scoreboard players set #17 Num 17
 scoreboard players set #18 Num 18
 scoreboard players set #19 Num 19
 scoreboard players set #20 Num 20
+scoreboard players set #40 Num 40
+scoreboard players set #200 Num 200
 scoreboard players set #-1 Num -1
 scoreboard players set #-2 Num -2
 scoreboard players set #-3 Num -3
@@ -62,10 +64,6 @@ scoreboard players set #-8 Num -8
 scoreboard players set #-9 Num -9
 scoreboard players set #-10000 Num -10000
 scoreboard players set #50 Num 50
-scoreboard players set #13 Num 13
-scoreboard players set #14 Num 14
-scoreboard players set #15 Num 15
-scoreboard players set #16 Num 16
 scoreboard players set #32 Num 32
 scoreboard players set #64 Num 64
 scoreboard players set #128 Num 128
@@ -83,8 +81,12 @@ scoreboard players set #-1000000 Num -1000000
 scoreboard players set #-100000 Num -100000
 scoreboard players set #100000 Num 100000
 scoreboard players set #150 Num 150
+scoreboard players set #86 Num 86
+scoreboard players set #18100 Num 18100
+scoreboard players set #-18100 Num -18100
+
 #scoreboard players set #max max-entity 10
 
 
 scoreboard players set @e[tag=Trigonometric,limit=1,x=0,y=0,z=0,distance=..3] input1 235
-execute as @e[tag=Trigonometric,limit=1,x=0,y=0,z=0,distance=..3] run function plane:math/rand-init
+execute as @e[tag=Trigonometric,limit=1,x=0,y=0,z=0,distance=..3] run function math:rand-init

@@ -3,7 +3,7 @@
 #機体召喚
 summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[a6m-root,a6m,a6m-init,plane-root,plane,entity-nohit],CustomName:"{\"text\":\"a6m\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b}
 summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[a6m,a6m-init,plane,entity-nohit,plane-seat],CustomName:"{\"text\":\"seat\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,DeathLootTable:"minecraft:entities/bat",SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[a6m,a6m-init,plane,plane-seat,entity-nohit]}],DisabledSlots:256,NoGravity:0b}
-summon armor_stand ~ ~ ~ {Tags:["a6m-body","a6m",a6m-init,plane,plane-body,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:7,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[-12f,0f,0f]},DisabledSlots:256}
+summon armor_stand ~ ~ ~ {Tags:["a6m-body","a6m",a6m-init,plane,model-changeable,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:7,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[-12f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["a6m-hitbox","a6m",a6m-init,plane,plane-hitbox,body],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
 summon armor_stand ~ ~ ~ {Tags:["a6m-hitbox","a6m",a6m-init,plane,plane-hitbox,engine],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
 summon armor_stand ~ ~ ~ {Tags:["a6m-hitbox","a6m",a6m-init,plane,plane-hitbox,aileron-r,aileron],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
@@ -24,19 +24,19 @@ execute as @e[tag=a6m-init] store result entity @s Attributes[1].Base double 1 r
 #スピード・滑走/角度/旋回速度/加速度/最高速度/離陸速度/形態スコア・存在座標・設定
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] speed 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] rolling 0
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] accelerate 5
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] deaccelerate 20
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] accelerate 3
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] deaccelerate 8
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] max-speed 1960
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] cruise-speed 1215
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] takeoff-speed 520
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] stall-speed 500
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] landing-pitch -1200
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngX -1200
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngX -1250
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngY 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngZ 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngY-old 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] pitch-speed 200
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] yaw-speed 400
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] yaw-speed 220
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] roll-speed 400
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] parking-udvm 7
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] rolling-udvm 8

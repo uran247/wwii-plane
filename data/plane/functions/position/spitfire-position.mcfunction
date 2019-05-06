@@ -10,7 +10,7 @@ execute as @e[tag=spitfire,tag=!spitfire-root] if score @s plane-id = @e[tag=spi
 execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed
 
 #角度スコアが変化していた場合ベクトル計算
-execute if entity @s[tag=!angle-not-changed] run function plane:math/vector
+execute if entity @s[tag=!angle-not-changed] run function math:vector
 
 #indicatorの位置を機体の向いてる方向へ移動
 execute store result score @e[tag=plane-indicator,tag=spitfire-position-target,distance=..6] reg1 run data get entity @s Pos[0] 20

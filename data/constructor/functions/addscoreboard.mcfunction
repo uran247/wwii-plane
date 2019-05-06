@@ -56,9 +56,6 @@ scoreboard objectives add yaw dummy
 scoreboard objectives add age dummy
 scoreboard objectives add HP dummy
 scoreboard objectives add rolling dummy
-scoreboard objectives add travelX dummy
-scoreboard objectives add travelY dummy
-scoreboard objectives add travelZ dummy
 scoreboard objectives add cosX dummy
 scoreboard objectives add sinX dummy
 scoreboard objectives add cosY dummy
@@ -95,6 +92,7 @@ scoreboard objectives add plane-weapon dummy
 scoreboard objectives add rightClick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add w1-reload dummy
 scoreboard objectives add w2-reload dummy
+scoreboard objectives add w3-reload dummy
 scoreboard objectives add damage dummy
 scoreboard objectives add plane-w1-posX dummy
 scoreboard objectives add plane-w1-posY dummy
@@ -112,6 +110,7 @@ scoreboard objectives add no-hit dummy
 scoreboard objectives add ammunition1 dummy
 scoreboard objectives add ammunition2 dummy
 scoreboard objectives add ammunition3 dummy
+scoreboard objectives add ammunition4 dummy
 scoreboard objectives add gtime minecraft.custom:minecraft.play_one_minute
 scoreboard objectives add shootdown dummy {"text":"スコア"}
 scoreboard objectives add offsetX dummy
@@ -134,3 +133,10 @@ scoreboard objectives add engine dummy
 scoreboard objectives add body dummy
 scoreboard objectives add stage-id dummy
 scoreboard objectives add clear-score dummy
+scoreboard objectives add ammo-reload1 dummy
+scoreboard objectives add ammo-reload2 dummy
+scoreboard objectives add ammo-reload3 dummy
+scoreboard objectives add throttle dummy
+scoreboard objectives add fuse-height dummy
+scoreboard objectives add game-id dummy
+scoreboard objectives add return dummy

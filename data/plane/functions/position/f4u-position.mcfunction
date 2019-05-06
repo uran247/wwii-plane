@@ -11,7 +11,7 @@ execute as @e[tag=f4u,tag=!f4u-root] if score @s plane-id = @e[tag=f4u-position-
 execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed
 
 #角度スコアが変化していた場合ベクトル計算
-execute if entity @s[tag=!angle-not-changed] run function plane:math/vector
+execute if entity @s[tag=!angle-not-changed] run function math:vector
 
 #角度スコアが変化していた場合rootをindicatorの方向に向ける
 execute if entity @s[tag=!angle-not-changed] run teleport @s ^ ^ ^ facing entity @e[tag=plane-indicator,tag=f4u-position-target,distance=..6,limit=1]

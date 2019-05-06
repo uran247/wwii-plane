@@ -39,6 +39,9 @@ playsound minecraft:weapon.muchingun.fire master @a ~ ~ ~ 16 1 1
 #発射炎
 #execute as @e[tag=gun-init,distance=..10] at @s run particle minecraft:cloud ^ ^ ^ 0.1 0.1 0.1 0.1 1 force
 
+#残弾数減算
+scoreboard players remove @s ammunition2 1
+
 #終了処理
 tag @e[tag=gun-init,distance=..20] remove gun-init
 #scoreboard players set @p rightClick 0

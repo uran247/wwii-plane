@@ -4,6 +4,7 @@ scoreboard players set #global shootdown 0
 
 bossbar add game-progress "制圧度"
 bossbar set minecraft:game-progress players @a
+bossbar set minecraft:game-progress max 30
 
 #ステージに応じてクリア撃墜数をセット
-execute if entity @p[scores={stage-id=1}] run scoreboard players set #global clear-score 100
+scoreboard players set #global clear-score 30

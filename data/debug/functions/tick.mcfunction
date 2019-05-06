@@ -7,5 +7,5 @@
 #execute as @e[tag=a6m-root] at @s run function satsuei:gun-test
 
 
-#execute as @e[tag=a6m-root] at @s run function plane:math/vector-3input
+#execute as @e[tag=a6m-root] at @s run function math:vector-3input
 

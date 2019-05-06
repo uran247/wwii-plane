@@ -3,29 +3,22 @@
 #実行者タグ付与
 tag @e[tag=a6m,distance=..10] add a6m-init
 
-#ID付与
-scoreboard players set @s plane-id 0
-scoreboard players operation @s plane-id > @s plane-id
-scoreboard players operation @e[tag=a6m-init] plane-id = @s plane-id
-scoreboard players add @e[tag=a6m-init] plane-id 1
-
-
 #スピード・滑走/角度/旋回速度/加速度/最高速度/離陸速度/形態スコア・存在座標・設定
 scoreboard players set @s speed 0
 scoreboard players set @s rolling 0
 scoreboard players set @s accelerate 5
-scoreboard players set @s deaccelerate 20
+scoreboard players set @s deaccelerate 16
 scoreboard players set @s max-speed 1960
 scoreboard players set @s cruise-speed 1215
 scoreboard players set @s takeoff-speed 520
 scoreboard players set @s stall-speed 500
 scoreboard players set @s landing-pitch -1200
-scoreboard players set @s AngX -1200
+scoreboard players set @s AngX -1250
 scoreboard players set @s AngY 0
 scoreboard players set @s AngZ 0
 scoreboard players set @s AngY-old 0
 scoreboard players set @s pitch-speed 200
-scoreboard players set @s yaw-speed 400
+scoreboard players set @s yaw-speed 220
 scoreboard players set @s roll-speed 400
 scoreboard players set @s parking-udvm 7
 scoreboard players set @s rolling-udvm 8

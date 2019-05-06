@@ -25,28 +25,6 @@ execute at @e[tag=hit-gun,distance=..20] run particle minecraft:explosion ^ ^ ^ 
 
 #ダメージ判定
 function weapon:gun/hit/damage
-#execute as @e[tag=hit-gun,distance=..20] store result score @s reg1 run data get entity @s Health
-#scoreboard players operation @e[tag=hit-gun,distance=..20] reg1 -= @s damage
-#execute as @e[tag=hit-gun,distance=..20] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
-#execute as @e[tag=hit-gun,distance=..20,scores={reg1=0},type=!minecraft:spawner_minecart,type=!minecraft:player] run say destroyed
-#execute at @s[scores={reg2=1}] if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=!minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run scoreboard players add @s shootdown 1
-#execute as @e[tag=hit-gun,distance=..20] store result entity @s Health float 1 run scoreboard players get @s reg1
-##execute at @s[tag=hit-executer] run effect give @e[tag=hit-gun,distance=..2] minecraft:instant_damage 1 31
-##execute at @s[tag=hit-executer] run kill @e[tag=hit-gun,distance=..2]
-#
-##スポナー破壊判定
-#execute as @e[tag=hit-gun,distance=..20,type=minecraft:spawner_minecart] store result score @s reg1 run data get entity @s MaxNearbyEntities
-#scoreboard players operation @e[tag=hit-gun,distance=..20,type=minecraft:spawner_minecart] reg1 -= @s damage
-#execute as @e[tag=hit-gun,distance=..20,type=minecraft:spawner_minecart] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
-#execute as @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] run say destroyed
-#execute as @e[tag=hit-gun,distance=..20] store result entity @s MaxNearbyEntities short 1 run scoreboard players get @s reg1
-#execute at @s[scores={reg2=1}] if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run scoreboard players add @s shootdown 5
-#execute at @s[scores={reg2=1}] if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] run scoreboard players add #global shootdown 5
-#execute store result bossbar minecraft:game-progress value run scoreboard players get #global shootdown
-#kill @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart]
-#
-##プレイヤーダメージ判定
-#execute as @e[tag=hit-gun,distance=..20,type=minecraft:player] run effect give @s minecraft:instant_damage 1 1
 
 #hit-gunタグ除去
 tag @e[tag=hit-gun] remove hit-gun

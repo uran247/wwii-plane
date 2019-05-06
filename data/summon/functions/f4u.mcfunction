@@ -2,7 +2,7 @@
 
 #機体召喚
 summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[f4u-root,f4u,f4u-init,plane-root,plane],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[f4u,f4u-init,plane,plane-seat]}],DisabledSlots:256,NoGravity:0b}
-summon armor_stand ~ ~ ~ {Tags:["f4u-body","f4u",f4u-init,plane,plane-body],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:1,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
+summon armor_stand ~ ~ ~ {Tags:["f4u-body","f4u",f4u-init,plane,model-changeable],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:1,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["f4u-wing-r","f4u",f4u-init,plane,plane-parts,f4u-wing],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:64,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["f4u-wing-l","f4u",f4u-init,plane,plane-parts,f4u-wing],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:65,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["f4u-indicator","f4u",f4u-init,plane,plane-indicator],NoGravity:1b,Invisible:1,Marker:1}

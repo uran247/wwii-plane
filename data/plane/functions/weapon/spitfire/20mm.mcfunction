@@ -5,7 +5,7 @@
 scoreboard players set @s input2 19
 scoreboard players set @s input3 10
 scoreboard players set @s input4 30
-function plane:math/vector-3input
+function math:vector-3input
 scoreboard players operation @s plane-w1-posX = @s output2
 scoreboard players operation @s plane-w1-posY = @s output3
 scoreboard players operation @s plane-w1-posZ = @s output4
@@ -13,7 +13,7 @@ scoreboard players operation @s plane-w1-posZ = @s output4
 scoreboard players set @s input2 -19
 scoreboard players set @s input3 10
 scoreboard players set @s input4 30
-function plane:math/vector-3input
+function math:vector-3input
 scoreboard players operation @s plane-w2-posX = @s output2
 scoreboard players operation @s plane-w2-posY = @s output3
 scoreboard players operation @s plane-w2-posZ = @s output4

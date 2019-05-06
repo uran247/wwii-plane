@@ -3,8 +3,8 @@
 #実行者：パーツ　実行位置：パーツ
 
 #三角関数計算
-function plane:math/sin
-function plane:math/cos
+function math:sin
+function math:cos
 
 #スコアリセット
 scoreboard players set @s reg1 0

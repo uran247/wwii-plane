@@ -6,12 +6,6 @@
 tag @s add a6m-position-executer
 execute as @e[tag=a6m,tag=!a6m-root] if score @s plane-id = @e[tag=a6m-position-executer,limit=1] plane-id run tag @s add a6m-position-target
 
-#角度スコアが前tickから変化したか判定しタグ付け
-execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed
-
-#角度スコアが変化していた場合ベクトル計算
-execute if entity @s[tag=!angle-not-changed] run function plane:math/vector
-
 #自分と同じIDのパーツを自分の位置へ
 execute as @s at @s run tp @e[tag=a6m,tag=a6m-position-target] ^ ^ ^ ~90 ~
 
@@ -39,6 +33,15 @@ execute as @e[tag=elevator-r,tag=a6m-position-target,distance=..10] at @s rotate
 execute as @e[tag=elevator-l,tag=a6m-position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.4
 execute as @e[tag=radder,tag=a6m-position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.9
 
+#seatの位置修正
+execute at @s run tp @e[tag=a6m-position-target,tag=plane-seat,type=minecraft:armor_stand] ^ ^1 ^-1 ~ ~
+
+#角度スコアが前tickから変化したか判定しタグ付け
+execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed
+
+#角度スコアが変化していた場合ベクトル計算
+execute if entity @s[tag=!angle-not-changed] run function math:vector
+
 #角度スコアが変化していた場合NBT補正
 execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..10] run data merge entity @s {Pose:{RightArm:[0.0f,-90.0f,-102.0f]}}
 
@@ -53,9 +56,6 @@ execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-targ
 #Rootの向き修正
 execute if entity @s[tag=!angle-not-changed] at @s store result entity @s Rotation[0] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..10] AngY
 execute if entity @s[tag=!angle-not-changed] at @s store result entity @s Rotation[1] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..10] AngX
-
-#seatの位置修正
-execute at @s run tp @e[tag=a6m-position-target,tag=plane-seat,type=minecraft:armor_stand] ^ ^1 ^-1 ~ ~
 
 #パーツのX角度補正
 execute if entity @s[tag=!angle-not-changed] as @e[tag=a6m,tag=a6m-position-target,distance=..6] at @s store result entity @s Rotation[1] float 0.01 run scoreboard players get @e[tag=a6m-position-executer,limit=1,distance=..6] AngZ
