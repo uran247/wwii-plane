@@ -6,12 +6,11 @@ execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[score
 execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=2,w2-reload=..0,ammunition2=1..}] at @s run function plane:weapon/a6m/7p7mm
 
 #reload時間減算
-scoreboard players remove @s w1-reload 1
+function plane:weapon/a6m/a6m-cooltime-weapon
 
 #残弾数が0になったら補充時間をセット
-execute if entity @s[scores={ammunition1=0}] unless score @s ammo-reload1 > #0 Num run scoreboard players set @s ammo-reload1 280
-execute if entity @s[scores={ammunition2=0}] unless score @s ammo-reload2 > #0 Num run scoreboard players set @s ammo-reload2 140
+execute unless entity @s[scores={ammunition1=1..,ammunition2=1..}] as @s run function plane:weapon/a6m/a6m-set-reloadtime
 
-execute if entity @s[scores={ammunition1=..0,ammo-reload1=..0}] run scoreboard players set @s ammunition1 100
-execute if entity @s[scores={ammunition2=..0,ammo-reload2=..0}] run scoreboard players set @s ammunition2 500
+#execute if entity @s[scores={ammunition1=..0,ammo-reload1=..0}] run scoreboard players set @s ammunition1 100
+execute unless entity @s[scores={ammunition1=1..,ammunition2=1..}] unless entity @s[scores={ammo-reload1=1..,ammo-reload2=1..}] as @s run function plane:weapon/a6m/a6m-reset-ammunition
 

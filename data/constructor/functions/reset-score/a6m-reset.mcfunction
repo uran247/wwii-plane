@@ -4,7 +4,7 @@
 tag @e[tag=a6m,distance=..10] add a6m-init
 
 #スピード・滑走/角度/旋回速度/加速度/最高速度/離陸速度/形態スコア・存在座標・設定
-scoreboard players set @s speed 0
+#scoreboard players set @s speed 0
 scoreboard players set @s rolling 0
 scoreboard players set @s accelerate 5
 scoreboard players set @s deaccelerate 16

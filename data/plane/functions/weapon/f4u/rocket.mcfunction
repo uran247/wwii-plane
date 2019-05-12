@@ -19,7 +19,7 @@ scoreboard players set @e[tag=launch-init,distance=..15] age 300
 scoreboard players set @e[tag=launch-init,distance=..15] speed 20
 scoreboard players set @e[tag=launch-init,distance=..15] damage 0
 scoreboard players operation @s reg1 = @s speed
-scoreboard players operation @s reg1 /= #100 Num
+scoreboard players operation @s reg1 /= #1000 Num
 scoreboard players operation @e[tag=launch-init,distance=..20] speed += @s reg1
 scoreboard players operation @e[tag=launch-init,distance=..20] reg1 = #rand rand
 scoreboard players operation @e[tag=launch-init,distance=..20] reg1 %= #7 Num

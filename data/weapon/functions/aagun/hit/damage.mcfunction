@@ -12,12 +12,12 @@ execute as @e[tag=!entity-nohit,distance=..3,tag=!enemy-target,type=!minecraft:p
 #execute as @e[tag=!entity-nohit,distance=..3] run tellraw @a [{"text":"reg1:"},{"score":{"name":"@s","objective":"reg1"}}]
 
 #HPが0になったら破壊メッセージ
-execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s times 0 20 20
-execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s subtitle {"text":"敵機撃墜","color":"gold","italic":true}
-execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s title {"text":""}
+execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run title @s times 0 20 20
+execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run title @s subtitle {"text":"敵機撃墜","color":"gold","italic":true}
+execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run title @s title {"text":""}
 #倒したのが敵航空機だった場合撃墜者のスコアをプラス
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id store result score @s reg4 if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=!enemy-target,type=!minecraft:player,tag=enemy-plane]
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run scoreboard players operation @s shootdown += @s reg4
+execute as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id store result score @s reg4 if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=!enemy-target,type=!minecraft:player,tag=enemy-plane]
+execute as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run scoreboard players operation @s shootdown += @s reg4
 #機体パーツが破壊されたら登場者にtellraw
 execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=engine] as @a if score @s plane-id = @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=engine,limit=1] plane-id run tellraw @s [{"text":"エンジンが破壊されました","color":"dark_red"}]
 execute if entity @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=aileron] as @a if score @s plane-id = @e[tag=!entity-nohit,distance=..3,scores={reg1=0},tag=aileron,limit=1] plane-id run tellraw @s [{"text":"主翼が破壊されました","color":"dark_red"}]
@@ -39,13 +39,13 @@ scoreboard players operation @e[tag=!entity-nohit,distance=..3,tag=!enemy-target
 execute as @e[tag=!entity-nohit,distance=..3,type=minecraft:spawner_minecart] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
 execute as @e[tag=!entity-nohit,distance=..3] store result entity @s MaxNearbyEntities short 1 run scoreboard players get @s reg1
 #0になった場合破壊メッセージ
-execute if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s times 0 20 20
-execute if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s subtitle {"text":"スポナー破壊","color":"gold","italic":true}
-execute if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s title {"text":""}
+execute if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run title @s times 0 20 20
+execute if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run title @s subtitle {"text":"スポナー破壊","color":"gold","italic":true}
+execute if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run title @s title {"text":""}
 #スポナー破壊した場合破壊者とグローバル破壊スコアを増やす
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id store result score @s reg4 if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] 
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run scoreboard players operation @s reg4 *= #5 Num
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run scoreboard players operation #global shootdown += @s reg4
+execute as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id store result score @s reg4 if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] 
+execute as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run scoreboard players operation @s reg4 *= #5 Num
+execute as @a if score @s plane-id = @e[tag=aagun-move-executer,limit=1] plane-id run scoreboard players operation #global shootdown += @s reg4
 #破壊されたスポナーをキル
 kill @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart]
 

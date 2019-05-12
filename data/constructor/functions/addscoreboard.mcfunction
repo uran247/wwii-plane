@@ -93,6 +93,7 @@ scoreboard objectives add rightClick minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add w1-reload dummy
 scoreboard objectives add w2-reload dummy
 scoreboard objectives add w3-reload dummy
+scoreboard objectives add w4-reload dummy
 scoreboard objectives add damage dummy
 scoreboard objectives add plane-w1-posX dummy
 scoreboard objectives add plane-w1-posY dummy
@@ -116,9 +117,6 @@ scoreboard objectives add shootdown dummy {"text":"スコア"}
 scoreboard objectives add offsetX dummy
 scoreboard objectives add offsetY dummy
 scoreboard objectives add offsetZ dummy
-scoreboard objectives add offsetNowX dummy
-scoreboard objectives add offsetNowY dummy
-scoreboard objectives add offsetNowZ dummy
 scoreboard objectives add cruise-speed dummy
 scoreboard objectives add stall-speed dummy
 scoreboard objectives add hp dummy
@@ -136,7 +134,11 @@ scoreboard objectives add clear-score dummy
 scoreboard objectives add ammo-reload1 dummy
 scoreboard objectives add ammo-reload2 dummy
 scoreboard objectives add ammo-reload3 dummy
+scoreboard objectives add ammo-reload4 dummy
 scoreboard objectives add throttle dummy
 scoreboard objectives add fuse-height dummy
 scoreboard objectives add game-id dummy
 scoreboard objectives add return dummy
+scoreboard objectives add resistance dummy
+scoreboard objectives add target-planeid dummy
+scoreboard objectives add forget-time dummy

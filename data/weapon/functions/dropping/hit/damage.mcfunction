@@ -7,39 +7,39 @@
 #### ダメージ判定（mob） ####
 #hpからダメージを引く
 execute as @e[tag=!entity-nohit,distance=..16,tag=!enemy-target,type=!minecraft:player] store result score @s reg1 run data get entity @s Health
-scoreboard players operation @s reg3 = @s damage
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..1,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..2,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..3,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..4,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..5,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..6,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..7,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..8,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..9,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..10,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..11,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..12,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..13,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..14,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..15,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..16,tag=!enemy-target,type=!minecraft:player] reg1 -= @s reg3
+scoreboard players operation #modified-damage reg1 = @s damage
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..1,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..2,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..3,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..4,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..5,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..6,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..7,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..8,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..9,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..10,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..11,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..12,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..13,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..14,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..15,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..16,tag=!enemy-target,type=!minecraft:player] reg1 -= #modified-damage reg1
 execute as @e[tag=!entity-nohit,distance=..16,tag=!enemy-target,type=!minecraft:player] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
 
 #HPが0になったら破壊メッセージ、HP0がいなくて命中がいたら命中メッセージ
@@ -60,64 +60,69 @@ execute if entity @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=body] a
 #ダメージを受けたのが胴体だった場合プレイヤーにダメージを与える
 execute if entity @e[tag=!entity-nohit,distance=..20,tag=body] as @a if score @s plane-id = @e[tag=!entity-nohit,distance=..16,tag=body,limit=1] plane-id run effect give @s minecraft:instant_damage 1 1
 #スコアをHPに反映
-execute as @e[tag=!entity-nohit,distance=..16] store result entity @s Health float 1 run scoreboard players get @s reg1
+execute as @e[tag=!enemy-target,tag=!entity-nohit,distance=..16] store result entity @s Health float 1 run scoreboard players get @s reg1
  
 
 
 #### スポナー破壊判定 ####
 #MaxNearbyEntities取得
-execute as @e[tag=!entity-nohit,distance=..20,type=minecraft:spawner_minecart] store result score @s reg1 run data get entity @s MaxNearbyEntities
+execute as @e[tag=!entity-nohit,distance=..16,type=spawner_minecart,tag=enemy-target] store result score @s reg1 run data get entity @s MaxNearbyEntities
+execute as @e[tag=!entity-nohit,distance=..16,type=!spawner_minecart,tag=enemy-target] store result score @s reg1 run data get entity @s Health
 #ダメージ分MaxNearbyEntitiesを引く
-scoreboard players operation @s reg3 = @s damage
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..1,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..2,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..3,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..4,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..5,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..6,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..7,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..8,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..9,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..10,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..11,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..12,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..13,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..14,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..15,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
-scoreboard players operation @s reg3 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..16,tag=enemy-target,type=!minecraft:player] reg1 -= @s reg3
+scoreboard players operation #modified-damage reg1 = @s damage
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..1,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..2,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..3,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..4,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..5,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..6,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..7,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..8,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..9,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..10,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..11,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..12,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..13,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..14,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..15,tag=enemy-target] reg1 -= #modified-damage reg1
+scoreboard players operation #modified-damage reg1 /= #2 Num
+scoreboard players operation @e[tag=!entity-nohit,distance=..16,tag=enemy-target] reg1 -= #modified-damage reg1
 execute as @e[tag=!entity-nohit,distance=..16,tag=enemy-target] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
-execute as @e[tag=!entity-nohit,distance=..16] store result entity @s MaxNearbyEntities short 1 run scoreboard players get @s reg1
+
 #0になった場合破壊メッセージ,0にならず当たった場合命中メッセージ
-execute if entity @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s times 0 20 20
-execute if entity @e[tag=!entity-nohit,distance=..16,tag=enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s subtitle {"text":"命中","color":"white","italic":true}
-execute if entity @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s subtitle {"text":"目標破壊","color":"gold","italic":true}
-execute if entity @e[tag=!entity-nohit,distance=..16,tag=enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s title {"text":""}
+execute if entity @e[tag=!entity-nohit,distance=..16,tag=enemy-target] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s times 0 20 20
+execute if entity @e[tag=!entity-nohit,distance=..16,tag=enemy-target] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s subtitle {"text":"命中","color":"white","italic":true}
+execute if entity @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=enemy-target] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s subtitle {"text":"目標破壊","color":"gold","italic":true}
+execute if entity @e[tag=!entity-nohit,distance=..16,tag=enemy-target] as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run title @s title {"text":""}
 #スポナー破壊した場合破壊者とグローバル破壊スコアを増やす
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id store result score @s reg4 if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0},tag=enemy-target] 
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run scoreboard players operation @s reg4 *= #5 Num
-execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run scoreboard players operation #global shootdown += @s reg4
-#破壊されたスポナーをキル
-kill @e[tag=!entity-nohit,distance=..20,scores={reg1=0},tag=enemy-target]
+execute at @s store result score #destroy-num reg1 if entity @e[tag=!entity-nohit,scores={reg1=0},tag=enemy-target,distance=..16]
+execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run scoreboard players operation #destroy-num reg1 *= #5 Num
+execute as @a if score @s plane-id = @e[tag=bomb-move-executer,limit=1] plane-id run scoreboard players operation #global shootdown += #destroy-num reg1
+
+#ダメージ処理、破壊されたスポナーをキル
+execute as @e[tag=!entity-nohit,distance=..16,type=spawner_minecart] store result entity @s MaxNearbyEntities short 1 run scoreboard players get @s reg1
+execute as @e[tag=!entity-nohit,distance=..16,type=!spawner_minecart] store result entity @s Health short 1 run scoreboard players get @s reg1
+kill @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=enemy-target,type=spawner_minecart]
 
 
 #### ダメージ時エフェクト ####
 #命中地点にパーティクル
+execute at @s[tag=50kg] run particle minecraft:explosion ^ ^ ^ 3.3 3.3 3.3 0 300 force
 execute at @s[tag=60kg] run particle minecraft:explosion ^ ^ ^ 4 4 4 0 300 force
 execute at @s[tag=250kg] run particle minecraft:explosion ^ ^ ^ 5 5 5 0 1250 force
 execute at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 16 1.2 0

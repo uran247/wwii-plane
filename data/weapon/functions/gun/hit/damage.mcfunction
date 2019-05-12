@@ -5,17 +5,17 @@
 
 #### ダメージ判定（mob） ####
 #hpからダメージを引く
-execute as @e[tag=hit-gun,distance=..20,tag=!enemy-target,type=!minecraft:player] store result score @s reg1 run data get entity @s Health
-scoreboard players operation @e[tag=hit-gun,distance=..20,tag=!enemy-target,type=!minecraft:player] reg1 -= @s damage
-execute as @e[tag=hit-gun,distance=..20,tag=!enemy-target,type=!minecraft:player] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
+execute as @e[tag=hit-gun,distance=..20,tag=!enemy-target,type=!player] store result score @s reg1 run data get entity @s Health
+scoreboard players operation @e[tag=hit-gun,distance=..20,tag=!enemy-target,type=!player] reg1 -= @s damage
+execute as @e[tag=hit-gun,distance=..20,tag=!enemy-target,type=!player] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
 
 #HPが0になったら破壊メッセージ
-execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s times 0 20 20
-execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s subtitle {"text":"敵機撃墜","color":"gold","italic":true}
-execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-plane,tag=!enemy-target,type=!minecraft:player] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s title {"text":""}
+execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-plane,tag=!enemy-target] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s times 0 20 20
+execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-plane,tag=!enemy-target] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s subtitle {"text":"敵機撃墜","color":"gold","italic":true}
+execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-plane,tag=!enemy-target] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s title {"text":""}
 
 #倒したのが敵航空機だった場合撃墜者のスコアをプラス
-execute at @s[scores={reg2=1}] if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=!enemy-target,type=!minecraft:player,tag=enemy-plane] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run scoreboard players add @s shootdown 1
+execute if score #hit-flag reg1 matches 1 at @s if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=!enemy-target,tag=enemy-plane] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run scoreboard players add @s shootdown 1
 
 #機体パーツが破壊されたら登場者にtellraw
 execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=engine] as @a if score @s plane-id = @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=engine,limit=1] plane-id run tellraw @s [{"text":"エンジンが破壊されました","color":"dark_red"}]
@@ -25,7 +25,7 @@ execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=elevetor] as 
 execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=body] as @a if score @s plane-id = @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=body,limit=1] plane-id run tellraw @s [{"text":"機体が破壊されました","color":"dark_red"}]
 
 #ダメージを受けたのが胴体だった場合プレイヤーにダメージを与える
-execute if entity @e[tag=hit-gun,distance=..20,tag=body] as @a if score @s plane-id = @e[tag=hit-gun,distance=..20,tag=body,limit=1] plane-id run effect give @s minecraft:instant_damage 1 1
+execute if entity @e[tag=hit-gun,distance=..20,tag=body] as @a if score @s plane-id = @e[tag=hit-gun,distance=..20,tag=body,limit=1] plane-id run effect give @s instant_damage 1 1
 
 #スコアをHPに反映
 execute as @e[tag=hit-gun,distance=..20] store result entity @s Health float 1 run scoreboard players get @s reg1
@@ -33,25 +33,25 @@ execute as @e[tag=hit-gun,distance=..20] store result entity @s Health float 1 r
 
 #### スポナー破壊判定 ####
 #MaxNearbyEntities取得
-execute as @e[tag=hit-gun,distance=..20,type=minecraft:spawner_minecart] store result score @s reg1 run data get entity @s MaxNearbyEntities
+execute as @e[tag=hit-gun,distance=..20,type=spawner_minecart] store result score @s reg1 run data get entity @s MaxNearbyEntities
 
 #ダメージ分MaxNearbyEntitiesを引く
-scoreboard players operation @e[tag=hit-gun,distance=..20,type=minecraft:spawner_minecart] reg1 -= @s damage
-execute as @e[tag=hit-gun,distance=..20,type=minecraft:spawner_minecart] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
+scoreboard players operation @e[tag=hit-gun,distance=..20,type=spawner_minecart] reg1 -= @s damage
+execute as @e[tag=hit-gun,distance=..20,type=spawner_minecart] if score @s reg1 < #0 Num run scoreboard players set @s reg1 0
 execute as @e[tag=hit-gun,distance=..20] store result entity @s MaxNearbyEntities short 1 run scoreboard players get @s reg1
 
 #0になった場合破壊メッセージ
-execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s times 0 20 20
-execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s subtitle {"text":"スポナー破壊","color":"gold","italic":true}
-execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s title {"text":""}
+execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s times 0 20 20
+execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s subtitle {"text":"スポナー破壊","color":"gold","italic":true}
+execute if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run title @s title {"text":""}
 
 #スポナー破壊した場合破壊者とグローバル破壊スコアを増やす
-execute at @s[scores={reg2=1}] if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run scoreboard players add @s shootdown 5
-execute at @s[scores={reg2=1}] if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart] run scoreboard players add #global shootdown 5
+execute if score #hit-flag reg1 matches 1 at @s if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-target] as @a if score @s plane-id = @e[tag=gun-move-executer,limit=1] plane-id run scoreboard players add @s shootdown 5
+execute if score #hit-flag reg1 matches 1 at @s if entity @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-target] run scoreboard players add #global shootdown 5
 
 #破壊されたスポナーをキル
-kill @e[tag=hit-gun,distance=..20,scores={reg1=0},type=minecraft:spawner_minecart]
+kill @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-target]
 
 
 #### 飛行機に乗ってないプレイヤーにダメージ判定 ####
-execute as @e[tag=hit-gun,tag=!plane-rider,distance=..20,type=minecraft:player] run effect give @s minecraft:instant_damage 1 1
+execute as @e[tag=hit-gun,tag=!plane-rider,distance=..20,type=player] run effect give @s instant_damage 1 1

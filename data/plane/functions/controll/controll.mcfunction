@@ -13,11 +13,15 @@ tag @s add plane-rider
 
 #実行者と対象機体にタグ付け
 tag @s add controller
-#tag @e[tag=plane-root,limit=1,sort=nearest,distance=..20] add controll-target
-execute as @e[tag=plane-root] if score @s plane-id = @p[tag=controller] plane-id run tag @s add controll-target
+scoreboard players operation #plane-id reg1 = @s plane-id
+execute as @e[tag=plane-root] if score @s plane-id = #plane-id reg1 run tag @s add controll-target
 
 #自分と同じIDのパーツにタグ付け
-execute as @e[tag=controll-target,distance=..20] at @s as @e[distance=..20,scores={plane-id=1..}] if score @s plane-id = @e[tag=controll-target,distance=..10,limit=1] plane-id run tag @s add controll-parts
+execute as @e[tag=controll-target,distance=..20] at @s as @e[distance=..20,scores={plane-id=1..}] if score @s plane-id = #plane-id reg1 run tag @s add controll-parts
+
+#選択スロット判定(plane:controll/rolling plane:controll/flying plane:controll/weaponで使用)
+function util:get-player-slot
+scoreboard players operation @s plane-key-input = #selected-slot return
 
 #移動操作
 execute if entity @e[tag=controll-target,tag=!flying,limit=1,sort=nearest,distance=..20] run function plane:controll/rolling
@@ -27,7 +31,7 @@ execute if entity @e[tag=controll-target,tag=flying,limit=1,sort=nearest,distanc
 function plane:controll/weapon
 
 #スコア情報をActionbarに表示 
-execute at @s run function plane:controll/plane-info
+execute at @s as @e[tag=controll-target,distance=..20,limit=1] run function plane:controll/plane-info
 
 #タグ削除
 tag @e[tag=controll-target,tag=plane-root,limit=1,sort=nearest,distance=..20] remove controll-target

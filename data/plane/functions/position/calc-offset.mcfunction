@@ -7,132 +7,116 @@ function math:sin
 function math:cos
 
 #スコアリセット
-scoreboard players set @s reg1 0
-scoreboard players set @s reg2 0
-scoreboard players set @s reg3 0
-scoreboard players set @s reg4 0
-scoreboard players set @s reg5 0
-scoreboard players set @s reg6 0
-scoreboard players set @s reg7 0
-scoreboard players set @s reg8 0
-scoreboard players set @s reg9 0
-scoreboard players set @s reg10 0
-scoreboard players set @s reg11 0
-scoreboard players set @s reg12 0
-scoreboard players set @s reg13 0
-scoreboard players set @s reg14 0
-scoreboard players set @s reg15 0
+scoreboard players set #offset-x reg1 0
+scoreboard players set #offset-y reg1 0
+scoreboard players set #offset-z reg1 0
+scoreboard players set #x-direction-dx reg1 0
+scoreboard players set #x-direction-dy reg1 0
+scoreboard players set #x-direction-dz reg1 0
+scoreboard players set #y-direction-dx reg1 0
+scoreboard players set #y-direction-dy reg1 0
+scoreboard players set #y-direction-dz reg1 0
+scoreboard players set #x-direction-unit-vector-x reg1 0
+scoreboard players set #x-direction-unit-vector-y reg1 0
+scoreboard players set #x-direction-unit-vector-z reg1 0
+scoreboard players set #y-direction-unit-vector-x reg1 0
+scoreboard players set #y-direction-unit-vector-y reg1 0
+scoreboard players set #y-direction-unit-vector-z reg1 0
 
 #座標取得
-execute store result score @s reg1 run data get entity @s Pos[0] 100
-execute store result score @s reg2 run data get entity @s Pos[1] 100
-execute store result score @s reg3 run data get entity @s Pos[2] 100
-#tellraw @a [{"text":"X: "},{"score":{"name":"@s","objective":"reg1"}},{"text":"Y: "},{"score":{"name":"@s","objective":"reg2"}},{"text":"Z: "},{"score":{"name":"@s","objective":"reg3"}},{"text":"cos: "},{"score":{"name":"@s","objective":"cos"}}]
-
+execute store result score #offset-x reg1 run data get entity @s Pos[0] 100
+execute store result score #offset-y reg1 run data get entity @s Pos[1] 100
+execute store result score #offset-z reg1 run data get entity @s Pos[2] 100
 
 #X方向の単位ベクトル算出
-summon minecraft:area_effect_cloud ^1 ^ ^ {Tags:[indicatorX,entity-nohit,entity-nohit],UUIDMost:0,UUIDLeast:1L}
-summon minecraft:area_effect_cloud ^ ^1 ^ {Tags:[indicatorY,entity-nohit,entity-nohit],UUIDMost:0,UUIDLeast:2L}
-tp 00000000-0000-0000-0000-00000001 ^1 ^ ^
-tp 00000000-0000-0000-0000-00000002 ^ ^1 ^
+tp 0-0-1-0-0 ^1 ^ ^
+tp 0-0-2-0-0 ^ ^1 ^
 
-execute store result score @s reg4 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorX,limit=1,sort=nearest] Pos[0] 100
-execute store result score @s reg5 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorX,limit=1,sort=nearest] Pos[1] 100
-execute store result score @s reg6 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorX,limit=1,sort=nearest] Pos[2] 100
-scoreboard players operation @s reg4 -= @s reg1
-scoreboard players operation @s reg5 -= @s reg2
-scoreboard players operation @s reg6 -= @s reg3
-scoreboard players operation @s reg10 = @s reg4
-scoreboard players operation @s reg11 = @s reg5
-scoreboard players operation @s reg12 = @s reg6
-scoreboard players operation @s reg4 *= @s cos
-scoreboard players operation @s reg5 *= @s cos
-scoreboard players operation @s reg6 *= @s cos
-scoreboard players operation @s reg4 /= #1000 Num
-scoreboard players operation @s reg5 /= #1000 Num
-scoreboard players operation @s reg6 /= #1000 Num
+execute store result score #x-direction-dx reg1 run data get entity 0-0-1-0-0 Pos[0] 100
+execute store result score #x-direction-dy reg1 run data get entity 0-0-1-0-0 Pos[1] 100
+execute store result score #x-direction-dz reg1 run data get entity 0-0-1-0-0 Pos[2] 100
+scoreboard players operation #x-direction-dx reg1 -= #offset-x reg1
+scoreboard players operation #x-direction-dy reg1 -= #offset-y reg1
+scoreboard players operation #x-direction-dz reg1 -= #offset-z reg1
+scoreboard players operation #x-direction-unit-vector-x reg1 = #x-direction-dx reg1
+scoreboard players operation #x-direction-unit-vector-y reg1 = #x-direction-dy reg1
+scoreboard players operation #x-direction-unit-vector-z reg1 = #x-direction-dz reg1
+scoreboard players operation #x-direction-dx reg1 *= @s cos
+scoreboard players operation #x-direction-dy reg1 *= @s cos
+scoreboard players operation #x-direction-dz reg1 *= @s cos
+scoreboard players operation #x-direction-dx reg1 /= #1000 Num
+scoreboard players operation #x-direction-dy reg1 /= #1000 Num
+scoreboard players operation #x-direction-dz reg1 /= #1000 Num
 
+execute store result score #y-direction-dx reg1 run data get entity 0-0-2-0-0 Pos[0] 100
+execute store result score #y-direction-dy reg1 run data get entity 0-0-2-0-0 Pos[1] 100
+execute store result score #y-direction-dz reg1 run data get entity 0-0-2-0-0 Pos[2] 100
+scoreboard players operation #y-direction-dx reg1 -= #offset-x reg1
+scoreboard players operation #y-direction-dy reg1 -= #offset-y reg1
+scoreboard players operation #y-direction-dz reg1 -= #offset-z reg1
+scoreboard players operation #y-direction-unit-vector-x reg1 = #y-direction-dx reg1
+scoreboard players operation #y-direction-unit-vector-y reg1 = #y-direction-dy reg1
+scoreboard players operation #y-direction-unit-vector-z reg1 = #y-direction-dz reg1
+scoreboard players operation #y-direction-dx reg1 *= @s sin
+scoreboard players operation #y-direction-dy reg1 *= @s sin
+scoreboard players operation #y-direction-dz reg1 *= @s sin
+scoreboard players operation #y-direction-dx reg1 /= #1000 Num
+scoreboard players operation #y-direction-dy reg1 /= #1000 Num
+scoreboard players operation #y-direction-dz reg1 /= #1000 Num
 
-execute store result score @s reg7 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorY,limit=1,sort=nearest] Pos[0] 100
-execute store result score @s reg8 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorY,limit=1,sort=nearest] Pos[1] 100
-execute store result score @s reg9 run data get entity @e[type=minecraft:area_effect_cloud,tag=indicatorY,limit=1,sort=nearest] Pos[2] 100
-scoreboard players operation @s reg7 -= @s reg1
-scoreboard players operation @s reg8 -= @s reg2
-scoreboard players operation @s reg9 -= @s reg3
-scoreboard players operation @s reg13 = @s reg7
-scoreboard players operation @s reg14 = @s reg8
-scoreboard players operation @s reg15 = @s reg9
-scoreboard players operation @s reg7 *= @s sin
-scoreboard players operation @s reg8 *= @s sin
-scoreboard players operation @s reg9 *= @s sin
-scoreboard players operation @s reg7 /= #1000 Num
-scoreboard players operation @s reg8 /= #1000 Num
-scoreboard players operation @s reg9 /= #1000 Num
-
-scoreboard players operation @s reg4 *= @s offsetX
-scoreboard players operation @s reg5 *= @s offsetX
-scoreboard players operation @s reg6 *= @s offsetX
-scoreboard players operation @s reg7 *= @s offsetX
-scoreboard players operation @s reg8 *= @s offsetX
-scoreboard players operation @s reg9 *= @s offsetX
-
-#tellraw @a [{"text":"X1: "},{"score":{"name":"@s","objective":"reg4"}},{"text":"Y1: "},{"score":{"name":"@s","objective":"reg5"}},{"text":"Z1: "},{"score":{"name":"@s","objective":"reg6"}}]
-#tellraw @a [{"text":"X2: "},{"score":{"name":"@s","objective":"reg7"}},{"text":"Y2: "},{"score":{"name":"@s","objective":"reg8"}},{"text":"Z2: "},{"score":{"name":"@s","objective":"reg9"}}]
+scoreboard players operation #x-direction-dx reg1 *= @s offsetX
+scoreboard players operation #x-direction-dy reg1 *= @s offsetX
+scoreboard players operation #x-direction-dz reg1 *= @s offsetX
+scoreboard players operation #y-direction-dx reg1 *= @s offsetX
+scoreboard players operation #y-direction-dy reg1 *= @s offsetX
+scoreboard players operation #y-direction-dz reg1 *= @s offsetX
 
 #Y方向の単位ベクトル算出
-scoreboard players operation @s reg10 *= @s sin
-scoreboard players operation @s reg11 *= @s sin
-scoreboard players operation @s reg12 *= @s sin
-scoreboard players operation @s reg10 /= #1000 Num
-scoreboard players operation @s reg11 /= #1000 Num
-scoreboard players operation @s reg12 /= #1000 Num
+scoreboard players operation #x-direction-unit-vector-x reg1 *= @s sin
+scoreboard players operation #x-direction-unit-vector-y reg1 *= @s sin
+scoreboard players operation #x-direction-unit-vector-z reg1 *= @s sin
+scoreboard players operation #x-direction-unit-vector-x reg1 /= #1000 Num
+scoreboard players operation #x-direction-unit-vector-y reg1 /= #1000 Num
+scoreboard players operation #x-direction-unit-vector-z reg1 /= #1000 Num
 
-scoreboard players operation @s reg13 *= @s cos
-scoreboard players operation @s reg14 *= @s cos
-scoreboard players operation @s reg15 *= @s cos
-scoreboard players operation @s reg13 /= #1000 Num
-scoreboard players operation @s reg14 /= #1000 Num
-scoreboard players operation @s reg15 /= #1000 Num
+scoreboard players operation #y-direction-unit-vector-x reg1 *= @s cos
+scoreboard players operation #y-direction-unit-vector-y reg1 *= @s cos
+scoreboard players operation #y-direction-unit-vector-z reg1 *= @s cos
+scoreboard players operation #y-direction-unit-vector-x reg1 /= #1000 Num
+scoreboard players operation #y-direction-unit-vector-y reg1 /= #1000 Num
+scoreboard players operation #y-direction-unit-vector-z reg1 /= #1000 Num
 
-scoreboard players operation @s reg10 *= @s offsetY
-scoreboard players operation @s reg11 *= @s offsetY
-scoreboard players operation @s reg12 *= @s offsetY
-scoreboard players operation @s reg13 *= @s offsetY
-scoreboard players operation @s reg14 *= @s offsetY
-scoreboard players operation @s reg15 *= @s offsetY
-
-
+scoreboard players operation #x-direction-unit-vector-x reg1 *= @s offsetY
+scoreboard players operation #x-direction-unit-vector-y reg1 *= @s offsetY
+scoreboard players operation #x-direction-unit-vector-z reg1 *= @s offsetY
+scoreboard players operation #y-direction-unit-vector-x reg1 *= @s offsetY
+scoreboard players operation #y-direction-unit-vector-y reg1 *= @s offsetY
+scoreboard players operation #y-direction-unit-vector-z reg1 *= @s offsetY
 
 #座標計算
-#tellraw @a [{"text":"X: "},{"score":{"name":"@s","objective":"reg1"}},{"text":"Y: "},{"score":{"name":"@s","objective":"reg2"}},{"text":"Z: "},{"score":{"name":"@s","objective":"reg3"}}]
+scoreboard players operation #offset-x reg1 *= #1000 Num
+scoreboard players operation #offset-y reg1 *= #1000 Num
+scoreboard players operation #offset-z reg1 *= #1000 Num
 
-scoreboard players operation @s reg1 *= #1000 Num
-scoreboard players operation @s reg2 *= #1000 Num
-scoreboard players operation @s reg3 *= #1000 Num
-
-
-
-scoreboard players operation @s reg1 += @s reg4
-scoreboard players operation @s reg2 += @s reg5
-scoreboard players operation @s reg3 += @s reg6
-scoreboard players operation @s reg1 += @s reg7
-scoreboard players operation @s reg2 += @s reg8
-scoreboard players operation @s reg3 += @s reg9
-scoreboard players operation @s reg1 += @s reg10
-scoreboard players operation @s reg2 += @s reg11
-scoreboard players operation @s reg3 += @s reg12
-scoreboard players operation @s reg1 -= @s reg13
-scoreboard players operation @s reg2 -= @s reg14
-scoreboard players operation @s reg3 -= @s reg15
-
-
-#tellraw @a [{"text":"X: "},{"score":{"name":"@s","objective":"reg1"}},{"text":"Y: "},{"score":{"name":"@s","objective":"reg2"}},{"text":"Z: "},{"score":{"name":"@s","objective":"reg3"}}]
-#tellraw @a [{"text":"X: "},{"score":{"name":"@s","objective":"reg1"}},{"text":"Y: "},{"score":{"name":"@s","objective":"reg2"}},{"text":"Z: "},{"score":{"name":"@s","objective":"reg3"}}]
+scoreboard players operation #offset-x reg1 += #x-direction-dx reg1
+scoreboard players operation #offset-y reg1 += #x-direction-dy reg1
+scoreboard players operation #offset-z reg1 += #x-direction-dz reg1
+scoreboard players operation #offset-x reg1 += #y-direction-dx reg1
+scoreboard players operation #offset-y reg1 += #y-direction-dy reg1
+scoreboard players operation #offset-z reg1 += #y-direction-dz reg1
+scoreboard players operation #offset-x reg1 += #x-direction-unit-vector-x reg1
+scoreboard players operation #offset-y reg1 += #x-direction-unit-vector-y reg1
+scoreboard players operation #offset-z reg1 += #x-direction-unit-vector-z reg1
+scoreboard players operation #offset-x reg1 -= #y-direction-unit-vector-x reg1
+scoreboard players operation #offset-y reg1 -= #y-direction-unit-vector-y reg1
+scoreboard players operation #offset-z reg1 -= #y-direction-unit-vector-z reg1
 
 #移動
-execute store result entity @s Pos[0] double 0.00001 run scoreboard players get @s reg1
-execute store result entity @s Pos[1] double 0.00001 run scoreboard players get @s reg2
-execute store result entity @s Pos[2] double 0.00001 run scoreboard players get @s reg3
+execute store result entity @s Pos[0] double 0.00001 run scoreboard players get #offset-x reg1
+execute store result entity @s Pos[1] double 0.00001 run scoreboard players get #offset-y reg1
+execute store result entity @s Pos[2] double 0.00001 run scoreboard players get #offset-z reg1
 
 #後処理
+tp 0-0-1-0-0 0 1 0
+tp 0-0-2-0-0 0 1 0
 

@@ -13,7 +13,7 @@ scoreboard players reset @e[tag=bombed,distance=..5] plane-id
 
 #スコア付与
 scoreboard players operation @e[tag=bombed,distance=..5] speed = @s speed
-scoreboard players operation @e[tag=bombed,distance=..5] speed /= #100 Num
+scoreboard players operation @e[tag=bombed,distance=..5] speed /= #1000 Num
 scoreboard players set @e[tag=bombed,distance=..5] damage 10
 scoreboard players set @e[tag=bombed,distance=..5] age 1200
 scoreboard players set @e[tag=bombed,distance=..5] no-hit 1190

@@ -4,7 +4,8 @@
 
 #実行者にタグ付け
 tag @s add plane-move-executer
-execute as @e[distance=..20,tag=plane] if score @s plane-id = @e[tag=plane-move-executer,distance=..20,limit=1] plane-id run tag @s add plane-move-parts
+scoreboard players operation #plane-id reg1 = @s plane-id
+execute as @e[distance=..20,tag=plane] if score @s plane-id = #plane-id reg1 run tag @s add plane-move-parts
 
 #飛行・滑走実行
 execute if entity @s[tag=!flying] run function plane:move/plane-move/rolling

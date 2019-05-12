@@ -5,12 +5,18 @@
 tag @s add ai-executer
 tag @e[tag=phantom1-rider,sort=nearest,distance=..3] add ai-rider
 
+#ターゲットのplane-idを保存
+#tag @p[distance=..96] add ai-target
+#execute as @p[tag=ai-target] positioned ^376 ^ ^-376 run tag @s[distance=500] remove ai-target
+#execute as @p[tag=ai-target] positioned ^-376 ^ ^-376 run tag @s[distance=500] remove ai-target
+#execute as @p[tag=ai-target] positioned ^ ^376 ^-376 run tag @s[distance=500] remove ai-target
+#execute as @p[tag=ai-target] positioned ^ ^-376 ^-376 run tag @s[distance=500] remove ai-target
+execute as @a[distance=..96] positioned ^ ^ ^200 if entity @s[distance=..200] run tag @s add ai-target-candidate
+execute if entity @p[tag=ai-target-candidate,scores={plane-id=1..}] run scoreboard players operation @s target-planeid = @p[tag=ai-target-candidate,scores={plane-id=1..}] plane-id
+execute if entity @p[tag=ai-target-candidate,scores={plane-id=1..}] run scoreboard players set @s forget-time 100
+
 #ターゲットにタグ付け
-tag @p[distance=..128] add ai-target
-execute as @p[tag=ai-target] positioned ^376 ^ ^-376 run tag @s[distance=500] remove ai-target
-execute as @p[tag=ai-target] positioned ^-376 ^ ^-376 run tag @s[distance=500] remove ai-target
-execute as @p[tag=ai-target] positioned ^ ^376 ^-376 run tag @s[distance=500] remove ai-target
-execute as @p[tag=ai-target] positioned ^ ^-376 ^-376 run tag @s[distance=500] remove ai-target
+execute at @s as @a if score @s plane-id = @e[tag=ai-executer,distance=..1,limit=1] target-planeid run tag @s add ai-target
 execute at @p[tag=ai-target,scores={plane-id=1..}] run tag @e[tag=plane-root,limit=1,sort=nearest] add ai-target-plane
 
 #どっちに回ればプレイヤーに近づくか検知して旋回方向決定
@@ -33,8 +39,6 @@ execute unless entity @p[tag=ai-target] run tag @s add AngYplus
 
 #ターゲット不在で高さ250なら高度を下げる
 execute unless entity @p[tag=ai-target] positioned ~ 0 ~ unless entity @s[dx=1,dy=200,dz=1] run tag @s add AngXplus
-
-#execute if entity @e[tag=AngXplus] run say @e[tag=AngXplus]
 
 #プレイヤー座標を向くように旋回
 scoreboard players operation @s[tag=AngYplus,tag=!near] AngY += @s yaw-speed
@@ -82,12 +86,19 @@ execute store result entity @s Motion[2] double 0.00001 run scoreboard players g
 
 #プレイヤーの方を向いたら射撃
 #execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind] run say lockon
-execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run function mob:weapon/phantom1/7p7mm
-execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run scoreboard players remove @s ammunition1 1
+#execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run function mob:weapon/phantom1/7p7mm
+#execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run scoreboard players remove @s ammunition1 1
+execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run function mob:weapon/phantom1/7p7mm
+execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run scoreboard players remove @s ammunition1 1
 scoreboard players remove @s[scores={ammunition1=1..,w1-reload=1..}] w1-reload 1
 
 #particle
-particle minecraft:large_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 force
+execute unless entity @p[tag=ai-target] run particle minecraft:large_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 force
+execute if entity @p[tag=ai-target] run particle minecraft:dust 1 0 0 2 ~ ~ ~ 0 0 0 1 1 force
+
+#対象忘却
+scoreboard players remove @s[scores={forget-time=0..}] forget-time 1
+scoreboard players reset @s[scores={forget-time=0}] target-planeid
 
 #実行者タグ除去
 kill @e[tag=ai-indicator,distance=..2]
@@ -100,4 +111,5 @@ tag @s remove ai-executer
 tag @e[tag=phantom1-rider,sort=nearest,distance=..3] remove ai-rider
 execute at @a[tag=ai-target] run tag @e[tag=ai-target-plane,distance=..20] remove ai-target-plane
 tag @a[tag=ai-target] remove ai-target
+tag @a[tag=ai-target-candidate] remove ai-target-candidate
 
