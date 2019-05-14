@@ -15,6 +15,7 @@ function weapon:gun/hit/hit-block
 #エンティティ衝突判定
 #機銃口径に応じて衝突判定幅が変わる
 execute at @s[tag=7p7mm] run function weapon:gun/hit/hit-entity-7p7mm
+execute at @s[tag=12p7mm] run function weapon:gun/hit/hit-entity-7p7mm
 execute at @s[tag=20mm] run function weapon:gun/hit/hit-entity-20mm
 
 #命中エンティティがいたらhitフラグを立てる

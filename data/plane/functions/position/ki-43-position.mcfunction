@@ -1,14 +1,14 @@
 #角度スコアを航空機に反映する、パーツの位置を調整する
-#実行方法:execute as @e[tag=a6m-root] at @s run function plane:position/a6m-position
+#実行方法:execute as @e[tag=ki43-root] at @s run function plane:position/ki43-position
 #実行者：機体　実行位置：機体
 
 #自分と同じIDを判定しタグ付け
-tag @s add a6m-position-executer
+tag @s add ki43-position-executer
 scoreboard players operation #plane-id reg1 = @s plane-id
-execute as @e[tag=a6m,tag=!a6m-root,distance=..40] if score @s plane-id = #plane-id reg1 run tag @s add position-target
+execute as @e[tag=ki43,tag=!ki43-root,distance=..40] if score @s plane-id = #plane-id reg1 run tag @s add position-target
 
 #自分と同じIDのパーツを自分の位置へ
-execute as @s at @s run tp @e[tag=a6m,tag=position-target,distance=..40] ^ ^ ^ ~90 ~
+execute as @s at @s run tp @e[tag=ki43,tag=position-target,distance=..40] ^ ^ ^ ~90 ~
 
 #パーツのヘルスチェック
 execute store result score @s plane-parts if entity @e[tag=position-target,distance=..10,tag=plane-hitbox]
@@ -25,9 +25,9 @@ execute as @e[tag=has-offset,tag=position-target,distance=..1] at @s rotated ~-9
 execute as @e[tag=engine,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^2
 execute as @e[tag=aileron-r,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.1
 execute as @e[tag=aileron-l,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.1
-execute as @e[tag=elevator-r,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.4
-execute as @e[tag=elevator-l,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.4
-execute as @e[tag=radder,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.9
+execute as @e[tag=elevator-r,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-5.4
+execute as @e[tag=elevator-l,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-5.4
+execute as @e[tag=radder,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-5.4
 
 #seatの位置修正
 execute at @s run tp @e[tag=position-target,tag=plane-seat,type=armor_stand,distance=..10] ^ ^1 ^-1 ~ ~
@@ -47,7 +47,7 @@ scoreboard players operation @s AngY-old = @s AngY
 scoreboard players operation @s AngZ-old = @s AngZ
 
 #タグ削除
-tag @s remove a6m-position-executer
+tag @s remove ki43-position-executer
 execute if entity @s[tag=angle-not-changed] run tag @s remove angle-not-changed
 tag @e[tag=position-target,distance=..10] remove position-target
 

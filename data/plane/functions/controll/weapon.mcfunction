@@ -16,6 +16,7 @@ execute if score @s rightClick >= #2 Num run scoreboard players set @s rightClic
 execute as @e[tag=controll-target,distance=..20] if entity @s[tag=a6m] at @s run function plane:weapon/a6m-weapon-manager
 execute as @e[tag=controll-target,distance=..20] if entity @s[tag=d3a] at @s run function plane:weapon/d3a-weapon-manager
 execute as @e[tag=controll-target,distance=..20] if entity @s[tag=ki21] at @s run function plane:weapon/ki21-weapon-manager
+execute as @e[tag=controll-target,distance=..20] if entity @s[tag=ki43] at @s run function plane:weapon/ki43-weapon-manager
 execute as @e[tag=controll-target,distance=..20] if entity @s[tag=spitfire] at @s run function plane:weapon/spitfire-weapon
 execute as @e[tag=controll-target,distance=..20] if entity @s[tag=ju87] at @s run function plane:weapon/ju87-weapon
 execute as @e[tag=controll-target,distance=..20] if entity @s[tag=f4u] at @s run function plane:weapon/f4u-weapon

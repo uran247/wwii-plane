@@ -111,6 +111,9 @@ scoreboard players operation #offset-x reg1 -= #y-direction-unit-vector-x reg1
 scoreboard players operation #offset-y reg1 -= #y-direction-unit-vector-y reg1
 scoreboard players operation #offset-z reg1 -= #y-direction-unit-vector-z reg1
 
+#底面をベースにするタグがついてた場合、底面が腕の高さに来るように補正
+execute if entity @s[tag=offset-base] run scoreboard players operation #offset-y reg1 += #150000 Num
+
 #移動
 execute store result entity @s Pos[0] double 0.00001 run scoreboard players get #offset-x reg1
 execute store result entity @s Pos[1] double 0.00001 run scoreboard players get #offset-y reg1

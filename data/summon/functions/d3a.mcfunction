@@ -7,13 +7,13 @@ summon armor_stand ~ ~ ~ {Tags:["d3a-body","d3a",d3a-init,plane,has-model,model-
 summon armor_stand ~ ~ ~ {Tags:["d3a-rightwing","d3a",d3a-init,plane,has-model,plane-parts,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:75,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
 
 #hitbox召喚
-summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,body],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,engine],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,aileron-r,aileron],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,aileron-l,aileron],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,elevator-r,elevetor],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,elevator-l,elevetor],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,radder],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"radder\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,body,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,engine,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,aileron-r,aileron,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,aileron-l,aileron,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,elevator-r,elevetor,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,elevator-l,elevetor,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["d3a-hitbox","d3a",d3a-init,has-offset,plane,plane-hitbox,radder,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"radder\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
 
 #ID付与
 execute as @e[tag=d3a-init,tag=d3a-root,limit=1] store result score @s plane-id run data get entity @s UUIDMost 0.000000000233
@@ -70,22 +70,22 @@ scoreboard players set @e[tag=body,tag=d3a-init] offsetX 0
 scoreboard players set @e[tag=body,tag=d3a-init] offsetY 0
 scoreboard players set @e[tag=body,tag=d3a-init] offsetZ 0
 scoreboard players set @e[tag=engine,tag=d3a-init] offsetX 0
-scoreboard players set @e[tag=engine,tag=d3a-init] offsetY -500
+scoreboard players set @e[tag=engine,tag=d3a-init] offsetY 0
 scoreboard players set @e[tag=engine,tag=d3a-init] offsetZ 0
 scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetX -4000
 scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetY -400
-scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetZ 0
+scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetZ 100
 scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetX 4000
-scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetY -400
+scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetY 100
 scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetZ 0
 scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetX -1500
-scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetY -200
+scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetY -100
 scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetZ 0
 scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetX 1500
-scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetY -200
+scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetY -100
 scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetZ 0
-scoreboard players set @e[tag=radder,tag=d3a-init] offsetX 0
-scoreboard players set @e[tag=radder,tag=d3a-init] offsetY -1000
+scoreboard players set @e[tag=radder,tag=d3a-init] offsetX -150
+scoreboard players set @e[tag=radder,tag=d3a-init] offsetY -1100
 scoreboard players set @e[tag=radder,tag=d3a-init] offsetZ 0
 
 #プレイヤーと同じAngYにする

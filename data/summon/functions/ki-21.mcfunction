@@ -9,14 +9,14 @@ summon armor_stand ~ ~ ~ {Tags:["ki21-rightwing","ki21",plane-init,plane,has-mod
 summon armor_stand ~ ~ ~ {Tags:["ki21-leftwing","ki21",plane-init,plane,has-model,has-offset,plane-parts,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:82,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
 
 #hitbox召喚
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,body],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,engine-r,engine],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,engine-l,engine],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,aileron-r,aileron],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,aileron-l,aileron],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,elevator-r,elevetor],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,elevator-l,elevetor],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
-summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,radder],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"radder\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,body,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,engine-r,engine,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,engine-l,engine,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,aileron-r,aileron,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,aileron-l,aileron,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"aileron-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,elevator-r,elevetor,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-right\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,elevator-l,elevetor,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"elevator-left\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
+summon armor_stand ~ ~ ~ {Tags:["ki21-hitbox","ki21",plane-init,plane,has-offset,plane-hitbox,radder,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"radder\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
 
 #ID付与
 execute as @e[tag=plane-init,tag=plane-root,limit=1] at @s run function summon:set-plane-id
@@ -70,29 +70,29 @@ execute store result score @e[tag=plane-init,tag=ki21-root,limit=1] PosZ run dat
 scoreboard players set @e[tag=body,tag=plane-init] offsetX 0
 scoreboard players set @e[tag=body,tag=plane-init] offsetY 0
 scoreboard players set @e[tag=body,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetX -5750
-scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetY 60
+scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetX -5770
+scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetY 62
 scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetX 5620
-scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetY -60
+scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetX 5660
+scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetY -63
 scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=engine-l,tag=plane-init] offsetX 3000
-scoreboard players set @e[tag=engine-l,tag=plane-init] offsetY -1200
+scoreboard players set @e[tag=engine-l,tag=plane-init] offsetX 2900
+scoreboard players set @e[tag=engine-l,tag=plane-init] offsetY -250
 scoreboard players set @e[tag=engine-l,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=engine-r,tag=plane-init] offsetX -2900
-scoreboard players set @e[tag=engine-r,tag=plane-init] offsetY -1200
+scoreboard players set @e[tag=engine-r,tag=plane-init] offsetX -3000
+scoreboard players set @e[tag=engine-r,tag=plane-init] offsetY -250
 scoreboard players set @e[tag=engine-r,tag=plane-init] offsetZ 0
 scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetX -7400
-scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetY -1000
+scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetY -700
 scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetZ 0
 scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetX 7300
-scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetY -1000
+scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetY -700
 scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetZ 0
 scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetX -3000
-scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetY -800
+scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetY -600
 scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetX 2700
-scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetY -800
+scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetX 3000
+scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetY -600
 scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetZ 0
 scoreboard players set @e[tag=radder,tag=plane-init] offsetX -300
 scoreboard players set @e[tag=radder,tag=plane-init] offsetY -1000

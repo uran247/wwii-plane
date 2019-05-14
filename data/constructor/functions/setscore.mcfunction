@@ -62,6 +62,8 @@ scoreboard players set #40500 Num 40500
 scoreboard players set #50000 Num 50000
 scoreboard players set #65536 Num 65536
 scoreboard players set #100000 Num 100000
+scoreboard players set #150000 Num 150000
+scoreboard players set #180000 Num 180000
 scoreboard players set #1000000 Num 1000000
 scoreboard players set #2850000 Num 2850000
 scoreboard players set #3240000 Num 3240000

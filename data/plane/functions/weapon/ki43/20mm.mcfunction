@@ -1,4 +1,4 @@
-#20mm機銃を使用 a6m
+#20mm機銃を使用 ki43
 #実行者：機体
 
 #召喚
@@ -10,11 +10,11 @@ scoreboard players set @e[tag=gun-init,distance=..5] age 65
 scoreboard players set @e[tag=gun-init,distance=..5] speed 94
 scoreboard players set @e[tag=gun-init,distance=..5] damage 20
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 1960
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY 50
+scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 100
+scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -750
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ 0
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -2050
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY 50
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -150
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY -750
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 0
 
 #5発目の弾なら曳光弾化

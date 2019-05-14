@@ -1,4 +1,4 @@
-#7.7mm機銃を使用 a6m
+#7.7mm機銃を使用 ki43
 #実行者：機体
 
 #召喚
@@ -10,15 +10,15 @@ scoreboard players set @e[tag=gun-init,distance=..5] age 65
 scoreboard players set @e[tag=gun-init,distance=..5] speed 93
 scoreboard players set @e[tag=gun-init,distance=..5] damage 7
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 180
+scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 100
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -750
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ 0
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -300
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -150
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY -750
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 0
 
 #5発目の弾なら曳光弾化
-scoreboard players operation @s reg1 = @s ammunition2
+scoreboard players operation @s reg1 = @s ammunition1
 scoreboard players operation @s reg1 %= #5 Num
 execute if score @s reg1 matches 0 run tag @e[tag=gun-init,distance=..10] add tracer
 
@@ -40,7 +40,7 @@ playsound minecraft:weapon.muchingun.fire master @a ~ ~ ~ 16 1 1
 #execute as @e[tag=gun-init,distance=..10] at @s run particle minecraft:cloud ^ ^ ^ 0.1 0.1 0.1 0.1 1 force
 
 #残弾数減算
-scoreboard players remove @s ammunition2 1
+scoreboard players remove @s ammunition1 1
 
 #終了処理
 tag @e[tag=gun-init,distance=..20] remove gun-init

@@ -2,7 +2,7 @@
 #実行者：機体
 
 #召喚
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,gun-nohit,tracer-lightblue,entity-nohit],Duration:200}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,gun-nohit,tracer-lightblue,entity-nohit,offset-base],Duration:200}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] age 65
