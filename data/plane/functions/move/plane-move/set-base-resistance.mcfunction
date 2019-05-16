@@ -4,4 +4,6 @@
 scoreboard players operation #base-resistance return = #speed input
 scoreboard players operation #base-resistance return *= #resistance input
 scoreboard players operation #base-resistance return /= #cruise-speed input
-execute if score #base-resistance return < #10 Num run scoreboard players set #base-resistance return 10
+scoreboard players operation #min-registance reg1 = #resistance input
+scoreboard players operation #min-registance reg1 /= #2 Num
+execute if score #base-resistance return < #min-registance reg1 run scoreboard players operation #base-resistance return = #min-registance reg1

@@ -2,13 +2,13 @@
 #実行者：機体
 
 #召喚
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,gun-nohit,tracer-lightblue,entity-nohit,offset-base],Duration:200}
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,gun-nohit,tracer-lightblue,entity-nohit,offset-base],Invisible:1,Marker:1,Glowing:0}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base],Duration:200}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base],Invisible:1,Marker:1,Glowing:0}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] age 65
 scoreboard players set @e[tag=gun-init,distance=..5] speed 93
-scoreboard players set @e[tag=gun-init,distance=..5] damage 7
+scoreboard players set @e[tag=gun-init,distance=..5] damage 3
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 100
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -750

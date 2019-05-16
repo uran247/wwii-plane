@@ -18,8 +18,8 @@ execute at @s[tag=7p7mm] run function weapon:gun/hit/hit-entity-7p7mm
 execute at @s[tag=12p7mm] run function weapon:gun/hit/hit-entity-7p7mm
 execute at @s[tag=20mm] run function weapon:gun/hit/hit-entity-20mm
 
-#命中エンティティがいたらhitフラグを立てる
-execute if entity @e[tag=hit-gun,distance=..20] run scoreboard players set #hit-flag reg1 1
+#命中エンティティがいたらhitフラグに2を立てる
+execute if entity @e[tag=hit-gun,distance=..20] run scoreboard players set #hit-flag reg1 2
 
 #命中エンティティにパーティクル
 execute at @e[tag=hit-gun,distance=..20] run particle minecraft:explosion ^ ^ ^ 0.1 0.1 0.1 0 1 force

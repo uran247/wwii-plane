@@ -36,10 +36,10 @@ scoreboard players operation @s plane-w4-posZ = @s output4
 
 
 #召喚
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right1,gun-nohit],Invisible:1,Marker:1,Glowing:0}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left1,gun-nohit],Invisible:1,Marker:1,Glowing:0}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right2,gun-nohit],Invisible:1,Marker:1,Glowing:0}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left2,gun-nohit],Invisible:1,Marker:1,Glowing:0}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right1],Invisible:1,Marker:1,Glowing:0}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left1],Invisible:1,Marker:1,Glowing:0}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right2],Invisible:1,Marker:1,Glowing:0}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left2],Invisible:1,Marker:1,Glowing:0}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] age 50

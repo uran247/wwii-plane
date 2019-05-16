@@ -20,8 +20,8 @@ scoreboard players operation @s plane-w2-posZ = @s output4
 
 
 #召喚
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,right,gun-nohit],Invisible:1,Marker:1}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,left,gun-nohit],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,right],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,left],Invisible:1,Marker:1}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] age 200

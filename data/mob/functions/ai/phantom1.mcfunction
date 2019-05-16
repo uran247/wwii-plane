@@ -30,9 +30,9 @@ execute as @p[tag=ai-target] positioned ^ ^502 ^ if entity @s[distance=..500] po
 execute if entity @p[distance=..5,tag=ai-target] run tag @s add near
 execute if entity @p[distance=30..,tag=ai-target] run tag @s remove near
 
-#真下が地面なら上へ行くようにする
-execute unless block ~ ~-1 ~ minecraft:air run tag @s add AngXminus
-execute unless block ~ ~-1 ~ minecraft:air run tag @s remove AngXplus
+#10ブロック下が地面なら上へ行くようにする
+execute unless block ~ ~-10 ~ minecraft:air run tag @s add AngXminus
+execute unless block ~ ~-10 ~ minecraft:air run tag @s remove AngXplus
 
 #ターゲット不在なら右旋回する
 execute unless entity @p[tag=ai-target] run tag @s add AngYplus

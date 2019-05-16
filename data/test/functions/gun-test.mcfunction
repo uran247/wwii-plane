@@ -1,10 +1,10 @@
 #召喚
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right1,gun-nohit],Invisible:1,Marker:1}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left1,gun-nohit],Invisible:1,Marker:1}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right2,gun-nohit],Invisible:1,Marker:1}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left2,gun-nohit],Invisible:1,Marker:1}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right3,gun-nohit],Invisible:1,Marker:1}
-summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left3,gun-nohit],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right1],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left1],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right2],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left2],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right3],Invisible:1,Marker:1}
+summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left3],Invisible:1,Marker:1}
 
 #スコア付与
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id

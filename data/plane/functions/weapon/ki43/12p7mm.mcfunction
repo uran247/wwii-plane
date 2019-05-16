@@ -2,13 +2,13 @@
 #実行者：機体
 
 #召喚
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right,gun-nohit,tracer-lightblue,entity-nohit,offset-base],Duration:200}
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left,gun-nohit,tracer-lightblue,entity-nohit,offset-base],Invisible:1,Marker:1,Glowing:0}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base],Duration:200}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base],Invisible:1,Marker:1,Glowing:0}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] age 65
 scoreboard players set @e[tag=gun-init,distance=..5] speed 98
-scoreboard players set @e[tag=gun-init,distance=..5] damage 14
+scoreboard players set @e[tag=gun-init,distance=..5] damage 8
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 100
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -750
@@ -33,7 +33,7 @@ execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing e
 #execute if entity @e[tag=gun-init,distance=..20] run scoreboard players set @s w1-reload 1
 
 #音
-playsound minecraft:weapon.muchingun.fire master @a ~ ~ ~ 16 1 1
+playsound minecraft:weapon.light-muchingun2.fire master @a ~ ~ ~ 16 0.8 1
 
 #発射炎
 #execute as @e[tag=gun-init,distance=..10] at @s run particle minecraft:cloud ^ ^ ^ 0.1 0.1 0.1 0.1 1 force

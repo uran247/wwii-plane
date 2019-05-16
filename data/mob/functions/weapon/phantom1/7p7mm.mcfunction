@@ -3,8 +3,8 @@
 #実行者：機体
 
 #召喚
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,gun-nohit,tracer-red,mob-gun,entity-nohit],Duration:200,CustomName:"{\"text\":\"gun-r\",\"color\":\"aqua\"}"}
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,gun-nohit,tracer-red,mob-gun,entity-nohit],Duration:200,CustomName:"{\"text\":\"gun-l\",\"color\":\"aqua\"}"}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-red,mob-gun,entity-nohit],Duration:200,CustomName:"{\"text\":\"gun-r\",\"color\":\"aqua\"}"}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-red,mob-gun,entity-nohit],Duration:200,CustomName:"{\"text\":\"gun-l\",\"color\":\"aqua\"}"}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] age 20

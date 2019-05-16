@@ -5,6 +5,9 @@
 #透明にしとく
 effect give @s minecraft:invisibility 1
 
+#plane-riderタグのツイてないプレイヤーの右クリックリセット
+execute as @s[tag=!plane-rider] run scoreboard players reset @s rightClick
+
 #seatを参照して実行者にid、タグ付け
 scoreboard players operation @s plane-id = @e[tag=plane-seat,limit=1,sort=nearest,distance=..5] plane-id
 tag @s add plane-rider
