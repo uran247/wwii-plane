@@ -15,8 +15,8 @@ scoreboard players operation #speed-decimal reg1 %= #10 Num
 scoreboard players operation #speed reg1 = @s speed
 scoreboard players operation #speed reg1 /= #10 Num
 
-#小数点移動先でhitしたか確認
-execute if score #speed-decimal reg1 matches 0 at @s positioned ^ ^ ^0.1 run function weapon:gun/hit/hit
+#hitしたか確認
+execute if score #speed-decimal reg1 matches 0 at @s run function weapon:gun/hit/hit
 execute if score #speed-decimal reg1 matches 1 at @s positioned ^ ^ ^0.1 run function weapon:gun/hit/hit
 execute if score #speed-decimal reg1 matches 2 at @s positioned ^ ^ ^0.2 run function weapon:gun/hit/hit
 execute if score #speed-decimal reg1 matches 3 at @s positioned ^ ^ ^0.3 run function weapon:gun/hit/hit
@@ -27,30 +27,13 @@ execute if score #speed-decimal reg1 matches 7 at @s positioned ^ ^ ^0.7 run fun
 execute if score #speed-decimal reg1 matches 8 at @s positioned ^ ^ ^0.8 run function weapon:gun/hit/hit
 execute if score #speed-decimal reg1 matches 9 at @s positioned ^ ^ ^0.9 run function weapon:gun/hit/hit
 
-#ブロック、エンティティ衝突判定
-#execute at @s run function weapon:gun/hit/hit
+#ダメージ処理
+execute if score #hit-flag reg1 matches 2 run function weapon:gun/hit/damage
+
+#命中エンティティにパーティクル
+execute if score #hit-flag reg1 matches 2 at @e[tag=hit-gun,distance=..20] run particle minecraft:explosion ^ ^ ^ 0.1 0.1 0.1 0 1 force
 
 #命中エンティティがいないなら衝突位置のブロックか到達地点まで移動
-#execute if score #speed reg1 = #1 Num at @s run tp @s ^ ^ ^1
-#execute if score #speed reg1 = #2 Num at @s run tp @s ^ ^ ^2
-#execute if score #speed reg1 = #3 Num at @s run tp @s ^ ^ ^3
-#execute if score #speed reg1 = #4 Num at @s run tp @s ^ ^ ^4
-#execute if score #speed reg1 = #5 Num at @s run tp @s ^ ^ ^5
-#execute if score #speed reg1 = #6 Num at @s run tp @s ^ ^ ^6
-#execute if score #speed reg1 = #7 Num at @s run tp @s ^ ^ ^7
-#execute if score #speed reg1 = #8 Num at @s run tp @s ^ ^ ^8
-#execute if score #speed reg1 = #9 Num at @s run tp @s ^ ^ ^9
-#execute if score #speed reg1 = #10 Num at @s run tp @s ^ ^ ^10
-#execute if score #speed reg1 = #11 Num at @s run tp @s ^ ^ ^11
-#execute if score #speed reg1 = #12 Num at @s run tp @s ^ ^ ^12
-#execute if score #speed reg1 = #13 Num at @s run tp @s ^ ^ ^13
-#execute if score #speed reg1 = #14 Num at @s run tp @s ^ ^ ^14
-#execute if score #speed reg1 = #15 Num at @s run tp @s ^ ^ ^15
-#execute if score #speed reg1 = #16 Num at @s run tp @s ^ ^ ^16
-#execute if score #speed reg1 = #17 Num at @s run tp @s ^ ^ ^17
-#execute if score #speed reg1 = #18 Num at @s run tp @s ^ ^ ^18
-#execute if score #speed reg1 = #19 Num at @s run tp @s ^ ^ ^19
-#execute if score #speed reg1 = #20 Num at @s run tp @s ^ ^ ^20
 execute if score #speed-decimal reg1 matches 0 at @s run function weapon:gun/move
 execute if score #speed-decimal reg1 matches 1 at @s positioned ^ ^ ^0.1 run function weapon:gun/move
 execute if score #speed-decimal reg1 matches 2 at @s positioned ^ ^ ^0.2 run function weapon:gun/move
@@ -62,7 +45,6 @@ execute if score #speed-decimal reg1 matches 7 at @s positioned ^ ^ ^0.7 run fun
 execute if score #speed-decimal reg1 matches 8 at @s positioned ^ ^ ^0.8 run function weapon:gun/move
 execute if score #speed-decimal reg1 matches 9 at @s positioned ^ ^ ^0.9 run function weapon:gun/move
 
-
 #ブロック衝突だった場合着弾地点にパーティクル
 execute if score #hit-flag reg1 matches 1 at @s run particle minecraft:explosion ^ ^ ^-1 0.1 0.1 0.1 0 1 force
 
@@ -73,11 +55,7 @@ execute as @s[tag=tracer,tag=tracer-lightblue] at @s run particle minecraft:dust
 #hitしてたら弾を削除
 execute if score #hit-flag reg1 >= #1 Num run kill @s
 
-#弾の寿命を1減らし、0なら消す
-scoreboard players remove @s age 1
-kill @s[scores={age=..0}]
-
 #タグ削除
-execute at @s run tag @e[tag=hit-gun,distance=..2] remove hit-gun
+tag @e[tag=hit-gun] remove hit-gun
 execute at @s run tag @s remove gun-move-executer
 tag @e[tag=gunner,distance=..25] remove gunner

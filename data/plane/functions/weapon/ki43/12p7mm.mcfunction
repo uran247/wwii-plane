@@ -1,13 +1,18 @@
 #12.7mm機銃を使用 ki43
 #実行者：機体
 
+#5発目の弾なら曳光弾化
+scoreboard players operation #is-tracer reg1 = @s ammunition1
+scoreboard players operation #is-tracer reg1 %= #5 Num
+
 #召喚
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base],Duration:200}
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,12p7mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base],Invisible:1,Marker:1,Glowing:0}
+execute if score #is-tracer reg1 matches 0 run summon area_effect_cloud ~ ~ ~ {Tags:[projectile,gun,12p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base,tracer],Duration:30}
+execute if score #is-tracer reg1 matches 0 run summon area_effect_cloud ~ ~ ~ {Tags:[projectile,gun,12p7mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base,tracer],Duration:30}
+execute unless score #is-tracer reg1 matches 0 run summon area_effect_cloud ~ ~ ~ {Tags:[projectile,gun,12p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base],Duration:30}
+execute unless score #is-tracer reg1 matches 0 run summon area_effect_cloud ~ ~ ~ {Tags:[projectile,gun,12p7mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base],Duration:30}
 
 #スコア付与
-scoreboard players set @e[tag=gun-init,distance=..5] age 65
-scoreboard players set @e[tag=gun-init,distance=..5] speed 98
+scoreboard players set @e[tag=gun-init,distance=..5] speed 100
 scoreboard players set @e[tag=gun-init,distance=..5] damage 8
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 100
@@ -16,11 +21,6 @@ scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ 0
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -150
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY -750
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 0
-
-#5発目の弾なら曳光弾化
-scoreboard players operation @s reg1 = @s ammunition1
-scoreboard players operation @s reg1 %= #5 Num
-execute if score @s reg1 matches 0 run tag @e[tag=gun-init,distance=..10] add tracer
 
 #発射位置に移動
 execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset

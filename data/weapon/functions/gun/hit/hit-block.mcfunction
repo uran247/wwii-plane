@@ -6,6 +6,7 @@
 #使えるタグ　gun-move-executer：弾体  gunner:発射母体
 
 #ブロック衝突判定、衝突判定が出たら#hit-flagが1に
+execute store success score #hit-flag reg1 positioned ^ ^ ^ unless block ~ ~ ~ minecraft:air run scoreboard players set #speed reg1 0
 execute if score #speed reg1 >= #1 Num store success score #hit-flag reg1 positioned ^ ^ ^1 unless block ~ ~ ~ minecraft:air run scoreboard players set #speed reg1 1
 execute if score #speed reg1 >= #2 Num store success score #hit-flag reg1 positioned ^ ^ ^2 unless block ~ ~ ~ minecraft:air run scoreboard players set #speed reg1 2
 execute if score #speed reg1 >= #3 Num store success score #hit-flag reg1 positioned ^ ^ ^3 unless block ~ ~ ~ minecraft:air run scoreboard players set #speed reg1 3

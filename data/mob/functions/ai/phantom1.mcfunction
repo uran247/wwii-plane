@@ -1,19 +1,19 @@
 #ai/aiから呼び出される
 #実行者・座標はphantom1
 
+#game-idが違ってたらkill
+execute unless score @s game-id = #global game-id run kill @s
+
 #実行者にタグ付け
 tag @s add ai-executer
 tag @e[tag=phantom1-rider,sort=nearest,distance=..3] add ai-rider
+execute if entity @s[nbt={Passengers:[{Tags:[phantom1-rider]}]}] run tag @s add has-rider
 
 #ターゲットのplane-idを保存
-#tag @p[distance=..96] add ai-target
-#execute as @p[tag=ai-target] positioned ^376 ^ ^-376 run tag @s[distance=500] remove ai-target
-#execute as @p[tag=ai-target] positioned ^-376 ^ ^-376 run tag @s[distance=500] remove ai-target
-#execute as @p[tag=ai-target] positioned ^ ^376 ^-376 run tag @s[distance=500] remove ai-target
-#execute as @p[tag=ai-target] positioned ^ ^-376 ^-376 run tag @s[distance=500] remove ai-target
 execute as @a[distance=..96] positioned ^ ^ ^200 if entity @s[distance=..200] run tag @s add ai-target-candidate
 execute if entity @p[tag=ai-target-candidate,scores={plane-id=1..}] run scoreboard players operation @s target-planeid = @p[tag=ai-target-candidate,scores={plane-id=1..}] plane-id
 execute if entity @p[tag=ai-target-candidate,scores={plane-id=1..}] run scoreboard players set @s forget-time 100
+execute if entity @p[tag=ai-target-candidate,scores={plane-id=1..}] unless entity @s[tag=!has-rider,distance=..3] run scoreboard players set @s forget-time 20
 
 #ターゲットにタグ付け
 execute at @s as @a if score @s plane-id = @e[tag=ai-executer,distance=..1,limit=1] target-planeid run tag @s add ai-target
@@ -84,16 +84,18 @@ execute store result entity @s Motion[0] double 0.00001 run scoreboard players g
 execute store result entity @s Motion[1] double 0.00001 run scoreboard players get @s speedY
 execute store result entity @s Motion[2] double 0.00001 run scoreboard players get @s speedZ
 
+#射撃可能か判定
+execute as @p[tag=ai-target] positioned ^ ^-251 ^-431 if entity @s[distance=..500] positioned ^ ^251 ^431 run tag @e[tag=ai-executer,distance=..1] add unattackable
+execute as @p[tag=ai-target] positioned ^ ^251 ^-431 if entity @s[distance=..500] positioned ^ ^-251 ^431 run tag @e[tag=ai-executer,distance=..1] add unattackable
+
 #プレイヤーの方を向いたら射撃
-#execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind] run say lockon
-#execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run function mob:weapon/phantom1/7p7mm
-#execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!AngXplus,tag=!AngXminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] at @s run scoreboard players remove @s ammunition1 1
-execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run function mob:weapon/phantom1/7p7mm
-execute as @s[tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run scoreboard players remove @s ammunition1 1
+execute as @s[tag=!unattackable,tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run function mob:weapon/phantom1/7p7mm
+execute as @s[tag=!unattackable,tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run scoreboard players remove @s ammunition1 1
 scoreboard players remove @s[scores={ammunition1=1..,w1-reload=1..}] w1-reload 1
 
 #particle
-execute unless entity @p[tag=ai-target] run particle minecraft:large_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 force
+execute unless entity @p[tag=ai-target] if entity @s[tag=has-rider] run particle minecraft:large_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 force
+execute unless entity @p[tag=ai-target] if entity @s[tag=!has-rider] run particle minecraft:dust 0 1 0 2 ~ ~ ~ 0.3 0.3 0.3 0 5 force
 execute if entity @p[tag=ai-target] run particle minecraft:dust 1 0 0 2 ~ ~ ~ 0 0 0 1 1 force
 
 #対象忘却
@@ -102,6 +104,8 @@ scoreboard players reset @s[scores={forget-time=0}] target-planeid
 
 #実行者タグ除去
 kill @e[tag=ai-indicator,distance=..2]
+tag @s remove has-rider
+tag @s remove unattackable
 tag @s remove AngYplus
 tag @s remove AngYminus
 tag @s remove AngXplus

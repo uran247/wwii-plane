@@ -1,5 +1,5 @@
 #召喚
-summon minecraft:area_effect_cloud ~ ~1 ~ {NoGravity:1,Tags:[projectile,aagun,88mm,aagun-init,aagun-nohit,tracer-red,mob-aagun,entity-nohit],Duration:200,CustomName:"{\"text\":\"aagun-r\",\"color\":\"aqua\"}"}
+summon minecraft:area_effect_cloud ~ ~1 ~ {NoGravity:1,Tags:[projectile,aagun,88mm,aagun-init,aagun-nohit,tracer-red,mob-aagun,entity-nohit],Duration:30,CustomName:"{\"text\":\"aagun-r\",\"color\":\"aqua\"}"}
 
 #スコア付与
 scoreboard players set @e[tag=aagun-init,distance=..5] age 25

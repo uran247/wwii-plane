@@ -10,6 +10,7 @@ scoreboard players set @e[tag=phantom1-init] yaw-speed 120
 scoreboard players set @e[tag=phantom1-init] plane-id -1
 scoreboard players set @e[tag=phantom1-init,tag=phantom1] ammunition1 600
 scoreboard players set @e[tag=phantom1-init,tag=phantom1] w1-reload 0
+scoreboard players operation @e[tag=phantom1-init,tag=phantom1] game-id = #global game-id
 
 #初期化タグ除去
 tag @e[tag=phantom1-init] remove phantom1-init
