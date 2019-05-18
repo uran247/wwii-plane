@@ -25,9 +25,9 @@ scoreboard players set @e[tag=ki43-init,tag=ki43-root] max-speed 17900
 scoreboard players set @e[tag=ki43-init,tag=ki43-root] cruise-speed 12300
 scoreboard players set @e[tag=ki43-init,tag=ki43-root] takeoff-speed 4300
 scoreboard players set @e[tag=ki43-init,tag=ki43-root] stall-speed 4100
-scoreboard players set @e[tag=ki43-init,tag=ki43-root] accelerate 71
+scoreboard players set @e[tag=ki43-init,tag=ki43-root] accelerate 64
 scoreboard players set @e[tag=ki43-init,tag=ki43-root] resistance 44
-scoreboard players set @e[tag=ki43-init,tag=ki43-root] deaccelerate 56
+scoreboard players set @e[tag=ki43-init,tag=ki43-root] deaccelerate 57
 scoreboard players set @e[tag=ki43-init,tag=ki43-root] plpr-start-min 1600
 scoreboard players set @e[tag=ki43-init,tag=ki43-root] plpr-start-max 1700
 scoreboard players set @e[tag=ki43-init,tag=ki43-root] plpr-stop-min 1400

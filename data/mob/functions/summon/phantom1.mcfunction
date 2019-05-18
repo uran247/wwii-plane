@@ -4,7 +4,7 @@ summon phantom ~ ~ ~ {Fire:-40,Glowing:0,CustomName:"{\"text\":\"ファントム
 #パラメータ代入
 scoreboard players set @e[tag=phantom1-init] AngX 0
 scoreboard players set @e[tag=phantom1-init] AngY 0
-scoreboard players set @e[tag=phantom1-init] speed 900
+scoreboard players set @e[tag=phantom1-init] speed 9000
 scoreboard players set @e[tag=phantom1-init] pitch-speed 120
 scoreboard players set @e[tag=phantom1-init] yaw-speed 120
 scoreboard players set @e[tag=phantom1-init] plane-id -1

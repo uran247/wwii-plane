@@ -27,6 +27,7 @@ scoreboard players set #60 Num 60
 scoreboard players set #64 Num 64
 scoreboard players set #70 Num 70
 scoreboard players set #75 Num 75
+scoreboard players set #80 Num 80
 scoreboard players set #86 Num 86
 scoreboard players set #90 Num 90
 scoreboard players set #100 Num 100
@@ -38,6 +39,7 @@ scoreboard players set #182 Num 182
 scoreboard players set #200 Num 200
 scoreboard players set #256 Num 256
 scoreboard players set #285 Num 285
+scoreboard players set #288 Num 288
 scoreboard players set #300 Num 300
 scoreboard players set #359 Num 359
 scoreboard players set #360 Num 360
@@ -64,6 +66,7 @@ scoreboard players set #65536 Num 65536
 scoreboard players set #100000 Num 100000
 scoreboard players set #150000 Num 150000
 scoreboard players set #180000 Num 180000
+scoreboard players set #900000 Num 900000
 scoreboard players set #1000000 Num 1000000
 scoreboard players set #2850000 Num 2850000
 scoreboard players set #3240000 Num 3240000

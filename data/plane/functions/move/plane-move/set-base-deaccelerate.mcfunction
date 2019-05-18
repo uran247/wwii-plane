@@ -6,4 +6,4 @@ execute if score #speedY input >= #0 Num run scoreboard players operation #base-
 execute if score #speedY input >= #0 Num run scoreboard players operation #base-deaccelerate return /= #100 Num
 execute if score #speedY input < #0 Num run scoreboard players operation #base-deaccelerate return = #resistance input
 execute if score #speedY input < #0 Num run scoreboard players operation #base-deaccelerate return *= #speedY input
-execute if score #speedY input < #0 Num run scoreboard players operation #base-deaccelerate return /= #70 Num
+execute if score #speedY input < #0 Num run scoreboard players operation #base-deaccelerate return /= #200 Num

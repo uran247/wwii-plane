@@ -16,6 +16,7 @@ scoreboard players operation #base-accelerate reg1 = #base-accelerate return
 scoreboard players operation #speed input = @s speed
 scoreboard players operation #cruise-speed input = @s cruise-speed
 scoreboard players operation #resistance input = @s resistance
+scoreboard players operation #ang-z input = @s AngZ
 function plane:move/plane-move/set-base-resistance
 scoreboard players operation #base-resistance reg1 = #base-resistance return
 
@@ -99,11 +100,11 @@ execute at @s unless block ~ ~1 ~ air run kill @e[tag=plane-move-parts,distance=
 execute at @s unless block ~ ~1 ~ air run kill @a[distance=..20]
 
 #登場者無しで奈落に行ったらキル
-execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 16 0
-execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
-execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run kill @s
-execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run kill @e[tag=plane-move-parts,distance=..20]
-execute at @s[tag=!exist-rider] if entity @s[y=0,dy=-100] run kill @a[distance=..20]
+execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 16 0
+execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
+execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @s
+execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @e[tag=plane-move-parts,distance=..20]
+execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @a[distance=..20]
 
 
 #タグ解除

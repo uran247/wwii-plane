@@ -1,5 +1,6 @@
 #ai/aiから呼び出される
 #実行者・座標はphantom1
+#入力　エンティティ：phantom1 座標：phantom1
 
 #game-idが違ってたらkill
 execute unless score @s game-id = #global game-id run kill @s
@@ -58,21 +59,25 @@ execute store result entity @s Rotation[0] float 0.01 run scoreboard players get
 execute store result entity @s Rotation[1] float 0.01 run scoreboard players get @s AngX
 
 #単位ベクトル算出
-execute at @s run summon minecraft:area_effect_cloud ^ ^ ^1 {Tags:[ai-indicator,entity-nohit]}
-execute store result score @s speedX run data get entity @e[tag=ai-indicator,limit=1,distance=..2] Pos[0] 100
-execute store result score @s speedY run data get entity @e[tag=ai-indicator,limit=1,distance=..2] Pos[1] 100
-execute store result score @s speedZ run data get entity @e[tag=ai-indicator,limit=1,distance=..2] Pos[2] 100
-execute at @s store result score @s reg1 run data get entity @s Pos[0] 100
-execute at @s store result score @s reg2 run data get entity @s Pos[1] 100
-execute at @s store result score @s reg3 run data get entity @s Pos[2] 100
-scoreboard players operation @s speedX -= @s reg1
-scoreboard players operation @s speedY -= @s reg2
-scoreboard players operation @s speedZ -= @s reg3
+function math:vector
+#execute at @s run summon minecraft:area_effect_cloud ^ ^ ^1 {Tags:[ai-indicator,entity-nohit]}
+#execute store result score @s speedX run data get entity @e[tag=ai-indicator,limit=1,distance=..2] Pos[0] 100
+#execute store result score @s speedY run data get entity @e[tag=ai-indicator,limit=1,distance=..2] Pos[1] 100
+#execute store result score @s speedZ run data get entity @e[tag=ai-indicator,limit=1,distance=..2] Pos[2] 100
+#execute at @s store result score @s reg1 run data get entity @s Pos[0] 100
+#execute at @s store result score @s reg2 run data get entity @s Pos[1] 100
+#execute at @s store result score @s reg3 run data get entity @s Pos[2] 100
+#scoreboard players operation @s speedX -= @s reg1
+#scoreboard players operation @s speedY -= @s reg2
+#scoreboard players operation @s speedZ -= @s reg3
 
 #speedとの積をとって移動量算出
 scoreboard players operation @s speedX *= @s speed
 scoreboard players operation @s speedY *= @s speed
 scoreboard players operation @s speedZ *= @s speed
+scoreboard players operation @s speedX /= #10 Num
+scoreboard players operation @s speedY /= #10 Num
+scoreboard players operation @s speedZ /= #10 Num
 
 #debug用motion停止
 #scoreboard players set @s speedX 0
