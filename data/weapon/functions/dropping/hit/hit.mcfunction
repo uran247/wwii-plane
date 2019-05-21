@@ -21,5 +21,4 @@ function weapon:dropping/hit/hit-block
 execute at @s[tag=bomb-normal] run function weapon:dropping/hit/hit-entity-bomb
 
 #命中エンティティがいたら#hit-flagのフラグを立てる
-execute if entity @e[tag=hit-bomb,distance=..20] run scoreboard players set #hit-flag reg1 1
-
+execute if entity @e[tag=hit-bomb,distance=..20] run scoreboard players set #hit-flag reg1 2

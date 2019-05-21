@@ -6,7 +6,7 @@ summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,
 summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,20mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base],Duration:50}
 
 #スコア付与
-scoreboard players set @e[tag=gun-init,distance=..5] speed 94
+scoreboard players set @e[tag=gun-init,distance=..5] speed 95
 scoreboard players set @e[tag=gun-init,distance=..5] damage 20
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 1960
