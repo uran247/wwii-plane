@@ -12,8 +12,6 @@ execute as @s[tag=!plane-rider] run scoreboard players reset @s rightClick
 scoreboard players operation @s plane-id = @e[tag=plane-seat,limit=1,sort=nearest,distance=..5] plane-id
 tag @s add plane-rider
 
-#対象機体にタグ付け
-
 #実行者と対象機体にタグ付け
 tag @s add controller
 scoreboard players operation #plane-id reg1 = @s plane-id

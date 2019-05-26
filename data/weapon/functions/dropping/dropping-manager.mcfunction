@@ -48,7 +48,7 @@ execute at @s positioned as @e[tag=hit-bomb,distance=..20,limit=1,sort=nearest] 
 
 #### ダメージ処理 ####
 #ダメージを与える
-execute if score #hit-flag reg1 >= #1 Num at @s run function weapon:dropping/hit/damage
+execute if score #hit-flag reg1 >= #1 Num at @s run function weapon:dropping/damage/damage
 
 #tellraw @a [{"text":"speed:"},{"score":{"name":"@s","objective":"speed"}},{"text":"Rotation[1]:"},{"score":{"name":"@s","objective":"reg10"}},{"text":"Pos[1]:"},{"score":{"name":"@s","objective":"reg11"}}]
 

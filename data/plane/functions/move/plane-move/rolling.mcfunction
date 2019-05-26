@@ -12,7 +12,6 @@ scoreboard players operation #throttle input = @s throttle
 function plane:move/plane-move/set-base-accelerate
 scoreboard players operation #base-accelerate reg1 = #base-accelerate return
 
-
 ####減速量決定　reg4に代入される ####
 scoreboard players operation #speed input = @s speed
 scoreboard players operation #cruise-speed input = @s cruise-speed
@@ -24,7 +23,6 @@ scoreboard players operation #speedY input = @s speedY
 scoreboard players operation #deaccelerate input = @s deaccelerate
 function plane:move/plane-move/set-base-deaccelerate
 scoreboard players operation #base-deaccelerate reg1 = #base-deaccelerate return
-
 
 #### speed決定 ####
 scoreboard players operation @s speed += #base-accelerate reg1
@@ -47,8 +45,11 @@ scoreboard players operation #displacementZ reg1 *= @s speed
 scoreboard players operation #displacementZ reg1 /= #10 Num
 execute store result entity @s Motion[2] double 0.00001 run scoreboard players get #displacementZ reg1
 
-#tellraw @a [{"text":"#base-accelerate:"},{"score":{"name":"#base-accelerate","objective":"reg1"}},{"text":"#base-resistance:"},{"score":{"name":"#base-resistance","objective":"reg1"}}]
+#speedがtakeoff-speedを超えスロットル全開なら飛行状態に遷移
+execute as @s[scores={throttle=20..}] if score @s takeoff-speed < @s speed run function plane:move/plane-move/rolling/takeoff
 
+#speedがpropeller-stopだったら停止モデル、propeller-startだったら滑走モデルに切り替え
+function plane:move/plane-move/rolling/change-plpr-model
 
 #音
 scoreboard players set @s[scores={sound=33..}] sound 0
@@ -57,6 +58,8 @@ scoreboard players operation @s reg1 = #rand rand
 scoreboard players operation @s reg1 %= #3 Num
 scoreboard players operation @s sound += @s reg1
 scoreboard players add @s sound 1
+#speedが1になったらエンジン始動音を鳴らす
+function plane:move/plane-move/rolling/engine-start-sound
 
 #speedが0なら音停止
 execute if entity @s[scores={speed=..0}] at @s run stopsound @a[distance=..10] * minecraft:plane.engine.recipro-rolling

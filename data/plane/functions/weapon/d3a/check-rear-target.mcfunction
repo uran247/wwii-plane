@@ -3,7 +3,7 @@
 
 #以前の実行でついてたタグ除去
 tag @e[tag=rear-gun-target-candidate,distance=..32] remove rear-gun-target-candidate
-tag @e[tag=rear-gun-targe,distance=..32] remove rear-gun-target
+tag @e[tag=rear-gun-target,distance=..32] remove rear-gun-target
 
 #indicator召喚
 summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[d3a-rear-gun-indicator,entity-nohit],Duration:1}

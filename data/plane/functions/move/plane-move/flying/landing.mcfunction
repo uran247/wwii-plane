@@ -6,12 +6,10 @@ data merge entity @s {NoGravity:0b}
 
 #sound管理スコアを0に
 scoreboard players set @s sound 0
-#stopsound @a * minecraft:plane.engine.recipro-flying
 
 #AngX,Zを初期値にする
 scoreboard players set @s AngZ 0
 scoreboard players operation @s AngX = @s landing-pitch
-#execute if score @s AngZ matches 180 run scoreboard players add @s AngX 1800
 
 #flyingタグ削除
 tag @s remove flying

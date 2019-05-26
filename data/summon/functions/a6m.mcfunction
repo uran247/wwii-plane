@@ -21,9 +21,9 @@ execute as @e[tag=a6m-init] store result entity @s Attributes[1].Base double 1 r
 #スピード・滑走/角度/旋回速度/加速度/最高速度/離陸速度/形態スコア・存在座標・設定
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] rolling 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] speed 0
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] accelerate 66
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] accelerate 70
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] resistance 41
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] deaccelerate 68
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] deaccelerate 93
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] max-speed 19600
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] cruise-speed 11500
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] takeoff-speed 5100
@@ -43,7 +43,7 @@ scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngY 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngZ 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] AngY-old 0
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] pitch-speed 200
-scoreboard players set @e[tag=a6m-init,tag=a6m-root] yaw-speed 220
+scoreboard players set @e[tag=a6m-init,tag=a6m-root] yaw-speed 230
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] roll-speed 400
 
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] parking-udvm 7

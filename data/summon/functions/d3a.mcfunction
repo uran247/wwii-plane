@@ -26,9 +26,9 @@ scoreboard players set @e[tag=d3a-init,tag=d3a-root] speed 0
 scoreboard players set @e[tag=d3a-init,tag=d3a-root] rolling 0
 scoreboard players set @e[tag=d3a-init,tag=d3a-root] accelerate 46
 scoreboard players set @e[tag=d3a-init,tag=d3a-root] resistance 29
-scoreboard players set @e[tag=d3a-init,tag=d3a-root] deaccelerate 78
-scoreboard players set @e[tag=d3a-init,tag=d3a-root] max-speed 14900
-scoreboard players set @e[tag=d3a-init,tag=d3a-root] cruise-speed 10400
+scoreboard players set @e[tag=d3a-init,tag=d3a-root] deaccelerate 42
+scoreboard players set @e[tag=d3a-init,tag=d3a-root] max-speed 13200
+scoreboard players set @e[tag=d3a-init,tag=d3a-root] cruise-speed 8500
 scoreboard players set @e[tag=d3a-init,tag=d3a-root] takeoff-speed 5000
 scoreboard players set @e[tag=d3a-init,tag=d3a-root] stall-speed 4800
 scoreboard players set @e[tag=d3a-init,tag=d3a-root] plpr-start-min 1500

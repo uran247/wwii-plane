@@ -5,7 +5,7 @@
 summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,tracer-lightblue,entity-nohit,offset-base],Duration:25}
 
 #スコア付与
-scoreboard players set @e[tag=gun-init,distance=..5] speed 93
+scoreboard players set @e[tag=gun-init,distance=..5] speed 95
 scoreboard players set @e[tag=gun-init,distance=..5] damage 2
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,distance=..5] offsetX 0
@@ -73,7 +73,7 @@ scoreboard players remove @s ammunition3 1
 
 #終了処理
 tag @e[tag=gun-init,distance=..20] remove gun-init
-tag @e[tag=rear-gun-target-candidate,distance=..32] add rear-gun-target-candidate
-tag @e[tag=rear-gun-targe,distance=..32] add rear-gun-target
+tag @e[tag=rear-gun-target-candidate,distance=..32] remove rear-gun-target-candidate
+tag @e[tag=rear-gun-target,distance=..32] remove rear-gun-target
 #scoreboard players set @p rightClick 0
 

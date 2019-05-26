@@ -11,6 +11,11 @@ execute as @e[distance=..20,tag=plane] if score @s plane-id = #plane-id reg1 run
 execute if entity @s[tag=!flying] run function plane:move/plane-move/rolling
 execute if entity @s[tag=flying] run function plane:move/plane-move/flying
 
+#方向転換
+execute if entity @s[tag=!flying] run function plane:move/plane-move/turn-rolling
+execute if entity @s[tag=flying] run function plane:move/plane-move/turn-flying
+
 #タグ解除
 execute at @s run tag @e[distance=..20,tag=plane-move-parts] remove plane-move-parts
 tag @s remove plane-move-executer
+

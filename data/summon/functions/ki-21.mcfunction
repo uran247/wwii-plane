@@ -24,10 +24,10 @@ execute as @e[tag=plane-init,tag=plane-root,limit=1] at @s run function summon:s
 #スピード・滑走/角度/旋回速度/加速度/最高速度/離陸速度/形態スコア・存在座標・設定
 scoreboard players set @e[tag=plane-init,tag=ki21-root] speed 0
 scoreboard players set @e[tag=plane-init,tag=ki21-root] rolling 0
-scoreboard players set @e[tag=plane-init,tag=ki21-root] accelerate 56
+scoreboard players set @e[tag=plane-init,tag=ki21-root] accelerate 36
 scoreboard players set @e[tag=plane-init,tag=ki21-root] resistance 28
 scoreboard players set @e[tag=plane-init,tag=ki21-root] deaccelerate 130
-scoreboard players set @e[tag=plane-init,tag=ki21-root] max-speed 14900
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-speed 16600
 scoreboard players set @e[tag=plane-init,tag=ki21-root] cruise-speed 13200
 scoreboard players set @e[tag=plane-init,tag=ki21-root] takeoff-speed 4600
 scoreboard players set @e[tag=plane-init,tag=ki21-root] stall-speed 4400

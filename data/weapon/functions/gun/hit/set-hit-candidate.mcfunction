@@ -1,7 +1,7 @@
 #入力　エンティティ：弾丸　スコア：#speed-decimal　#speed
 #処理　hit-candidate指定
 #戻り　エンティティ：hit-candidateタグ付き
-execute if score #speed-decimal reg1 matches 5 positioned ^ ^ ^0.25 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-05
+execute positioned ^ ^ ^10 run tag @e[tag=!gun,tag=!gunner,distance=..10.2,tag=!entity-nohit,tag=!plane-rider] add hit-candidate
 execute if score #speed reg1 matches 1 positioned ^ ^ ^0.5 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-1
 execute if score #speed reg1 matches 2 positioned ^ ^ ^1 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-2
 execute if score #speed reg1 matches 3 positioned ^ ^ ^1.5 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-3
@@ -22,3 +22,6 @@ execute if score #speed reg1 matches 17 positioned ^ ^ ^8.5 run function weapon:
 execute if score #speed reg1 matches 18 positioned ^ ^ ^9 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-18
 execute if score #speed reg1 matches 19 positioned ^ ^ ^9.5 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-19
 execute if score #speed reg1 matches 20 positioned ^ ^ ^10 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-20
+
+#0.5移動する場合別処理で0.5以内にタグ付け
+execute if score #speed-decimal reg1 matches 5 positioned ^ ^ ^-0.25 run function weapon:gun/hit/set-hit-candidate/set-hit-candidate-05
