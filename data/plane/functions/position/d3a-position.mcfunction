@@ -27,16 +27,6 @@ execute store result score @s body if entity @e[tag=position-target,distance=..1
 scoreboard players operation @e[tag=has-offset,tag=position-target,distance=..3] input1 = @s AngZ
 execute as @e[tag=has-offset,tag=position-target,distance=..3] at @s rotated ~-90 ~ run function plane:position/calc-offset
 
-execute as @e[tag=engine,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^3
-execute as @e[tag=aileron-r,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^1
-execute as @e[tag=aileron-l,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^1
-execute as @e[tag=elevator-r,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.9
-execute as @e[tag=elevator-l,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.9
-execute as @e[tag=radder,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-4.9
-execute as @e[tag=d3a-bomb-right,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.8
-execute as @e[tag=d3a-bomb-left,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.8
-execute as @e[tag=d3a-bomb-center,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.8
-
 #角度スコアが前tickから変化したか判定しタグ付け
 execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed
 

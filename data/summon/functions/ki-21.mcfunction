@@ -72,31 +72,31 @@ scoreboard players set @e[tag=body,tag=plane-init] offsetY 0
 scoreboard players set @e[tag=body,tag=plane-init] offsetZ 0
 scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetX -5770
 scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetY 62
-scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetZ -130
 scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetX 5660
 scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetY -63
-scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=engine-l,tag=plane-init] offsetX 2900
+scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetZ 50
+scoreboard players set @e[tag=engine-l,tag=plane-init] offsetX 3000
 scoreboard players set @e[tag=engine-l,tag=plane-init] offsetY -250
-scoreboard players set @e[tag=engine-l,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=engine-l,tag=plane-init] offsetZ -6800
 scoreboard players set @e[tag=engine-r,tag=plane-init] offsetX -3000
 scoreboard players set @e[tag=engine-r,tag=plane-init] offsetY -250
-scoreboard players set @e[tag=engine-r,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=engine-r,tag=plane-init] offsetZ -6800
 scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetX -7400
 scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetY -700
-scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=aileron-r,tag=plane-init] offsetZ -3000
 scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetX 7300
 scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetY -700
-scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=aileron-l,tag=plane-init] offsetZ -3000
 scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetX -3000
 scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetY -600
-scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=elevator-r,tag=plane-init] offsetZ 6500
 scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetX 3000
 scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetY -600
-scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=elevator-l,tag=plane-init] offsetZ 6500
 scoreboard players set @e[tag=radder,tag=plane-init] offsetX -300
 scoreboard players set @e[tag=radder,tag=plane-init] offsetY -1000
-scoreboard players set @e[tag=radder,tag=plane-init] offsetZ 0
+scoreboard players set @e[tag=radder,tag=plane-init] offsetZ 6500
 
 
 #プレイヤーと同じAngYにする

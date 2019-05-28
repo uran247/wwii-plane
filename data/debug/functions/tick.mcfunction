@@ -9,4 +9,4 @@
 
 
 
-#execute as @e[tag=ki21-root] at @s run function debug:chk-offset
+execute as @e[tag=ki21-root] at @s run function debug:chk-offset

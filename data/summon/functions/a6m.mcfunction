@@ -66,22 +66,22 @@ scoreboard players set @e[tag=body,tag=a6m-init] offsetY 0
 scoreboard players set @e[tag=body,tag=a6m-init] offsetZ 0
 scoreboard players set @e[tag=engine,tag=a6m-init] offsetX 0
 scoreboard players set @e[tag=engine,tag=a6m-init] offsetY -100
-scoreboard players set @e[tag=engine,tag=a6m-init] offsetZ 0
+scoreboard players set @e[tag=engine,tag=a6m-init] offsetZ -2000
 scoreboard players set @e[tag=aileron-r,tag=a6m-init] offsetX -3000
 scoreboard players set @e[tag=aileron-r,tag=a6m-init] offsetY 0
-scoreboard players set @e[tag=aileron-r,tag=a6m-init] offsetZ 0
+scoreboard players set @e[tag=aileron-r,tag=a6m-init] offsetZ -100
 scoreboard players set @e[tag=aileron-l,tag=a6m-init] offsetX 3000
 scoreboard players set @e[tag=aileron-l,tag=a6m-init] offsetY 0
-scoreboard players set @e[tag=aileron-l,tag=a6m-init] offsetZ 0
+scoreboard players set @e[tag=aileron-l,tag=a6m-init] offsetZ -100
 scoreboard players set @e[tag=elevator-r,tag=a6m-init] offsetX -1500
 scoreboard players set @e[tag=elevator-r,tag=a6m-init] offsetY -250
-scoreboard players set @e[tag=elevator-r,tag=a6m-init] offsetZ 0
+scoreboard players set @e[tag=elevator-r,tag=a6m-init] offsetZ 4400
 scoreboard players set @e[tag=elevator-l,tag=a6m-init] offsetX 1500
 scoreboard players set @e[tag=elevator-l,tag=a6m-init] offsetY -250
-scoreboard players set @e[tag=elevator-l,tag=a6m-init] offsetZ 0
+scoreboard players set @e[tag=elevator-l,tag=a6m-init] offsetZ 4400
 scoreboard players set @e[tag=radder,tag=a6m-init] offsetX -80
 scoreboard players set @e[tag=radder,tag=a6m-init] offsetY -1000
-scoreboard players set @e[tag=radder,tag=a6m-init] offsetZ 0
+scoreboard players set @e[tag=radder,tag=a6m-init] offsetZ 4900
 
 
 #プレイヤーと同じAngYにする

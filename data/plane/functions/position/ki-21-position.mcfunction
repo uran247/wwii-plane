@@ -28,23 +28,6 @@ execute store result score @s body if entity @e[tag=position-target,distance=..2
 scoreboard players operation @e[tag=has-offset,tag=position-target] input1 = @s AngZ
 execute as @e[tag=has-offset,tag=position-target,distance=..15] at @s rotated ~-90 ~ run function plane:position/calc-offset
 
-execute as @e[tag=ki21-rightwing,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.03
-execute as @e[tag=ki21-leftwing,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^-0.041
-execute as @e[tag=engine-r,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^6.8
-execute as @e[tag=engine-l,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^6.8
-execute as @e[tag=aileron-r,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^3
-execute as @e[tag=aileron-l,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^3
-execute as @e[tag=elevator-r,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^-6.5
-execute as @e[tag=elevator-l,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^-6.5
-execute as @e[tag=radder,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^-6.5
-
-execute as @e[tag=ki21-bomb-1,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^2
-execute as @e[tag=ki21-bomb-2,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^3.5
-execute as @e[tag=ki21-bomb-3,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^5
-execute as @e[tag=ki21-bomb-4,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^2
-execute as @e[tag=ki21-bomb-5,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^3.5
-execute as @e[tag=ki21-bomb-6,tag=position-target,distance=..20] at @s rotated ~-90 ~ run tp @s ^ ^ ^5
-
 #角度スコアが前tickから変化したか判定しタグ付け
 execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed
 

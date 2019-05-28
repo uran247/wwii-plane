@@ -22,13 +22,6 @@ execute store result score @s body if entity @e[tag=position-target,distance=..1
 scoreboard players operation @e[tag=has-offset,tag=position-target] input1 = @s AngZ
 execute as @e[tag=has-offset,tag=position-target,distance=..1] at @s rotated ~-90 ~ run function plane:position/calc-offset
 
-execute as @e[tag=engine,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^2
-execute as @e[tag=aileron-r,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.1
-execute as @e[tag=aileron-l,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^0.1
-execute as @e[tag=elevator-r,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-5.4
-execute as @e[tag=elevator-l,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-5.4
-execute as @e[tag=radder,tag=position-target,distance=..10] at @s rotated ~-90 ~ run tp @s ^ ^ ^-5.4
-
 #seatの位置修正
 execute at @s run tp @e[tag=position-target,tag=plane-seat,type=armor_stand,distance=..10] ^ ^1 ^-1 ~ ~
 

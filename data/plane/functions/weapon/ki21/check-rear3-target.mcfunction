@@ -10,8 +10,8 @@ execute as @s at @s run tp 0-0-4-0-0 ^ ^ ^ ~90 ~
 
 #スコア付与
 execute as 0-0-4-0-0 run scoreboard players set @s offsetX 0
-execute as 0-0-4-0-0 run scoreboard players set @s offsetY 23227
-execute as 0-0-4-0-0 run scoreboard players set @s offsetZ -32627
+execute as 0-0-4-0-0 run scoreboard players set @s offsetY 13053
+execute as 0-0-4-0-0 run scoreboard players set @s offsetZ 33406
 
 #位置移動
 execute as 0-0-4-0-0 at @s rotated ~-90 ~ run function plane:position/calc-offset

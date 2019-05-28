@@ -71,22 +71,22 @@ scoreboard players set @e[tag=body,tag=d3a-init] offsetY 0
 scoreboard players set @e[tag=body,tag=d3a-init] offsetZ 0
 scoreboard players set @e[tag=engine,tag=d3a-init] offsetX 0
 scoreboard players set @e[tag=engine,tag=d3a-init] offsetY 0
-scoreboard players set @e[tag=engine,tag=d3a-init] offsetZ 0
+scoreboard players set @e[tag=engine,tag=d3a-init] offsetZ -3000
 scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetX -4000
-scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetY -400
-scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetZ 100
+scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetY 100
+scoreboard players set @e[tag=aileron-r,tag=d3a-init] offsetZ -1000
 scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetX 4000
 scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetY 100
-scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetZ 0
+scoreboard players set @e[tag=aileron-l,tag=d3a-init] offsetZ -1000
 scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetX -1500
 scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetY -100
-scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetZ 0
+scoreboard players set @e[tag=elevator-r,tag=d3a-init] offsetZ 4900
 scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetX 1500
 scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetY -100
-scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetZ 0
+scoreboard players set @e[tag=elevator-l,tag=d3a-init] offsetZ 4900
 scoreboard players set @e[tag=radder,tag=d3a-init] offsetX -150
 scoreboard players set @e[tag=radder,tag=d3a-init] offsetY -1100
-scoreboard players set @e[tag=radder,tag=d3a-init] offsetZ 0
+scoreboard players set @e[tag=radder,tag=d3a-init] offsetZ 4900
 
 #プレイヤーと同じAngYにする
 execute at @e[tag=d3a-init,tag=d3a-root,limit=1] store result score @p reg1 run data get entity @p Rotation[0] 100

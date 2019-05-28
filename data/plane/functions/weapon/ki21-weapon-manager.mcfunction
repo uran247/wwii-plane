@@ -22,4 +22,5 @@ execute as @s run function plane:weapon/ki21/ki21-cooltime-weapon
 execute unless entity @s[scores={ammunition1=1..,ammunition2=1..,ammunition3=1..,ammunition4=1..}] unless entity @s[scores={ammunition1=..-1,ammunition2=..-1,ammunition3=..-1,ammunition4=..-1}] as @s run function plane:weapon/ki21/ki21-set-reloadtime
 
 #リロードタイムが経過したらリロード
-execute unless entity @s[scores={ammunition1=..-1,ammunition2=..-1,ammunition3=..-1,ammunition4=..-1}] unless entity @s[scores={ammo-reload1=1..,ammo-reload2=1..,ammo-reload3=1..,ammunition4=1..}] as @s run function plane:weapon/ki21/ki21-reset-ammunition
+execute unless entity @s[scores={ammunition1=..-1,ammunition2=..-1,ammunition3=..-1,ammunition4=..-1}] unless entity @s[scores={ammo-reload1=1..,ammo-reload2=1..,ammo-reload3=1..,ammo-reload4=1..}] as @s run function plane:weapon/ki21/ki21-reset-ammunition
+    

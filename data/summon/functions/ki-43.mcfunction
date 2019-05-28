@@ -65,22 +65,22 @@ scoreboard players set @e[tag=body,tag=ki43-init] offsetY 0
 scoreboard players set @e[tag=body,tag=ki43-init] offsetZ 0
 scoreboard players set @e[tag=engine,tag=ki43-init] offsetX 0
 scoreboard players set @e[tag=engine,tag=ki43-init] offsetY -100
-scoreboard players set @e[tag=engine,tag=ki43-init] offsetZ 0
+scoreboard players set @e[tag=engine,tag=ki43-init] offsetZ -1500
 scoreboard players set @e[tag=aileron-r,tag=ki43-init] offsetX -3000
 scoreboard players set @e[tag=aileron-r,tag=ki43-init] offsetY 0
-scoreboard players set @e[tag=aileron-r,tag=ki43-init] offsetZ 0
+scoreboard players set @e[tag=aileron-r,tag=ki43-init] offsetZ -100
 scoreboard players set @e[tag=aileron-l,tag=ki43-init] offsetX 3000
-scoreboard players set @e[tag=aileron-l,tag=ki43-init] offsetY -100
-scoreboard players set @e[tag=aileron-l,tag=ki43-init] offsetZ 0
+scoreboard players set @e[tag=aileron-l,tag=ki43-init] offsetY 0
+scoreboard players set @e[tag=aileron-l,tag=ki43-init] offsetZ -100
 scoreboard players set @e[tag=elevator-r,tag=ki43-init] offsetX -1500
 scoreboard players set @e[tag=elevator-r,tag=ki43-init] offsetY -300
-scoreboard players set @e[tag=elevator-r,tag=ki43-init] offsetZ 0
+scoreboard players set @e[tag=elevator-r,tag=ki43-init] offsetZ 5400
 scoreboard players set @e[tag=elevator-l,tag=ki43-init] offsetX 1300
 scoreboard players set @e[tag=elevator-l,tag=ki43-init] offsetY -300
-scoreboard players set @e[tag=elevator-l,tag=ki43-init] offsetZ 0
+scoreboard players set @e[tag=elevator-l,tag=ki43-init] offsetZ 5400
 scoreboard players set @e[tag=radder,tag=ki43-init] offsetX -100
 scoreboard players set @e[tag=radder,tag=ki43-init] offsetY -1000
-scoreboard players set @e[tag=radder,tag=ki43-init] offsetZ 0
+scoreboard players set @e[tag=radder,tag=ki43-init] offsetZ 5400
 
 
 #プレイヤーと同じAngYにする
