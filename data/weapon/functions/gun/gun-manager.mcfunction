@@ -40,8 +40,8 @@ execute if score #speed-decimal reg1 matches 9 at @s positioned ^ ^ ^0.9 run fun
 execute if score #hit-flag reg1 matches 1 at @s run particle minecraft:explosion ^ ^ ^-1 0.1 0.1 0.1 0 1 force
 
 #曳光弾ならパーティクル
-execute as @s[tag=tracer,tag=tracer-red] at @s run particle minecraft:dust 1 0 0 2 ~ ~ ~ 0 0 0 1 1 force
-execute as @s[tag=tracer,tag=tracer-lightblue] at @s run particle minecraft:dust 0 1 1 2 ~ ~ ~ 0 0 0 1 1 force
+execute as @s[tag=tracer,tag=tracer-red] at @s run particle minecraft:dust 1 0 0 2 ~ ~ ~ 0 0 0 20000 1 force
+execute as @s[tag=tracer,tag=tracer-lightblue] at @s run particle minecraft:dust 0 1 1 2 ~ ~ ~ 0 0 0 20000 1 force
 
 #hitしてたら弾を削除
 execute if score #hit-flag reg1 >= #1 Num run kill @s

@@ -107,8 +107,7 @@ execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @e[tag=plan
 execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @a[distance=..20]
 
 #speedがgear-pull-outだったら滑走モデル、gear-retractingだったら飛行モデルに切り替え(失速中の場合はギアを出さない)
-execute as @s[tag=!stall] if score @s speed >= @s gear-pullout-min if score @s speed <= @s gear-pullout-max store result entity @e[tag=plane-move-parts,tag=model-changeable,limit=1,sort=nearest,distance=..20] HandItems[0].tag.Damage int 1 run scoreboard players get @s rolling-udvm
-execute as @s if score @s speed >= @s gear-retract-min if score @s speed <= @s gear-retract-max store result entity @e[tag=plane-move-parts,tag=model-changeable,limit=1,sort=nearest,distance=..20] HandItems[0].tag.Damage int 1 run scoreboard players get @s flying-udvm
+function plane:move/plane-move/flying/change-gear-model
 
 #1ブロック下が空気以外かつspeedがギア引き出し速度未満、失速してない、throttlが50%未満ならならなら着陸モードへ
 execute as @s[tag=!stall,tag=!destroyed,scores={throttle=..10}] at @s if score @s gear-pullout-max > @s speed unless block ~ ~-2 ~ minecraft:air run data merge entity @e[tag=plane-move-parts,tag=plane-seat,distance=..20,limit=1] {Invulnerable:1b}

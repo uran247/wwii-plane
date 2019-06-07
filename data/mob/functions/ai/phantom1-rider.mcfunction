@@ -1,0 +1,1 @@
+execute unless entity @e[tag=phantom1,distance=..5] run kill @s

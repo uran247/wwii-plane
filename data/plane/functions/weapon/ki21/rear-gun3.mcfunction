@@ -22,7 +22,6 @@ execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function pla
 execute at @e[tag=gun-init,distance=..20] run particle minecraft:dust 1 0 0 0.2 ~ ~ ~ 0 0 0 1 30 force
 
 #向きをターゲット方向に向ける
-summon minecraft:area_effect_cloud ^ ^ ^200  {Duration:0,Tags:[gun-indicator,entity-nohit],CustomName:"{\"text\":\"gun-indicator\",\"color\":\"aqua\"}"}
 execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing entity @e[tag=rear-gun-target,distance=..32,limit=1]
 
 

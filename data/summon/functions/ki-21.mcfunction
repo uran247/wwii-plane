@@ -70,12 +70,12 @@ execute store result score @e[tag=plane-init,tag=ki21-root,limit=1] PosZ run dat
 scoreboard players set @e[tag=body,tag=plane-init] offsetX 0
 scoreboard players set @e[tag=body,tag=plane-init] offsetY 0
 scoreboard players set @e[tag=body,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetX -5770
-scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetY 62
-scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetZ -130
+scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetX -5740
+scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetY 0
+scoreboard players set @e[tag=ki21-rightwing,tag=plane-init] offsetZ 0
 scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetX 5660
-scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetY -63
-scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetZ 50
+scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetY 0
+scoreboard players set @e[tag=ki21-leftwing,tag=plane-init] offsetZ 0
 scoreboard players set @e[tag=engine-l,tag=plane-init] offsetX 3000
 scoreboard players set @e[tag=engine-l,tag=plane-init] offsetY -250
 scoreboard players set @e[tag=engine-l,tag=plane-init] offsetZ -6800

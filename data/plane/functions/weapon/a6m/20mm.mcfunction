@@ -25,10 +25,8 @@ execute if score @s reg1 matches 4 run tag @e[tag=gun-init,distance=..5] add tra
 execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
 
 #向きを機体方向に向ける
-#execute rotated as @s as @e[tag=gun-init,limit=1,distance=..20,tag=left] positioned as @s run tp @s ~ ~ ~ ~ ~
-#execute rotated as @s as @e[tag=gun-init,limit=1,distance=..20,tag=right] positioned as @s run tp @s ~ ~ ~ ~ ~
-summon minecraft:area_effect_cloud ^ ^ ^200  {Duration:0,Tags:[gun-indicator,entity-nohit],CustomName:"{\"text\":\"gun-indicator\",\"color\":\"aqua\"}"}
-execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing entity @e[tag=gun-indicator,distance=..220,limit=1]
+tp 0-0-4-0-0 ^ ^ ^200
+execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing entity 0-0-4-0-0
 
 #tellraw @p [{"score" : {"name":"@e[tag=gun-init,tag=right,limit=1,distance=..5]", "objective":"reg1"}}, {"text":" "}, {"score" : {"name":"@e[tag=gun-init,tag=right,limit=1,distance=..5]", "objective":"reg2"}}]
 
@@ -44,6 +42,9 @@ execute as @e[tag=gun-init,distance=..10] at @s run particle minecraft:cloud ^ ^
 
 #残弾数減算
 scoreboard players remove @s ammunition1 1
+
+#エンティティ返却
+tp 0-0-4-0-0 0 1 0
 
 #終了処理
 tag @e[tag=gun-init,distance=..20] remove gun-init
