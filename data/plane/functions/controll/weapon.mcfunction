@@ -8,7 +8,7 @@ tag @s add weapon-user
 
 #使用武器選択判定
 execute if entity @s[scores={plane-key-input=1}] run scoreboard players set @e[tag=controll-target,distance=..20] plane-weapon 1
-execute if entity @s[scores={plane-key-input=3}] run scoreboard players set @e[tag=controll-target,distance=..20] plane-weapon 2
+execute if entity @s[scores={plane-key-input=2}] run scoreboard players set @e[tag=controll-target,distance=..20] plane-weapon 2
 
 #右クリック判定
 execute if score @s rightClick >= #2 Num run scoreboard players set @s rightClick 0

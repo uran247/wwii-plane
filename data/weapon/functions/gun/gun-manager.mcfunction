@@ -42,6 +42,7 @@ execute if score #hit-flag reg1 matches 1 at @s run particle minecraft:explosion
 #曳光弾ならパーティクル
 execute as @s[tag=tracer,tag=tracer-red] at @s run particle minecraft:dust 1 0 0 2 ~ ~ ~ 0 0 0 20000 1 force
 execute as @s[tag=tracer,tag=tracer-lightblue] at @s run particle minecraft:dust 0 1 1 2 ~ ~ ~ 0 0 0 20000 1 force
+execute as @s[tag=tracer,tag=tracer-orange] at @s run particle minecraft:dust 1 0.644 0 2 ~ ~ ~ 0 0 0 20000 1 force
 
 #hitしてたら弾を削除
 execute if score #hit-flag reg1 >= #1 Num run kill @s

@@ -3,7 +3,7 @@
 
 #曳光弾判定
 scoreboard players operation #tracer reg1 = @s ammunition1
-scoreboard players operation #tracer reg1 %= #15 Num
+scoreboard players operation #tracer reg1 %= #10 Num
 
 #召喚
 execute if score #tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base,tracer],Duration:50}
