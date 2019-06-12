@@ -1,5 +1,5 @@
 {
-  "parent": "advancements:japan/ki-27",
+  "parent": "advancements:japan/root",
   "display": {
     "icon": {
       "item": "minecraft:bat_spawn_egg",

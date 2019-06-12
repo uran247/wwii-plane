@@ -24,7 +24,7 @@ execute unless entity @e[tag=ai-target-plane,limit=1,sort=nearest] as @e[tag=aag
 #現在の角度取得
 execute as @e[tag=aagun-init,distance=..5] store result score @s reg1 run data get entity @s Rotation[0] 1
 #-20 - 20の乱数生成
-execute as @e[tag=aagun-init,distance=..5] run scoreboard players operation @s reg2 += #rand rand
+execute as @e[tag=aagun-init,distance=..5] run scoreboard players operation @s reg2 = #rand rand
 execute as @e[tag=aagun-init,distance=..5] run scoreboard players operation @s reg2 %= #40 Num
 execute as @e[tag=aagun-init,distance=..5] run scoreboard players remove @s reg2 20
 #元々の角度に乱数を足す
@@ -41,7 +41,7 @@ function math:rand
 #現在の角度取得
 execute as @e[tag=aagun-init,distance=..5] store result score @s reg1 run data get entity @s Rotation[1] 1
 #-20 - 20の乱数生成
-execute as @e[tag=aagun-init,distance=..5] run scoreboard players operation @s reg2 += #rand rand
+execute as @e[tag=aagun-init,distance=..5] run scoreboard players operation @s reg2 = #rand rand
 execute as @e[tag=aagun-init,distance=..5] run scoreboard players operation @s reg2 %= #40 Num
 execute as @e[tag=aagun-init,distance=..5] run scoreboard players remove @s reg2 20
 #元々の角度に乱数を足す

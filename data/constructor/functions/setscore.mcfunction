@@ -19,6 +19,7 @@ scoreboard players set #17 Num 17
 scoreboard players set #18 Num 18
 scoreboard players set #19 Num 19
 scoreboard players set #20 Num 20
+scoreboard players set #21 Num 21
 scoreboard players set #32 Num 32
 scoreboard players set #40 Num 40
 scoreboard players set #45 Num 45
