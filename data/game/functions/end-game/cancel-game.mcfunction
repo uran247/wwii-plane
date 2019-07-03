@@ -1,5 +1,6 @@
 #ゲーム途中退出用
 function game:end-game/delete-bossbar
+function game:end-game/reset-stage-id
 function game:end-game/delete-plane
 function game:end-game/move-to-lobby
 

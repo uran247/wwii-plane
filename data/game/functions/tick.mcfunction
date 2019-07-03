@@ -1,0 +1,1 @@
+execute if score #global stage-id > #0 Num run function game:game-manager

@@ -1,7 +1,7 @@
 #実行条件無し
 
 #機体召喚
-summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[a5m-root,a5m,a5m-init,plane-root,plane,entity-nohit,12p7mm,has-weapon1],CustomName:"{\"text\":\"a5m\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b}
+summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[a5m-root,a5m,a5m-init,plane-root,plane,entity-nohit,12p7mm,has-weapon1,tier1,main-weapon1],CustomName:"{\"text\":\"a5m\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b}
 summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[a5m,a5m-init,plane,entity-nohit,plane-seat],CustomName:"{\"text\":\"seat\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,DeathLootTable:"minecraft:entities/bat",SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[a5m,a5m-init,plane,plane-seat,entity-nohit]}],DisabledSlots:256,NoGravity:0b}
 summon armor_stand ~ ~ ~ {Tags:["a5m-body","a5m",a5m-init,plane,has-model,model-changeable,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:85,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[-12f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["a5m-hitbox","a5m",a5m-init,plane,plane-hitbox,has-offset,body,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
@@ -52,7 +52,9 @@ scoreboard players set @e[tag=a5m-init,tag=a5m-root] flying-udvm 86
 
 scoreboard players set @e[tag=a5m-init,tag=a5m-root] w1-reload 0
 scoreboard players set @e[tag=a5m-init,tag=a5m-root] w2-reload 0
-scoreboard players set @e[tag=a5m-init,tag=a5m-root] ammunition1 1000
+scoreboard players set @e[tag=a5m-init,tag=a5m-root] ammunition1 500
+scoreboard players set @e[tag=a5m-init,tag=a5m-root] max-ammunition1 500
+scoreboard players set @e[tag=a5m-init,tag=a5m-root] max-ammo-reload1 140
 scoreboard players set @e[tag=a5m-init,tag=a5m-root] plane-weapon 1
 
 execute store result score @e[tag=a5m-init,tag=a5m-root,limit=1] PosX run data get entity @e[tag=a5m-init,tag=a5m-root,limit=1] Pos[0] 100000

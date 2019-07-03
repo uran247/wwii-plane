@@ -1,0 +1,32 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:nether_star",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 13,
+                                "max": 21
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "condition": "minecraft:match_tool",
+                            "predicate": {
+                                "item": "minecraft:shulker_box",
+                                "nbt": "{\"BlockEntityTag\":{Items:[{tag:{item-type:ho103}}]}}"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

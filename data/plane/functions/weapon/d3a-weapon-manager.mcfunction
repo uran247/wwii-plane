@@ -2,9 +2,9 @@
 #実行者：機体
 
 #選択に応じて武器ファンクション実行,弾薬選択武器の弾薬が0だったら右クリック値を0に
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=1..}] at @s run function plane:weapon/d3a/7p7mm
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=2,w2-reload=..0,ammunition2=1..},tag=flying] at @s run function plane:weapon/d3a/bomb
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=..0}] at @s run scoreboard players set @a[tag=weapon-user,scores={rightClick=1..}] rightClick 0
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=1..}] at @s run function plane:weapon/d3a/7p7mm
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=2,w2-reload=..0,ammunition2=1..},tag=flying] at @s run function plane:weapon/d3a/bomb
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=..0}] at @s run scoreboard players set @p[tag=weapon-user,scores={rightClick=1..}] rightClick 0
 
 #後部機銃発射（自動発射）
 execute if entity @s[scores={w3-reload=..0,ammunition3=1..}] at @s run function plane:weapon/d3a/check-rear-target

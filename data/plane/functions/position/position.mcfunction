@@ -7,3 +7,4 @@ execute as @e[tag=f4u-root] at @s run function plane:position/f4u-position
 execute as @e[tag=ki21-root] at @s run function plane:position/ki-21-position
 execute as @e[tag=ki43-root] at @s run function plane:position/ki-43-position
 execute as @e[tag=a5m-root] at @s run function plane:position/a5m-position
+execute as @e[tag=a6m2-root] at @s run function plane:position/a6m2-position

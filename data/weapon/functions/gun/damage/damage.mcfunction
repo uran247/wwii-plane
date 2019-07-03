@@ -20,7 +20,7 @@ execute as @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=!enemy-target,sort=n
 execute as @e[tag=hit-gun,distance=..20,scores={reg1=0},tag=enemy-target,sort=nearest,limit=1] run function weapon:gun/damage/set-kill-target-message
 execute if entity @e[tag=!entity-nohit,distance=..20,scores={reg1=0}] run title @p[tag=bullet-owner] title {"text":""}
 #メッセージを表示(tellraw)
-execute as @e[tag=hit-gun,tag=plane-hitbox,distance=..20,scores={reg1=0}] run function weapon:gun/damage/destroy-hitbox-message
+execute as @e[tag=hit-gun,tag=plane-hitbox,distance=..20,scores={reg1=0}] run function weapon:util/destroy-hitbox-message
 
 #撃墜者/クリアスコアをプラス
 execute as @p[tag=bullet-owner] run function weapon:gun/damage/set-shotdown-score

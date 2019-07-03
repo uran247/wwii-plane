@@ -22,7 +22,7 @@ execute if score #speed reg1 matches 8 at @s run tp @s ^ ^ ^0.8
 execute if score #speed reg1 matches 9 at @s run tp @s ^ ^ ^0.9
 
 #1-20移動
-scoreboard players operation #speed reg1 = @s speed
+scoreboard players operation #speed reg1 = @s speed 
 scoreboard players operation #speed reg1 /= #10 Num
 
 #ブロック、エンティティ衝突判定
@@ -53,8 +53,6 @@ execute unless entity @e[tag=hit-aagun,distance=..20] if score #speed reg1 = #20
 #命中したエンティティ位置に移動　エンティティ命中有の場合
 execute at @s positioned as @e[tag=hit-aagun,distance=..20,limit=1,sort=nearest] run tp @s ~ ~ ~
 
-#tellraw @a [{"text":"speed:"},{"score":{"name":"@s","objective":"speed"}},{"text":"Rotation[1]:"},{"score":{"name":"@s","objective":"reg10"}},{"text":"Pos[1]:"},{"score":{"name":"@s","objective":"reg11"}}]
-
 #### age更新 + ダメージ処理 ####
 scoreboard players remove @s age 1
 #y座標がfuse-heightを超えたらageを0に
@@ -63,7 +61,7 @@ execute if score @s reg4 > @s fuse-height run scoreboard players set @s age 0
 #block/entityへhitしてたらageを0に
 execute if score #hit-flag reg1 matches 1 run scoreboard players set @s age 0
 #ageが0になったらダメージ処理発生
-execute at @s[scores={age=..0}] run function weapon:aagun/hit/damage
+execute at @s[scores={age=..0}] run function weapon:aagun/damage/damage
 
 #終了処理
 tag @e[tag=hit-aagun,distance=..20] remove hit-aagun

@@ -2,9 +2,9 @@
 #実行者：機体
 
 #選択に応じて武器ファンクション実行
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=1..,AngX=..1600,AngZ=-1000..1000},tag=flying] at @s run function plane:weapon/ki21/bomb
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] unless entity @s[scores={AngX=..1600,AngZ=-1000..1000}] at @s run tellraw @a[tag=weapon-user,scores={rightClick=1..}] [{"text":"投下可能な姿勢になっていません","color":"yellow"}]
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] unless entity @s[scores={AngX=..1600,AngZ=-1000..1000}] at @s run scoreboard players set @a[tag=weapon-user,scores={rightClick=1..}] rightClick 0
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=1..,AngX=..1600,AngZ=-1000..1000},tag=flying] at @s run function plane:weapon/ki21/bomb
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] unless entity @s[scores={AngX=..1600,AngZ=-1000..1000}] at @s run tellraw @p[tag=weapon-user,scores={rightClick=1..}] [{"text":"投下可能な姿勢になっていません","color":"yellow"}]
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] unless entity @s[scores={AngX=..1600,AngZ=-1000..1000}] at @s run scoreboard players set @p[tag=weapon-user,scores={rightClick=1..}] rightClick 0
 
 #後部機銃発射（自動発射）
 

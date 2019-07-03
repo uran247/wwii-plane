@@ -9,4 +9,4 @@ function game:start-game/stage-3/set-bossbar
 schedule function game:start-game/stage-3/summon-enemy 10
 
 #開始効果音
-execute as @a at @s run playsound minecraft:entity.ender_dragon.ambient master @s ~ ~ ~ 200 0.5
+execute as @a at @s run playsound minecraft:entity.ender_dragon.ambient master @s ~ ~ ~ 1 0.5

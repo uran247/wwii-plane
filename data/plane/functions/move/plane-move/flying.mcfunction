@@ -86,25 +86,25 @@ execute if score #exist-rider reg1 matches 0 run scoreboard players operation @s
 
 #音
 scoreboard players set @s[scores={sound=30..}] sound 0
-execute if entity @s[scores={sound=0,speed=-1..}] at @p run playsound minecraft:plane.engine.recipro-flying ambient @a ~ ~ ~ 10 1 1
+execute if entity @s[scores={sound=0,speed=-1..}] at @p run playsound minecraft:plane.engine.recipro-flying ambient @a ~ ~ ~ 1 1 1
 scoreboard players operation @s reg1 = #rand rand
 scoreboard players operation @s reg1 %= #4 Num
 scoreboard players operation @s sound += @s reg1
 #tellraw @p [{"score":{"name":"@s","objective":"reg1"}}]
 
 #飛行状態でブロックにめり込んだら爆発
-execute at @s unless block ~ ~1 ~ air run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 16 0
+execute at @s unless block ~ ~1 ~ air run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 1 0
 execute at @s unless block ~ ~1 ~ air run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
 execute at @s unless block ~ ~1 ~ air run kill @s
 execute at @s unless block ~ ~1 ~ air run kill @e[tag=plane-move-parts,distance=..20]
-execute at @s unless block ~ ~1 ~ air run kill @a[distance=..20]
+execute at @s unless block ~ ~1 ~ air run kill @a[distance=..10]
 
 #登場者無しで奈落に行ったらキル
-execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 16 0
-execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
-execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @s
-execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @e[tag=plane-move-parts,distance=..20]
-execute at @s[tag=!exist-rider] if entity @s[y=-50,dy=-100] run kill @a[distance=..20]
+execute if score #exist-rider reg1 matches 0 at @s if entity @s[y=-50,dy=-100] run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 1 0
+execute if score #exist-rider reg1 matches 0 at @s if entity @s[y=-50,dy=-100] run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
+execute if score #exist-rider reg1 matches 0 at @s if entity @s[y=-50,dy=-100] run kill @s
+execute if score #exist-rider reg1 matches 0 at @s if entity @s[y=-50,dy=-100] run kill @e[tag=plane-move-parts,distance=..20]
+execute if score #exist-rider reg1 matches 0 at @s if entity @s[y=-50,dy=-100] run kill @a[distance=..10]
 
 #speedがgear-pull-outだったら滑走モデル、gear-retractingだったら飛行モデルに切り替え(失速中の場合はギアを出さない)
 function plane:move/plane-move/flying/change-gear-model

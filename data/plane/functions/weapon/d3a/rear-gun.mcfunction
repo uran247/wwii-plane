@@ -62,7 +62,7 @@ execute as @e[tag=gun-init,distance=..20] store result entity @s Rotation[1] flo
 #execute if entity @e[tag=gun-init,distance=..20] run scoreboard players set @s w1-reload 1
 
 #音
-playsound minecraft:weapon.muchingun.fire master @a ~ ~ ~ 16 1 1
+playsound minecraft:weapon.muchingun.fire master @a ~ ~ ~ 1 1 1
 
 #発射炎
 #execute as @e[tag=gun-init,distance=..10] at @s run particle minecraft:cloud ^ ^ ^ 0.1 0.1 0.1 0.1 1 force

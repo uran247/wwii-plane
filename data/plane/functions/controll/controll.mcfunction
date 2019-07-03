@@ -5,11 +5,11 @@
 #透明にしとく
 effect give @s minecraft:invisibility 1
 
-#plane-riderタグのツイてないプレイヤーの右クリックリセット
+#plane-riderタグのツイてないプレイヤーの右クリック検知スコアをリセット
 execute as @s[tag=!plane-rider] run scoreboard players reset @s rightClick
 
 #seatを参照して実行者にid、タグ付け
-scoreboard players operation @s plane-id = @e[tag=plane-seat,limit=1,sort=nearest,distance=..5] plane-id
+execute store result score @s plane-id run data get entity @s RootVehicle.Entity.Attributes[1].Base
 tag @s add plane-rider
 
 #実行者と対象機体にタグ付け
@@ -22,8 +22,8 @@ function util:get-player-slot
 scoreboard players operation @s plane-key-input = #selected-slot return
 #tellraw @a [{"text":"plane-key-input:"},{"score":{"name":"@s","objective":"plane-key-input"}},{"text":"#max:"},{"score":{"name":"#max","objective":"max-entity"}}]
 
-#自分と同じIDのパーツにタグ付け
-execute at @e[tag=controll-target,distance=..20] as @e[distance=..20,scores={plane-id=1..}] if score @s plane-id = #plane-id reg1 run tag @s add controll-parts
+#自分と同じIDのパーツにタグ付け(今のところ使ってないのでコメントアウト)
+#execute at @e[tag=controll-target,distance=..20] as @e[distance=..20,scores={plane-id=1..}] if score @s plane-id = #plane-id reg1 run tag @s add controll-parts
 
 #移動操作
 execute at @e[tag=controll-target,tag=!flying,limit=1,sort=nearest,distance=..20] run function plane:controll/rolling
@@ -37,5 +37,5 @@ execute at @s as @e[tag=controll-target,distance=..20,limit=1] run function plan
 
 #タグ削除
 tag @e[tag=controll-target,tag=plane-root,limit=1,sort=nearest,distance=..20] remove controll-target
-tag @e[tag=controll-parts,distance=..20] remove controll-parts
+#tag @e[tag=controll-parts,distance=..20] remove controll-parts
 tag @s remove controller

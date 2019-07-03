@@ -15,32 +15,32 @@ scoreboard players operation #altitude reg1 /= #100000 Num
 #weaponチャットコンポーネント用タグを0-0-5-0-0にいれる
 data modify block 0 4 0 Items[0].tag.pages set value [""]
 
-execute if entity @s[tag=has-weapon1,scores={ammunition1=1..}] run data modify block 0 4 0 Items[0].tag.pages[0] set value "wpn1:"
-execute if entity @s[tag=has-weapon1,scores={ammunition1=..0}] run data modify block 0 4 0 Items[0].tag.pages[0] set value "reloading:"
-execute unless entity @s[tag=has-weapon1] run data modify block 0 4 0 Items[0].tag.pages[0] set value ""
+execute if entity @s[tag=main-weapon1,scores={ammunition1=1..}] run data modify block 0 4 0 Items[0].tag.pages[0] set value "wpn1:"
+execute if entity @s[tag=main-weapon1,scores={ammunition1=..0}] run data modify block 0 4 0 Items[0].tag.pages[0] set value "reloading:"
+execute unless entity @s[tag=main-weapon1] run data modify block 0 4 0 Items[0].tag.pages[0] set value ""
 
-execute if entity @s[tag=has-weapon2,scores={ammunition2=1..}] run data modify block 0 4 0 Items[0].tag.pages append value " wpn2:"
-execute if entity @s[tag=has-weapon2,scores={ammunition2=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "reloading:"
-execute unless entity @s[tag=has-weapon2] run data modify block 0 4 0 Items[0].tag.pages append value ""
+execute if entity @s[tag=main-weapon2,scores={ammunition2=1..}] run data modify block 0 4 0 Items[0].tag.pages append value " wpn2:"
+execute if entity @s[tag=main-weapon2,scores={ammunition2=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "reloading:"
+execute unless entity @s[tag=main-weapon2] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
-execute if entity @s[tag=has-weapon3,scores={ammunition3=1..}] run data modify block 0 4 0 Items[0].tag.pages append value " wpn3:"
-execute if entity @s[tag=has-weapon3,scores={ammunition3=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "reloading:"
-execute unless entity @s[tag=has-weapon3] run data modify block 0 4 0 Items[0].tag.pages append value ""
+execute if entity @s[tag=main-weapon3,scores={ammunition3=1..}] run data modify block 0 4 0 Items[0].tag.pages append value " wpn3:"
+execute if entity @s[tag=main-weapon3,scores={ammunition3=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "reloading:"
+execute unless entity @s[tag=main-weapon3] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
-execute if entity @s[tag=has-weapon4,scores={ammunition4=1..}] run data modify block 0 4 0 Items[0].tag.pages append value " wpn4:"
-execute if entity @s[tag=has-weapon4,scores={ammunition4=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "reloading:"
-execute unless entity @s[tag=has-weapon4] run data modify block 0 4 0 Items[0].tag.pages append value ""
+execute if entity @s[tag=main-weapon4,scores={ammunition4=1..}] run data modify block 0 4 0 Items[0].tag.pages append value " wpn4:"
+execute if entity @s[tag=main-weapon4,scores={ammunition4=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "reloading:"
+execute unless entity @s[tag=main-weapon4] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
 
 #wepon残弾数取得
-execute if entity @s[tag=has-weapon1] run scoreboard players operation #ammunition1 reg1 = @s ammunition1
-execute if entity @s[tag=has-weapon2] run scoreboard players operation #ammunition2 reg1 = @s ammunition2
-execute if entity @s[tag=has-weapon3] run scoreboard players operation #ammunition3 reg1 = @s ammunition3
-execute if entity @s[tag=has-weapon4] run scoreboard players operation #ammunition4 reg1 = @s ammunition4
-execute unless entity @s[tag=has-weapon1] run scoreboard players reset #ammunition1 reg1
-execute unless entity @s[tag=has-weapon2] run scoreboard players reset #ammunition2 reg1
-execute unless entity @s[tag=has-weapon3] run scoreboard players reset #ammunition3 reg1
-execute unless entity @s[tag=has-weapon4] run scoreboard players reset #ammunition4 reg1
+execute if entity @s[tag=main-weapon1] run scoreboard players operation #ammunition1 reg1 = @s ammunition1
+execute if entity @s[tag=main-weapon2] run scoreboard players operation #ammunition2 reg1 = @s ammunition2
+execute if entity @s[tag=main-weapon3] run scoreboard players operation #ammunition3 reg1 = @s ammunition3
+execute if entity @s[tag=main-weapon4] run scoreboard players operation #ammunition4 reg1 = @s ammunition4
+execute unless entity @s[tag=main-weapon1] run scoreboard players reset #ammunition1 reg1
+execute unless entity @s[tag=main-weapon2] run scoreboard players reset #ammunition2 reg1
+execute unless entity @s[tag=main-weapon3] run scoreboard players reset #ammunition3 reg1
+execute unless entity @s[tag=main-weapon4] run scoreboard players reset #ammunition4 reg1
 
 #残弾数0の場合リロード時間を取得
 execute if entity @s[scores={ammunition1=..0}] run scoreboard players operation #ammunition1 reg1 = @s ammo-reload1

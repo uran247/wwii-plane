@@ -55,7 +55,7 @@ execute as @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=enemy-target,s
 execute if entity @e[tag=!entity-nohit,distance=..16,scores={reg1=0}] run title @p[tag=bomb-owner] title {"text":""}
 #メッセージを表示(tellraw)
 execute if entity @e[tag=!entity-nohit,distance=..16,scores={reg1=1}] run function weapon:dropping/damage/hit-message
-execute as @e[tag=plane-hitbox,distance=..16,scores={reg1=0}] run function weapon:dropping/damage/destroy-hitbox-message
+execute as @e[tag=plane-hitbox,distance=..16,scores={reg1=0}] run function weapon:util/destroy-hitbox-message
 
 #撃墜者/クリアスコアをプラス
 execute as @p[tag=bomb-owner] run function weapon:dropping/damage/set-shotdown-score
@@ -70,7 +70,7 @@ kill @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=enemy-target,type=sp
 execute at @s[tag=50kg] run particle minecraft:explosion ^ ^ ^ 1 1 1 0 100 force
 execute at @s[tag=60kg] run particle minecraft:explosion ^ ^ ^ 1 1 1 0 120 force
 execute at @s[tag=250kg] run particle minecraft:explosion ^ ^ ^ 3 3 3 0 500 force
-execute at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 16 1.2 0
+execute at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 1 1.2 0
 
 #タグ除去
 tag @a remove bomb-owner

@@ -13,7 +13,7 @@ execute store result score @s[tag=bombed] reg1 if entity @e[tag=position-target,
 execute as @s[tag=bombed,scores={ammunition2=3,reg1=0}] at @s run function summon:d3a/d3a-bomb
 
 #自分と同じIDのパーツを自分の位置へ
-execute as @s at @s run tp @e[tag=d3a,tag=position-target] ^ ^ ^ ~90 ~
+execute as @s at @s run tp @e[tag=position-target] ^ ^ ^ ~90 ~
 
 #パーツのヘルスチェック
 execute store result score @s plane-parts if entity @e[tag=position-target,distance=..10,tag=plane-hitbox]

@@ -5,10 +5,10 @@
 #自分と同じIDを判定しタグ付け
 tag @s add ki43-position-executer
 scoreboard players operation #plane-id reg1 = @s plane-id
-execute as @e[tag=ki43,tag=!ki43-root,distance=..40] if score @s plane-id = #plane-id reg1 run tag @s add position-target
+execute as @e[tag=ki43,tag=!ki43-root] if score @s plane-id = #plane-id reg1 run tag @s add position-target
 
 #自分と同じIDのパーツを自分の位置へ
-execute as @s at @s run tp @e[tag=ki43,tag=position-target,distance=..40] ^ ^ ^ ~90 ~
+execute as @s at @s run tp @e[tag=ki43,tag=position-target] ^ ^ ^ ~90 ~
 
 #パーツのヘルスチェック
 execute store result score @s plane-parts if entity @e[tag=position-target,distance=..10,tag=plane-hitbox]
@@ -23,7 +23,7 @@ scoreboard players operation @e[tag=has-offset,tag=position-target] input1 = @s 
 execute as @e[tag=has-offset,tag=position-target,distance=..1] at @s rotated ~-90 ~ run function plane:position/calc-offset
 
 #seatの位置修正
-execute at @s run tp @e[tag=position-target,tag=plane-seat,type=armor_stand,distance=..10] ^ ^1 ^-1 ~ ~
+execute at @s run tp @e[tag=position-target,tag=plane-seat,type=armor_stand,distance=..20] ^ ^1 ^-1 ~ ~
 
 #角度スコアが前tickから変化したか判定しタグ付け
 execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed

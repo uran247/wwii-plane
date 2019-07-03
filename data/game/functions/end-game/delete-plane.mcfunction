@@ -8,4 +8,4 @@ execute as @a if score @s plane-id = #plane-id reg1 run scoreboard players set #
 execute if score #flag reg1 matches 1 run function item:plane2item/plane2item
 
 #ロビーへ移動
-tp @e[type=item,nbt={Item:{id:"minecraft:bat_spawn_egg"}}] 0 140 0
+tp @e[type=item,nbt={Item:{id:"minecraft:bat_spawn_egg"}}] 5 140 0

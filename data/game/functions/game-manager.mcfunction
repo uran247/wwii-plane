@@ -6,7 +6,8 @@ execute store result bossbar minecraft:game-progress value run scoreboard player
 #game-idが異なるenemy-targetをすべてkill
 execute as @e[tag=enemy-target] unless score @s game-id = #global game-id run kill @s
 
-
 #クリアスコアに達したらゲーム終了
 execute if score #global shootdown >= #global clear-score run function game:end-game/end-game1
 
+#経過時間測定
+scoreboard players add #game time 1

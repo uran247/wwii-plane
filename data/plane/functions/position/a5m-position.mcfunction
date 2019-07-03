@@ -5,10 +5,10 @@
 #自分と同じIDを判定しタグ付け
 tag @s add a5m-position-executer
 scoreboard players operation #plane-id reg1 = @s plane-id
-execute as @e[tag=a5m,tag=!a5m-root,distance=..40] if score @s plane-id = #plane-id reg1 run tag @s add position-target
+execute as @e[tag=a5m,tag=!a5m-root] if score @s plane-id = #plane-id reg1 run tag @s add position-target
 
 #自分と同じIDのパーツを自分の位置へ
-execute as @s at @s run tp @e[tag=a5m,tag=position-target,distance=..40] ^ ^ ^ ~90 ~
+execute as @s at @s run tp @e[tag=a5m,tag=position-target] ^ ^ ^ ~90 ~
 
 #パーツのヘルスチェック
 execute store result score @s plane-parts if entity @e[tag=position-target,distance=..10,tag=plane-hitbox]

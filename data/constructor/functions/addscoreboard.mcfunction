@@ -38,9 +38,6 @@ scoreboard objectives add speedX dummy
 scoreboard objectives add speedY dummy
 scoreboard objectives add speedZ dummy
 scoreboard objectives add speed dummy
-scoreboard objectives add roll dummy
-scoreboard objectives add pitch dummy
-scoreboard objectives add yaw dummy
 scoreboard objectives add age dummy
 scoreboard objectives add HP dummy
 scoreboard objectives add rolling dummy
@@ -55,6 +52,7 @@ scoreboard objectives add landing-roll dummy
 scoreboard objectives add max-speed dummy
 scoreboard objectives add accelerate dummy
 scoreboard objectives add deaccelerate dummy
+scoreboard objectives add resistance dummy
 scoreboard objectives add takeoff-speed dummy
 scoreboard objectives add parking-udvm dummy
 scoreboard objectives add rolling-udvm dummy
@@ -77,23 +75,14 @@ scoreboard objectives add w2-reload dummy
 scoreboard objectives add w3-reload dummy
 scoreboard objectives add w4-reload dummy
 scoreboard objectives add damage dummy
-scoreboard objectives add plane-w1-posX dummy
-scoreboard objectives add plane-w1-posY dummy
-scoreboard objectives add plane-w1-posZ dummy
-scoreboard objectives add plane-w2-posX dummy
-scoreboard objectives add plane-w2-posY dummy
-scoreboard objectives add plane-w2-posZ dummy
-scoreboard objectives add plane-w3-posX dummy
-scoreboard objectives add plane-w3-posY dummy
-scoreboard objectives add plane-w3-posZ dummy
-scoreboard objectives add plane-w4-posX dummy
-scoreboard objectives add plane-w4-posY dummy
-scoreboard objectives add plane-w4-posZ dummy
 scoreboard objectives add ammunition1 dummy
 scoreboard objectives add ammunition2 dummy
 scoreboard objectives add ammunition3 dummy
 scoreboard objectives add ammunition4 dummy
-scoreboard objectives add gtime minecraft.custom:minecraft.play_one_minute
+scoreboard objectives add max-ammunition1 dummy
+scoreboard objectives add max-ammunition2 dummy
+scoreboard objectives add max-ammunition3 dummy
+scoreboard objectives add max-ammunition4 dummy
 scoreboard objectives add shootdown dummy {"text":"スコア"}
 scoreboard objectives add offsetX dummy
 scoreboard objectives add offsetY dummy
@@ -114,11 +103,14 @@ scoreboard objectives add ammo-reload1 dummy
 scoreboard objectives add ammo-reload2 dummy
 scoreboard objectives add ammo-reload3 dummy
 scoreboard objectives add ammo-reload4 dummy
+scoreboard objectives add max-ammo-reload1 dummy
+scoreboard objectives add max-ammo-reload2 dummy
+scoreboard objectives add max-ammo-reload3 dummy
+scoreboard objectives add max-ammo-reload4 dummy
 scoreboard objectives add throttle dummy
 scoreboard objectives add fuse-height dummy
 scoreboard objectives add game-id dummy
 scoreboard objectives add return dummy
-scoreboard objectives add resistance dummy
 scoreboard objectives add target-planeid dummy
 scoreboard objectives add forget-time dummy
 scoreboard objectives add target-planeid dummy
@@ -126,3 +118,4 @@ scoreboard objectives add forget-time dummy
 scoreboard objectives add yaw-gap dummy
 scoreboard objectives add pitch-gap dummy
 scoreboard objectives add open-shop minecraft.custom:minecraft.talked_to_villager
+scoreboard objectives add time dummy

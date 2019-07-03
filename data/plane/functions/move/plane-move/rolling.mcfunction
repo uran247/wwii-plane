@@ -53,7 +53,7 @@ function plane:move/plane-move/rolling/change-plpr-model
 
 #音
 scoreboard players set @s[scores={sound=33..}] sound 0
-execute if entity @s[scores={sound=0,speed=1..}] at @p run playsound minecraft:plane.engine.recipro-rolling ambient @a ~ ~ ~ 10 1 1
+execute if entity @s[scores={sound=0,speed=1..}] at @p run playsound minecraft:plane.engine.recipro-rolling ambient @a ~ ~ ~ 1 1 1
 scoreboard players operation @s reg1 = #rand rand
 scoreboard players operation @s reg1 %= #3 Num
 scoreboard players operation @s sound += @s reg1

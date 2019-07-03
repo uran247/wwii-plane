@@ -70,7 +70,7 @@ execute as @e[tag=gun-init,distance=..5] store result entity @s Rotation[1] floa
 execute if entity @e[tag=gun-init,distance=..20] run scoreboard players set @s w1-reload 3
 
 #音
-playsound minecraft:entity.ghast.shoot master @a ~ ~ ~ 16 1 1
+playsound minecraft:entity.ghast.shoot master @a ~ ~ ~ 1 1 1
 
 #終了処理
 tag @e[tag=gun-init,distance=..20] remove gun-init

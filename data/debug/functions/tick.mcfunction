@@ -7,7 +7,7 @@
 #execute as @e[tag=rocket] at @s positioned ~ ~1.4 ~ run particle minecraft:flame ^ ^ ^-1.8 0 0 0 0.013 1 force
 #execute as @e[tag=a6m-root] at @s run function satsuei:gun-test
 #execute as @a[scores={open-shop=1..}] run function debug:insert-villager
-execute store result score #pick reg1 run clear @a stone 0
-execute if score #pick reg1 > #0 Num run say pick
-scoreboard players set #pick reg1 0
+#execute store result score #pick reg1 run clear @a stone 0
+#execute if score #pick reg1 > #0 Num run say pick
+#scoreboard players set #pick reg1 0
 #execute as @e[tag=a5m-root] at @s run function debug:chk-offset

@@ -2,8 +2,8 @@
 #実行者：機体
 
 #選択に応じて武器ファンクション実行
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=1..}] at @s run function plane:weapon/a5m/7p7mm
-execute if entity @a[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=..0}] at @s run scoreboard players set @a[tag=weapon-user,scores={rightClick=1..}] rightClick 0
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=1..}] at @s run function plane:weapon/a5m/7p7mm
+execute if entity @p[tag=weapon-user,scores={rightClick=1..}] if entity @s[scores={plane-weapon=1,w1-reload=..0,ammunition1=..0}] at @s run scoreboard players set @p[tag=weapon-user,scores={rightClick=1..}] rightClick 0
 
 #reload時間減算
 function plane:weapon/a5m/a5m-cooltime-weapon

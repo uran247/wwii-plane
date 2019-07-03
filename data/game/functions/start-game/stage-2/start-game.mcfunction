@@ -6,4 +6,4 @@ function game:start-game/stage-2/show-message
 function game:start-game/stage-2/set-bossbar
 
 #開始効果音
-execute as @a at @s run playsound minecraft:entity.ender_dragon.ambient master @s ~ ~ ~ 200 0.5
+execute as @a at @s run playsound minecraft:entity.ender_dragon.ambient master @s ~ ~ ~ 1 0.5

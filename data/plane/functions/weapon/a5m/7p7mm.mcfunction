@@ -41,7 +41,7 @@ execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing e
 #音
 scoreboard players operation #sound reg1 = @s ammunition1
 scoreboard players operation #sound reg1 %= #2 Num
-execute if score #sound reg1 matches 0 run playsound minecraft:weapon.gun-7p7m.fire master @a ~ ~ ~ 16 1 1
+execute if score #sound reg1 matches 0 run playsound minecraft:weapon.gun-7p7m.fire master @a ~ ~ ~ 1 1 1
 
 #発射炎
 #execute as @e[tag=gun-init,distance=..10] at @s run particle minecraft:cloud ^ ^ ^ 0.1 0.1 0.1 0.1 1 force

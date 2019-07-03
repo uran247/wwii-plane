@@ -1,7 +1,7 @@
 #実行条件無し
 
 #機体召喚
-summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[ki21-root,ki21,plane-init,plane-root,plane,entity-nohit,bombed,normal,50kg,has-weapon1],CustomName:"{\"text\":\"ki21\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b}
+summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[ki21-root,ki21,plane-init,plane-root,plane,entity-nohit,bombed,normal,50kg,has-weapon1,main-weapon1,tier1],CustomName:"{\"text\":\"ki21\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b}
 summon armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[ki21,plane-init,plane,entity-nohit,plane-seat],CustomName:"{\"text\":\"seat\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,DeathLootTable:"minecraft:entities/bat",SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[ki21,plane-init,plane,plane-seat,entity-nohit]}],DisabledSlots:256,NoGravity:0b}
 summon armor_stand ~ ~ ~ {Tags:["ki21-body","ki21",plane-init,plane,has-model,model-changeable,plane-parts,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:78,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["ki21-tail","ki21",plane-init,plane,has-model,plane-parts,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:83,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256}
@@ -56,10 +56,19 @@ scoreboard players set @e[tag=plane-init,tag=ki21-root] flying-udvm 80
 scoreboard players set @e[tag=plane-init,tag=ki21-root] w1-reload 0
 scoreboard players set @e[tag=plane-init,tag=ki21-root] w2-reload 0
 scoreboard players set @e[tag=plane-init,tag=ki21-root] w3-reload 0
+scoreboard players set @e[tag=plane-init,tag=ki21-root] w4-reload 0
 scoreboard players set @e[tag=plane-init,tag=ki21-root] ammunition1 20
 scoreboard players set @e[tag=plane-init,tag=ki21-root] ammunition2 500
 scoreboard players set @e[tag=plane-init,tag=ki21-root] ammunition3 500
 scoreboard players set @e[tag=plane-init,tag=ki21-root] ammunition4 500
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammunition1 20
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammunition2 500
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammunition3 500
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammunition4 500
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammo-reload1 600
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammo-reload2 140
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammo-reload3 140
+scoreboard players set @e[tag=plane-init,tag=ki21-root] max-ammo-reload4 140
 scoreboard players set @e[tag=plane-init,tag=ki21-root] plane-weapon 1
 
 execute store result score @e[tag=plane-init,tag=ki21-root,limit=1] PosX run data get entity @e[tag=plane-init,tag=ki21-root,limit=1] Pos[0] 100000

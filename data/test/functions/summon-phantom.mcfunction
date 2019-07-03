@@ -1,5 +1,4 @@
 #plane:tickで実行
-#execute as @a at @s run function test:summon-phantom
 tag @s add summon-phantom-executer
 scoreboard players set @s reg1 0
 execute as @e[type=minecraft:phantom,distance=..200] run scoreboard players add @a[tag=summon-phantom-executer] reg1 1

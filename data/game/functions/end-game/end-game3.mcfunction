@@ -5,4 +5,5 @@ execute if score #global stage-id matches 3 run function game:end-game/stage-1/t
 
 #共通処理
 function game:end-game/move-to-lobby
+function game:end-game/reset-stage-id
 
