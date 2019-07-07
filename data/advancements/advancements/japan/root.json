@@ -1,7 +1,8 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:map"
+      "item": "minecraft:bat_spawn_egg",
+      "nbt":"{CustomModelData:6}"
     },
     "title": {
       "translate": "日本ツリー"

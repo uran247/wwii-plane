@@ -1,3 +1,4 @@
+#1-3:vector 4:measurement 5:craft
 summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"1"],UUIDLeast:0,UUIDMost:1,Invulnerable:1}
 summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"2"],UUIDLeast:0,UUIDMost:2,Invulnerable:1}
 summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"3"],UUIDLeast:0,UUIDMost:3,Invulnerable:1}
@@ -45,3 +46,4 @@ kill @e[tag=Trigonometric2]
 summon minecraft:armor_stand -0.5 0 -0.5 {Markar:1,Tags:[Trigonometric],NoGravity:1,Invulnerable:1}
 summon minecraft:armor_stand 0 0 0 {Markar:1,Tags:[Trigonometric2],NoGravity:1,Invulnerable:1}
 data merge entity @e[tag=Trigonometric,limit=1] {Pos:[0d,0d,0d]}
+replaceitem entity 0-0-5-0-0 weapon.mainhand minecraft:shulker_box

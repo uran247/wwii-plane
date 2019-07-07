@@ -14,6 +14,22 @@
                                 "min": 13,
                                 "max": 21
                             }
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag":"{HideFlags:18}"
+                        },
+                        {
+                            "function": "minecraft:set_attributes",
+                            "modifiers":[
+                                {
+                                    "name":"test",
+                                    "attribute":"test",
+                                    "operation":"multiply_base",
+                                    "amount":1.0,
+                                    "slot":"mainhand"
+                                }
+                            ]
                         }
                     ],
                     "conditions": [
@@ -21,7 +37,7 @@
                             "condition": "minecraft:match_tool",
                             "predicate": {
                                 "item": "minecraft:shulker_box",
-                                "nbt": "{\"BlockEntityTag\":{Items:[{tag:{item-type:ho103}}]}}"
+                                "nbt": "{BlockEntityTag:{Items:[{Slot:0b,tag:{item-type:ho103}}]}}"
                             }
                         }
                     ]

@@ -6,11 +6,11 @@ tag @s add bombing-executer
 
 #投下対象判定
 scoreboard players operation #plane-id reg1 = @s plane-id
-execute as @e[tag=plane-bomb,tag=d3a,distance=..10,limit=1] if score @s plane-id = #plane-id reg1 run tag @s add drop-init
+execute as @e[tag=plane-bomb,tag=plane,distance=..10,limit=1] if score @s plane-id = #plane-id reg1 run tag @s add drop-init
 tag @e[tag=drop-init,distance=..10] add dropping
 
 #d3aタグ削除
-tag @e[tag=drop-init,distance=..10] remove d3a
+tag @e[tag=drop-init,distance=..10] remove plane
 
 #スコア付与
 scoreboard players operation @e[tag=drop-init,distance=..10] speed = @s speed

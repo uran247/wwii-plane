@@ -6,11 +6,11 @@ tag @s add bombing-executer
 
 #投下対象判定
 scoreboard players operation #plane-id reg1 = @s plane-id
-execute as @e[tag=plane-bomb,tag=ki21,distance=..20,limit=1] if score @s plane-id = #plane-id reg1 run tag @s add drop-init
+execute as @e[tag=plane-bomb,tag=plane,distance=..20,limit=1] if score @s plane-id = #plane-id reg1 run tag @s add drop-init
 tag @e[tag=drop-init,distance=..20] add dropping
 
 #ki21タグ削除
-tag @e[tag=drop-init,distance=..20] remove ki21
+tag @e[tag=drop-init,distance=..20] remove plane
 
 #対象がいなかったら召喚
 scoreboard players operation #offset reg1 = @s ammunition1

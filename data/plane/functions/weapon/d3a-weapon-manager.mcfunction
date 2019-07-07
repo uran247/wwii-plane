@@ -11,11 +11,11 @@ execute if entity @s[scores={w3-reload=..0,ammunition3=1..}] at @s run function 
 execute if entity @s[scores={w3-reload=..0,ammunition3=1..}] if entity @e[tag=rear-gun-target,distance=..32] at @s run function plane:weapon/d3a/rear-gun
 
 #reload時間減算
-execute as @s run function plane:weapon/d3a/d3a-cooltime-weapon
+execute as @s run function plane:weapon/util/cooltime-weapon
 
 #残弾数が0になったら補充時間をセット
-execute unless entity @s[scores={ammunition1=1..,ammunition2=1..,ammunition3=1..}] unless entity @s[scores={ammunition1=..-1,ammunition2=..-1,ammunition3=..-1}] as @s run function plane:weapon/d3a/d3a-set-reloadtime
+execute unless entity @s[scores={ammunition1=1..,ammunition2=1..,ammunition3=1..}] unless entity @s[scores={ammunition1=..-1,ammunition2=..-1,ammunition3=..-1}] as @s run function plane:weapon/util/set-reloadtime
 
 #リロードタイムが経過したらリロード
-execute unless entity @s[scores={ammunition1=..-1,ammunition2=..-1,ammunition3=..-1}] unless entity @s[scores={ammo-reload1=1..,ammo-reload2=1..,ammo-reload3=1..}] as @s run function plane:weapon/d3a/da3-reset-ammunition
+execute unless entity @s[scores={ammunition1=..-1,ammunition2=..-1,ammunition3=..-1}] unless entity @s[scores={ammo-reload1=1..,ammo-reload2=1..,ammo-reload3=1..}] as @s run function plane:weapon/util/reset-ammunition
 

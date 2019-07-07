@@ -53,7 +53,7 @@ function plane:move/plane-move/rolling/change-plpr-model
 
 #音
 scoreboard players set @s[scores={sound=33..}] sound 0
-execute if entity @s[scores={sound=0,speed=1..}] at @p run playsound minecraft:plane.engine.recipro-rolling ambient @a ~ ~ ~ 1 1 1
+execute if entity @s[scores={sound=0,speed=1..}] at @s run playsound minecraft:plane.engine.recipro-rolling ambient @a ~ ~ ~ 1 1 1
 scoreboard players operation @s reg1 = #rand rand
 scoreboard players operation @s reg1 %= #3 Num
 scoreboard players operation @s sound += @s reg1
@@ -65,9 +65,7 @@ function plane:move/plane-move/rolling/engine-start-sound
 execute if entity @s[scores={speed=..0}] at @s run stopsound @a[distance=..10] * minecraft:plane.engine.recipro-rolling
 
 #登場者がいるか判定して、いないならスピードを下げる
-execute at @s as @a[tag=plane-rider] if score #plane-id reg1 = @s plane-id run tag @e[tag=flying-executer,limit=1,distance=..1] add exist-rider
-execute at @s[tag=!exist-rider] run scoreboard players remove @s[scores={speed=1..}] speed 10
+execute at @s[tag=!has-rider] run scoreboard players remove @s[scores={throttle=5..}] throttle 5
 
 #タグ解除
-tag @s remove exist-rider
 tag @s remove flying-executer

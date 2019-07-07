@@ -3,7 +3,7 @@
   "display": {
     "icon": {
       "item": "minecraft:bat_spawn_egg",
-      "nbt":"{CustomModelData:68}"
+      "nbt":"{CustomModelData:2}"
     },
     "title": {
       "translate": "一式戦闘機 隼"

@@ -10,4 +10,5 @@
 #execute store result score #pick reg1 run clear @a stone 0
 #execute if score #pick reg1 > #0 Num run say pick
 #scoreboard players set #pick reg1 0
-#execute as @e[tag=a5m-root] at @s run function debug:chk-offset
+#execute as @e[tag=a6m2-root] at @s run function debug:chk-offset
+#function debug:test-immute-pickup

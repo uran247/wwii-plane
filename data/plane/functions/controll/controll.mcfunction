@@ -17,10 +17,12 @@ tag @s add controller
 scoreboard players operation #plane-id reg1 = @s plane-id
 execute as @e[tag=plane-root] if score @s plane-id = #plane-id reg1 run tag @s add controll-target
 
+#飛行機に搭乗者がいることをタグ付け
+tag @e[tag=controll-target,limit=1] add has-rider
+
 #選択スロット判定(plane:controll/rolling plane:controll/flying plane:controll/weaponで使用)
 function util:get-player-slot
 scoreboard players operation @s plane-key-input = #selected-slot return
-#tellraw @a [{"text":"plane-key-input:"},{"score":{"name":"@s","objective":"plane-key-input"}},{"text":"#max:"},{"score":{"name":"#max","objective":"max-entity"}}]
 
 #自分と同じIDのパーツにタグ付け(今のところ使ってないのでコメントアウト)
 #execute at @e[tag=controll-target,distance=..20] as @e[distance=..20,scores={plane-id=1..}] if score @s plane-id = #plane-id reg1 run tag @s add controll-parts

@@ -3,7 +3,7 @@
   "display": {
     "icon": {
       "item": "minecraft:bat_spawn_egg",
-      "nbt":"{CustomModelData:86}"
+      "nbt":"{CustomModelData:1}"
     },
     "title": {
       "translate": "九六式艦上戦闘機"

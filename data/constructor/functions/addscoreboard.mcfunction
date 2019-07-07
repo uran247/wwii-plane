@@ -53,6 +53,7 @@ scoreboard objectives add max-speed dummy
 scoreboard objectives add accelerate dummy
 scoreboard objectives add deaccelerate dummy
 scoreboard objectives add resistance dummy
+scoreboard objectives add energy-loss dummy
 scoreboard objectives add takeoff-speed dummy
 scoreboard objectives add parking-udvm dummy
 scoreboard objectives add rolling-udvm dummy
