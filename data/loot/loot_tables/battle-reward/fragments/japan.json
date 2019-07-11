@@ -4,193 +4,49 @@
             "rolls": 1,
             "entries": [
                 {
-                    "type": "item",
-                    "name": "minecraft:orange_dye",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"星の欠片","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:fragment-of-star}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/piece-of-earth",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:yellow_dye",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"雷の欠片","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:fragment-of-thunder}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/piece-of-poison",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:lime_dye",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"風の欠片","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:fragment-of-wind}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/piece-of-spirit",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:light_gray_dye",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"霊魂の欠片","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:fragment-of-spirit}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/piece-of-thunder",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:purple_dye",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"毒の欠片","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:fragment-of-poison}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/piece-of-water",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:blue_dye",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"水の欠片","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:fragment-of-water}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/piece-of-wind",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:brown_dye",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"大地の欠片","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:fragment-of-earth}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/piece-of-star",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:prismarine_crystals",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"竜の鱗","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:dragon-scale}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/dragon-scale",
+                    "weight": 1
                 },
                 {
-                    "type": "item",
-                    "name": "minecraft:feather",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_name",
-                            "name": {"text":"霊鳥の羽","color":"gold"}
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                {"text":"航空機の開発に使う素材","color":"white"}
-                            ]
-                        },
-                        {
-                            "function": "minecraft:set_nbt",
-                            "tag": "{item-type:feather-of-sacred-bird}"
-                        }
-                    ]
+                    "type": "loot_table",
+                    "name": "loot:items/pieces/feather-of-sacred-bird",
+                    "weight": 1
                 }
             ]
         }
