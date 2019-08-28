@@ -3,17 +3,18 @@
 
 #10発目の弾なら曳光弾化
 scoreboard players operation #is-tracer reg1 = @s ammunition1
-scoreboard players operation #is-tracer reg1 %= #10 Num
+scoreboard players operation #is-tracer reg1 %= #5 Num
 
 #召喚
-execute if score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-lightblue,tracer,entity-nohit,offset-base],Duration:30}
-execute if score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-lightblue,tracer,entity-nohit,offset-base],Duration:30}
+execute if score #is-tracer reg1 matches 0 run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-lightblue,tracer,entity-nohit,offset-base],Duration:30}
+execute if score #is-tracer reg1 matches 0 run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Invisible:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-lightblue,tracer,entity-nohit,offset-base],Duration:30}
 execute unless score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base],Duration:30}
 execute unless score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base],Duration:30}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] speed 95
 scoreboard players set @e[tag=gun-init,distance=..5] damage 4
+scoreboard players set @e[tag=gun-init,distance=..5,type=armor_stand] max-age 30
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 210
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -720

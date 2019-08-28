@@ -39,13 +39,20 @@ execute if score #speed-decimal reg1 matches 9 at @s positioned ^ ^ ^0.9 run fun
 #ブロック衝突だった場合着弾地点にパーティクル
 execute if score #hit-flag reg1 matches 1 at @s run particle minecraft:explosion ^ ^ ^-1 0.1 0.1 0.1 0 1 force
 
-#曳光弾ならパーティクル
-execute as @s[tag=tracer,tag=tracer-red] at @s run particle minecraft:dust 1 0 0 2 ~ ~ ~ 0 0 0 20000 1 force
-execute as @s[tag=tracer,tag=tracer-lightblue] at @s run particle minecraft:dust 0 1 1 2 ~ ~ ~ 0 0 0 20000 1 force
-execute as @s[tag=tracer,tag=tracer-orange] at @s run particle minecraft:dust 1 0.547 0 2 ~ ~ ~ 0 0 0 20000 1 force
+#曳光弾ならモデル表示
+execute as @s[tag=tracer,tag=tracer-lightblue,scores={age=1}] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:1}}]}
+execute as @s[tag=tracer,tag=tracer-orange,scores={age=1}] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:2}}]}
+execute as @s[tag=tracer,tag=tracer-yellow,scores={age=2}] run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:snowball",Count:1b,tag:{CustomModelData:3}}]}
+execute as @s[tag=enemy-tracer,tag=tracer-red] at @s run particle minecraft:dust 1 0 0 2 ~ ~ ~ 0 0 0 20000 1 force
+#execute as @s[tag=tracer,tag=tracer-lightblue] at @s run particle minecraft:dust 0 1 1 2 ~ ~ ~ 0 0 0 20000 1 force
+#execute as @s[tag=tracer,tag=tracer-orange] at @s run particle minecraft:dust 1 0.547 0 2 ~ ~ ~ 0 0 0 20000 1 force
 
 #hitしてたら弾を削除
 execute if score #hit-flag reg1 >= #1 Num run kill @s
+
+#age減算、０になったら削除
+scoreboard players add @s[type=armor_stand] age 1
+execute if score @s[type=armor_stand] age > @s max-age run kill @s
 
 #タグ削除
 tag @e[tag=hit-gun] remove hit-gun

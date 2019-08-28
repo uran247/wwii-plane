@@ -17,7 +17,7 @@ scoreboard players operation #throttle reg1 *= #5 Num
 
 #高度取得
 scoreboard players operation #altitude reg1 = @s PosY
-scoreboard players operation #altitude reg1 /= #100000 Num
+scoreboard players operation #altitude reg1 /= #10000 Num
 
 execute if entity @s[tag=main-weapon1,scores={ammunition1=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\"wpn1:\",\"color\":\"red\"},{\"score\":{\"name\":\"#ammunition1\",\"objective\":\"reg1\"},\"color\":\"red\"}]"
 execute if entity @s[tag=main-weapon1,scores={ammunition1=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\"reloading:\",\"color\":\"white\"},{\"score\":{\"name\":\"#ammunition1\",\"objective\":\"reg1\"},\"color\":\"white\"}]"

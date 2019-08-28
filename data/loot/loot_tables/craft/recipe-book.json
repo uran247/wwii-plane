@@ -1,0 +1,30 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:written_book",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function":"set_name",
+                            "name":{"text":"Recipe Book"}
+                        },
+                        {
+                            "function":"set_lore",
+                            "lore":[
+                                {"translate":"クラフトレシピが記載された本","color":"blue"}
+                            ]
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag":"{title:\"Recipe Book\",author:\"\",pages:[\"{\\\"text\\\":\\\"  零式艦上戦闘機二一型\n\n\\\",\\\"color\\\":\\\"black\\\",\\\"extra\\\":[{\\\"text\\\":\\\"      \n\\\",\\\"color\\\":\\\"white\\\"},{\\\"text\\\":\\\"      \n\\\",\\\"color\\\":\\\"white\\\"},{\\\"text\\\":\\\"      \n\\\",\\\"color\\\":\\\"white\\\"}]}\"]}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

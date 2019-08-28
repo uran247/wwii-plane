@@ -3,17 +3,18 @@
 
 #10発目の弾なら曳光弾化
 scoreboard players operation #is-tracer reg1 = @s ammunition1
-scoreboard players operation #is-tracer reg1 %= #10 Num
+scoreboard players operation #is-tracer reg1 %= #5 Num
 
 #召喚
-execute if score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer,tracer-lightblue,entity-nohit,offset-base],Duration:30}
-execute if score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer,tracer-lightblue,entity-nohit,offset-base],Duration:30}
+execute if score #is-tracer reg1 matches 0 run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer,tracer-lightblue,entity-nohit,offset-base],Duration:30,Invisible:1,Pose:{Head:[0.01f,0f,0f]}}
+execute if score #is-tracer reg1 matches 0 run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer,tracer-lightblue,entity-nohit,offset-base],Duration:30,Invisible:1,Pose:{Head:[0.01f,0f,0f]}}
 execute unless score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-lightblue,entity-nohit,offset-base],Duration:30}
 execute unless score #is-tracer reg1 matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-lightblue,entity-nohit,offset-base],Duration:30}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] speed 95
 scoreboard players set @e[tag=gun-init,distance=..5] damage 3
+scoreboard players set @e[tag=gun-init,distance=..5,type=armor_stand] max-age 30
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 100
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -750
@@ -27,7 +28,7 @@ execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function pla
 
 #向きを機体方向に向ける
 #execute rotated as @s as @e[tag=gun-init,limit=2,distance=..20] positioned as @s run tp @s ~ ~ ~ ~ ~
-summon minecraft:area_effect_cloud ^ ^ ^200  {Duration:0,Tags:[gun-indicator,entity-nohit],CustomName:"{\"text\":\"gun-indicator\",\"color\":\"aqua\"}"}
+summon minecraft:area_effect_cloud ^ ^ ^200  {Duration:0,Tags:[gun-indicator,entity-nohit]}
 execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing entity @e[tag=gun-indicator,distance=..220,limit=1]
 
 #発射したならreload時間設定

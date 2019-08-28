@@ -120,3 +120,4 @@ scoreboard objectives add yaw-gap dummy
 scoreboard objectives add pitch-gap dummy
 scoreboard objectives add open-shop minecraft.custom:minecraft.talked_to_villager
 scoreboard objectives add time dummy
+scoreboard objectives add max-age dummy

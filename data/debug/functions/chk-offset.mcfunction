@@ -1,6 +1,6 @@
-execute as 0-0-4-0-0 run scoreboard players set @s offsetX -2050
-execute as 0-0-4-0-0 run scoreboard players set @s offsetY 350
-execute as 0-0-4-0-0 run scoreboard players set @s offsetZ -2200
+execute as 0-0-4-0-0 run scoreboard players set @s offsetX -50
+execute as 0-0-4-0-0 run scoreboard players set @s offsetY -2150
+execute as 0-0-4-0-0 run scoreboard players set @s offsetZ -950
 execute as 0-0-4-0-0 run tag @s add offset-base
 scoreboard players operation 0-0-4-0-0 input1 = @s AngZ
 tp 0-0-4-0-0 ^ ^ ^ ~90 ~

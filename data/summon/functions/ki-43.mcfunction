@@ -2,7 +2,7 @@
 
 #機体召喚
 summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[ki43-root,ki43,plane-init,plane-root,plane,entity-nohit,"7p7mm",has-weapon1,tier1,main-weapon1],CustomName:"{\"text\":\"ki43\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b}
-summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[ki43,plane-init,plane,entity-nohit,plane-seat,has-offset],CustomName:"{\"text\":\"seat\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,DeathLootTable:"minecraft:entities/bat",SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[ki43,plane-init,plane,plane-seat,entity-nohit]}],DisabledSlots:256,NoGravity:0b}
+summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[ki43,plane-init,plane,entity-nohit,plane-seat],CustomName:"{\"text\":\"seat\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,DeathLootTable:"minecraft:entities/bat",SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[ki43,plane-init,plane,plane-seat,entity-nohit]}],DisabledSlots:256,NoGravity:0b}
 summon armor_stand ~ ~ ~ {Tags:["ki43-body","ki43",plane-init,plane,has-model,model-changeable,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:67,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[-12f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["ki43-hitbox","ki43",plane-init,plane,plane-hitbox,has-offset,body,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
 summon armor_stand ~ ~ ~ {Tags:["ki43-hitbox","ki43",plane-init,plane,plane-hitbox,has-offset,engine,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"engine\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}
@@ -65,17 +65,14 @@ scoreboard players set @e[tag=plane-init,tag=ki43-root,tag=7p7mm] max-ammo-reloa
 scoreboard players set @e[tag=plane-init,tag=ki43-root,tag=12p7mm] max-ammo-reload1 210
 scoreboard players set @e[tag=plane-init,tag=ki43-root] plane-weapon 1
 
-execute store result score @e[tag=plane-init,tag=ki43-root,limit=1] PosX run data get entity @e[tag=plane-init,tag=ki43-root,limit=1] Pos[0] 100000
-execute store result score @e[tag=plane-init,tag=ki43-root,limit=1] PosY run data get entity @e[tag=plane-init,tag=ki43-root,limit=1] Pos[1] 100000
-execute store result score @e[tag=plane-init,tag=ki43-root,limit=1] PosZ run data get entity @e[tag=plane-init,tag=ki43-root,limit=1] Pos[2] 100000
+execute store result score @e[tag=plane-init,tag=ki43-root,limit=1] PosX run data get entity @e[tag=plane-init,tag=ki43-root,limit=1] Pos[0] 10000
+execute store result score @e[tag=plane-init,tag=ki43-root,limit=1] PosY run data get entity @e[tag=plane-init,tag=ki43-root,limit=1] Pos[1] 10000
+execute store result score @e[tag=plane-init,tag=ki43-root,limit=1] PosZ run data get entity @e[tag=plane-init,tag=ki43-root,limit=1] Pos[2] 10000
 
 #hitbocのスコア設定
 scoreboard players set @e[tag=body,tag=plane-init] offsetX 0
 scoreboard players set @e[tag=body,tag=plane-init] offsetY 0
 scoreboard players set @e[tag=body,tag=plane-init] offsetZ 0
-scoreboard players set @e[tag=plane-seat,tag=plane-init] offsetX 0
-scoreboard players set @e[tag=plane-seat,tag=plane-init] offsetY -300
-scoreboard players set @e[tag=plane-seat,tag=plane-init] offsetZ 3800
 scoreboard players set @e[tag=engine,tag=plane-init] offsetX 0
 scoreboard players set @e[tag=engine,tag=plane-init] offsetY -100
 scoreboard players set @e[tag=engine,tag=plane-init] offsetZ -1500

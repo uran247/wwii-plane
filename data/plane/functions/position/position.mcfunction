@@ -24,13 +24,15 @@ execute as @e[tag=has-offset,tag=position-target,distance=..15] at @s rotated ~-
 #航空機ごとの個別処理
 execute as @s[tag=a6m-root] run function plane:position/a6m-position
 execute as @s[tag=d3a-root] run function plane:position/d3a-position
-execute as @s[tag=spitfire-root] run function plane:position/spitfire-position
-execute as @s[tag=ju87-root] run function plane:position/ju87-position
-execute as @s[tag=f4u-root] run function plane:position/f4u-position
+#execute as @s[tag=spitfire-root] run function plane:position/spitfire-position
+#execute as @s[tag=ju87-root] run function plane:position/ju87-position
+#execute as @s[tag=f4u-root] run function plane:position/f4u-position
 execute as @s[tag=ki21-root] run function plane:position/ki-21-position
 execute as @s[tag=ki43-root] run function plane:position/ki-43-position
 execute as @s[tag=a5m-root] run function plane:position/a5m-position
 execute as @s[tag=a6m2-root] run function plane:position/a6m2-position
+execute as @s[tag=ki44-root] run function plane:position/ki-44-position
+execute as @s[tag=d4y2-root] run function plane:position/d4y2-position
 
 #角度スコアが前tickから変化したか判定しタグ付け
 execute if score @s AngX-old = @s AngX if score @s AngY-old = @s AngY if score @s AngZ-old = @s AngZ run tag @s add angle-not-changed
@@ -42,7 +44,7 @@ execute if entity @s[tag=!angle-not-changed] run function math:vector
 execute at @s[tag=!angle-not-changed] run function plane:position/position-common/modify-angle
 
 #seatの位置表示
-execute if entity @s[tag=!has-rider,tag=!no-move] at @e[tag=position-target,tag=plane-seat,type=minecraft:armor_stand] run particle minecraft:happy_villager ~ ~1.8 ~ 0.1 0.1 0.1 1 1 force @a[tag=!plane-rider]
+execute if entity @s[tag=!has-rider,tag=!no-move] at @e[tag=position-target,tag=plane-seat,tag=!no-particle,type=minecraft:armor_stand] run particle minecraft:happy_villager ~ ~1.8 ~ 0.1 0.1 0.1 1 1 force @a[tag=!plane-rider]
 
 #Ang-oldに現在のAng代入
 scoreboard players operation @s AngX-old = @s AngX

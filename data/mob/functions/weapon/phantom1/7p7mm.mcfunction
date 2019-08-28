@@ -7,7 +7,7 @@ summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm
 summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-red,mob-gun,entity-nohit],Duration:20,CustomName:"{\"text\":\"gun-l\",\"color\":\"aqua\"}"}
 
 #スコア付与
-scoreboard players set @e[tag=gun-init,distance=..5] speed 50
+scoreboard players set @e[tag=gun-init,distance=..5] speed 100
 scoreboard players set @e[tag=gun-init,distance=..5] damage 5
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 800
@@ -20,7 +20,7 @@ scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 0
 #10発目の弾なら曳光弾化
 scoreboard players operation #ammo-num reg1 = @s ammunition1
 scoreboard players operation #ammo-num reg1 %= #10 Num
-execute if score #ammo-num reg1 matches 0 run tag @e[tag=gun-init,distance=..10] add tracer
+execute if score #ammo-num reg1 matches 0 run tag @e[tag=gun-init,distance=..10] add enemy-tracer
 
 #発射位置に移動
 execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset

@@ -41,24 +41,24 @@ execute if score @s speed > @s max-speed run scoreboard players operation @s spe
 #x方向ベクトル×speedをPosに代入
 scoreboard players operation #displacementX reg1 = @s speedX
 scoreboard players operation #displacementX reg1 *= @s speed
-scoreboard players operation #displacementX reg1 /= #10 Num
+scoreboard players operation #displacementX reg1 /= #100 Num
 scoreboard players operation @s PosX += #displacementX reg1
-execute store result entity @s Pos[0] double 0.00001 run scoreboard players get @s PosX
+execute store result entity @s Pos[0] double 0.0001 run scoreboard players get @s PosX
 
 #y方向ベクトル×speedをMotionに代入(滑走中の場合は実行しない、失速の場合下降させる)
 scoreboard players operation #displacementY reg1 = @s speedY
 scoreboard players operation #displacementY reg1 *= @s speed
-scoreboard players operation #displacementY reg1 /= #10 Num
+scoreboard players operation #displacementY reg1 /= #100 Num
 scoreboard players operation @s[tag=!stall] PosY += #displacementY reg1
 scoreboard players operation @s[tag=stall] PosY -= #50000 Num
-execute store result entity @s Pos[1] double 0.00001 run scoreboard players get @s PosY
+execute store result entity @s Pos[1] double 0.0001 run scoreboard players get @s PosY
 
 #z方向ベクトル×speedをMotionに代入
 scoreboard players operation #displacementZ reg1 = @s speedZ
 scoreboard players operation #displacementZ reg1 *= @s speed
-scoreboard players operation #displacementZ reg1 /= #10 Num
+scoreboard players operation #displacementZ reg1 /= #100 Num
 scoreboard players operation @s PosZ += #displacementZ reg1
-execute store result entity @s Pos[2] double 0.00001 run scoreboard players get @s PosZ
+execute store result entity @s Pos[2] double 0.0001 run scoreboard players get @s PosZ
 
 #speedが離陸速度未満だったら失速タグをつける
 execute if score @s[tag=!stall] speed < @s stall-speed run tag @s add stall
@@ -97,6 +97,13 @@ execute at @s unless block ~ ~1 ~ air run particle minecraft:explosion ~ ~ ~ 2 2
 execute at @s unless block ~ ~1 ~ air run kill @s
 execute at @s unless block ~ ~1 ~ air run kill @e[tag=plane-move-parts,distance=..20]
 execute at @s unless block ~ ~1 ~ air run kill @a[distance=..10]
+
+#ステージの壁を乗り越えようとしたら爆発（配布マップ用）
+execute at @s if block ~ 255 ~ minecraft:glass run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 1 0
+execute at @s if block ~ 255 ~ minecraft:glass run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
+execute at @s if block ~ 255 ~ minecraft:glass run kill @s
+execute at @s if block ~ 255 ~ minecraft:glass run kill @e[tag=plane-move-parts,distance=..20]
+execute at @s if block ~ 255 ~ minecraft:glass run kill @a[distance=..10]
 
 #登場者無しで奈落に行ったらキル
 execute at @s[tag=!has-rider] if entity @s[y=-50,dy=-100] run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 1 0

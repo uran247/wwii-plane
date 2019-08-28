@@ -17,4 +17,3 @@ execute as @e[type=armor_stand,tag=plane-root,tag=!no-move] at @s run function p
 #飛行機位置修正
 execute as @e[type=armor_stand,tag=plane-root] at @s run function plane:position/position
 
-#execute as @e[tag=a6m-root] at @s run function math:vector-3input

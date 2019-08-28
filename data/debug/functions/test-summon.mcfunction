@@ -56,9 +56,9 @@ scoreboard players set @e[tag=a6m-init,tag=a6m-root] ammunition1 100
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] ammunition2 500
 scoreboard players set @e[tag=a6m-init,tag=a6m-root] plane-weapon 1
 
-execute store result score @e[tag=a6m-init,tag=a6m-root,limit=1] PosX run data get entity @e[tag=a6m-init,tag=a6m-root,limit=1] Pos[0] 100000
-execute store result score @e[tag=a6m-init,tag=a6m-root,limit=1] PosY run data get entity @e[tag=a6m-init,tag=a6m-root,limit=1] Pos[1] 100000
-execute store result score @e[tag=a6m-init,tag=a6m-root,limit=1] PosZ run data get entity @e[tag=a6m-init,tag=a6m-root,limit=1] Pos[2] 100000
+execute store result score @e[tag=a6m-init,tag=a6m-root,limit=1] PosX run data get entity @e[tag=a6m-init,tag=a6m-root,limit=1] Pos[0] 10000
+execute store result score @e[tag=a6m-init,tag=a6m-root,limit=1] PosY run data get entity @e[tag=a6m-init,tag=a6m-root,limit=1] Pos[1] 10000
+execute store result score @e[tag=a6m-init,tag=a6m-root,limit=1] PosZ run data get entity @e[tag=a6m-init,tag=a6m-root,limit=1] Pos[2] 10000
 
 #hitbocのスコア設定
 scoreboard players set @e[tag=body,tag=a6m-init] offsetX 0

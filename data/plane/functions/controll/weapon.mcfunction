@@ -20,6 +20,8 @@ execute as @e[tag=controll-target,distance=..1] if entity @s[tag=ki21] at @s run
 execute as @e[tag=controll-target,distance=..1] if entity @s[tag=ki43] at @s run function plane:weapon/ki43-weapon-manager
 execute as @e[tag=controll-target,distance=..1] if entity @s[tag=a5m] at @s run function plane:weapon/a5m-weapon-manager
 execute as @e[tag=controll-target,distance=..1] if entity @s[tag=a6m2] at @s run function plane:weapon/a6m2-weapon-manager
+execute as @e[tag=controll-target,distance=..1] if entity @s[tag=ki44] at @s run function plane:weapon/ki44-weapon-manager
+execute as @e[tag=controll-target,distance=..1] if entity @s[tag=d4y2] at @s run function plane:weapon/d4y2-weapon-manager
 execute as @e[tag=controll-target,distance=..1] if entity @s[tag=spitfire] at @s run function plane:weapon/spitfire-weapon
 execute as @e[tag=controll-target,distance=..1] if entity @s[tag=ju87] at @s run function plane:weapon/ju87-weapon
 execute as @e[tag=controll-target,distance=..1] if entity @s[tag=f4u] at @s run function plane:weapon/f4u-weapon

@@ -36,9 +36,9 @@ scoreboard players set @s w2-reload 0
 scoreboard players set @s ammunition1 100
 scoreboard players set @s ammunition2 500
 
-execute store result score @s PosX run data get entity @s Pos[0] 100000
-execute store result score @s PosY run data get entity @s Pos[1] 100000
-execute store result score @s PosZ run data get entity @s Pos[2] 100000
+execute store result score @s PosX run data get entity @s Pos[0] 10000
+execute store result score @s PosY run data get entity @s Pos[1] 10000
+execute store result score @s PosZ run data get entity @s Pos[2] 10000
 
 #hitbocのスコア設定
 scoreboard players set @e[tag=body,tag=a6m-init] offsetX 0

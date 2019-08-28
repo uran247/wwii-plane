@@ -34,9 +34,9 @@ scoreboard players set @e[tag=spitfire-init,tag=spitfire-root] gear-pull-out 790
 scoreboard players set @e[tag=spitfire-init,tag=spitfire-root] w1-reload 0
 scoreboard players set @e[tag=spitfire-init,tag=spitfire-root] w2-reload 0
 
-execute store result score @e[tag=spitfire-init,tag=spitfire-root,limit=1] PosX run data get entity @e[tag=spitfire-init,tag=spitfire-root,limit=1] Pos[0] 100000
-execute store result score @e[tag=spitfire-init,tag=spitfire-root,limit=1] PosY run data get entity @e[tag=spitfire-init,tag=spitfire-root,limit=1] Pos[1] 100000
-execute store result score @e[tag=spitfire-init,tag=spitfire-root,limit=1] PosZ run data get entity @e[tag=spitfire-init,tag=spitfire-root,limit=1] Pos[2] 100000
+execute store result score @e[tag=spitfire-init,tag=spitfire-root,limit=1] PosX run data get entity @e[tag=spitfire-init,tag=spitfire-root,limit=1] Pos[0] 10000
+execute store result score @e[tag=spitfire-init,tag=spitfire-root,limit=1] PosY run data get entity @e[tag=spitfire-init,tag=spitfire-root,limit=1] Pos[1] 10000
+execute store result score @e[tag=spitfire-init,tag=spitfire-root,limit=1] PosZ run data get entity @e[tag=spitfire-init,tag=spitfire-root,limit=1] Pos[2] 10000
 
 #処理終了
 tag @e[tag=spitfire-init] remove spitfire-init

@@ -10,5 +10,10 @@
 #execute store result score #pick reg1 run clear @a stone 0
 #execute if score #pick reg1 > #0 Num run say pick
 #scoreboard players set #pick reg1 0
-#execute as @e[tag=a6m2-root] at @s run function debug:chk-offset
 #function debug:test-immute-pickup
+#execute as @e[tag=ki44-root] at @s run particle m ^0.2 ^2 ^3.1 0 0 0 0 10 force
+#execute as @e[tag=ki44-root] at @s run particle minecraft:flame ^-0.3 ^2 ^3.1 0 0 0 0 10 force
+#execute as @e[tag=ki44-root] at @s run particle minecraft:flame ^-1.85 ^1.1 ^2.25 0 0 0 0 10 force
+#execute as @e[tag=ki44-root] at @s run particle minecraft:flame ^1.75 ^1.1 ^2.25 0 0 0 0 10 force
+
+#execute as @e[tag=d4y2-root] at @s run function debug:chk-offset

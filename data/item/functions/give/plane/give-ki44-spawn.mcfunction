@@ -1,0 +1,1 @@
+loot spawn ~ ~ ~ loot loot:planes/japan/ki-44

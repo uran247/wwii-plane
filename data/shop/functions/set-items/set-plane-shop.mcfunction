@@ -24,4 +24,4 @@ execute if entity @p[tag=shop-target,tag=japan,advancements={advancements:japan/
 execute if entity @p[tag=shop-target,tag=japan,advancements={advancements:japan/ki-21=true}] run data modify entity @s Offers.Recipes[0].sell.tag set from block ~ ~-2 ~ Items[0].tag
 
 #タグ解除
-tag @p[tag=shop-target] add shop-target
+tag @p[tag=shop-target] remove shop-target

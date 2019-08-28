@@ -68,9 +68,9 @@ scoreboard players set @e[tag=plane-init,tag=d3a-root] max-ammo-reload2 500
 scoreboard players set @e[tag=plane-init,tag=d3a-root] max-ammo-reload3 140
 scoreboard players set @e[tag=plane-init,tag=d3a-root] plane-weapon 1
 
-execute store result score @e[tag=plane-init,tag=d3a-root,limit=1] PosX run data get entity @e[tag=plane-init,tag=d3a-root,limit=1] Pos[0] 100000
-execute store result score @e[tag=plane-init,tag=d3a-root,limit=1] PosY run data get entity @e[tag=plane-init,tag=d3a-root,limit=1] Pos[1] 100000
-execute store result score @e[tag=plane-init,tag=d3a-root,limit=1] PosZ run data get entity @e[tag=plane-init,tag=d3a-root,limit=1] Pos[2] 100000
+execute store result score @e[tag=plane-init,tag=d3a-root,limit=1] PosX run data get entity @e[tag=plane-init,tag=d3a-root,limit=1] Pos[0] 10000
+execute store result score @e[tag=plane-init,tag=d3a-root,limit=1] PosY run data get entity @e[tag=plane-init,tag=d3a-root,limit=1] Pos[1] 10000
+execute store result score @e[tag=plane-init,tag=d3a-root,limit=1] PosZ run data get entity @e[tag=plane-init,tag=d3a-root,limit=1] Pos[2] 10000
 
 #hitboxのスコア設定
 scoreboard players set @e[tag=body,tag=plane-init] offsetX 0
