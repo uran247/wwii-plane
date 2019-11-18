@@ -1,9 +1,9 @@
 {
-  "parent": "advancements:japan/ki-49",
+  "parent": "advancements:japan/ki-21",
   "display": {
     "icon": {
-      "item": "minecraft:diamond_sword",
-      "nbt":"{HideFlags:4,Damage:0}"
+      "item": "minecraft:bat_spawn_egg",
+      "nbt":"{CustomModelData:10}"
     },
     "title": {
       "translate": "一式陸上攻撃機"
@@ -17,14 +17,21 @@
     "hidden": true
   },
   "criteria": {
-    "get_a5m": {
-      "trigger": "minecraft:impossible",
-      "conditions": {}
+    "get_g4m1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+              "item": "minecraft:bat_spawn_egg",
+              "nbt": "{CustomModelData:10}"
+          }
+      ]
+      }
     }    
   },
   "requirements": [
     [
-      "get_a5m"
+      "get_g4m1"
     ]
   ]
 }

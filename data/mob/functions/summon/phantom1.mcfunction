@@ -1,5 +1,5 @@
 #召喚
-summon phantom ~ ~ ~ {Fire:-40,Glowing:0,CustomName:"{\"text\":\"ファントムI\"}",Tags:[phantom1,no-burn,phantom1-init,enemy-plane,enemy],Size:30,PersistenceRequired:1b,Passengers:[{id:"minecraft:skeleton",PersistenceRequired:1b,Glowing:0,Tags:[phantom1-rider,phantom1-init,enemy],ArmorItems:[{},{},{},{id:"minecraft:diamond_helmet",Count:1b}]}]}
+summon phantom ~ ~ ~ {Health:120f,Attributes:[{Name:generic.maxHealth,Base:120}],Glowing:0,CustomName:"{\"text\":\"ファントムI\"}",Tags:[phantom1,no-burn,phantom1-init,enemy-plane,enemy,has-size,size30],Size:30,PersistenceRequired:1b,Passengers:[{id:"minecraft:skeleton",PersistenceRequired:1b,Glowing:0,Tags:[phantom1-rider,phantom1-init,enemy],ArmorItems:[{},{},{},{id:"minecraft:diamond_helmet",Count:1b}]}]}
 
 #パラメータ代入
 scoreboard players set @e[tag=phantom1-init] AngX 0

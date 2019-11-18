@@ -34,17 +34,18 @@ scoreboard players operation @s AngX += #delta-angle return
 
 #yawが変化してたらrollも変化(-9000..9000)
 scoreboard players operation #roll-speed reg1 = @s roll-speed
-execute if score #yaw-gap reg1 >= #-17800 Num if score #yaw-gap reg1 <= #-200 Num as @s[scores={AngZ=-8999..},tag=!stall,tag=!destroyed] run scoreboard players operation @s AngZ -= #roll-speed reg1
-execute if score #yaw-gap reg1 >= #300 Num if score #yaw-gap reg1 <= #17800 Num as @s[scores={AngZ=..8999},tag=!stall,tag=!destroyed] run scoreboard players operation @s AngZ += #roll-speed reg1
-execute if score #yaw-gap reg1 >= #-17800 Num if score #yaw-gap reg1 <= #-200 Num as @s[scores={AngZ=..-9000},tag=!stall,tag=!destroyed] run scoreboard players set @s AngZ -9000
-execute if score #yaw-gap reg1 >= #300 Num if score #yaw-gap reg1 <= #17800 Num as @s[scores={AngZ=9000..},tag=!stall,tag=!destroyed] run scoreboard players set @s AngZ 9000
+execute if score #yaw-gap reg1 matches -17800..-200 as @s[scores={AngZ=-8999..},tag=!stall,tag=!destroyed] run scoreboard players operation @s AngZ -= #roll-speed reg1
+execute if score #yaw-gap reg1 matches 300..17800 as @s[scores={AngZ=..8999},tag=!stall,tag=!destroyed] run scoreboard players operation @s AngZ += #roll-speed reg1
+execute if score #yaw-gap reg1 matches -17800..-200 as @s[scores={AngZ=..-9000},tag=!stall,tag=!destroyed] run scoreboard players set @s AngZ -9000
+execute if score #yaw-gap reg1 matches 300..17800 as @s[scores={AngZ=9000..},tag=!stall,tag=!destroyed] run scoreboard players set @s AngZ 9000
 
 #rollをもとに戻す
-execute if score #yaw-gap reg1 >= #-200 Num if score #yaw-gap reg1 <= #300 Num as @s[scores={AngZ=1..18000}] at @s run scoreboard players operation @s AngZ -= #roll-speed reg1
-execute if score #yaw-gap reg1 >= #-200 Num if score #yaw-gap reg1 <= #300 Num as @s[scores={AngZ=-18000..-1}] at @s run scoreboard players operation @s AngZ += #roll-speed reg1
-execute if score #yaw-gap reg1 >= #-200 Num if score #yaw-gap reg1 <= #300 Num as @s[scores={AngZ=1..}] if score @s AngZ < #roll-speed reg1 at @s run scoreboard players set @s AngZ 0
+execute if score #yaw-gap reg1 matches -200..300 as @s[scores={AngZ=1..18000}] at @s run scoreboard players operation @s AngZ -= #roll-speed reg1
+execute if score #yaw-gap reg1 matches -200..300 as @s[scores={AngZ=-18000..-1}] at @s run scoreboard players operation @s AngZ += #roll-speed reg1
+
+execute if score #yaw-gap reg1 matches -200..300 as @s[scores={AngZ=1..}] if score @s AngZ < #roll-speed reg1 at @s run scoreboard players set @s AngZ 0
 scoreboard players operation #roll-speed reg1 *= #-1 Num
-execute if score #yaw-gap reg1 >= #-200 Num if score #yaw-gap reg1 <= #300 Num as @s[scores={AngZ=..-1}] if score @s AngZ > @s roll-speed at @s run scoreboard players set @s AngZ 0
+execute if score #yaw-gap reg1 matches -200..300 as @s[scores={AngZ=..-1}] if score @s AngZ > #roll-speed reg1 at @s run scoreboard players set @s AngZ 0
 
 #AngYを-18000 - 18000に補正
 scoreboard players remove @s[scores={AngY=18100..}] AngY 36000

@@ -1,20 +1,21 @@
-execute if score #speed reg1 = #1 Num run tp @s ^ ^ ^1
-execute if score #speed reg1 = #2 Num run tp @s ^ ^ ^2
-execute if score #speed reg1 = #3 Num run tp @s ^ ^ ^3
-execute if score #speed reg1 = #4 Num run tp @s ^ ^ ^4
-execute if score #speed reg1 = #5 Num run tp @s ^ ^ ^5
-execute if score #speed reg1 = #6 Num run tp @s ^ ^ ^6
-execute if score #speed reg1 = #7 Num run tp @s ^ ^ ^7
-execute if score #speed reg1 = #8 Num run tp @s ^ ^ ^8
-execute if score #speed reg1 = #9 Num run tp @s ^ ^ ^9
-execute if score #speed reg1 = #10 Num run tp @s ^ ^ ^10
-execute if score #speed reg1 = #11 Num run tp @s ^ ^ ^11
-execute if score #speed reg1 = #12 Num run tp @s ^ ^ ^12
-execute if score #speed reg1 = #13 Num run tp @s ^ ^ ^13
-execute if score #speed reg1 = #14 Num run tp @s ^ ^ ^14
-execute if score #speed reg1 = #15 Num run tp @s ^ ^ ^15
-execute if score #speed reg1 = #16 Num run tp @s ^ ^ ^16
-execute if score #speed reg1 = #17 Num run tp @s ^ ^ ^17
-execute if score #speed reg1 = #18 Num run tp @s ^ ^ ^18
-execute if score #speed reg1 = #19 Num run tp @s ^ ^ ^19
-execute if score #speed reg1 = #20 Num run tp @s ^ ^ ^20
+execute if score #speed reg1 matches 0 run tp @s ^ ^ ^
+execute if score #speed reg1 matches 1 run tp @s ^ ^ ^1
+execute if score #speed reg1 matches 2 run tp @s ^ ^ ^2
+execute if score #speed reg1 matches 3 run tp @s ^ ^ ^3
+execute if score #speed reg1 matches 4 run tp @s ^ ^ ^4
+execute if score #speed reg1 matches 5 run tp @s ^ ^ ^5
+execute if score #speed reg1 matches 6 run tp @s ^ ^ ^6
+execute if score #speed reg1 matches 7 run tp @s ^ ^ ^7
+execute if score #speed reg1 matches 8 run tp @s ^ ^ ^8
+execute if score #speed reg1 matches 9 run tp @s ^ ^ ^9
+execute if score #speed reg1 matches 10 run tp @s ^ ^ ^10
+execute if score #speed reg1 matches 11 run tp @s ^ ^ ^11
+execute if score #speed reg1 matches 12 run tp @s ^ ^ ^12
+execute if score #speed reg1 matches 13 run tp @s ^ ^ ^13
+execute if score #speed reg1 matches 14 run tp @s ^ ^ ^14
+execute if score #speed reg1 matches 15 run tp @s ^ ^ ^15
+execute if score #speed reg1 matches 16 run tp @s ^ ^ ^16
+execute if score #speed reg1 matches 17 run tp @s ^ ^ ^17
+execute if score #speed reg1 matches 18 run tp @s ^ ^ ^18
+execute if score #speed reg1 matches 19 run tp @s ^ ^ ^19
+execute if score #speed reg1 matches 20 run tp @s ^ ^ ^20

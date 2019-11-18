@@ -42,6 +42,15 @@ playsound minecraft:weapon.heavy-muchingun.fire master @a ~ ~ ~ 1 1 1
 #残弾数減算
 scoreboard players remove @s ammunition1 1
 
+#x,y,z方向の速度スコア化
+execute as @e[tag=gun-init,distance=..20] run function math:vector
+execute as @e[tag=gun-init,distance=..20] run scoreboard players operation @s speedX *= @s speed
+execute as @e[tag=gun-init,distance=..20] run scoreboard players operation @s speedY *= @s speed
+execute as @e[tag=gun-init,distance=..20] run scoreboard players operation @s speedZ *= @s speed
+scoreboard players operation @e[tag=gun-init,distance=..20] speedX /= #10 Num
+scoreboard players operation @e[tag=gun-init,distance=..20] speedY /= #10 Num
+scoreboard players operation @e[tag=gun-init,distance=..20] speedZ /= #10 Num
+
 #終了処理
 tag @e[tag=gun-init,distance=..20] remove gun-init
 

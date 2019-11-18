@@ -16,5 +16,6 @@ execute as @e[tag=aa88,limit=1,sort=nearest] run tp @s -2344 40 -1694
 execute as @e[tag=aa88] run tag @s add enemy-target
 
 #game-idを付与
-execute as @e[tag=aa88] store result score @s game-id run scoreboard players get #global game-id
+execute as @e[tag=aa88,tag=!has-gameid] store result score @s game-id run scoreboard players get #global game-id
+execute as @e[tag=aa88,tag=!has-gameid] run tag @s add has-gameid
 

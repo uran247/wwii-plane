@@ -65,19 +65,16 @@ function math:vector
 scoreboard players operation @s speedX *= @s speed
 scoreboard players operation @s speedY *= @s speed
 scoreboard players operation @s speedZ *= @s speed
-scoreboard players operation @s speedX /= #10 Num
-scoreboard players operation @s speedY /= #10 Num
-scoreboard players operation @s speedZ /= #10 Num
 
 #debug用motion停止
 #scoreboard players set @s speedX 0
 #scoreboard players set @s speedY 0
 #scoreboard players set @s speedZ 0
 
-#Motionに代入
-execute store result entity @s Motion[0] double 0.00001 run scoreboard players get @s speedX
-execute store result entity @s Motion[1] double 0.00001 run scoreboard players get @s speedY
-execute store result entity @s Motion[2] double 0.00001 run scoreboard players get @s speedZ
+#Motionに代入(speed/10)
+execute store result entity @s Motion[0] double 0.00001 run scoreboard players operation @s speedX /= #10 Num
+execute store result entity @s Motion[1] double 0.00001 run scoreboard players operation @s speedY /= #10 Num
+execute store result entity @s Motion[2] double 0.00001 run scoreboard players operation @s speedZ /= #10 Num
 
 #射撃可能か判定
 execute as @p[tag=ai-target] positioned ^ ^-251 ^-431 if entity @s[distance=..500] positioned ^ ^251 ^431 run tag @e[tag=ai-executer,distance=..1] add unattackable

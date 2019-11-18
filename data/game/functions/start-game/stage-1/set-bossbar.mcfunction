@@ -4,7 +4,7 @@ scoreboard players set #global shootdown 0
 
 bossbar add game-progress "制圧度"
 bossbar set minecraft:game-progress players @a
-bossbar set minecraft:game-progress max 100
+bossbar set minecraft:game-progress max 35
 
 #ステージに応じてクリア撃墜数をセット
-scoreboard players set #global clear-score 100
+scoreboard players set #global clear-score 35

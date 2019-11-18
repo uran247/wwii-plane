@@ -1,0 +1,1 @@
+execute as @e[tag=plane-hitbox] run data merge entity @s {Invisible:0}

@@ -42,23 +42,20 @@ execute if score @s speed > @s max-speed run scoreboard players operation @s spe
 scoreboard players operation #displacementX reg1 = @s speedX
 scoreboard players operation #displacementX reg1 *= @s speed
 scoreboard players operation #displacementX reg1 /= #100 Num
-scoreboard players operation @s PosX += #displacementX reg1
-execute store result entity @s Pos[0] double 0.0001 run scoreboard players get @s PosX
+execute store result entity @s Pos[0] double 0.0001 run scoreboard players operation @s PosX += #displacementX reg1
 
 #y方向ベクトル×speedをMotionに代入(滑走中の場合は実行しない、失速の場合下降させる)
 scoreboard players operation #displacementY reg1 = @s speedY
 scoreboard players operation #displacementY reg1 *= @s speed
 scoreboard players operation #displacementY reg1 /= #100 Num
-scoreboard players operation @s[tag=!stall] PosY += #displacementY reg1
-scoreboard players operation @s[tag=stall] PosY -= #50000 Num
-execute store result entity @s Pos[1] double 0.0001 run scoreboard players get @s PosY
+execute store result entity @s[tag=!stall] Pos[1] double 0.0001 run scoreboard players operation @s PosY += #displacementY reg1
+execute store result entity @s[tag=stall] Pos[1] double 0.0001 run scoreboard players remove @s PosY 5000
 
 #z方向ベクトル×speedをMotionに代入
 scoreboard players operation #displacementZ reg1 = @s speedZ
 scoreboard players operation #displacementZ reg1 *= @s speed
 scoreboard players operation #displacementZ reg1 /= #100 Num
-scoreboard players operation @s PosZ += #displacementZ reg1
-execute store result entity @s Pos[2] double 0.0001 run scoreboard players get @s PosZ
+execute store result entity @s Pos[2] double 0.0001 run scoreboard players operation @s PosZ += #displacementZ reg1
 
 #speedが離陸速度未満だったら失速タグをつける
 execute if score @s[tag=!stall] speed < @s stall-speed run tag @s add stall
@@ -66,7 +63,6 @@ execute if score @s[tag=stall] speed >= @s stall-speed run tag @s remove stall
 
 #失速してたらピッチを下げる(ピッチ速度の5分の1の速度で下がる)
 execute at @s[tag=stall] run scoreboard players operation @s reg1 = @s pitch-speed
-execute at @s[tag=stall] run scoreboard players operation @s reg1 /= #5 Num
 execute at @s[tag=stall] run scoreboard players operation @s AngX += @s reg1
 
 #以下条件のどれかを満たしたら墜落タグ

@@ -1,1 +1,0 @@
-scoreboard players set #global stage-id 0

@@ -6,7 +6,7 @@
 #倒したのが敵航空機カウント
 execute store result score #kill-num reg1 if entity @e[tag=!entity-nohit,distance=..16,scores={reg1=0},tag=!enemy-target,type=!minecraft:player]
 
-#スポナー破壊数カウント
+#ターゲット破壊数カウント（配布マップ用）
 execute store result score #destroy-num reg1 if entity @e[tag=!entity-nohit,scores={reg1=0},tag=enemy-target,distance=..16]
 
 #スコア増加

@@ -15,7 +15,7 @@ scoreboard players remove @s[scores={plane-weapon=2,w2-reload=..0}] ammunition2 
 
 execute if score @s ammunition1 matches 0 run scoreboard players set @s ammunition1 400
 execute if score @s ammunition2 matches 0 run tag @s remove armed
-execute if score @s ammunition2 matches 0 run function summon:f4u-rocket
+execute if score @s ammunition2 matches 0 run function plane:summon/f4u-rocket
 execute if score @s ammunition2 matches 0 run scoreboard players set @s ammunition2 8
 
 

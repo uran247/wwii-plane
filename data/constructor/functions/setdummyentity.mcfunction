@@ -1,24 +1,24 @@
-#1-3:vector 4:measurement 5:craft
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"1"],UUIDLeast:0,UUIDMost:1,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"2"],UUIDLeast:0,UUIDMost:2,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"3"],UUIDLeast:0,UUIDMost:3,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"4"],UUIDLeast:0,UUIDMost:4,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"5"],UUIDLeast:0,UUIDMost:5,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"6"],UUIDLeast:0,UUIDMost:6,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"7"],UUIDLeast:0,UUIDMost:7,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"8"],UUIDLeast:0,UUIDMost:8,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"9"],UUIDLeast:0,UUIDMost:9,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"10"],UUIDLeast:0,UUIDMost:10,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"11"],UUIDLeast:0,UUIDMost:11,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"12"],UUIDLeast:0,UUIDMost:12,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"13"],UUIDLeast:0,UUIDMost:13,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"14"],UUIDLeast:0,UUIDMost:14,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"15"],UUIDLeast:0,UUIDMost:15,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"16"],UUIDLeast:0,UUIDMost:16,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"17"],UUIDLeast:0,UUIDMost:17,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"18"],UUIDLeast:0,UUIDMost:18,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"19"],UUIDLeast:0,UUIDMost:19,Invulnerable:1}
-summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[block-detector,"20"],UUIDLeast:0,UUIDMost:20,Invulnerable:1}
+#1-3:vector 4:measurement 5:craft 6:damage 7,8,9:check block a,b:measurement
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,block-detector,"1"],UUIDLeast:0,UUIDMost:1,Invulnerable:1} 
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"2"],UUIDLeast:0,UUIDMost:2,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,block,axis,block-detector,"3"],UUIDLeast:0,UUIDMost:3,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,block,axis,block-detector,"4"],UUIDLeast:0,UUIDMost:4,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"5"],UUIDLeast:0,UUIDMost:5,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"6"],UUIDLeast:0,UUIDMost:6,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"7"],UUIDLeast:0,UUIDMost:7,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"8"],UUIDLeast:0,UUIDMost:8,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"9"],UUIDLeast:0,UUIDMost:9,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"10"],UUIDLeast:0,UUIDMost:10,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"11"],UUIDLeast:0,UUIDMost:11,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"12"],UUIDLeast:0,UUIDMost:12,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"13"],UUIDLeast:0,UUIDMost:13,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"14"],UUIDLeast:0,UUIDMost:14,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"15"],UUIDLeast:0,UUIDMost:15,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"16"],UUIDLeast:0,UUIDMost:16,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"17"],UUIDLeast:0,UUIDMost:17,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"18"],UUIDLeast:0,UUIDMost:18,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"19"],UUIDLeast:0,UUIDMost:19,Invulnerable:1}
+summon minecraft:armor_stand 0 1 0 {NoGravity:1,Marker:1,Invisible:1,Tags:[entity-nohit,blockblock-detector,"20"],UUIDLeast:0,UUIDMost:20,Invulnerable:1}
 scoreboard players set @e[tag=block-detector,tag=1,x=0,y=1,z=0,distance=..1] Num 1
 scoreboard players set @e[tag=block-detector,tag=2,x=0,y=1,z=0,distance=..1] Num 2
 scoreboard players set @e[tag=block-detector,tag=3,x=0,y=1,z=0,distance=..1] Num 3
@@ -40,6 +40,17 @@ scoreboard players set @e[tag=block-detector,tag=18,x=0,y=1,z=0,distance=..1] Nu
 scoreboard players set @e[tag=block-detector,tag=19,x=0,y=1,z=0,distance=..1] Num 19
 scoreboard players set @e[tag=block-detector,tag=20,x=0,y=1,z=0,distance=..1] Num 20
 
+summon minecraft:armor_stand -1788 255 -1884 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage1],Invulnerable:1,UUIDLeast:0,UUIDMost:21}
+summon minecraft:armor_stand -1913 255 -1766 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage2],Invulnerable:1,UUIDLeast:0,UUIDMost:22}
+summon minecraft:armor_stand 1626 255 -2793 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:24}
+summon minecraft:armor_stand 2022 255 -3005 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:25}
+summon minecraft:armor_stand 2419 255 -3217 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:26}
+summon minecraft:armor_stand 2815 255 -3430 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:27}
+summon minecraft:armor_stand 3211 255 -3643 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:28}
+summon minecraft:item_frame 0 142 49 {Tags:[free-nugget],UUIDLeast:0,UUIDMost:29,Facing:5b}
+summon minecraft:armor_stand 4737 200 -5700 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage5],Invulnerable:1,UUIDLeast:0,UUIDMost:30}
+summon minecraft:item_frame 7 142 49 {Tags:[free-steak],UUIDLeast:0,UUIDMost:31,Facing:4b}
+
 setworldspawn 0 0 0
 kill @e[tag=Trigonometric]
 kill @e[tag=Trigonometric2]
@@ -47,3 +58,4 @@ summon minecraft:armor_stand -0.5 0 -0.5 {Markar:1,Tags:[Trigonometric],NoGravit
 summon minecraft:armor_stand 0 0 0 {Markar:1,Tags:[Trigonometric2],NoGravity:1,Invulnerable:1}
 data merge entity @e[tag=Trigonometric,limit=1] {Pos:[0d,0d,0d]}
 replaceitem entity 0-0-5-0-0 weapon.mainhand minecraft:shulker_box
+

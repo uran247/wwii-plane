@@ -102,7 +102,7 @@ execute at @s[tag=hit-executer] run particle minecraft:explosion ^ ^ ^-1 2 2 2 0
 #ダメージ処理
 execute at @s as @e[tag=hit-rocket,distance=..2] store result score @s reg1 run data get entity @s Health
 execute at @s run scoreboard players operation @e[tag=hit-rocket,distance=..2] reg1 -= @s damage
-execute at @s as @e[tag=hit-rocket,distance=..2] if score @s reg1 < #0 Num run scoreboard players set @s 0
+execute at @s as @e[tag=hit-rocket,distance=..2,scores={reg1=..-1}] run scoreboard players set @s 0
 #execute as @e[tag=hit-rocket] run say hit
 execute at @s[tag=hit-executer] if entity @e[tag=hit-rocket,distance=..2] as @e[tag=plane-root] if score @s plane-id = @e[tag=rocket-move-executer,limit=1] plane-id run scoreboard players add @p shootdown 1
 execute at @s as @e[tag=hit-rocket,distance=..2] store result entity @s Health float 1 run scoreboard players get @s reg1

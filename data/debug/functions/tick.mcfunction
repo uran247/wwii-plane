@@ -16,4 +16,13 @@
 #execute as @e[tag=ki44-root] at @s run particle minecraft:flame ^-1.85 ^1.1 ^2.25 0 0 0 0 10 force
 #execute as @e[tag=ki44-root] at @s run particle minecraft:flame ^1.75 ^1.1 ^2.25 0 0 0 0 10 force
 
-#execute as @e[tag=d4y2-root] at @s run function debug:chk-offset
+execute as @e[tag=j100b-root] at @s run function debug:particle-satsuei
+
+#execute positioned -1640 255 -1928 run particle minecraft:happy_villager ~ ~ ~ 1 1 1 0 100 force
+#function debug:test-circle
+
+#execute as @e[tag=stage1,tag=mark,x=-1640,y=255,z=-1928] at @s run function debug:test-circle
+#execute as @e[tag=stage1,tag=mark,x=-1640,y=255,z=-1928] at @s run function debug:test-circle2
+
+#execute as @a at @s run function debug:test-hit
+

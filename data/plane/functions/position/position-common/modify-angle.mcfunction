@@ -4,12 +4,12 @@
 #返り
 
 #角度スコアが変化していた場合NBT補正(なぜかAngXを変更できなくなるバグ防止)
-execute if entity @s as @e[tag=position-target,distance=..10] run data merge entity @s {Pose:{RightArm:[0.0f,-90.0f,-102.0f]}}
+execute as @e[tag=position-target] run data merge entity @s {Pose:{RightArm:[0.0f,-90.0f,-102.0f]}}
 
 #角度スコアが変化していた場合自分と同じIDのパーツのモデル角度をスコア分にする
 scoreboard players operation #ang-x reg1 = @s AngX
 scoreboard players remove #ang-x reg1 9000
-execute if entity @s as @e[tag=has-model,tag=position-target,distance=..10] at @s store result entity @s Pose.RightArm[2] float 0.01 run scoreboard players get #ang-x reg1
+execute if entity @s as @e[tag=has-model,tag=position-target] at @s store result entity @s Pose.RightArm[2] float 0.01 run scoreboard players get #ang-x reg1
 scoreboard players operation #ang-z reg1 = @s AngZ
 scoreboard players remove #ang-z reg1 9000
 execute if entity @s as @e[tag=has-model,tag=position-target,distance=..10] at @s store result entity @s Pose.RightArm[1] float 0.01 run scoreboard players get #ang-z reg1
@@ -20,4 +20,6 @@ execute if entity @s at @s store result entity @s Rotation[1] float 0.01 run sco
 
 #パーツのX角度補正
 scoreboard players operation #ang-z reg1 = @s AngZ
-execute if entity @s as @e[tag=position-target,distance=..6] at @s store result entity @s Rotation[1] float 0.01 run scoreboard players get #ang-z reg1
+execute if entity @s as @e[tag=position-target] at @s store result entity @s Rotation[1] float 0.01 run scoreboard players get #ang-z reg1
+
+#execute if entity @s[tag=dropping] run say 1

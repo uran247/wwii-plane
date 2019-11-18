@@ -33,8 +33,7 @@ scoreboard players set @s[scores={speed=..-1}] speed 0
 #x方向ベクトル×speedをMotionに代入
 scoreboard players operation #displacementX reg1 = @s speedX
 scoreboard players operation #displacementX reg1 *= @s speed
-scoreboard players operation #displacementX reg1 /= #10 Num
-execute store result entity @s Motion[0] double 0.00001 run scoreboard players get #displacementX reg1
+execute store result entity @s Motion[0] double 0.00001 run scoreboard players operation #displacementX reg1 /= #10 Num
 
 #Y方向ベクトルに0.05を代入
 execute store result entity @s Motion[1] double -0.05 run scoreboard players get #1 Num
@@ -42,8 +41,7 @@ execute store result entity @s Motion[1] double -0.05 run scoreboard players get
 #z方向ベクトル×speedをMotionに代入
 scoreboard players operation #displacementZ reg1 = @s speedZ
 scoreboard players operation #displacementZ reg1 *= @s speed
-scoreboard players operation #displacementZ reg1 /= #10 Num
-execute store result entity @s Motion[2] double 0.00001 run scoreboard players get #displacementZ reg1
+execute store result entity @s Motion[2] double 0.00001 run scoreboard players operation #displacementZ reg1 /= #10 Num
 
 #speedがtakeoff-speedを超えスロットル全開なら飛行状態に遷移
 execute as @s[scores={throttle=20..}] if score @s takeoff-speed < @s speed run function plane:move/plane-move/rolling/takeoff

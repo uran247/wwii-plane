@@ -1,0 +1,2 @@
+execute as @e[tag=free-nugget,x=0,y=142,z=49,distance=..2] at @s if entity @p[distance=..6] run data merge entity @s {Item:{id:"minecraft:gold_nugget",Count:1b}}
+execute as @e[tag=free-steak,x=7,y=142,z=49,distance=..2] at @s if entity @p[distance=..6] run data merge entity @s {Item:{id:"minecraft:cooked_beef",Count:1b}}

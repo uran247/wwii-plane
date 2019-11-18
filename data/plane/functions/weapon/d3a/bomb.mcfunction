@@ -30,6 +30,19 @@ execute if entity @e[tag=gun-init,distance=..20] run scoreboard players set @s w
 #残弾数減算
 scoreboard players remove @s ammunition2 1
 
+#x,y,z方向の速度スコア化
+scoreboard players operation @e[tag=drop-init,distance=..20] speedX = @s speedX
+scoreboard players operation @e[tag=drop-init,distance=..20] speedY = @s speedY
+scoreboard players operation @e[tag=drop-init,distance=..20] speedZ = @s speedZ
+execute as @e[tag=drop-init,distance=..20] run scoreboard players operation @s speedX *= @s speed
+execute as @e[tag=drop-init,distance=..20] run scoreboard players operation @s speedY *= @s speed
+execute as @e[tag=drop-init,distance=..20] run scoreboard players operation @s speedZ *= @s speed
+scoreboard players operation @e[tag=drop-init,distance=..20] speedX /= #10 Num
+scoreboard players operation @e[tag=drop-init,distance=..20] speedY /= #10 Num
+scoreboard players operation @e[tag=drop-init,distance=..20] speedZ /= #10 Num
+#tellraw @p [{"score" : {"name":"@s", "objective":"speedX"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"speedY"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"speedZ"}}]
+#execute as @e[tag=drop-init,distance=..20] run tellraw @p [{"score" : {"name":"@s", "objective":"speedX"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"speedY"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"speedZ"}}]
+
 #音
 playsound minecraft:block.piston.contract ambient @a ~ ~ ~ 1 1.5
 

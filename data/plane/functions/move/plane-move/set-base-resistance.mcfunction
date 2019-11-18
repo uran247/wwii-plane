@@ -7,7 +7,7 @@ scoreboard players operation #base-resistance return /= #cruise-speed input
 
 execute unless score #ang-z input matches 0 run scoreboard players operation #energy-loss reg1 = #energy-loss input
 execute unless score #ang-z input matches 0 run scoreboard players operation #energy-loss reg1 *= #ang-z input
-execute if score #ang-z input < #0 Num run scoreboard players operation #energy-loss reg1 *= #-1 Num
+execute if score #ang-z input matches ..-1 run scoreboard players operation #energy-loss reg1 *= #-1 Num
 execute unless score #ang-z input matches 0 run scoreboard players operation #energy-loss reg1 /= #9000 Num
 execute unless score #ang-z input matches 0 run scoreboard players operation #base-resistance return += #energy-loss reg1
 

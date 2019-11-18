@@ -5,12 +5,14 @@
 #透明にしとく
 effect give @s minecraft:invisibility 1
 
-#plane-riderタグのツイてないプレイヤーの右クリック検知スコアをリセット
+#plane-riderタグのツイてないプレイヤーの右クリック検知スコアとドロップスコアをリセット
 execute as @s[tag=!plane-rider] run scoreboard players reset @s rightClick
+execute as @s[tag=!plane-rider] run scoreboard players reset @s drop-cont-stick
 
 #seatを参照して実行者にid、タグ付け
-execute store result score @s plane-id run data get entity @s RootVehicle.Entity.Attributes[1].Base
+execute store result score @s plane-id run data get entity @s RootVehicle.Entity.Attributes[{Name:"generic.knockbackResistance"}].Base
 tag @s add plane-rider
+tag @s add entity-nohit
 
 #実行者と対象機体にタグ付け
 tag @s add controller

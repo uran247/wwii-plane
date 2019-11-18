@@ -1,0 +1,1 @@
+execute as @a[tag=gbm-bunretsu] at @s run function bgm:bunretsu/playing

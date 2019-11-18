@@ -20,9 +20,12 @@ scoreboard players set #18 Num 18
 scoreboard players set #19 Num 19
 scoreboard players set #20 Num 20
 scoreboard players set #21 Num 21
+scoreboard players set #30 Num 30
 scoreboard players set #32 Num 32
 scoreboard players set #40 Num 40
+scoreboard players set #41 Num 41
 scoreboard players set #45 Num 45
+scoreboard players set #49 Num 49
 scoreboard players set #50 Num 50
 scoreboard players set #60 Num 60
 scoreboard players set #64 Num 64
@@ -52,6 +55,7 @@ scoreboard players set #1024 Num 1024
 scoreboard players set #2048 Num 2048
 scoreboard players set #4000 Num 4000
 scoreboard players set #4096 Num 4096
+scoreboard players set #6000 Num 6000
 scoreboard players set #8192 Num 8192
 scoreboard players set #9000 Num 9000
 scoreboard players set #10000 Num 10000
@@ -59,6 +63,7 @@ scoreboard players set #16384 Num 16384
 scoreboard players set #17800 Num 17800
 scoreboard players set #18100 Num 18100
 scoreboard players set #28500 Num 28500
+scoreboard players set #31743 Num 31743
 scoreboard players set #32400 Num 32400
 scoreboard players set #32768 Num 32768
 scoreboard players set #40500 Num 40500

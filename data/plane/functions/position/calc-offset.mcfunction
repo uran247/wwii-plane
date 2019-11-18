@@ -95,6 +95,7 @@ scoreboard players operation #z-direction-dx reg1 *= @s offsetZ
 scoreboard players operation #z-direction-dy reg1 *= @s offsetZ
 scoreboard players operation #z-direction-dz reg1 *= @s offsetZ
 
+
 #桁あわせ
 #scoreboard players operation #offset-x reg1 *= #10 Num
 #scoreboard players operation #offset-y reg1 *= #10 Num
@@ -135,7 +136,9 @@ scoreboard players operation #offset-y reg1 -= #z-direction-dy reg1
 scoreboard players operation #offset-z reg1 -= #z-direction-dz reg1
 
 #底面をベースにするタグがついてた場合、底面が腕の高さに来るように補正
-execute if entity @s[tag=offset-base] run scoreboard players operation #offset-y reg1 += #1500 Num
+execute if entity @s[tag=offset-base] run scoreboard players add #offset-y reg1 1500
+
+#execute if entity @s[tag=cockpit] run tellraw @p [{"score" : {"name":"#z-direction-dz", "objective":"reg1"}}, {"text":" "}]
 
 #移動
 execute store result entity @s Pos[0] double 0.001 run scoreboard players get #offset-x reg1

@@ -17,5 +17,5 @@ scoreboard players operation @s AngX = @s landing-pitch
 
 #flyingタグ削除
 tag @s remove flying
-data merge entity @e[tag=plane-seat,distance=..5,limit=1] {Invulnerable:0b}
+#data merge entity @e[tag=plane-seat,distance=..5,limit=1] {Invulnerable:0b}
 

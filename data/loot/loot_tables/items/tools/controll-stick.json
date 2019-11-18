@@ -1,0 +1,37 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:carrot_on_a_stick",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function":"set_name",
+                            "name":{"text":"操縦桿"}
+                        },
+                        {
+                            "function":"set_lore",
+                            "lore":[
+                                {"translate":"右クリックで飛行機を操作できる、搭乗時と降機時で効果が違う。","color":"blue"},
+                                {"translate":"持ち歩ける操縦桿ってなんだよとか言ってはいけない。","color":"blue"},
+                                {"translate":" 搭乗時：","color":"yellow"},
+                                {"translate":"  右クリック：武器使用","color":"yellow"},
+                                {"translate":"  捨てる：使用武器切り替え","color":"yellow"},
+                                {"translate":" 降機時：","color":"yellow"},
+                                {"translate":"  右クリック：近くの飛行機をアイテム化","color":"yellow"},
+                                {"translate":"  捨てる：地面に投げ捨てる","color":"yellow"}
+                            ]
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag":"{item-type:controll-rod}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
