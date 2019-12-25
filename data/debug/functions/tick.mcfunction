@@ -16,7 +16,7 @@
 #execute as @e[tag=ki44-root] at @s run particle minecraft:flame ^-1.85 ^1.1 ^2.25 0 0 0 0 10 force
 #execute as @e[tag=ki44-root] at @s run particle minecraft:flame ^1.75 ^1.1 ^2.25 0 0 0 0 10 force
 
-execute as @e[tag=j100b-root] at @s run function debug:particle-satsuei
+#execute as @e[tag=ki61-root] at @s run function debug:particle-satsuei
 
 #execute positioned -1640 255 -1928 run particle minecraft:happy_villager ~ ~ ~ 1 1 1 0 100 force
 #function debug:test-circle

@@ -8,7 +8,6 @@ function game:start-game/stage-3/show-message
 function game:start-game/stage-3/set-bossbar
 
 schedule function game:start-game/stage-3/summon-enemy 10
-execute as @a run function bgm:bunretsu/play
 
 #開始効果音
 execute as @a at @s run playsound minecraft:entity.ender_dragon.ambient master @s ~ ~ ~ 1 0.5

@@ -4,4 +4,4 @@
 
 #seatの位置修正
 execute at @s[tag=has-rider] run tp @e[tag=plane-seat,tag=position-target] ^ ^-0.7 ^-1.3
-execute at @s[tag=!has-rider] run tp @e[tag=plane-seat,tag=position-target] ^ ^0.7 ^0.5
+execute at @s[tag=!has-rider] run tp @e[tag=plane-seat,tag=position-target] ^ ^-0.3 ^0.5

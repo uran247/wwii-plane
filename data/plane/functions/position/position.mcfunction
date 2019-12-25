@@ -32,6 +32,7 @@ execute as @s[tag=ki44-root] run function plane:position/ki-44-position
 execute as @s[tag=d4y2-root] run function plane:position/d4y2-position
 execute as @s[tag=j2m3-root] run function plane:position/j2m3-position
 execute as @s[tag=g4m1-root] run function plane:position/g4m1-position
+execute as @s[tag=ki61-root] run function plane:position/ki-61-position
 #execute as @s[tag=spitfire-root] run function plane:position/spitfire-position
 #execute as @s[tag=ju87-root] run function plane:position/ju87-position
 #execute as @s[tag=f4u-root] run function plane:position/f4u-position

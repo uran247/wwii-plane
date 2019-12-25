@@ -19,8 +19,8 @@ execute unless score #player-all-num reg1 = #player-around-num reg1 run scoreboa
 execute unless score #player-all-num reg1 = #player-around-num reg1 run tellraw @a [{"text":"プレイヤーが全員集まっていません","color":"yellow"}]
 
 #stageごとのチェック実施
-execute if score #global stage-id matches 1 run function game:start-game/stage-1/chk-start-condition
-execute if score #global stage-id matches 2 run function game:start-game/stage-2/chk-start-condition
-execute if score #global stage-id matches 3 run function game:start-game/stage-3/chk-start-condition
-execute if score #global stage-id matches 4 run function game:start-game/stage-4/chk-start-condition
+execute if score #global stage-id matches 1 run function game:stages/stage1/start-game/chk-start-condition
+execute if score #global stage-id matches 2 run function game:stages/stage2/start-game/chk-start-condition
+execute if score #global stage-id matches 3 run function game:stages/stage3/start-game/chk-start-condition
+execute if score #global stage-id matches 4 run function game:stages/stage4/start-game/chk-start-condition
 execute if score #global stage-id matches 5 run function game:start-game/stage-5/chk-start-condition

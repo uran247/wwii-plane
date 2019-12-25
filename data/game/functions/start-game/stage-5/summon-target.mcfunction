@@ -19,7 +19,8 @@ execute positioned 4888 51 -5395 run function mob:summon/aa88
 #execute positioned 4888 201 -5395 run function mob:summon/banshee
 
 #榴弾砲の向き設定
-execute as @e[tag=howitzer152] at @s run tp @s ~ ~ ~ 160 -17
+execute as @e[tag=howitzer152] at @s run tp @s ~ ~ ~ facing 4600 46 -6130
+execute as @e[tag=howitzer152] at @s run tp @s ~ ~ ~ ~ -17
 
 #基地召喚
 summon minecraft:armor_stand 4600 46 -6130 {Invisible:1,Tags:[friend-target,base,entity-nohit],HandItems:[{id:"minecraft:snowball",Count:1b,tag:{BaseHP:10000}},{}]}

@@ -5,7 +5,7 @@
 tag @s add he-executer
 
 #自分と同じID持ちのエンティティにタグ付け
-execute as @e[distance=..20] if score @s plane-id = @e[tag=he-executer,distance=..20,limit=1] plane-id run tag @s add he-gunner
+execute as @e[distance=..20,tag=!he-executer] if score @s plane-id = @e[tag=he-executer,distance=..20,limit=1] plane-id run tag @s add he-gunner
 
 #ヒットフラグ初期化
 scoreboard players set #hit-flag reg1 0

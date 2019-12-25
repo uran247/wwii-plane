@@ -7,7 +7,7 @@
 tag @s add aagun-move-executer
 
 #自分と同じID持ちのエンティティにタグ付け
-execute as @e[distance=..20] if score @s plane-id = @e[tag=aagun-move-executer,distance=..20,limit=1] plane-id run tag @s add aaguner
+execute as @e[distance=..20,tag=!aagun-move-executer] if score @s plane-id = @e[tag=aagun-move-executer,distance=..20,limit=1] plane-id run tag @s add aaguner
 
 #ヒットフラグ初期化
 scoreboard players set #hit-flag reg1 0

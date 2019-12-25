@@ -7,8 +7,5 @@ function game:start-game/stage-1/move-to-stage
 function game:start-game/stage-1/show-message
 execute as @a run function bgm:bunretsu/play
 
-#フラグセット
-scoreboard players set #phase event-flag 0
-
 #開始効果音
 execute as @a at @s run playsound minecraft:entity.ender_dragon.ambient master @s ~ ~ ~ 200 0.5

@@ -138,3 +138,4 @@ scoreboard objectives add max-age dummy
 scoreboard objectives add drop-cont-stick minecraft.dropped:minecraft.carrot_on_a_stick
 scoreboard objectives add bgm-bunretsu dummy
 scoreboard objectives add event-flag dummy
+scoreboard objectives add bgm-repeat dummy

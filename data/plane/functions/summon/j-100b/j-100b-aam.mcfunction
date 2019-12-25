@@ -27,4 +27,4 @@ tag @e[tag=j100b-missile-left,tag=j100b-init] remove j100b-init
 #残弾スコア付与
 scoreboard players set @s ammunition2 2
 
-tellraw @p [{"score" : {"name":"@e[tag=plane-missile,limit=1]", "objective":"plane-id"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"plane-id"}}]
+#tellraw @p [{"score" : {"name":"@e[tag=plane-missile,limit=1]", "objective":"plane-id"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"plane-id"}}]
