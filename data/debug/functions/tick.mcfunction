@@ -24,5 +24,9 @@
 #execute as @e[tag=stage1,tag=mark,x=-1640,y=255,z=-1928] at @s run function debug:test-circle
 #execute as @e[tag=stage1,tag=mark,x=-1640,y=255,z=-1928] at @s run function debug:test-circle2
 
-#execute as @a at @s run function debug:test-hit
+#execute as @e[tag=plane-root] run function debug:exec-geometory-test
 
+#execute as @a at @s facing ^ ^ ^101 positioned ^ ^ ^101 run function game:in-game-event/util/show-direction
+#execute as @a positioned -1548 200 1234 run function game:in-game-event/util/show-direction
+
+#execute as @a[scores={rightClick=1..}] at @s run summon arrow ~ ~ ~ {}

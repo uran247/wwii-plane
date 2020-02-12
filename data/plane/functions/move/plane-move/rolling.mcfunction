@@ -8,6 +8,7 @@ tag @s add flying-executer
 
 #### 基本加速量決定 reg1に代入される ####
 scoreboard players operation #accelerate input = @s accelerate
+scoreboard players operation #accelerate-cor input = @s accelerate-cor
 scoreboard players operation #throttle input = @s throttle
 function plane:move/plane-move/set-base-accelerate
 scoreboard players operation #base-accelerate reg1 = #base-accelerate return

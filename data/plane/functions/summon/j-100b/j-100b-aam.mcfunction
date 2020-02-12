@@ -1,6 +1,6 @@
 #j100bの爆弾召喚
 #実行者：機体
-#使用可能タグ j100b-position-target j100b-position-executer
+#使用可能タグ target-parts j100b-position-executer
 
 #### aam爆弾1個目召喚 ####
 execute if entity @s[tag=aam] run summon armor_stand ~ ~ ~ {Tags:["j100b-missile-right","j100b",j100b-init,plane,has-offset,has-model,plane-missile,plane-parts,entity-nohit,aam,missile-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:3}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}

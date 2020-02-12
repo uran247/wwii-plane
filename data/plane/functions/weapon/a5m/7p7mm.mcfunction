@@ -17,11 +17,11 @@ scoreboard players set @e[tag=gun-init,distance=..5] damage 3
 scoreboard players set @e[tag=gun-init,distance=..5,type=armor_stand] max-age 25
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 120
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -220
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ -3120
+scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY 220
+scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ 3120
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -188
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY -220
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ -3120
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY 220
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 3120
 
 #5発目の弾なら曳光弾化
 #scoreboard players operation @s reg1 = @s ammunition1
@@ -29,7 +29,12 @@ scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ -3120
 #execute if score @s reg1 matches 0 run tag @e[tag=gun-init,distance=..10] add tracer
 
 #発射位置に移動
-execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
+function plane:position/util/calc-triangle-ratio
+scoreboard players operation #sin reg1 = #sin return
+scoreboard players operation #cos reg1 = #cos return
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/calc-displacement
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/move-parts
 
 #向きを機体方向に向ける
 tp 0-0-4-0-0 ^ ^ ^200

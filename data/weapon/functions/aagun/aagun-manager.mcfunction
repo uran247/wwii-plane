@@ -64,6 +64,7 @@ execute if score #hit-flag reg1 matches 1.. run kill @s
 #execute if score #hit-flag reg1 matches 3 run say fuse
 
 #終了処理
+tag @e[tag=aaguner,distance=..20] remove aaguner
 tag @s remove aagun-move-executer
 tag @e[tag=aagun-move-executer] remove aagun-move-executer
 tag @e[tag=hit-on-line] remove hit-on-line

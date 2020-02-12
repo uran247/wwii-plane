@@ -1,4 +1,7 @@
 #UI内のクリックされたアイテムを検知してイベント
+execute store result score #tutorial1 reg1 run clear @s #tags:stage-select{stage:2147483647}
+execute store result score #tutorial2 reg1 run clear @s #tags:stage-select{stage:2147483646}
+execute store result score #tutorial3 reg1 run clear @s #tags:stage-select{stage:2147483645}
 execute store result score #stage1 reg1 run clear @s #tags:stage-select{stage:1}
 execute store result score #stage2 reg1 run clear @s #tags:stage-select{stage:2}
 execute store result score #stage3 reg1 run clear @s #tags:stage-select{stage:3}
@@ -11,6 +14,9 @@ execute store result score #ok reg1 run clear @s #tags:stage-select{stage:ok}
 
 #ステージを選択
 execute unless block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"confirmation\"}"} run scoreboard players set #global stage-id 0
+execute if score #tutorial1 reg1 matches 1.. run scoreboard players set #global stage-id 2147483647
+execute if score #tutorial2 reg1 matches 1.. run scoreboard players set #global stage-id 2147483646
+execute if score #tutorial3 reg1 matches 1.. run scoreboard players set #global stage-id 2147483645
 execute if score #stage1 reg1 matches 1.. run scoreboard players set #global stage-id 1
 execute if score #stage2 reg1 matches 1.. run scoreboard players set #global stage-id 2
 execute if score #stage3 reg1 matches 1.. run scoreboard players set #global stage-id 3

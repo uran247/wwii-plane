@@ -15,7 +15,7 @@
                         {
                             "function":"set_lore",
                             "lore":[
-                                {"translate":"適機を一定数撃墜せよ","color":"green"},
+                                {"translate":"敵機を一定数撃墜せよ","color":"green"},
                                 {"translate":""},
                                 {"translate":"出撃条件：航空機がTier2以下","color":"blue"},
                                 {"translate":""},

@@ -12,7 +12,7 @@ scoreboard players set @e[tag=aagun-init,distance=..5] offsetY 0
 scoreboard players set @e[tag=aagun-init,distance=..5] offsetZ 0
 
 #発射位置に移動
-execute at @s positioned ~ ~ ~ as @e[tag=aagun-init,distance=..5] run function plane:position/calc-offset
+#execute at @s positioned ~ ~ ~ as @e[tag=aagun-init,distance=..5] run function plane:position/calc-offset
 
 #向きを自機方向に向ける
 execute if entity @e[tag=ai-target-plane,limit=1,sort=nearest] as @e[tag=aagun-init,limit=2,distance=..20] facing entity @e[tag=ai-target-plane,limit=1,sort=nearest] eyes positioned as @s run tp @s ~ ~ ~ ~ ~

@@ -4,9 +4,10 @@
 execute if score #speedY input matches 0.. run scoreboard players operation #base-deaccelerate return = #deaccelerate input
 execute if score #speedY input matches 0.. run scoreboard players operation #base-deaccelerate return *= #speedY input
 execute if score #speedY input matches 0.. run scoreboard players operation #base-deaccelerate return /= #100 Num
-execute if score #speedY input matches ..-1 run scoreboard players operation #base-deaccelerate return = #49 Num
+execute if score #speedY input matches ..-1 run scoreboard players operation #base-deaccelerate return = #resistance input
 execute if score #speedY input matches ..-1 run scoreboard players operation #base-deaccelerate return *= #speedY input
-execute if score #speedY input matches ..-1 run scoreboard players operation #base-deaccelerate return /= #100 Num
+execute if score #speedY input matches ..-1 run scoreboard players operation #base-deaccelerate return *= #speedY input
+execute if score #speedY input matches ..-1 run scoreboard players operation #base-deaccelerate return /= #-10000 Num
 
 #tellraw @p [{"score" : {"name":"#speedY", "objective":"input"}}]
 #tellraw @p [{"score" : {"name":"#base-deaccelerate", "objective":"return"}}]

@@ -8,3 +8,6 @@ bossbar set minecraft:game-progress max 35
 
 #ステージに応じてクリア撃墜数をセット
 scoreboard players set #global clear-score 35
+
+#エンティティ最大数をセット
+scoreboard players set #max max-entity 3

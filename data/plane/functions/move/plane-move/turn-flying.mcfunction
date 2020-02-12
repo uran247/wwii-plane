@@ -16,21 +16,23 @@ scoreboard players operation #max-yaw reg1 = #max-yaw return
 function plane:move/plane-move/flying/set-max-pitch
 scoreboard players operation #max-pitch reg1 = #max-pitch return
 
-#### プレイヤーの向きに応じてAngXYZのスコア変更 ####
+#tellraw @p [{"score" : {"name":"#max-yaw", "objective":"reg1"}}, {"text":" "}, {"score" : {"name":"#max-pitch", "objective":"reg1"}}]
+
+#### プレイヤーの向きに応じてAngXYZのスコア変更 失速してた場合は旋回をしない ####
 #yaw
 scoreboard players operation #delta-angle input = #yaw-gap reg1
 scoreboard players operation #base-angle input = @s AngY
 scoreboard players operation #change-ammount input = #max-yaw reg1
 function util:fill-angle-gap
 scoreboard players operation @s yaw-gap -= #delta-angle return
-scoreboard players operation @s AngY += #delta-angle return
+scoreboard players operation @s[tag=!stall] AngY += #delta-angle return
 #pitch
 scoreboard players operation #delta-angle input = #pitch-gap reg1
 scoreboard players operation #base-angle input = @s AngX
 scoreboard players operation #change-ammount input = #max-pitch reg1
 function util:fill-angle-gap
 scoreboard players operation @s pitch-gap -= #delta-angle return
-scoreboard players operation @s AngX += #delta-angle return
+scoreboard players operation @s[tag=!stall] AngX += #delta-angle return
 
 #yawが変化してたらrollも変化(-9000..9000)
 scoreboard players operation #roll-speed reg1 = @s roll-speed

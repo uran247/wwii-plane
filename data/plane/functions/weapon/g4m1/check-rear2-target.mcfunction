@@ -18,10 +18,15 @@ execute as 0-0-a-0-0 run scoreboard players set @s offsetY -500
 execute as 0-0-a-0-0 run scoreboard players set @s offsetZ -950
 
 #位置移動
-scoreboard players operation 0-0-4-0-0 input1 = @s AngZ
-execute as 0-0-4-0-0 at @s rotated ~-90 ~ run function plane:position/calc-offset
-scoreboard players operation 0-0-a-0-0 input1 = @s AngZ
-execute as 0-0-a-0-0 at @s rotated ~-90 ~ run function plane:position/calc-offset
+function plane:position/util/calc-triangle-ratio
+scoreboard players operation #sin reg1 = #sin return
+scoreboard players operation #cos reg1 = #cos return
+execute at @s as 0-0-4-0-0 run function plane:position/util/calc-displacement
+execute at @s as 0-0-4-0-0 run function plane:position/calc-offset
+execute at @s as 0-0-4-0-0 run function plane:position/util/move-parts
+execute at @s as 0-0-a-0-0 run function plane:position/util/calc-displacement
+execute at @s as 0-0-a-0-0 run function plane:position/calc-offset
+execute at @s as 0-0-a-0-0 run function plane:position/util/move-parts
 
 #機銃40B以内に敵がいるか判定
 execute at 0-0-4-0-0 as @e[tag=enemy-plane,distance=..40] facing entity 0-0-a-0-0 feet positioned ^ ^ ^40 run tag @s[distance=..40] add rear-gun-target-candidate

@@ -8,9 +8,16 @@
     "title": {
       "translate": "九九式艦上爆撃機"
     },
-    "description": {
-      "translate": "D3A"
-    },
+    "description": [
+      {
+        "text": "日本海軍の艦上爆撃機。\n太平洋戦争の序盤で活躍した。\n",
+        "color":"white"
+      },
+      {
+        "text":"爆撃機 Tier1\n",
+        "color":"green"
+      }
+    ],
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

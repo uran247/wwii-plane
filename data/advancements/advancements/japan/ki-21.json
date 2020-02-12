@@ -8,9 +8,16 @@
     "title": {
       "translate": "九七式重爆撃機"
     },
-    "description": {
-      "translate": "ki-21"
-    },
+    "description": [
+      {
+        "text": "日本陸軍の爆撃機。\n比較的早い最高速度と少なめの爆弾搭載量を持つ。\n",
+        "color":"white"
+      },
+      {
+        "text":"爆撃機 Tier1\n",
+        "color":"green"
+      }
+    ],
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

@@ -17,14 +17,19 @@ scoreboard players set @e[tag=gun-init,distance=..5] damage 20
 scoreboard players set @e[tag=gun-init,distance=..5,type=armor_stand] max-age 25
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 1860
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY 400
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ -3260
+scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY -400
+scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ 3260
 scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -2080
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY 400
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ -3200
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY -400
+scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 3200
 
 #発射位置に移動
-execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
+function plane:position/util/calc-triangle-ratio
+scoreboard players operation #sin reg1 = #sin return
+scoreboard players operation #cos reg1 = #cos return
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/calc-displacement
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/move-parts
 
 #向きを機体方向に向ける
 tp 0-0-4-0-0 ^ ^ ^300

@@ -1,22 +1,3 @@
-summon armor_stand ~ ~ ~ {Tags:["aam-test","aam1"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:3}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["aam-test","aam2"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:3}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["bm-test","bm1"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:4}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["bm-test","bm2"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:4}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk1"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk2"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk3"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk4"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk5"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk6"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk7"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk8"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk9"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk10"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk11"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk12"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk13"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk14"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk15"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
-summon armor_stand ~ ~ ~ {Tags:["rk-test","rk16"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
+summon armor_stand ~ ~ ~ {Tags:["bomb-test"],NoGravity:1b,Invisible:1b,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:106}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
 
-summon armor_stand ~ ~ ~ {Tags:["rk-test"],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:5}},{}],Pose:{RightArm:[-90f,0f,0f]},DisabledSlots:256}
+summon armor_stand ~ ~ ~ {Tags:["test"],NoGravity:1b,Invisible:1b,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:7}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}

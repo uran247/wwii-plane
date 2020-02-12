@@ -2,7 +2,6 @@
 execute positioned 0 1 0 run function mob:summon/phantom1
 execute positioned 0 1 0 run function mob:summon/phantom1
 execute positioned 0 1 0 run function mob:summon/phantom1
-execute if score #global shootdown matches 10.. positioned 0 1 0 run function mob:summon/phantom1 
 
 #targetタグ付与
 execute positioned 0 1 0 as @e[tag=phantom1,distance=..10] run tag @s add enemy-target

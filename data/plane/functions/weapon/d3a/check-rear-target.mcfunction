@@ -14,7 +14,16 @@ execute as 0-0-4-0-0 run scoreboard players set @s offsetY 1000
 execute as 0-0-4-0-0 run scoreboard players set @s offsetZ 0
 
 #位置移動
-execute at @s positioned ~ ~ ~ as 0-0-4-0-0 run function plane:position/calc-offset
+function plane:position/util/calc-triangle-ratio
+scoreboard players operation #sin reg1 = #sin return
+scoreboard players operation #cos reg1 = #cos return
+execute at @s as 0-0-4-0-0 run function plane:position/util/calc-displacement
+execute at @s as 0-0-4-0-0 run function plane:position/calc-offset
+execute at @s as 0-0-4-0-0 run function plane:position/util/move-parts
+
+#debug
+#execute at @s facing entity 0-0-4-0-0 feet positioned ^ ^ ^10 run particle minecraft:smoke ~ ~ ~ 0 0 0 1 0 force
+#tellraw @p [{"nbt":"Pos","entity":"0-0-4-0-0"}] 
 
 #後方32B以内に敵がいるか判定
 execute at @s run tag @e[tag=enemy-plane,distance=..32] add rear-gun-target-candidate

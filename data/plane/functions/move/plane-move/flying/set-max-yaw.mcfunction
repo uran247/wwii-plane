@@ -6,6 +6,12 @@
 #yaw,roll速度取得
 scoreboard players operation #max-yaw return = @s yaw-speed
 scoreboard players operation #roll-spped reg1 = @s roll-speed
+#tellraw @p [{"score" : {"name":"#max-yaw", "objective":"return"}}]
+
+#yaw,roll速度補正
+scoreboard players operation #max-yaw return += @s yaw-speed-cor
+scoreboard players operation #roll-spped reg1 += @s roll-speed-cor
+#tellraw @p [{"score" : {"name":"#max-yaw", "objective":"return"}}]
 
 #radder破損時補正
 execute if entity @s[scores={radder=0}] run scoreboard players operation #max-yaw return /= #2 Num
@@ -24,7 +30,6 @@ scoreboard players operation #abs-speedy reg1 *= #abs-speedy reg1
 scoreboard players operation #roll-spped reg1 *= #abs-speedy reg1
 scoreboard players set #1-speedy reg1 10000
 scoreboard players operation #1-speedy reg1 -= #abs-speedy reg1
-scoreboard players operation #max-yaw return = @s yaw-speed
 scoreboard players operation #max-yaw return *= #1-speedy reg1
 
 #足して1000で割る

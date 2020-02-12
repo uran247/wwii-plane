@@ -1,1 +1,1 @@
-execute unless entity @e[tag=phantom1,distance=..20] run kill @s
+execute unless entity @e[tag=enemy-plane,distance=..10] run kill @s

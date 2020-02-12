@@ -8,9 +8,16 @@
     "title": {
       "translate": "九六式艦上戦闘機"
     },
-    "description": {
-      "translate": "A5M"
-    },
+    "description": [
+      {
+        "text": "日本海軍の艦上戦闘機。\n日本海軍初の全金属製単葉機。\n",
+        "color":"white"
+      },
+      {
+        "text":"戦闘機 Tier1\n",
+        "color":"green"
+      }
+    ],
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

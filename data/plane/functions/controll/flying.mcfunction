@@ -6,8 +6,6 @@
 #周囲見渡しスロットを選択してたらタグ付け
 tag @s[scores={plane-key-input=8}] add overlook
 
-#engineがいなかったら強制的に速度マイナス
-execute if entity @e[tag=controll-target,distance=..1,limit=1,scores={engine=0}] run scoreboard players set @p plane-key-input 6
 
 #プレイヤーが右を向いているか左を向いているか取得(0未満なら左、0以上なら右)
 execute store result score #source-rot input run data get entity @s Rotation[0] 100
@@ -25,12 +23,18 @@ execute if entity @s[tag=!overlook] run scoreboard players operation @e[tag=cont
 execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players add @s[scores={throttle=..19}] throttle 1
 execute if entity @s[scores={plane-key-input=6}] as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players remove @s[scores={throttle=1..}] throttle 1
 
+#稼働エンジン数に応じてスロットル減衰 スロットル×稼働エンジン数/最大エンジン数
+execute as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players operation @s throttle *= @s engine
+execute as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players operation @s throttle /= @s max-engine
+
+#墜落してた場合スロットル0
+scoreboard players set @e[tag=controll-target,tag=destroyed,distance=..1,limit=1] throttle 0
+
 #speedがgear-pull-outだったら滑走モデル、gear-retractingだったら飛行モデルに切り替え(失速中の場合はギアを出さない)
 execute as @e[tag=controll-target,limit=1,distance=..20,tag=!stall] if score @s speed >= @s gear-pullout-min if score @s speed <= @s gear-pullout-max store result entity @e[tag=model-changeable,limit=1,sort=nearest,distance=..20] HandItems[0].tag.Damage int 1 run scoreboard players get @s rolling-udvm
 execute as @e[tag=controll-target,limit=1,distance=..20] if score @s speed >= @s gear-retract-min if score @s speed <= @s gear-retract-max store result entity @e[tag=model-changeable,limit=1,sort=nearest,distance=..20] HandItems[0].tag.Damage int 1 run scoreboard players get @s flying-udvm
 
 #1ブロック下が空気以外かつspeedがギア引き出し速度未満、失速してない、throttlが50%未満ならならなら着陸モードへ
-execute as @e[tag=controll-target,distance=..1,limit=1,tag=!stall,tag=!destroyed,scores={throttle=..10}] at @s if score @s gear-pullout-max > @s speed unless block ~ ~-2 ~ minecraft:air run data merge entity @e[tag=plane-seat,distance=..20,limit=1] {Invulnerable:1b}
 execute as @e[tag=controll-target,distance=..1,limit=1,tag=!stall,tag=!destroyed,scores={throttle=..10}] at @s if score @s gear-pullout-max > @s speed unless block ~ ~-1 ~ minecraft:air run function plane:controll/flying/landing
 
 #周囲見渡しタグ削除

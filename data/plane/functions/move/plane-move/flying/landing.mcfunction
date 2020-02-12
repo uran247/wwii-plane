@@ -17,4 +17,3 @@ scoreboard players operation @s AngX = @s landing-pitch
 
 #flyingタグ削除
 tag @s remove flying
-

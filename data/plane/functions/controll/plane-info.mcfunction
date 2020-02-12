@@ -19,28 +19,31 @@ scoreboard players operation #throttle reg1 *= #5 Num
 scoreboard players operation #altitude reg1 = @s PosY
 scoreboard players operation #altitude reg1 /= #10000 Num
 
-execute if entity @s[tag=main-weapon1,scores={ammunition1=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\"wpn1:\",\"color\":\"red\"},{\"score\":{\"name\":\"#ammunition1\",\"objective\":\"reg1\"},\"color\":\"red\"}]"
+#武器
+execute if entity @s[tag=main-weapon1,scores={ammunition1=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\"wpn1:\",\"color\":\"green\"},{\"score\":{\"name\":\"#ammunition1\",\"objective\":\"reg1\"},\"color\":\"green\"}]"
 execute if entity @s[tag=main-weapon1,scores={ammunition1=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\"reloading:\",\"color\":\"white\"},{\"score\":{\"name\":\"#ammunition1\",\"objective\":\"reg1\"},\"color\":\"white\"}]"
 execute unless entity @s[tag=main-weapon1] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
-execute if entity @s[tag=main-weapon2,scores={ammunition2=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn2:\",\"color\":\"red\"},{\"score\":{\"name\":\"#ammunition2\",\"objective\":\"reg1\"},\"color\":\"red\"}]"
+execute if entity @s[tag=main-weapon2,scores={ammunition2=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn2:\",\"color\":\"green\"},{\"score\":{\"name\":\"#ammunition2\",\"objective\":\"reg1\"},\"color\":\"green\"}]"
 execute if entity @s[tag=main-weapon2,scores={ammunition2=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" reloading:\",\"color\":\"white\"},{\"score\":{\"name\":\"#ammunition2\",\"objective\":\"reg1\"},\"color\":\"white\"}]"
 execute unless entity @s[tag=main-weapon2] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
-execute if entity @s[tag=main-weapon3,scores={ammunition3=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn3:\",\"color\":\"red\"},{\"score\":{\"name\":\"#ammunition3\",\"objective\":\"reg1\"},\"color\":\"red\"}]"
+execute if entity @s[tag=main-weapon3,scores={ammunition3=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn3:\",\"color\":\"green\"},{\"score\":{\"name\":\"#ammunition3\",\"objective\":\"reg1\"},\"color\":\"green\"}]"
 execute if entity @s[tag=main-weapon3,scores={ammunition3=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" reloading:\",\"color\":\"white\"},{\"score\":{\"name\":\"#ammunition3\",\"objective\":\"reg1\"},\"color\":\"white\"}]"
 execute unless entity @s[tag=main-weapon3] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
-execute if entity @s[tag=main-weapon4,scores={ammunition4=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn4:\",\"color\":\"red\"},{\"score\":{\"name\":\"#ammunition4\",\"objective\":\"reg1\"},\"color\":\"red\"}]"
+execute if entity @s[tag=main-weapon4,scores={ammunition4=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn4:\",\"color\":\"green\"},{\"score\":{\"name\":\"#ammunition4\",\"objective\":\"reg1\"},\"color\":\"green\"}]"
 execute if entity @s[tag=main-weapon4,scores={ammunition4=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" reloading:\",\"color\":\"white\"},{\"score\":{\"name\":\"#ammunition4\",\"objective\":\"reg1\"},\"color\":\"white\"}]"
 execute unless entity @s[tag=main-weapon4] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
-execute if entity @s[tag=main-weapon5,scores={ammunition5=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn5:\",\"color\":\"red\"},{\"score\":{\"name\":\"#ammunition5\",\"objective\":\"reg1\"},\"color\":\"red\"}]"
+execute if entity @s[tag=main-weapon5,scores={ammunition5=1..}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" wpn5:\",\"color\":\"green\"},{\"score\":{\"name\":\"#ammunition5\",\"objective\":\"reg1\"},\"color\":\"green\"}]"
 execute if entity @s[tag=main-weapon5,scores={ammunition5=..0}] run data modify block 0 4 0 Items[0].tag.pages append value "[{\"text\":\" reloading:\",\"color\":\"white\"},{\"score\":{\"name\":\"#ammunition5\",\"objective\":\"reg1\"},\"color\":\"white\"}]"
 execute unless entity @s[tag=main-weapon5] run data modify block 0 4 0 Items[0].tag.pages append value ""
 
 execute if entity @s[scores={plane-weapon=1}] run data modify block 0 4 0 Items[0].tag.pages append from entity @s HandItems[0].tag.weapons[0]
 execute if entity @s[scores={plane-weapon=2}] run data modify block 0 4 0 Items[0].tag.pages append from entity @s HandItems[0].tag.weapons[1]
+execute if entity @s[scores={plane-weapon=3}] run data modify block 0 4 0 Items[0].tag.pages append from entity @s HandItems[0].tag.weapons[2]
+execute if entity @s[scores={plane-weapon=4}] run data modify block 0 4 0 Items[0].tag.pages append from entity @s HandItems[0].tag.weapons[3]
 
 
 #wepon残弾数取得
@@ -68,13 +71,13 @@ execute if entity @s[scores={ammunition5=..0}] run scoreboard players operation 
 execute if entity @s[scores={ammunition5=..0}] run scoreboard players operation #ammunition5 reg1 /= #20 Num
 
 #title @p[tag=controller] actionbar ["",{"nbt":"Items[0].tag.pages[0]","block":"0 4 0","interpret":true},{"text":" Throt:","color":"red"},{"score":{"name":"#throttle","objective":"reg1"},"color":"red"},{"text":"% Alt:","color":"red"},{"score":{"name":"#altitude","objective":"reg1"},"color":"red"},{"text":" Wpn:","color":"red"},{"score":{"name":"@s","objective":"plane-weapon"},"color":"red"},{"text":" Ammo:{","color":"red"},{"nbt":"Items[0].tag.pages[1]","block":"0 4 0","color":"red","interpret":true},{"nbt":"Items[0].tag.pages[2]","block":"0 4 0","color":"red","interpret":true},{"nbt":"Items[0].tag.pages[3]","block":"0 4 0","color":"red","interpret":true},{"nbt":"Items[0].tag.pages[4]","block":"0 4 0","color":"red","interpret":true},{"text":"}","color":"red"}]
-title @p[tag=controller] actionbar ["",{"nbt":"Items[0].tag.pages[0]","block":"0 4 0","interpret":true},{"text":" Throt:","color":"red"},{"score":{"name":"#throttle","objective":"reg1"},"color":"red"},{"text":"% Alt:","color":"red"},{"score":{"name":"#altitude","objective":"reg1"},"color":"red"},{"text":" Wpn:","color":"red"},{"nbt":"Items[0].tag.pages[6]","block":"0 4 0","color":"red"},{"text":" Ammo:{","color":"red"},{"nbt":"Items[0].tag.pages[1]","block":"0 4 0","color":"red","interpret":true},{"nbt":"Items[0].tag.pages[2]","block":"0 4 0","color":"red","interpret":true},{"nbt":"Items[0].tag.pages[3]","block":"0 4 0","color":"red","interpret":true},{"nbt":"Items[0].tag.pages[4]","block":"0 4 0","color":"red","interpret":true},{"text":"}","color":"red"}]
+title @p[tag=controller] actionbar ["",{"nbt":"Items[0].tag.pages[0]","block":"0 4 0","interpret":true},{"text":" Throt:","color":"red"},{"score":{"name":"#throttle","objective":"reg1"},"color":"red"},{"text":"% Alt:","color":"red"},{"score":{"name":"#altitude","objective":"reg1"},"color":"red"},{"text":" Wpn:","color":"yellow"},{"nbt":"Items[0].tag.pages[6]","block":"0 4 0","color":"yellow"},{"text":" Ammo:{","color":"green"},{"nbt":"Items[0].tag.pages[1]","block":"0 4 0","color":"green","interpret":true},{"nbt":"Items[0].tag.pages[2]","block":"0 4 0","color":"green","interpret":true},{"nbt":"Items[0].tag.pages[3]","block":"0 4 0","color":"green","interpret":true},{"nbt":"Items[0].tag.pages[4]","block":"0 4 0","color":"green","interpret":true},{"text":"}","color":"green"}]
 
 #失速してたら警告表示
 execute if entity @s[tag=stall] run title @p[tag=controller] times 0 1 1
 execute if entity @s[tag=stall] run title @p[tag=controller] title [{"text":"失速！！","color":"dark_red"}]
 
 #墜落判定が出たら表示
-execute if entity @s[tag=destroyed] run title @p[tag=controller] times 0 1 1
-execute if entity @s[tag=destroyed] run title @p[tag=controller] title [{"text":"墜落！！操作不能","color":"dark_red"}]
+execute if entity @s[tag=destroyed,tag=flying] run title @p[tag=controller] times 0 2 0
+execute if entity @s[tag=destroyed,tag=flying] run title @p[tag=controller] title [{"text":"墜落！！操作不能","color":"dark_red"}]
 

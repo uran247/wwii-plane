@@ -4,12 +4,16 @@
 #周囲見渡しスロットを選択してたらタグ付け
 tag @s[scores={plane-key-input=8}] add overlook
 
-#engineがいなかったら強制的に速度マイナス
-execute if entity @e[tag=controll-target,distance=..1,limit=1,scores={engine=0}] run scoreboard players set @p plane-key-input 6
-
 #スロット8選択でthrottleが+１，6選択で-1
 execute if entity @s[scores={plane-key-input=9}] as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players add @s[scores={throttle=..19}] throttle 1
 execute if entity @s[scores={plane-key-input=6}] as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players remove @s[scores={throttle=1..}] throttle 1
+
+#稼働エンジン数に応じてスロットル減衰 スロットル×稼働エンジン数/最大エンジン数
+execute as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players operation @s throttle *= @s engine
+execute as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players operation @s throttle /= @s max-engine
+
+#墜落してた場合スロットル0
+scoreboard players set @e[tag=controll-target,tag=destroyed,distance=..1,limit=1] throttle 0
 
 #プレイヤーが右を向いているか左を向いているか取得(0未満なら左、0以上なら右)
 execute store result score #source-rot input run data get entity @s Rotation[0] 100

@@ -23,18 +23,6 @@
                         {
                             "function": "minecraft:set_nbt",
                             "tag":"{item-type:ki-43,weapon:7p7mm,tier:1,CustomModelData:2,CanPlaceOn:[\"minecraft:gold_block\"],HideFlags:18,EntityTag:{Silent:1b,Tags:[ki43-spawner,plane-spawner],ActiveEffects:[{Id:14b,Amplifier:1b,Duration:100,ShowParticles:0b}]}}"
-                        },
-                        {
-                            "function": "minecraft:set_attributes",
-                            "modifiers":[
-                                {
-                                    "name":"cannot_stack",
-                                    "attribute":"cannot_stack",
-                                    "operation":"multiply_base",
-                                    "amount":1.0,
-                                    "slot":"mainhand"
-                                }
-                            ]
                         }
                     ]
                 }

@@ -8,6 +8,7 @@ tag @s add flying-executer
 
 #### 基本加速量決定####
 scoreboard players operation #accelerate input = @s accelerate
+scoreboard players operation #accelerate-cor input = @s accelerate-cor
 scoreboard players operation #throttle input = @s throttle
 function plane:move/plane-move/set-base-accelerate
 scoreboard players operation #base-accelerate reg1 = #base-accelerate return
@@ -49,7 +50,7 @@ scoreboard players operation #displacementY reg1 = @s speedY
 scoreboard players operation #displacementY reg1 *= @s speed
 scoreboard players operation #displacementY reg1 /= #100 Num
 execute store result entity @s[tag=!stall] Pos[1] double 0.0001 run scoreboard players operation @s PosY += #displacementY reg1
-execute store result entity @s[tag=stall] Pos[1] double 0.0001 run scoreboard players remove @s PosY 5000
+execute store result entity @s[tag=stall] Pos[1] double 0.0001 run scoreboard players remove @s PosY 1250
 
 #z方向ベクトル×speedをMotionに代入
 scoreboard players operation #displacementZ reg1 = @s speedZ
@@ -61,15 +62,9 @@ execute store result entity @s Pos[2] double 0.0001 run scoreboard players opera
 execute if score @s[tag=!stall] speed < @s stall-speed run tag @s add stall
 execute if score @s[tag=stall] speed >= @s stall-speed run tag @s remove stall
 
-#失速してたらピッチを下げる(ピッチ速度の5分の1の速度で下がる)
-execute at @s[tag=stall] run scoreboard players operation @s reg1 = @s pitch-speed
-execute at @s[tag=stall] run scoreboard players operation @s AngX += @s reg1
-
-#以下条件のどれかを満たしたら墜落タグ
-#パーツが3個破損　bodyが破損 aileronのどっちかが破損
-tag @s[scores={aileron=..1}] add destroyed
-tag @s[scores={plane-parts=..4}] add destroyed
-tag @s[scores={body=..0}] add destroyed
+#失速してたらピッチを下げる(ピッチ速度で下がる)
+execute at @s[tag=stall,scores={AngX=..9000}] run scoreboard players operation @s reg1 = @s pitch-speed
+execute at @s[tag=stall,scores={AngX=..9000}] run scoreboard players operation @s AngX += @s reg1
 
 #墜落してたらピッチを下げる(ピッチ速度の2分の1の速度で下がる)
 execute at @s[tag=destroyed,scores={AngX=..9000}] run scoreboard players operation #down-pitch reg1 = @s pitch-speed
@@ -91,29 +86,28 @@ scoreboard players operation @s sound += @s reg1
 execute at @s unless block ~ ~1 ~ air run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 1 0
 execute at @s unless block ~ ~1 ~ air run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
 execute at @s unless block ~ ~1 ~ air run kill @s
-execute at @s unless block ~ ~1 ~ air run kill @e[tag=plane-move-parts,distance=..20]
+execute at @s unless block ~ ~1 ~ air run kill @e[tag=target-parts,distance=..20]
 execute at @s unless block ~ ~1 ~ air run kill @a[distance=..10]
 
 #ステージの壁を乗り越えようとしたら爆発（配布マップ用）
 execute at @s if block ~ 255 ~ minecraft:glass run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 1 0
 execute at @s if block ~ 255 ~ minecraft:glass run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
 execute at @s if block ~ 255 ~ minecraft:glass run kill @s
-execute at @s if block ~ 255 ~ minecraft:glass run kill @e[tag=plane-move-parts,distance=..20]
+execute at @s if block ~ 255 ~ minecraft:glass run kill @e[tag=target-parts,distance=..20]
 execute at @s if block ~ 255 ~ minecraft:glass run kill @a[distance=..10]
 
 #登場者無しで奈落に行ったらキル
 execute at @s[tag=!has-rider] if entity @s[y=-50,dy=-100] run playsound minecraft:entity.generic.explode ambient @a ~ ~ ~ 1 0
 execute at @s[tag=!has-rider] if entity @s[y=-50,dy=-100] run particle minecraft:explosion ~ ~ ~ 2 2 2 1 50 force
 execute at @s[tag=!has-rider] if entity @s[y=-50,dy=-100] run kill @s
-execute at @s[tag=!has-rider] if entity @s[y=-50,dy=-100] run kill @e[tag=plane-move-parts,distance=..20]
+execute at @s[tag=!has-rider] if entity @s[y=-50,dy=-100] run kill @e[tag=target-parts,distance=..20]
 execute at @s[tag=!has-rider] if entity @s[y=-50,dy=-100] run kill @a[distance=..10]
 
 #speedがgear-pull-outだったら滑走モデル、gear-retractingだったら飛行モデルに切り替え(失速中の場合はギアを出さない)
 function plane:move/plane-move/flying/change-gear-model
 
 #1ブロック下が空気以外かつspeedがギア引き出し速度未満、throttlが50%未満ならならなら着陸モードへ
-execute as @s[tag=!destroyed,scores={throttle=..10}] at @s if score @s gear-pullout-max > @s speed unless block ~ ~-2 ~ minecraft:air run data merge entity @e[tag=plane-move-parts,tag=plane-seat,distance=..20,limit=1] {Invulnerable:1b}
-execute as @s[tag=!destroyed,scores={throttle=..10}] at @s if score @s gear-pullout-max > @s speed unless block ~ ~-1 ~ minecraft:air run function plane:move/plane-move/flying/landing
+execute as @s[tag=!destroyed,scores={throttle=..10,AngX=..3000}] at @s if score @s gear-pullout-max > @s speed unless block ~ ~-1 ~ minecraft:air run function plane:move/plane-move/flying/landing
 
 
 #タグ解除

@@ -23,7 +23,7 @@ execute at @p[tag=ai-target,scores={plane-id=1..}] run tag @e[tag=plane-root,lim
 #どっちに回ればプレイヤーに近づくか検知して旋回方向決定
 execute as @p[tag=ai-target] positioned ^-502 ^ ^ if entity @s[distance=..500] positioned ^502 ^ ^ run tag @e[tag=ai-executer,distance=..1] add AngYplus
 execute as @p[tag=ai-target] positioned ^502 ^ ^ if entity @s[distance=..500] positioned ^-502 ^ ^ run tag @e[tag=ai-executer,distance=..1] add AngYminus
-execute as @p[tag=ai-target] positioned ^ ^ ^-501 if entity @s[distance=..500] positioned ^ ^ ^501 run tag @e[tag=ai-executer,distance=..1] add existbehind
+execute as @p[tag=ai-target] positioned ^ ^ ^-501 if entity @s[distance=..500] positioned ^ ^ ^501 run tag @e[tag=ai-executer,distance=..1] add exist-behind
 execute as @p[tag=ai-target] positioned ^ ^-502 ^ if entity @s[distance=..500] positioned ^ ^502 ^ run tag @e[tag=ai-executer,distance=..1] add AngXplus
 execute as @p[tag=ai-target] positioned ^ ^502 ^ if entity @s[distance=..500] positioned ^ ^-502 ^ run tag @e[tag=ai-executer,distance=..1] add AngXminus
 
@@ -43,7 +43,7 @@ execute unless entity @p[tag=ai-target] positioned ~ 0 ~ unless entity @s[dx=1,d
 
 #プレイヤー座標を向くように旋回
 scoreboard players operation @s[tag=AngYplus,tag=!near] AngY += @s yaw-speed
-scoreboard players operation @s[tag=existbehind,tag=!AngYplus,tag=!AngYminus,tag=!near] AngY += @s yaw-speed
+scoreboard players operation @s[tag=exist-behind,tag=!AngYplus,tag=!AngYminus,tag=!near] AngY += @s yaw-speed
 scoreboard players operation @s[tag=AngYminus,tag=!near] AngY -= @s yaw-speed
 scoreboard players operation @s[tag=AngXplus,tag=!near,scores={AngX=..6000}] AngX += @s pitch-speed
 scoreboard players operation @s[tag=AngXminus,tag=!near,scores={AngX=-6000..}] AngX -= @s pitch-speed
@@ -81,8 +81,8 @@ execute as @p[tag=ai-target] positioned ^ ^-251 ^-431 if entity @s[distance=..50
 execute as @p[tag=ai-target] positioned ^ ^251 ^-431 if entity @s[distance=..500] positioned ^ ^-251 ^431 run tag @e[tag=ai-executer,distance=..1] add unattackable
 
 #プレイヤーの方を向いたら射撃
-execute as @s[tag=!unattackable,tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run function mob:weapon/phantom1/7p7mm
-execute as @s[tag=!unattackable,tag=!AngYplus,tag=!AngYminus,tag=!existbehind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run scoreboard players remove @s ammunition1 1
+execute as @s[tag=!unattackable,tag=!AngYplus,tag=!AngYminus,tag=!exist-behind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run function mob:weapon/phantom1/7p7mm
+execute as @s[tag=!unattackable,tag=!AngYplus,tag=!AngYminus,tag=!exist-behind,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run scoreboard players remove @s ammunition1 1
 scoreboard players remove @s[scores={ammunition1=1..,w1-reload=1..}] w1-reload 1
 
 #particle
@@ -102,7 +102,7 @@ tag @s remove AngYplus
 tag @s remove AngYminus
 tag @s remove AngXplus
 tag @s remove AngXminus
-tag @s remove existbehind
+tag @s remove exist-behind
 tag @s remove ai-executer
 tag @e[tag=phantom1-rider,sort=nearest,distance=..3] remove ai-rider
 execute at @a[tag=ai-target] run tag @e[tag=ai-target-plane,distance=..20] remove ai-target-plane

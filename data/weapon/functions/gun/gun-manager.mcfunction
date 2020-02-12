@@ -70,6 +70,9 @@ scoreboard players add @s age 1
 execute if score @s[type=armor_stand] age > @s max-age run kill @s
 #tellraw @p [{"score" : {"name":"@s", "objective":"age"}}]
 
+#scoreboard players add @s[tag=banshee-gun] age 1
+#execute if entity @s[tag=banshee-gun] run tellraw @p [{"score" : {"name":"@s", "objective":"age"}}, {"text":" "}]
+
 #タグ削除
 tag @e[tag=hit-weapon] remove hit-weapon
 tag @e[tag=hit-on-line] remove hit-on-line

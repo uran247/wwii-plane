@@ -63,6 +63,8 @@ scoreboard players set @e[tag=plane-init,tag=j100b-root] max-ammo-reload2 300
 scoreboard players set @e[tag=plane-init,tag=j100b-root] plane-weapon 1
 scoreboard players set @e[tag=plane-init,tag=j100b-root] weapon-types 1
 
+scoreboard players set @e[tag=plane-init,tag=j100b-root] max-engine 1
+
 execute store result score @e[tag=plane-init,tag=j100b-root,limit=1] PosX run data get entity @e[tag=plane-init,tag=j100b-root,limit=1] Pos[0] 10000
 execute store result score @e[tag=plane-init,tag=j100b-root,limit=1] PosY run data get entity @e[tag=plane-init,tag=j100b-root,limit=1] Pos[1] 10000
 execute store result score @e[tag=plane-init,tag=j100b-root,limit=1] PosZ run data get entity @e[tag=plane-init,tag=j100b-root,limit=1] Pos[2] 10000

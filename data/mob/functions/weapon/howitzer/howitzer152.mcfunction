@@ -1,5 +1,5 @@
 #砲の発射
-#入力　entity:@e[tag=howitzer]
+#入力　entity:@e[tag=howitzer152]
 
 #召喚
 summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,he,152mm,he-init,he-nohit,tracer-red,mob-he,entity-nohit],Duration:300,CustomName:"{\"text\":\"he-r\",\"color\":\"aqua\"}"}

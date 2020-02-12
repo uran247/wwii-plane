@@ -15,11 +15,17 @@ tag @e[tag=drop-init,distance=..20] remove plane
 #対象がいなかったら召喚
 scoreboard players operation #offset reg1 = @s ammunition1
 scoreboard players operation #offset reg1 %= #3 Num
-execute as @s[tag=50kg] unless entity @e[tag=drop-init,distance=..20] if score #offset reg1 matches 0 run summon armor_stand ^-0.5 ^-1 ^ {Tags:["ki21-bomb-7",drop-init,dropping,plane,plane-bomb,plane-parts,entity-nohit,50kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:84,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
-execute as @s[tag=50kg] unless entity @e[tag=drop-init,distance=..20] if score #offset reg1 matches 1 run summon armor_stand ^ ^-1 ^ {Tags:["ki21-bomb-7",drop-init,dropping,plane,plane-bomb,plane-parts,entity-nohit,50kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:84,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
-execute as @s[tag=50kg] unless entity @e[tag=drop-init,distance=..20] if score #offset reg1 matches 2 run summon armor_stand ^0.5 ^-1 ^ {Tags:["ki21-bomb-7",drop-init,dropping,plane,plane-bomb,plane-parts,entity-nohit,50kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:84,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
+execute as @s[tag=50kg] unless entity @e[tag=drop-init,distance=..20] as @e[distance=..10,tag=body] if score @s plane-id = #plane-id reg1 run tag @s add plane-parts-target
+execute as @s[tag=50kg,scores={ammunition1=..3}] unless entity @e[tag=drop-init,distance=..20] as @e[distance=..10,tag=plane-parts-target,scores={accelerate-cor=..-1}] run scoreboard players add @s accelerate-cor 1
+execute as @s[tag=50kg,scores={ammunition1=1..}] unless entity @e[tag=drop-init,distance=..20] as @e[distance=..10,tag=plane-parts-target,scores={pitch-speed-cor=..-1}] run scoreboard players add @s pitch-speed-cor 1
+execute as @s[tag=50kg,scores={ammunition1=1..}] unless entity @e[tag=drop-init,distance=..20] as @e[distance=..10,tag=plane-parts-target,scores={yaw-speed-cor=..-1}] run scoreboard players add @s yaw-speed-cor 1
+tag @e[distance=..10,tag=plane-parts-target] remove plane-parts-target
+execute as @s[tag=50kg] unless entity @e[tag=drop-init,distance=..20] if score #offset reg1 matches 0 run summon armor_stand ^-0.5 ^-1 ^ {Tags:["ki21-bomb-7",drop-init,dropping,plane-bomb,plane-parts,entity-nohit,50kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:84,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
+execute as @s[tag=50kg] unless entity @e[tag=drop-init,distance=..20] if score #offset reg1 matches 1 run summon armor_stand ^ ^-1 ^ {Tags:["ki21-bomb-7",drop-init,dropping,plane-bomb,plane-parts,entity-nohit,50kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:84,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
+execute as @s[tag=50kg] unless entity @e[tag=drop-init,distance=..20] if score #offset reg1 matches 2 run summon armor_stand ^0.5 ^-1 ^ {Tags:["ki21-bomb-7",drop-init,dropping,plane-bomb,plane-parts,entity-nohit,50kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:84,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
 scoreboard players set @e[tag=ki21-bomb-7,tag=drop-init] damage 250
 scoreboard players operation @e[tag=ki21-bomb-7,tag=drop-init] plane-id = @s plane-id
+
 
 #スコア付与
 scoreboard players operation @e[tag=drop-init,distance=..20] speed = @s speed
@@ -60,3 +66,5 @@ playsound minecraft:block.piston.contract ambient @a ~ ~ ~ 1 1.5
 tag @s remove bombing-executer
 tag @e[tag=drop-init,distance=..20] remove drop-init
 scoreboard players set @p[scores={rightClick=1..}] rightClick 0
+
+

@@ -16,12 +16,16 @@ scoreboard players set @e[tag=gun-init,distance=..5] damage 13
 scoreboard players set @e[tag=gun-init,distance=..5] max-age 100
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,distance=..5] offsetX 0
-scoreboard players set @e[tag=gun-init,distance=..5] offsetY -500
-scoreboard players set @e[tag=gun-init,distance=..5] offsetZ 9200
+scoreboard players set @e[tag=gun-init,distance=..5] offsetY 500
+scoreboard players set @e[tag=gun-init,distance=..5] offsetZ -9200
 
 #発射位置に移動
-execute at @s positioned ~ ~ ~ as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
-#execute at @e[tag=gun-init,distance=..20] run particle minecraft:dust 1 0 0 0.2 ~ ~ ~ 0 0 0 1 30 force
+function plane:position/util/calc-triangle-ratio
+scoreboard players operation #sin reg1 = #sin return
+scoreboard players operation #cos reg1 = #cos return
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/calc-displacement
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/move-parts
 
 #向きをターゲット方向に向ける
 execute as @e[tag=gun-init,limit=2,distance=..20] at @s run tp @s ~ ~ ~ facing entity @e[tag=rear-gun-target,distance=..55,limit=1]

@@ -6,6 +6,6 @@
 #execute store result score @s cos run data get entity @e[tag=Trigonometric2,limit=1] Pos[2] 200
 #kill @e[tag=Trigonometric]
 
-execute store result entity @e[tag=Trigonometric,limit=1] Rotation[0] float 0.01 run scoreboard players get @s input1
-execute at @e[tag=Trigonometric,limit=1] run tp @e[tag=Trigonometric2,limit=1] ^ ^ ^5
-execute store result score @s cos run data get entity @e[tag=Trigonometric2,limit=1] Pos[2] 200
+execute store result entity 0-0-20-0-0 Rotation[0] float 0.01 run scoreboard players get @s input1
+execute at 0-0-20-0-0 positioned ^ ^ ^5 run tp 0-0-21-0-0 ~ ~ ~
+execute store result score @s cos run data get entity 0-0-21-0-0 Pos[2] 200

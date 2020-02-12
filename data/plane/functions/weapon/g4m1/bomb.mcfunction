@@ -15,6 +15,11 @@ tag @e[tag=drop-init,distance=..20] remove plane
 #対象がいなかったら召喚
 scoreboard players operation #offset reg1 = @s ammunition1
 scoreboard players operation #offset reg1 %= #2 Num
+execute as @s[tag=250kg] as @e[distance=..10,tag=body] if score @s plane-id = #plane-id reg1 run tag @s add plane-parts-target
+execute as @s[tag=250kg] as @e[distance=..10,tag=plane-parts-target,scores={accelerate-cor=..-1}] run scoreboard players add @s accelerate-cor 1
+execute as @s[tag=250kg] as @e[distance=..10,tag=plane-parts-target,scores={pitch-speed-cor=..-1}] run scoreboard players add @s pitch-speed-cor 2
+execute as @s[tag=250kg] as @e[distance=..10,tag=plane-parts-target,scores={yaw-speed-cor=..-1}] run scoreboard players add @s yaw-speed-cor 2
+tag @e[distance=..10,tag=plane-parts-target] remove plane-parts-target
 execute as @s[tag=250kg] if score #offset reg1 matches 0 run summon armor_stand ^-0.5 ^-1 ^ {Tags:["g4m1-bomb",drop-init,dropping,plane-bomb,plane-parts,entity-nohit,250kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:77,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
 execute as @s[tag=250kg] if score #offset reg1 matches 1 run summon armor_stand ^0.5 ^-1 ^ {Tags:["g4m1-bomb",drop-init,dropping,plane-bomb,plane-parts,entity-nohit,250kg,bomb-normal],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:77,Unbreakable:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
 scoreboard players set @e[tag=g4m1-bomb,tag=drop-init,tag=250kg] damage 1250

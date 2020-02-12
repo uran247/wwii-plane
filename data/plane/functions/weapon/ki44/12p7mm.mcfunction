@@ -21,21 +21,25 @@ scoreboard players set @e[tag=gun-init,distance=..5] damage 8
 scoreboard players set @e[tag=gun-init,distance=..5,type=armor_stand] max-age 20
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left1,distance=..5] offsetX 200
-scoreboard players set @e[tag=gun-init,tag=left1,distance=..5] offsetY -600
-scoreboard players set @e[tag=gun-init,tag=left1,distance=..5] offsetZ -3300
+scoreboard players set @e[tag=gun-init,tag=left1,distance=..5] offsetY 600
+scoreboard players set @e[tag=gun-init,tag=left1,distance=..5] offsetZ 3300
 scoreboard players set @e[tag=gun-init,tag=left2,distance=..5] offsetX 1740
-scoreboard players set @e[tag=gun-init,tag=left2,distance=..5] offsetY 450
-scoreboard players set @e[tag=gun-init,tag=left2,distance=..5] offsetZ -2600
+scoreboard players set @e[tag=gun-init,tag=left2,distance=..5] offsetY -450
+scoreboard players set @e[tag=gun-init,tag=left2,distance=..5] offsetZ 2600
 scoreboard players set @e[tag=gun-init,tag=right1,distance=..5] offsetX -330
-scoreboard players set @e[tag=gun-init,tag=right1,distance=..5] offsetY -600
-scoreboard players set @e[tag=gun-init,tag=right1,distance=..5] offsetZ -3300
+scoreboard players set @e[tag=gun-init,tag=right1,distance=..5] offsetY 600
+scoreboard players set @e[tag=gun-init,tag=right1,distance=..5] offsetZ 3300
 scoreboard players set @e[tag=gun-init,tag=right2,distance=..5] offsetX -1740
-scoreboard players set @e[tag=gun-init,tag=right2,distance=..5] offsetY 450
-scoreboard players set @e[tag=gun-init,tag=right2,distance=..5] offsetZ -2600
+scoreboard players set @e[tag=gun-init,tag=right2,distance=..5] offsetY -450
+scoreboard players set @e[tag=gun-init,tag=right2,distance=..5] offsetZ 2600
 
 #発射位置に移動
-#execute rotated as @s as @e[tag=gun-init,distance=..20] at @s run tp @s ~ ~ ~ ~ ~
+function plane:position/util/calc-triangle-ratio
+scoreboard players operation #sin reg1 = #sin return
+scoreboard players operation #cos reg1 = #cos return
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/calc-displacement
 execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/calc-offset
+execute at @s as @e[tag=gun-init,distance=..5] run function plane:position/util/move-parts
 
 #向きを機体方向に向ける
 execute at @s run summon minecraft:area_effect_cloud ^ ^ ^150 {Duration:0,Tags:[gun-indicator,entity-nohit]}

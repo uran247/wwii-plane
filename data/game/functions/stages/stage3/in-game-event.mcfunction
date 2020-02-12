@@ -1,5 +1,5 @@
 #目印セット
-execute as @e[tag=stage2,tag=mark,x=-1913,y=255,z=-1766,distance=..1] at @s run function game:in-game-event/util/set-circle
+#execute as @e[tag=stage2,tag=mark,x=-1913,y=255,z=-1766,distance=..1] at @s run function game:in-game-event/util/set-circle
 
 #基地HPをクリアスコアに代入
 execute as @e[tag=enemy-base] store result score #now-score reg1 run data get entity @s HandItems[0].tag.BaseHP
@@ -23,7 +23,9 @@ execute if score #phase event-flag matches 1 run scoreboard players set #phase e
 #目標地点まで向かう指示
 execute if score #phase event-flag matches 2 run title @a times 0 80 20
 execute if score #phase event-flag matches 2 run title @a title {"text":"目標地点へ向かえ","color":"yellow","bold":false}
+execute if score #phase event-flag matches 2 as @a positioned -1888 200 -2112 run function game:in-game-event/util/show-direction
 #目標地点へ到達したらフラグを次フェーズへ
-execute if score #phase event-flag matches 2 positioned -1977 0 -1830 if entity @p[dx=128,dy=1024,dz=128] run scoreboard players set #phase event-flag 3
+execute if score #phase event-flag matches 2 positioned -1888 0 -2112 if entity @p[dx=128,dy=1024,dz=128] run scoreboard players set #phase event-flag 3
+execute if score #phase event-flag matches 3 as @a positioned -1877 200 -2084 unless entity @s[distance=..378] run function game:in-game-event/util/show-direction
 
 #tellraw @p [{"score" : {"name":"#phase", "objective":"event-flag"}}, {"text":" "}]

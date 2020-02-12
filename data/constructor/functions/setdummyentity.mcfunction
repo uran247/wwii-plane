@@ -40,22 +40,20 @@ scoreboard players set @e[tag=block-detector,tag=18,x=0,y=1,z=0,distance=..1] Nu
 scoreboard players set @e[tag=block-detector,tag=19,x=0,y=1,z=0,distance=..1] Num 19
 scoreboard players set @e[tag=block-detector,tag=20,x=0,y=1,z=0,distance=..1] Num 20
 
-summon minecraft:armor_stand -1788 255 -1884 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage1],Invulnerable:1,UUIDLeast:0,UUIDMost:21}
-summon minecraft:armor_stand -1913 255 -1766 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage2],Invulnerable:1,UUIDLeast:0,UUIDMost:22}
-summon minecraft:armor_stand 1626 255 -2793 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:24}
-summon minecraft:armor_stand 2022 255 -3005 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:25}
-summon minecraft:armor_stand 2419 255 -3217 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:26}
-summon minecraft:armor_stand 2815 255 -3430 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:27}
-summon minecraft:armor_stand 3211 255 -3643 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:28}
+summon minecraft:armor_stand -1788 200 -1884 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage1],Invulnerable:1,UUIDLeast:0,UUIDMost:21}
+summon minecraft:armor_stand -1913 200 -1766 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage2],Invulnerable:1,UUIDLeast:0,UUIDMost:22}
+summon minecraft:armor_stand 1626 200 -2793 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:24}
+summon minecraft:armor_stand 2022 200 -3005 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:25}
+summon minecraft:armor_stand 2419 200 -3217 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:26}
+summon minecraft:armor_stand 2815 200 -3430 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:27}
+summon minecraft:armor_stand 3211 200 -3643 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:28}
 summon minecraft:item_frame 0 142 49 {Tags:[free-nugget],UUIDLeast:0,UUIDMost:29,Facing:5b}
 summon minecraft:armor_stand 4737 200 -5700 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage5],Invulnerable:1,UUIDLeast:0,UUIDMost:30}
 summon minecraft:item_frame 7 142 49 {Tags:[free-steak],UUIDLeast:0,UUIDMost:31,Facing:4b}
 
-setworldspawn 0 0 0
-kill @e[tag=Trigonometric]
-kill @e[tag=Trigonometric2]
-summon minecraft:armor_stand -0.5 0 -0.5 {Markar:1,Tags:[Trigonometric],NoGravity:1,Invulnerable:1}
-summon minecraft:armor_stand 0 0 0 {Markar:1,Tags:[Trigonometric2],NoGravity:1,Invulnerable:1}
+setworldspawn 0 255 0
+summon minecraft:armor_stand -0.5 0 -0.5 {Markar:1,Tags:[Trigonometric],NoGravity:1,Invulnerable:1,UUIDLeast:0,UUIDMost:32}
+summon minecraft:armor_stand 0 0 0 {Markar:1,Tags:[Trigonometric2],NoGravity:1,Invulnerable:1,UUIDLeast:0,UUIDMost:33}
 data merge entity @e[tag=Trigonometric,limit=1] {Pos:[0d,0d,0d]}
 replaceitem entity 0-0-5-0-0 weapon.mainhand minecraft:shulker_box
 

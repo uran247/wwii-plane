@@ -2,8 +2,8 @@
 execute store result score #enemy-num reg1 if entity @e[tag=enemy-target]
 execute if score #enemy-num reg1 matches 0 run function game:stages/stage1/in-game-event/summon-target
 
-#目印セット
-execute as @e[tag=stage1,tag=mark,x=-1788,y=255,z=-1884,distance=..1] at @s run function game:in-game-event/util/set-circle
+#エンティティ数調整
+execute if score #enemy-num reg1 > #max max-entity run kill @e[limit=1,tag=enemy-target,sort=random]
 
 #撃墜スコアをクリアスコアに代入
 scoreboard players operation #now-score clear-score = #global shootdown
@@ -25,5 +25,8 @@ execute if score #phase event-flag matches 1 run scoreboard players set #phase e
 #目標地点まで向かう指示
 execute if score #phase event-flag matches 2 run title @a times 0 80 20
 execute if score #phase event-flag matches 2 run title @a title {"text":"目標地点へ向かえ","color":"yellow","bold":false}
+execute if score #phase event-flag matches 2 as @a positioned -1788 200 -1884 run function game:in-game-event/util/show-direction
+
 #目標地点へ到達したらフラグを次フェーズへ
-execute if score #phase event-flag matches 2 positioned -1852 0 -1948 if entity @p[dx=128,dy=1024,dz=128] run scoreboard players set #phase event-flag 3
+execute if score #phase event-flag matches 2 positioned -1788 0 -1884 if entity @p[dx=128,dy=1024,dz=128] run scoreboard players set #phase event-flag 3
+execute if score #phase event-flag matches 3 as @a positioned -1888 200 -2112 unless entity @s[distance=..378] run function game:in-game-event/util/show-direction

@@ -1,4 +1,5 @@
 #入力：entity: player position: player score:@s taken-damage
+#処理：プレイヤーにtaken-damege分のダメージを与える
 
 execute store success score #is-evacuation reg1 if data entity @s Inventory[{Slot:103b}]
 execute if score #is-evacuation reg1 matches 1 run data merge block 0 5 0 {Items:[{slot:0b,id:"minecraft:stone",Count:1b}]}

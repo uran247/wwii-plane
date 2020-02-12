@@ -4,12 +4,11 @@
 #利用可能タグ controll-target:機体
 
 #武器使用者にタグ付け
-tag @s add weapon-user
+tag @s[nbt={Inventory:[{Slot:-106b,tag:{item-type:controll-rod}}]}] add weapon-user
 
 #使用武器選択判定
-execute if entity @s[scores={drop-cont-stick=1..}] at @s run function plane:controll/weapon/switch-weapon
-#execute if entity @s[scores={plane-key-input=1}] run scoreboard players set @e[tag=controll-target,distance=..20] plane-weapon 1
-#execute if entity @s[scores={plane-key-input=2}] run scoreboard players set @e[tag=controll-target,distance=..20] plane-weapon 2
+#execute if entity @s[scores={drop-cont-stick=1..}] at @s run function plane:controll/weapon/switch-weapon
+execute if entity @s[nbt=!{Inventory:[{Slot:-106b,tag:{item-type:controll-rod}}]}] at @s run function plane:controll/weapon/switch-weapon
 
 #右クリック判定
 execute if score @s rightClick matches 2.. run scoreboard players set @s rightClick 0
