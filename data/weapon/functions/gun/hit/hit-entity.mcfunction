@@ -14,5 +14,9 @@ execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size30] pos
 execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size30] positioned ^-1001.5 ^ ^ run tag @s[distance=..1000] remove hit-candidate
 execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size30] positioned ^ ^1001.5 ^ run tag @s[distance=..1000] remove hit-candidate
 execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size30] positioned ^ ^-1001.5 ^ run tag @s[distance=..1000] remove hit-candidate
+execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size140] positioned ^1007 ^ ^ run tag @s[distance=..1000] remove hit-candidate
+execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size140] positioned ^-1007 ^ ^ run tag @s[distance=..1000] remove hit-candidate
+execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size140] positioned ^ ^1007 ^ run tag @s[distance=..1000] remove hit-candidate
+execute positioned ^ ^ ^10 as @e[tag=hit-candidate,distance=..20,tag=size140] positioned ^ ^-1007 ^ run tag @s[distance=..1000] remove hit-candidate
 tag @e[tag=hit-candidate,limit=1,sort=nearest,distance=..20,tag=!gunner] add hit-gun
 execute positioned ^ ^ ^10 run tag @e[tag=hit-candidate,distance=..20] remove hit-candidate

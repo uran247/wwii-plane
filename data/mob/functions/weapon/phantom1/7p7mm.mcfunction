@@ -7,8 +7,8 @@ summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm
 summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-red,mob-gun,entity-nohit],Duration:20,CustomName:"{\"text\":\"gun-l\",\"color\":\"aqua\"}"}
 
 #スコア付与
-scoreboard players set @e[tag=gun-init,distance=..5] speed 100
-scoreboard players set @e[tag=gun-init,distance=..5] damage 20
+scoreboard players set @e[tag=gun-init,distance=..5] speed 70
+scoreboard players set @e[tag=gun-init,distance=..5] damage 15
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 800
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY 0

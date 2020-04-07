@@ -9,7 +9,7 @@ tag @s add ai-executer
 execute if data entity @s Passengers run tag @s add has-rider
 execute if entity @s[tag=has-rider] run tag @e[tag=mob-rider,sort=nearest,distance=..3] add ai-rider
 
-#ターゲットのplane-idを記憶
+#攻撃ターゲットのplane-idを記憶
 function mob:ai/util/get-target
 
 #どっちに回ればプレイヤーに近づくか検知して旋回方向決定
@@ -28,10 +28,15 @@ execute unless block ~ ~-10 ~ minecraft:air run tag @s add AngXminus
 execute unless block ~ ~-10 ~ minecraft:air run tag @s remove AngXplus
 
 #ターゲット不在なら右旋回する
-execute unless entity @p[tag=ai-target] run tag @s add AngYplus
+execute unless entity @p[tag=ai-target] store result score #time reg1 run time query gametime
+execute unless entity @p[tag=ai-target] run scoreboard players operation #time reg1 %= #2 Num
+execute unless entity @p[tag=ai-target] if score #time reg1 matches 0 run tag @s add AngYplus
 
-#ターゲット不在で高さ250なら高度を下げる
-execute unless entity @p[tag=ai-target] positioned ~ 0 ~ unless entity @s[dx=1,dy=200,dz=1] run tag @s add AngXplus
+#ターゲット不在で高さがdefault-pos-y以上なら高度を下げる
+execute store result score #pos-y reg1 run data get entity @s Pos[1] 1
+execute unless entity @p[tag=ai-target] if score @s default-pos-y matches 1.. if score #pos-y reg1 > @s default-pos-y run tag @s add AngXplus
+execute unless entity @p[tag=ai-target] if score @s default-pos-y matches 1.. if score #pos-y reg1 < @s default-pos-y run tag @s add AngXminus
+execute unless entity @p[tag=ai-target] unless score @s default-pos-y matches 1.. positioned ~ 0 ~ unless entity @s[dx=1,dy=250,dz=1] run tag @s add AngXplus
 
 #プレイヤー座標を向くように旋回
 scoreboard players operation @s[tag=AngYplus,tag=!near] AngY += @s yaw-speed
@@ -70,14 +75,13 @@ execute store result entity @s Motion[2] double 0.00001 run scoreboard players o
 
 #射撃可能か判定
 function mob:ai/util/is-attackable
-#execute as @p[tag=ai-target] positioned ^ ^-251 ^-431 if entity @s[distance=..500] positioned ^ ^251 ^431 run tag @e[tag=ai-executer,distance=..1] add unattackable
-#execute as @p[tag=ai-target] positioned ^ ^251 ^-431 if entity @s[distance=..500] positioned ^ ^-251 ^431 run tag @e[tag=ai-executer,distance=..1] add unattackable
 
 #プレイヤーの方を向いたら射撃
 execute if entity @s[tag=attackable] run function mob:ai/attack/use-weapon
-#execute as @s[tag=attackable,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run function mob:weapon/phantom1/7p7mm
-#execute as @s[tag=attackable,scores={ammunition1=1..,w1-reload=..0}] if entity @p[tag=ai-target,distance=..96] at @s run scoreboard players remove @s ammunition1 1
-#scoreboard players remove @s[scores={ammunition1=1..,w1-reload=1..}] w1-reload 1
+
+#cooltimeが0だったらスキル使用
+execute if entity @s[tag=has-skill] if score @s skill-ct matches ..0 run function mob:ai/attack/use-skill
+execute if entity @s[tag=has-skill] if score @s skill-ct matches 1.. run scoreboard players remove @s skill-ct 1
 
 #particle
 execute unless entity @p[tag=ai-target] if entity @s[tag=has-rider] run particle minecraft:large_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 force

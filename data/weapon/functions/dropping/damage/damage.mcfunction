@@ -13,44 +13,45 @@ execute as @a if score @s plane-id = #bomb-id reg1 run tag @s add bomb-owner
 execute as @e[tag=!entity-nohit,distance=..32] run function weapon:util/set-entity-hp
 scoreboard players operation #damage reg1 = @s damage
 execute as @e[tag=base,distance=..50] run function weapon:dropping/damage/base-damage
+scoreboard players set @e[tag=!entity-nohit,distance=..32] reg2 0
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..2] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..2] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..4] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..4] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..6] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..6] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..8] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..8] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..10] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..10] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..12] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..12] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..14] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..14] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..16] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..16] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..18] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..18] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..20] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..20] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..22] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..22] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..24] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..24] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..26] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..26] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..28] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..28] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..30] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..30] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..32] reg1 -= #damage reg1
-execute as @e[tag=!entity-nohit,distance=..32,scores={reg1=..-1}] run scoreboard players set @s reg1 0
+scoreboard players operation @e[tag=!entity-nohit,distance=..32] reg2 += #damage reg1
+execute as @e[tag=!entity-nohit,distance=..32] run function weapon:util/calc-entity-damage
 
 ### メッセージ処理 ###
 #メッセージを表示(title)
 title @p[tag=bomb-owner] times 0 20 20
-execute as @e[tag=!entity-nohit,distance=..32,scores={reg1=0},tag=!enemy-target,sort=nearest,limit=1] run function weapon:dropping/damage/set-kill-mob-message
+execute as @e[tag=!entity-nohit,distance=..32,scores={reg1=0},sort=nearest,limit=1] run function weapon:dropping/damage/set-kill-mob-message
 execute as @e[tag=!entity-nohit,distance=..32,scores={reg1=0},tag=enemy-target,sort=nearest,limit=1] run function weapon:dropping/damage/set-kill-target-message
 execute if entity @e[tag=!entity-nohit,distance=..32,scores={reg1=0}] run title @p[tag=bomb-owner] title {"text":""}
 #メッセージを表示(tellraw)
@@ -71,9 +72,12 @@ kill @e[tag=!entity-nohit,distance=..32,scores={reg1=0},tag=enemy-target,type=sp
 
 #### ダメージ時エフェクト ####
 #命中地点にパーティクル
-execute at @s[tag=50kg] run particle minecraft:explosion ^ ^ ^ 1 1 1 0 100 force
-execute at @s[tag=60kg] run particle minecraft:explosion ^ ^ ^ 1 1 1 0 120 force
-execute at @s[tag=250kg] run particle minecraft:explosion ^ ^ ^ 3 3 3 0 500 force
+execute at @s[tag=50kg] run particle minecraft:large_smoke ~ ~1 ~ 1.0 1.0 1.0 0.05 500 force
+execute at @s[tag=50kg] run particle minecraft:flame ~ ~1 ~ 1 1 1 0.03 100 force
+execute at @s[tag=60kg] run particle minecraft:large_smoke ~ ~1 ~ 1.0 1.0 1.0 0.05 500 force
+execute at @s[tag=60kg] run particle minecraft:flame ~ ~1 ~ 1 1 1 0.03 100 force
+execute at @s[tag=250kg] run particle minecraft:large_smoke ~ ~1 ~ 3 1 3 0.25 2500 force
+execute at @s[tag=250kg] run particle minecraft:flame ~ ~1 ~ 3 3 3 0.25 500 force
 
 #音
 execute at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 3 1.2 0

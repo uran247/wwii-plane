@@ -24,3 +24,4 @@ execute if score #global stage-id matches 2 run function game:stages/stage2/star
 execute if score #global stage-id matches 3 run function game:stages/stage3/start-game
 execute if score #global stage-id matches 4 run function game:stages/stage4/start-game
 execute if score #global stage-id matches 5 run function game:stages/stage5/start-game
+execute if score #global stage-id matches 6 run function game:stages/stage6/start-game

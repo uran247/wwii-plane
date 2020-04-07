@@ -1,7 +1,7 @@
 #実行条件無し
 
 #機体召喚
-summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[j100b-root,j100b,plane-init,plane-root,plane,entity-nohit,has-weapon1,tier1,main-weapon1,missiled,aam],CustomName:"{\"text\":\"j100b\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b,HandItems:[{id:"minecraft:stone_button",Count:1b,tag:{weapons:["7.7mm gun"]}},{}]}
+summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[j100b-root,j100b,plane-init,plane-root,plane,entity-nohit,has-weapon1,tier1,main-weapon1,missiled,aam],CustomName:"{\"text\":\"j100b\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b,HandItems:[{id:"snowball",Count:1b,tag:{CustomModelData:1,weapons:["7.7mm gun"]}},{}]}
 summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[j100b,plane-init,plane,entity-nohit,plane-seat],CustomName:"{\"text\":\"seat\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,Invulnerable:1b,DeathLootTable:"minecraft:entities/bat",SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[j100b,plane-init,plane,plane-seat,entity-nohit]}],DisabledSlots:256,NoGravity:0b}
 summon armor_stand ~ ~ ~ {Tags:["j100b-body","j100b",plane-init,plane,has-model,model-changeable-cmd,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:gunpowder",Count:1b,tag:{CustomModelData:1}},{}],Pose:{RightArm:[0f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["j100b-hitbox","j100b",plane-init,plane,plane-hitbox,has-offset,body,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:80f,Attributes:[{Name:generic.maxHealth,Base:80}]}

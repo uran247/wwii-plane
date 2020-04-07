@@ -8,4 +8,5 @@ execute at @e[tag=ki44-spawner] as @p run function plane:summon/ki-44
 execute at @e[tag=d4y2-spawner] as @p run function plane:summon/d4y2
 execute at @e[tag=j2m3-spawner] as @p run function plane:summon/j2m3
 execute at @e[tag=g4m1-spawner] as @p run function plane:summon/g4m1
+execute at @e[tag=n1k2-spawner] as @p run function plane:summon/n1k2
 kill @e[tag=plane-spawner]

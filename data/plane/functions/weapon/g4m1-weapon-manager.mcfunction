@@ -7,6 +7,9 @@ execute if entity @p[tag=weapon-user,scores={rightClick=1..}] unless entity @s[s
 execute if entity @p[tag=weapon-user,scores={rightClick=1..}] unless entity @s[scores={AngX=..1600,AngZ=-1000..1000}] at @s run scoreboard players set @p[tag=weapon-user,scores={rightClick=1..}] rightClick 0
 
 #後部機銃発射（自動発射）
+function plane:position/util/calc-triangle-ratio
+scoreboard players operation #sin reg1 = #sin return
+scoreboard players operation #cos reg1 = #cos return
 execute if entity @s[scores={w2-reload=..0,ammunition2=1..}] at @s run function plane:weapon/g4m1/check-rear1-target
 execute if entity @s[scores={w2-reload=..0,ammunition2=1..}] if entity @e[tag=rear-gun-target,distance=..55] at @s run function plane:weapon/g4m1/rear-gun1
 execute if entity @s[scores={w3-reload=..0,ammunition3=1..}] at @s run function plane:weapon/g4m1/check-rear2-target

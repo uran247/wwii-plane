@@ -15,6 +15,7 @@ execute as @s[tag=ki44-root] at @s run function item:plane2item/ki44-2-item
 execute as @s[tag=d4y2-root] at @s run function item:plane2item/d4y2-2-item
 execute as @s[tag=j2m3-root] at @s run function item:plane2item/j2m3-2-item
 execute as @s[tag=g4m1-root] at @s run function item:plane2item/g4m1-2-item
+execute as @s[tag=n1k2-root] at @s run function item:plane2item/n1k2-2-item
 
 #ロバチェスト内のアイテム放出
 data merge block 0 6 0 {Items:[]}

@@ -43,7 +43,7 @@ scoreboard players operation @e[tag=d4y2-bomb-center,tag=d4y2-init] plane-id = @
 execute as @e[tag=d4y2-bomb-center,tag=d4y2-init] store result entity @s Attributes[{Name:"generic.knockbackResistance"}].Base double 1 run scoreboard players get @s plane-id
 tag @e[tag=d4y2-bomb-center,tag=d4y2-init] remove d4y2-init
 
-
 #残弾スコア付与
 scoreboard players set @s[tag=60kg-normal] ammunition2 3
 scoreboard players set @s[tag=!60kg-normal] ammunition2 1
+scoreboard players set #return return 1

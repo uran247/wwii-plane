@@ -33,7 +33,8 @@ execute if score #phase event-flag matches 5 run scoreboard players set #phase e
 
 #飛行説明
 execute if score #phase event-flag matches 6 run title @a times 0 3 0
-execute if score #phase event-flag matches 6 run title @a title [{"text":"目標を撃破せよ","color":"yellow","bold":false}]
+execute if score #phase event-flag matches 6 run title @a title [{"text":""}]
+execute if score #phase event-flag matches 6 run title @a subtitle [{"text":"パーティクルの方向にいる目標を撃破せよ","color":"yellow","bold":false}]
 execute if score #phase event-flag matches 6 as @a positioned -1548 200 1234 run function game:in-game-event/util/show-direction
 execute if score #phase event-flag matches 6 positioned as @e[tag=howitzer-tutorial] run particle dust 1 0.65 0 2 ~ ~ ~ 1 1 1 0 10 force
 execute if score #phase event-flag matches 6 unless entity @e[tag=howitzer-tutorial] run scoreboard players add #timer time 1

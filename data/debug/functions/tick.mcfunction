@@ -29,4 +29,5 @@
 #execute as @a at @s facing ^ ^ ^101 positioned ^ ^ ^101 run function game:in-game-event/util/show-direction
 #execute as @a positioned -1548 200 1234 run function game:in-game-event/util/show-direction
 
-#execute as @a[scores={rightClick=1..}] at @s run summon arrow ~ ~ ~ {}
+
+#execute as @e[tag=g4m1-root] at @s run function debug:chk-offset

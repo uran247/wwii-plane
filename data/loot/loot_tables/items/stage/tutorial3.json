@@ -10,7 +10,7 @@
                     "functions": [
                         {
                             "function":"set_name",
-                            "name":{"text":"チュートリアル -射撃-"}
+                            "name":{"text":"チュートリアル -爆撃-"}
                         },
                         {
                             "function":"set_lore",

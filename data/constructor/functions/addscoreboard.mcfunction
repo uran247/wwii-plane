@@ -91,6 +91,7 @@ scoreboard objectives add w3-reload dummy
 scoreboard objectives add w4-reload dummy
 scoreboard objectives add w5-reload dummy
 scoreboard objectives add w6-reload dummy
+scoreboard objectives add max-w1-reload dummy
 scoreboard objectives add damage dummy
 scoreboard objectives add torp-damage dummy
 scoreboard objectives add taken-damage dummy
@@ -154,3 +155,10 @@ scoreboard objectives add drop-cont-stick minecraft.dropped:minecraft.carrot_on_
 scoreboard objectives add bgm-bunretsu dummy
 scoreboard objectives add event-flag dummy
 scoreboard objectives add bgm-repeat dummy
+scoreboard objectives add skill-ct dummy
+scoreboard objectives add max-skill-ct dummy
+scoreboard objectives add fire-power dummy
+scoreboard objectives add accuracy dummy
+scoreboard objectives add gun-speed dummy
+scoreboard objectives add default-pos-y dummy
+scoreboard objectives add defence dummy

@@ -4,20 +4,18 @@
 #実行者：砲弾
 
 
-#### ダメージ判定 ####
-#hp取得
-execute as @e[tag=!entity-nohit,distance=..3] run function weapon:util/set-entity-hp
-
-#hpからダメージを引く
-scoreboard players operation @e[tag=!entity-nohit,distance=..3] reg1 -= @s damage
-execute as @e[tag=!entity-nohit,distance=..3,scores={reg1=..-1}] run scoreboard players set @s reg1 0
-
 #### 射手取得 ####
 #砲弾のplane-id取得
 scoreboard players operation #bullet-id reg1 = @s plane-id
 #射手判定
 execute as @a if score @s plane-id = #bullet-id reg1 run tag @s add weapon-owner
+#### ダメージ判定 ####
+#hp取得
+execute as @e[tag=!entity-nohit,distance=..3] run function weapon:util/set-entity-hp
 
+#hpからダメージを引く 防御率分だけダメージを下げる
+scoreboard players operation @e[tag=!entity-nohit,distance=..3] reg2 = @s damage
+execute as @e[tag=!entity-nohit,distance=..3] run function weapon:util/calc-entity-damage
 
 ### メッセージ処理 ###
 #メッセージを表示(title)
@@ -34,7 +32,8 @@ execute as @e[tag=plane-hitbox,distance=..3,scores={reg1=0}] run function weapon
 execute as @p[tag=weapon-owner] run function weapon:aagun/damage/set-shotdown-score
 
 #スコアをHPに反映
-execute as @e[tag=!entity-nohit,distance=..3,type=!minecraft:spawner_minecart,type=!minecraft:player] store result entity @s Health float 1 run scoreboard players get @s reg1
+execute if score #bullet-id reg1 matches 1.. as @e[tag=!entity-nohit,distance=..3,type=!minecraft:spawner_minecart,type=!minecraft:player] store result entity @s Health float 1 run scoreboard players get @s reg1
+execute if score #bullet-id reg1 matches ..0 as @e[tag=!entity-nohit,distance=..3,type=!minecraft:spawner_minecart,type=!minecraft:player] unless score @s plane-id matches ..0 store result entity @s Health float 1 run scoreboard players get @s reg1
 execute as @e[tag=!entity-nohit,distance=..3,type=minecraft:spawner_minecart] store result entity @s MaxNearbyEntities short 1 run scoreboard players get @s reg1
 execute as @a[tag=!entity-nohit,distance=..3] run scoreboard players operation @s taken-damage -= @s reg1
 execute as @a[tag=!entity-nohit,distance=..3] run function weapon:util/damage
@@ -44,8 +43,11 @@ kill @e[tag=!entity-nohit,distance=..20,scores={reg1=0},type=minecraft:spawner_m
 
 #### ダメージ時エフェクト ####
 #命中地点にパーティクル
-execute at @s[tag=88mm] run particle minecraft:large_smoke ^ ^ ^ 1.3 2 1.3 0 1000 force
+particle minecraft:large_smoke ^ ^ ^ 1.3 2 1.3 0 1000 force
 execute at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 3 1.2 0
 
 #タグ除去
 tag @a remove weapon-owner
+
+#tellraw @p [{"score" : {"name":"#bunretsu-max", "objective":"bgm-repeat"}}, {"text":" "}, {"score" : {"name":"#repeat-now", "objective":"bgm-repeat"}}]
+

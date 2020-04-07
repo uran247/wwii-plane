@@ -11,11 +11,11 @@ execute as @s at @s run tp 0-0-a-0-0 ^ ^ ^ ~90 ~
 
 #スコア付与
 execute as 0-0-4-0-0 run scoreboard players set @s offsetX 1000
-execute as 0-0-4-0-0 run scoreboard players set @s offsetY -500
-execute as 0-0-4-0-0 run scoreboard players set @s offsetZ -950
+execute as 0-0-4-0-0 run scoreboard players set @s offsetY 500
+execute as 0-0-4-0-0 run scoreboard players set @s offsetZ 950
 execute as 0-0-a-0-0 run scoreboard players set @s offsetX 2000
-execute as 0-0-a-0-0 run scoreboard players set @s offsetY -500
-execute as 0-0-a-0-0 run scoreboard players set @s offsetZ -950
+execute as 0-0-a-0-0 run scoreboard players set @s offsetY 500
+execute as 0-0-a-0-0 run scoreboard players set @s offsetZ 950
 
 #位置移動
 function plane:position/util/calc-triangle-ratio

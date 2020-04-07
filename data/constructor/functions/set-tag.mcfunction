@@ -1,2 +1,2 @@
-tag @a add japan
+#tag @a add japan
 #say 1

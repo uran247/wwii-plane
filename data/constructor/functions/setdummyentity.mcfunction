@@ -47,13 +47,13 @@ summon minecraft:armor_stand 2022 200 -3005 {NoGravity:1,Marker:1,Invisible:1,Ta
 summon minecraft:armor_stand 2419 200 -3217 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:26}
 summon minecraft:armor_stand 2815 200 -3430 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:27}
 summon minecraft:armor_stand 3211 200 -3643 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage4],Invulnerable:1,UUIDLeast:0,UUIDMost:28}
-summon minecraft:item_frame 0 142 49 {Tags:[free-nugget],UUIDLeast:0,UUIDMost:29,Facing:5b}
+summon minecraft:item_frame 1 142 41 {Tags:[free-nugget],UUIDLeast:0,UUIDMost:29,Facing:3b}
 summon minecraft:armor_stand 4737 200 -5700 {NoGravity:1,Marker:1,Invisible:1,Tags:[mark,stage5],Invulnerable:1,UUIDLeast:0,UUIDMost:30}
-summon minecraft:item_frame 7 142 49 {Tags:[free-steak],UUIDLeast:0,UUIDMost:31,Facing:4b}
+summon minecraft:item_frame 6 142 41 {Tags:[free-steak],UUIDLeast:0,UUIDMost:31,Facing:3b}
 
 setworldspawn 0 255 0
 summon minecraft:armor_stand -0.5 0 -0.5 {Markar:1,Tags:[Trigonometric],NoGravity:1,Invulnerable:1,UUIDLeast:0,UUIDMost:32}
 summon minecraft:armor_stand 0 0 0 {Markar:1,Tags:[Trigonometric2],NoGravity:1,Invulnerable:1,UUIDLeast:0,UUIDMost:33}
 data merge entity @e[tag=Trigonometric,limit=1] {Pos:[0d,0d,0d]}
 replaceitem entity 0-0-5-0-0 weapon.mainhand minecraft:shulker_box
-
+summon fox 0 142 47 {UUIDLeast:0,UUIDMost:1000,Tags:[mascot],Invulnerable:1b,Sleeping:1b,Type:snow,NoAI:1b}

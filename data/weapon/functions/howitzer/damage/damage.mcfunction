@@ -13,39 +13,40 @@ execute as @a if score @s plane-id = #he-id reg1 run tag @s add weapon-owner
 execute as @e[tag=!entity-nohit,distance=..16] run function weapon:util/set-entity-hp
 scoreboard players operation #damage reg1 = @s damage
 execute as @e[tag=base,distance=..50] run function weapon:howitzer/damage/base-damage
+scoreboard players set @e[tag=!entity-nohit,distance=..16] reg2 0
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..1] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..1] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..2] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..2] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..3] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..3] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..4] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..4] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..5] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..5] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..6] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..6] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..7] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..7] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..8] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..8] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..9] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..9] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..10] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..10] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..11] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..11] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..12] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..12] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..13] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..13] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..14] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..14] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..15] reg1 -= #damage reg1
+scoreboard players operation @e[tag=!entity-nohit,distance=..15] reg2 += #damage reg1
 scoreboard players operation #damage reg1 /= #2 Num
-scoreboard players operation @e[tag=!entity-nohit,distance=..16] reg1 -= #damage reg1
-execute as @e[tag=!entity-nohit,distance=..16,scores={reg1=..-1}] run scoreboard players set @s reg1 0
+scoreboard players operation @e[tag=!entity-nohit,distance=..16] reg2 += #damage reg1
+execute as @e[tag=!entity-nohit,distance=..16] run function weapon:util/calc-entity-damage
 
 ### メッセージ処理 ###
 #メッセージを表示(title)

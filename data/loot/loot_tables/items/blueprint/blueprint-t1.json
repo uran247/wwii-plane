@@ -20,7 +20,7 @@
                         },
                         {
                             "function": "minecraft:set_nbt",
-                            "tag":"{item-type:translate-tier1,tier:1,CustomModelData:1}"
+                            "tag":"{item-type:blueprint-tier1,tier:1,CustomModelData:1}"
                         }
                     ]
                 }

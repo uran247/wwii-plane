@@ -18,7 +18,6 @@ execute as @a if score @s reg1 matches 0 store result score @s reg1 if data enti
 execute as @a if score @s reg2 matches 0 store result score @s reg2 if data entity @s Inventory[{id:"minecraft:bat_spawn_egg",tag:{tier:4}}]
 execute as @a if score @s reg1 matches 0 store result score @s reg1 if data entity @s EnderItems[{id:"minecraft:bat_spawn_egg",tag:{tier:5}}]
 execute as @a if score @s reg2 matches 0 store result score @s reg2 if data entity @s Inventory[{id:"minecraft:bat_spawn_egg",tag:{tier:5}}]
-
 #持ってたらフラグをNGに
 execute as @a if score @s reg1 matches 1.. run scoreboard players set #chk-prepare return 0
 execute as @a if score @s reg2 matches 1.. run scoreboard players set #chk-prepare return 0

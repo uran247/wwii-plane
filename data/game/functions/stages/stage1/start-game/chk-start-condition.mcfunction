@@ -7,7 +7,7 @@ execute as @a store result score @s reg1 run clear @s minecraft:bat_spawn_egg 0
 execute as @a run function game:start-game/util/count-enderchest
 execute as @a run scoreboard players operation @s reg1 += @s return
 execute if entity @a[scores={reg1=6..}] run scoreboard players set #chk-prepare return 0
-execute if entity @a[scores={reg1=6..}] run tellraw @a [{"text":"持ち込める航空機は5機までです","color":"yellow"}]
+execute if entity @a[scores={reg1=6..}] run tellraw @a [{"text":"持ち込める航空機は手持ちとエンダーチェスト合わせて5機までです","color":"yellow"}]
 
 #Tier2以上の航空機を持ってるか判定
 scoreboard players set @a reg1 0

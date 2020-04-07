@@ -5,8 +5,10 @@
 
 #ダメージ後の体力計算
 execute as @e[tag=hit-weapon,distance=..20] run function weapon:util/set-entity-hp
-scoreboard players operation @e[tag=hit-weapon,distance=..20,type=!player] reg1 -= @s damage
-execute as @e[tag=hit-weapon,distance=..20,type=!player,scores={reg1=..-1}] run scoreboard players set @s reg1 0
+#scoreboard players operation @e[tag=hit-weapon,distance=..20,type=!player] reg1 -= @s damage
+#execute as @e[tag=hit-weapon,distance=..20,type=!player,scores={reg1=..-1}] run scoreboard players set @s reg1 0
+scoreboard players operation @e[tag=hit-weapon,distance=..20,type=!player] reg2 = @s damage
+execute as @e[tag=hit-weapon,distance=..20,type=!player] run function weapon:util/calc-entity-damage
 
 #弾丸のplane-id記憶
 scoreboard players operation #bullet-id reg1 = @s plane-id

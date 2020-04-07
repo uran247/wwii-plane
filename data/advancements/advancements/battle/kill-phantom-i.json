@@ -1,5 +1,5 @@
 {
-  "parent": "advancements:japan/root",
+  "parent": "advancements:battle/destroy-message-root",
   "display": {
     "icon": {
       "item": "minecraft:phantom_membrane",
@@ -27,6 +27,6 @@
     ]
   ],
   "rewards": {
-    "function": "advancements:schedule-revoke-kill-phantom-i"
+    "function": "advancements:schedule-revoke-kill-enemy"
   }
 }

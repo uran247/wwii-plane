@@ -11,7 +11,7 @@
                     "functions": [
                         {
                             "function": "minecraft:set_nbt",
-                            "tag":"{dummy-item:1b}"
+                            "tag":"{offer-item:1b,dummy-item:1b}"
                         }
                     ]
                 }

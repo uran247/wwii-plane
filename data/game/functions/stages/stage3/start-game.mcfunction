@@ -1,6 +1,6 @@
 #startgame1→2の順で実行　1,2は6tick開ける
 function game:start-game/util/set-game-id
-function game:stages/stage3/start-game/summon-spawner
+function game:stages/stage3/start-game/summon-base
 
 function game:stages/stage3/start-game/forceload
 function game:stages/stage3/start-game/move-to-stage

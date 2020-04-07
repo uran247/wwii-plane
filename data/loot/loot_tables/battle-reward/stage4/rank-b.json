@@ -44,15 +44,7 @@
                 {
                     "type": "loot_table",
                     "name": "loot:battle-reward/fragments/japan",
-                    "weight": 1,
-                    "conditions": [
-                        {
-                            "comment":"check japan tag",
-                            "entity": "this",
-                            "condition": "entity_properties",
-                            "predicate": {"nbt": "{Tags:[japan]}"}
-                        }
-                    ]
+                    "weight": 1
                 }
             ]
         }

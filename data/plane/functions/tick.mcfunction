@@ -1,12 +1,8 @@
 #tickタグで指定して実行
 #搭乗時、降機時の飛行機に関連するコマンド
 
-#プレイヤーのplaneid、rider、keyinputタグリセット
-execute as @a[nbt=!{RootVehicle:{Entity:{Tags:[plane-seat]}}}] run scoreboard players reset @s plane-id
-execute as @a[nbt=!{RootVehicle:{Entity:{Tags:[plane-seat]}}}] run tag @s remove plane-rider
-execute as @a[nbt=!{RootVehicle:{Entity:{Tags:[plane-seat]}}}] run tag @s remove entity-nohit
-execute as @a[nbt=!{RootVehicle:{Entity:{Tags:[plane-seat]}}}] run clear @s minecraft:carrot_on_a_stick{item-type:controll-rod}
-scoreboard players set @a[nbt=!{RootVehicle:{Entity:{Tags:[plane-seat]}}}] plane-key-input 0
+#プレイヤーのplaneid、rider、keyinputタグリセット アイテム削除
+execute as @a[tag=plane-rider,nbt=!{RootVehicle:{Entity:{Tags:[plane-seat]}}}] run function plane:controll/plane-leave
 
 #飛行機のタグリセット
 tag @e[type=armor_stand,tag=plane-root] remove has-rider

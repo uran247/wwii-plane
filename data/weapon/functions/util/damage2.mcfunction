@@ -21,7 +21,7 @@ effect give @s minecraft:health_boost 1 0 true
 effect clear @s minecraft:health_boost
 #effect give @s instant_health 1 0 true
 
-execute if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:stone_button"}]}] run replaceitem entity @s weapon.offhand air
+execute if entity @s[nbt={Inventory:[{Slot:-106b,id:"stone_button"}]}] run replaceitem entity @s weapon.offhand air
 execute if score #is-evacuation reg1 matches 1 run loot replace entity @s weapon.offhand mine 0 5 0 air{load:1b}
 
 execute if score #new-hp reg1 matches ..0 run effect give @s minecraft:instant_damage 1 2 true

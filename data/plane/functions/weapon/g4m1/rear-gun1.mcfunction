@@ -14,7 +14,7 @@ scoreboard players set @e[tag=gun-init,distance=..5] speed 100
 scoreboard players set @e[tag=gun-init,distance=..5] damage 4
 scoreboard players set @e[tag=gun-init,distance=..5] max-age 100
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
-scoreboard players set @e[tag=gun-init,distance=..5] offsetX 0
+scoreboard players set @e[tag=gun-init,distance=..5] offsetX 220
 scoreboard players set @e[tag=gun-init,distance=..5] offsetY 0
 scoreboard players set @e[tag=gun-init,distance=..5] offsetZ 11300
 

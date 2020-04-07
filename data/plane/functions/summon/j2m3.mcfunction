@@ -1,7 +1,7 @@
 #実行条件無し
 
 #機体召喚
-summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[j2m3-root,j2m3,plane-init,plane-root,plane,entity-nohit,need-calc-offset,delay-rotation,has-weapon1,has-weapon2,main-weapon1,main-weapon2,tier2],CustomName:"{\"text\":\"j2m3\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b,HandItems:[{id:"minecraft:stone_button",Count:1b,tag:{weapons:["Model1 20mm gun","Model2 20mm gun"]}},{}]}
+summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[j2m3-root,j2m3,plane-init,plane-root,plane,entity-nohit,need-calc-offset,delay-rotation,has-weapon1,has-weapon2,main-weapon1,main-weapon2,tier2],CustomName:"{\"text\":\"j2m3\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},DisabledSlots:256,NoGravity:0b,HandItems:[{id:"snowball",Count:1b,tag:{CustomModelData:1,weapons:["Model1 20mm gun","Model2 20mm gun"]}},{}]}
 summon minecraft:armor_stand ~ ~ ~ {Invisible:1,NoGravity:0,Tags:[j2m3,plane-init,plane,entity-nohit,plane-seat],CustomName:"{\"text\":\"seat\"}",Pose:{LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f]},Passengers:[{id:donkey,Health:13f,Attributes:[{Name:generic.maxHealth,Base:13}],Invulnerable:1b,DeathLootTable:"minecraft:entities/bat",SaddleItem:{id:"minecraft:saddle",Count:1b},Tame:1,NoAI:1,Silent:1,ChestedHorse:1b,ActiveEffects:[{Id:14,Amplifier:0,Duration:1000000,ShowParticles:0b}],Tags:[j2m3,plane-init,plane,plane-seat,entity-nohit]}],DisabledSlots:256,NoGravity:0b}
 summon armor_stand ~ ~ ~ {Tags:["j2m3-body","j2m3",plane-init,plane,has-model,model-changeable,entity-nohit],NoGravity:1b,Invisible:1,HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:93,Unbreakable:1}},{}],Pose:{LeftArm:[0f,0f,0f],RightArm:[-12f,0f,0f]},DisabledSlots:256}
 summon armor_stand ~ ~ ~ {Tags:["j2m3-hitbox","j2m3",plane-init,plane,plane-hitbox,has-offset,body,offset-base],NoGravity:1b,Invisible:1,Marker:1,Glowing:1,CustomName:"{\"text\":\"body\"}",Health:110f,Attributes:[{Name:generic.maxHealth,Base:110}]}
@@ -22,10 +22,10 @@ execute as @e[tag=plane-init] store result entity @s Attributes[{Name:"generic.k
 #スピード・滑走/角度/旋回速度/加速度/最高速度/離陸速度/形態スコア・存在座標・設定
 scoreboard players set @e[tag=plane-init,tag=j2m3-root] rolling 0
 scoreboard players set @e[tag=plane-init,tag=j2m3-root] speed 0
-scoreboard players set @e[tag=plane-init,tag=j2m3-root] accelerate 100
-scoreboard players set @e[tag=plane-init,tag=j2m3-root] resistance 60
-scoreboard players set @e[tag=plane-init,tag=j2m3-root] energy-loss 18
-scoreboard players set @e[tag=plane-init,tag=j2m3-root] deaccelerate 93
+scoreboard players set @e[tag=plane-init,tag=j2m3-root] accelerate 77
+scoreboard players set @e[tag=plane-init,tag=j2m3-root] resistance 46
+scoreboard players set @e[tag=plane-init,tag=j2m3-root] energy-loss 14
+scoreboard players set @e[tag=plane-init,tag=j2m3-root] deaccelerate 72
 scoreboard players set @e[tag=plane-init,tag=j2m3-root] max-speed 20700
 scoreboard players set @e[tag=plane-init,tag=j2m3-root] cruise-speed 12500
 scoreboard players set @e[tag=plane-init,tag=j2m3-root] takeoff-speed 5625

@@ -19,6 +19,7 @@ execute rotated as 0-0-4-0-0 positioned ^ ^ ^-12.5 as @e[tag=!check-executer,dis
 #実効者-0-0-4-0-0の直線上にいるエンティティにタグ付け
 execute rotated as 0-0-4-0-0 positioned ^ ^ ^-12.5 as @e[tag=hit-candidate,distance=..14,tag=!has-size] positioned ^513 ^ ^ unless entity @s[distance=..512] positioned ^-1026 ^ ^ unless entity @s[distance=..512] positioned ^513 ^513 ^ unless entity @s[distance=..512] positioned ^ ^-1026 ^ unless entity @s[distance=..512] run tag @s add hit-on-line
 execute rotated as 0-0-4-0-0 positioned ^ ^ ^-12.5 as @e[tag=hit-candidate,distance=..14,tag=size30] positioned ^515 ^ ^ unless entity @s[distance=..512] positioned ^-1030 ^ ^ unless entity @s[distance=..512] positioned ^515 ^515 ^ unless entity @s[distance=..512] positioned ^ ^-1030 ^ unless entity @s[distance=..512] run tag @s add hit-on-line
+execute rotated as 0-0-4-0-0 positioned ^ ^ ^-12.5 as @e[tag=hit-candidate,distance=..14,tag=size140] positioned ^519 ^ ^ unless entity @s[distance=..512] positioned ^-1038 ^ ^ unless entity @s[distance=..512] positioned ^519 ^519 ^ unless entity @s[distance=..512] positioned ^ ^-1038 ^ unless entity @s[distance=..512] run tag @s add hit-on-line
 
 #実効者と目印にタグ削除
 tag @s remove check-executer

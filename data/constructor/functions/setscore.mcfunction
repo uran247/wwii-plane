@@ -30,6 +30,7 @@ scoreboard players set #50 Num 50
 scoreboard players set #60 Num 60
 scoreboard players set #64 Num 64
 scoreboard players set #70 Num 70
+scoreboard players set #72 Num 72
 scoreboard players set #75 Num 75
 scoreboard players set #80 Num 80
 scoreboard players set #86 Num 86
