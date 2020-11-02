@@ -18,8 +18,12 @@ replaceitem block 0 6 0 container.1 minecraft:air
 
 
 #武装変更
-execute as @e[tag=controll-target,distance=..20] run scoreboard players operation @s plane-weapon %= @s weapon-types
-scoreboard players add @e[tag=controll-target,distance=..20] plane-weapon 1
+#execute as @e[tag=controll-target,distance=..20] run scoreboard players operation @s plane-weapon %= @s weapon-types
+#scoreboard players add @e[tag=controll-target,distance=..20] plane-weapon 1
+#
+execute as @e[tag=controll-target,distance=..20] run function plane:controll/weapon/change-current-weapon
+
+
 
 #スコアリセット
 #scoreboard players reset @s drop-cont-stick

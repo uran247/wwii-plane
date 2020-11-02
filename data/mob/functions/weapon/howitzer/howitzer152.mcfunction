@@ -52,7 +52,6 @@ execute as @e[tag=he-init,distance=..20] store result entity @s Rotation[1] floa
 
 #x,y,z方向の速度スコア化
 execute as @e[tag=he-init,distance=..20] run function math:vector
-#execute as @e[tag=he-init,distance=..20] run say 1
 execute as @e[tag=he-init,distance=..20] run scoreboard players operation @s speedX *= @s speed
 execute as @e[tag=he-init,distance=..20] run scoreboard players operation @s speedY *= @s speed
 execute as @e[tag=he-init,distance=..20] run scoreboard players operation @s speedZ *= @s speed

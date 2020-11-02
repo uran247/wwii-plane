@@ -30,10 +30,6 @@ execute as @e[tag=controll-target,distance=..1,limit=1] run scoreboard players o
 #墜落してた場合スロットル0
 scoreboard players set @e[tag=controll-target,tag=destroyed,distance=..1,limit=1] throttle 0
 
-#speedがgear-pull-outだったら滑走モデル、gear-retractingだったら飛行モデルに切り替え(失速中の場合はギアを出さない)
-execute as @e[tag=controll-target,limit=1,distance=..20,tag=!stall] if score @s speed >= @s gear-pullout-min if score @s speed <= @s gear-pullout-max store result entity @e[tag=model-changeable,limit=1,sort=nearest,distance=..20] HandItems[0].tag.Damage int 1 run scoreboard players get @s rolling-udvm
-execute as @e[tag=controll-target,limit=1,distance=..20] if score @s speed >= @s gear-retract-min if score @s speed <= @s gear-retract-max store result entity @e[tag=model-changeable,limit=1,sort=nearest,distance=..20] HandItems[0].tag.Damage int 1 run scoreboard players get @s flying-udvm
-
 #1ブロック下が空気以外かつspeedがギア引き出し速度未満、失速してない、throttlが50%未満ならならなら着陸モードへ
 execute as @e[tag=controll-target,distance=..1,limit=1,tag=!stall,tag=!destroyed,scores={throttle=..10}] at @s if score @s gear-pullout-max > @s speed unless block ~ ~-1 ~ minecraft:air run function plane:controll/flying/landing
 

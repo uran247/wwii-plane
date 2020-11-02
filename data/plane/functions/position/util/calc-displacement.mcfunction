@@ -1,4 +1,4 @@
-#ロール角度に応じた変位計算
+#ロール角度に応じた変位計算 変位=^(x*cosθ-y*sinθ) ^(y*cosθ+x*sinθ) ^z
 #入力 entity: target, score: #sin reg1 #cos reg1
 
 #三角関数計算
@@ -23,5 +23,3 @@ scoreboard players operation @s new-offsetY += #sin-x-offsetX reg1
 
 scoreboard players operation @s new-offsetX /= #1000 Num
 scoreboard players operation @s new-offsetY /= #1000 Num
-
-#execute if entity @s[tag=d4y2-bomb-right] run tellraw @p [{"score" : {"name":"#cos", "objective":"reg1"}}, {"text":" "}, {"score" : {"name":"#sin", "objective":"reg1"}}]

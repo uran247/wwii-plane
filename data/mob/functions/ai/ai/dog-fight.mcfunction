@@ -80,8 +80,8 @@ function mob:ai/util/is-attackable
 execute if entity @s[tag=attackable] run function mob:ai/attack/use-weapon
 
 #cooltimeが0だったらスキル使用
-execute if entity @s[tag=has-skill] if score @s skill-ct matches ..0 run function mob:ai/attack/use-skill
-execute if entity @s[tag=has-skill] if score @s skill-ct matches 1.. run scoreboard players remove @s skill-ct 1
+execute if entity @s[tag=has-skill] positioned ~-128 -64 ~-128 if entity @p[dx=256,dy=1024,dz=256] if score @s skill-ct matches ..0 at @s run function mob:ai/attack/use-skill
+execute if entity @s[tag=has-skill] positioned ~-128 -64 ~-128 if entity @p[dx=256,dy=1024,dz=256] if score @s skill-ct matches 1.. at @s run scoreboard players remove @s skill-ct 1
 
 #particle
 execute unless entity @p[tag=ai-target] if entity @s[tag=has-rider] run particle minecraft:large_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 force

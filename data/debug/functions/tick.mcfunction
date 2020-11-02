@@ -30,4 +30,8 @@
 #execute as @a positioned -1548 200 1234 run function game:in-game-event/util/show-direction
 
 
-#execute as @e[tag=g4m1-root] at @s run function debug:chk-offset
+#execute as @e[tag=n1k2-root] at @s run function debug:chk-offset
+
+#execute as @e[tag=satsuei6] at @s run function debug:particle-satsuei
+
+#execute at @p run particle flash ^ ^ ^3 0 0 0 0 1 force

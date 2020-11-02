@@ -2,20 +2,38 @@
 #input: entity:機体
 #処理：#max-yaw = yaw-speed * (1-speedy^16) + roll-speed * speedy^16
 #return: スコア:#max-yaw return
+#TODO: ピッチ速度をsin * sin * pitch + cos * cos * yawにする
 
-#yaw,roll速度取得
+
+#yaw,roll,pitch速度取得
 scoreboard players operation #max-yaw return = @s yaw-speed
+scoreboard players operation #pitch-speed reg1 = @s pitch-speed
 scoreboard players operation #roll-spped reg1 = @s roll-speed
-#tellraw @p [{"score" : {"name":"#max-yaw", "objective":"return"}}]
 
-#yaw,roll速度補正
+#yaw,roll,pitch速度補正
 scoreboard players operation #max-yaw return += @s yaw-speed-cor
+scoreboard players operation #pitch-speed reg1 += @s yaw-speed-cor
 scoreboard players operation #roll-spped reg1 += @s roll-speed-cor
 #tellraw @p [{"score" : {"name":"#max-yaw", "objective":"return"}}]
 
-#radder破損時補正
+#radder, pitch破損時補正
 execute if entity @s[scores={radder=0}] run scoreboard players operation #max-yaw return /= #2 Num
+execute if entity @s[scores={elevetor=0}] run scoreboard players operation #pitch-speed reg1 /= #2 Num
 
+#roll角に応じてpitchとyawをスワップ
+scoreboard players operation #pitch-speed reg1 *= @s sin
+scoreboard players operation #pitch-speed reg1 /= #1000 Num
+scoreboard players operation #pitch-speed reg1 *= @s sin
+scoreboard players operation #pitch-speed reg1 /= #1000 Num
+
+scoreboard players operation #max-yaw return *= @s cos
+scoreboard players operation #max-yaw return /= #1000 Num
+scoreboard players operation #max-yaw return *= @s cos
+scoreboard players operation #max-yaw return /= #1000 Num
+
+scoreboard players operation #max-yaw return += #pitch-speed reg1
+
+## Pitch角に合わせてRollとyawをスワップ
 #speedy絶対値取得
 scoreboard players operation #abs-speedy reg1 = @s speedY
 scoreboard players operation #abs-speedy reg1 *= @s speedY
@@ -38,6 +56,8 @@ scoreboard players operation #max-yaw return /= #10000 Num
 
 #返り値
 execute if entity @s[tag=destroyed] run scoreboard players set #max-yaw return 0
+
+#tellraw @p [{"score" : {"name":"#max-yaw", "objective":"return"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"cos"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"sin"}}]
 
 #tellraw @p [{"score" : {"name":"#max-yaw", "objective":"return"}}]
 #ztellraw @p [{"score" : {"name":"@s", "objective":"speedY"}}]

@@ -22,4 +22,3 @@ execute if entity @s at @s store result entity @s Rotation[1] float 0.01 run sco
 scoreboard players operation #ang-z reg1 = @s AngZ
 execute if entity @s as @e[tag=target-parts] at @s store result entity @s Rotation[1] float 0.01 run scoreboard players get #ang-z reg1
 
-#execute if entity @s[tag=dropping] run say 1

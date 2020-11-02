@@ -1,1 +1,0 @@
-loot spawn ~ ~ ~ loot loot:planes/japan/d3a

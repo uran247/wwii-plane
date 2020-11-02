@@ -6,8 +6,8 @@
 summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1b,Tags:[projectile,gun,20mm,gun-init,tracer-red,mob-gun,entity-nohit,banshee-gun],Duration:20,CustomName:"{\"text\":\"gun\",\"color\":\"aqua\"}"}
 
 #スコア付与
-scoreboard players set @e[tag=gun-init,distance=..5] speed 100
-scoreboard players set @e[tag=gun-init,distance=..5] damage 50
+scoreboard players set @e[tag=gun-init,distance=..5] speed 90
+scoreboard players set @e[tag=gun-init,distance=..5] damage 20
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 0
 scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY 0
@@ -76,7 +76,7 @@ scoreboard players operation @e[tag=gun-init,distance=..20] speedZ /= #10 Num
 scoreboard players remove @s ammunition1 1
 
 #発射したならreload時間設定
-execute if entity @e[tag=gun-init,distance=..20] run scoreboard players set @s w1-reload 3
+execute if entity @e[tag=gun-init,distance=..20] run scoreboard players set @s w1-reload 4
 
 #音
 playsound minecraft:entity.ghast.shoot master @a ~ ~ ~ 1 1 1

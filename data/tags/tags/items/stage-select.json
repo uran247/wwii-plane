@@ -5,6 +5,7 @@
         "minecraft:redstone_block",
         "minecraft:lapis_block",
         "minecraft:blue_ice",
-        "minecraft:paper"
+        "minecraft:paper",
+        "minecraft:jigsaw"
     ]
 }

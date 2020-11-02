@@ -3,7 +3,7 @@
 execute if score #phase event-flag matches 0 run scoreboard players add #timer time 1
 execute if score #phase event-flag matches 0 if score #timer time matches 40.. run scoreboard players set #phase event-flag 1
 execute if score #phase event-flag matches 1 run scoreboard players set #timer time 0
-execute if score #phase event-flag matches 1 run loot give @a loot loot:planes/japan/ki-43
+execute if score #phase event-flag matches 1 run loot give @a loot plane-data:ki-43
 execute if score #phase event-flag matches 1 run scoreboard players set @a summon-plane 0
 execute if score #phase event-flag matches 1 run function game:stages/tutorial2/in-game-event/summon-explanation-1
 execute if score #phase event-flag matches 1 run scoreboard players set #phase event-flag 2

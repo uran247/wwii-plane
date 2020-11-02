@@ -1,1 +1,0 @@
-loot spawn ~ ~ ~ loot loot:planes/japan/a6m2

@@ -9,8 +9,8 @@ execute if score #base-hp reg1 matches ..0 run scoreboard players set #game-over
 scoreboard players operation #now-score clear-score = #global shootdown
 
 #目標にパーティクル
-execute as @e[tag=enemy-target] at @s run particle minecraft:dust 1 0.65 0 10 ~ ~ ~ 1 1 1 0 1 force
-execute as @e[tag=aa] at @s run particle minecraft:dust 0.97 0 1 5 ~ ~ ~ 1 1 1 0 1 force
+execute as @e[tag=enemy-target] at @s run particle minecraft:dust 0.8 0 1 40 ~ ~ ~ 2 2 2 0 20 force
+execute as @e[tag=aa] at @s run particle minecraft:dust 1 0 0.6 5 ~ ~ ~ 1 1 1 0 1 force
 
 #榴弾の数調整
 execute store result score #aa-num reg1 if entity @e[tag=aerial-aa]
@@ -27,6 +27,9 @@ scoreboard players operation #now-score clear-score = #global shootdown
 
 #ボス体力をゲージに代入
 execute if entity @e[tag=enemy-target,limit=1] as @e[tag=enemy-target,limit=1] store result bossbar minecraft:game-progress value run data get entity @s Health
+
+#ボスのスキル待機時間をゲージに代入
+execute if entity @e[tag=enemy-target,limit=1] as @e[tag=enemy-target,limit=1] store result bossbar minecraft:boss-skill value run scoreboard players get @s skill-ct
 
 #イベントフラグ
 #BGM開始　

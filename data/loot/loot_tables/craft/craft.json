@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "name": "loot:planes/japan/a6m2",
+                    "name": "plane-data:a6m2",
                     "weight": 1,
                     "conditions": [
                         {
@@ -28,7 +28,7 @@
                 },
                 {
                     "type": "loot_table",
-                    "name": "loot:planes/japan/ki-44",
+                    "name": "plane-data:ki-44",
                     "weight": 1,
                     "conditions": [
                         {
@@ -50,7 +50,7 @@
                 },
                 {
                     "type": "loot_table",
-                    "name": "loot:planes/japan/j2m3",
+                    "name": "plane-data:j2m3",
                     "weight": 1,
                     "conditions": [
                         {
@@ -72,7 +72,7 @@
                 },
                 {
                     "type": "loot_table",
-                    "name": "loot:planes/japan/d4y2",
+                    "name": "plane-data:d4y2",
                     "weight": 1,
                     "conditions": [
                         {
@@ -94,7 +94,7 @@
                 },
                 {
                     "type": "loot_table",
-                    "name": "loot:planes/japan/g4m1",
+                    "name": "plane-data:g4m1",
                     "weight": 1,
                     "conditions": [
                         {

@@ -19,6 +19,7 @@ scoreboard players set #phase event-flag 0
 execute if score #global stage-id matches 2147483647 run function game:stages/tutorial1/start-game
 execute if score #global stage-id matches 2147483646 run function game:stages/tutorial2/start-game
 execute if score #global stage-id matches 2147483645 run function game:stages/tutorial3/start-game
+execute if score #global stage-id matches 2147483644 run function game:stages/debug1/start-game
 execute if score #global stage-id matches 1 run function game:stages/stage1/start-game
 execute if score #global stage-id matches 2 run function game:stages/stage2/start-game
 execute if score #global stage-id matches 3 run function game:stages/stage3/start-game

@@ -3,19 +3,15 @@
 #実行者：機体
 
 #召喚
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,right,tracer-red,mob-gun,entity-nohit],Duration:20,CustomName:"{\"text\":\"gun-r\",\"color\":\"aqua\"}"}
-summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,left,tracer-red,mob-gun,entity-nohit],Duration:20,CustomName:"{\"text\":\"gun-l\",\"color\":\"aqua\"}"}
+summon minecraft:area_effect_cloud ~ ~ ~ {NoGravity:1,Tags:[projectile,gun,7p7mm,gun-init,tracer-red,mob-gun,entity-nohit],Duration:20,CustomName:"{\"text\":\"gun-l\",\"color\":\"aqua\"}"}
 
 #スコア付与
 scoreboard players set @e[tag=gun-init,distance=..5] speed 70
-scoreboard players set @e[tag=gun-init,distance=..5] damage 15
+scoreboard players set @e[tag=gun-init,distance=..5] damage 5
 scoreboard players operation @e[tag=gun-init,distance=..5] plane-id = @s plane-id
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetX 800
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetY 0
-scoreboard players set @e[tag=gun-init,tag=left,distance=..5] offsetZ 0
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetX -800
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetY 0
-scoreboard players set @e[tag=gun-init,tag=right,distance=..5] offsetZ 0
+scoreboard players set @e[tag=gun-init,distance=..5] offsetX 0
+scoreboard players set @e[tag=gun-init,distance=..5] offsetY 0
+scoreboard players set @e[tag=gun-init,distance=..5] offsetZ 0
 
 #10発目の弾なら曳光弾化
 scoreboard players operation #ammo-num reg1 = @s ammunition1
@@ -23,11 +19,11 @@ scoreboard players operation #ammo-num reg1 %= #10 Num
 execute if score #ammo-num reg1 matches 0 run tag @e[tag=gun-init,distance=..10] add enemy-tracer
 
 #発射位置に移動
-scoreboard players set #sin reg1 0
-scoreboard players set #cos reg1 1000
-execute as @e[tag=gun-init,distance=..5] run function plane:position/util/calc-displacement
-execute as @e[tag=gun-init,distance=..5] at @s rotated ~-90 ~ run function plane:position/calc-offset
-execute as @e[tag=gun-init,distance=..5] run function plane:position/util/move-parts
+#scoreboard players set #sin reg1 0
+#scoreboard players set #cos reg1 1000
+#execute as @e[tag=gun-init,distance=..5] run function plane:position/util/calc-displacement
+#execute as @e[tag=gun-init,distance=..5] at @s rotated ~-90 ~ run function plane:position/calc-offset
+#execute as @e[tag=gun-init,distance=..5] run function plane:position/util/move-parts
 
 #向きを自機方向に向ける
 execute if entity @e[tag=ai-target-plane,limit=1,sort=nearest] as @e[tag=gun-init,limit=2,distance=..20] facing entity @e[tag=ai-target-plane,limit=1,sort=nearest] eyes positioned as @s run tp @s ~ ~ ~ ~ ~

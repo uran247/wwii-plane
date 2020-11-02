@@ -6,14 +6,14 @@
 #実行者にタグ付け
 tag @s add flying-executer
 
-#### 基本加速量決定 reg1に代入される ####
+#### 基本加速量決定  #base-accelerate reg1に代入される ####
 scoreboard players operation #accelerate input = @s accelerate
 scoreboard players operation #accelerate-cor input = @s accelerate-cor
 scoreboard players operation #throttle input = @s throttle
 function plane:move/plane-move/set-base-accelerate
 scoreboard players operation #base-accelerate reg1 = #base-accelerate return
 
-####減速量決定　reg4に代入される ####
+####減速量決定　#base-resistance reg1に代入される ####
 scoreboard players operation #speed input = @s speed
 scoreboard players operation #cruise-speed input = @s cruise-speed
 scoreboard players operation #resistance input = @s resistance

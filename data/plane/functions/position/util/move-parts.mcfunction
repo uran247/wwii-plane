@@ -13,5 +13,3 @@ scoreboard players operation #current-z reg1 += @s displacementZ
 execute store result entity @s Pos[0] double 0.001 run scoreboard players get #current-x reg1
 execute store result entity @s Pos[1] double 0.001 run scoreboard players get #current-y reg1
 execute store result entity @s Pos[2] double 0.001 run scoreboard players get #current-z reg1
-
-#execute if entity @s[tag=d4y2-bomb-right] run tellraw @p [{"score" : {"name":"@s", "objective":"displacementX"}}, {"text":" "}, {"score" : {"name":"@s", "objective":"displacementZ"}}]

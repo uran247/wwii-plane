@@ -7,3 +7,4 @@ execute if entity @s[tag=has-weapon3,scores={ammunition3=..0,ammo-reload3=..0}] 
 execute if entity @s[tag=has-weapon4,scores={ammunition4=..0,ammo-reload4=..0}] run scoreboard players operation @s ammunition4 = @s max-ammunition4
 execute if entity @s[tag=has-weapon5,scores={ammunition5=..0,ammo-reload5=..0}] run scoreboard players operation @s ammunition5 = @s max-ammunition5
 execute if entity @s[tag=has-weapon6,scores={ammunition6=..0,ammo-reload6=..0}] run scoreboard players operation @s ammunition6 = @s max-ammunition6
+

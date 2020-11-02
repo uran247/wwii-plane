@@ -73,11 +73,22 @@ kill @e[tag=!entity-nohit,distance=..32,scores={reg1=0},tag=enemy-target,type=sp
 #### ダメージ時エフェクト ####
 #命中地点にパーティクル
 execute at @s[tag=50kg] run particle minecraft:large_smoke ~ ~1 ~ 1.0 1.0 1.0 0.05 500 force
-execute at @s[tag=50kg] run particle minecraft:flame ~ ~1 ~ 1 1 1 0.03 100 force
+execute at @s[tag=50kg] run particle minecraft:flame ~ ~1 ~ 1 1.2 1 0.03 100 force
+
 execute at @s[tag=60kg] run particle minecraft:large_smoke ~ ~1 ~ 1.0 1.0 1.0 0.05 500 force
-execute at @s[tag=60kg] run particle minecraft:flame ~ ~1 ~ 1 1 1 0.03 100 force
-execute at @s[tag=250kg] run particle minecraft:large_smoke ~ ~1 ~ 3 1 3 0.25 2500 force
-execute at @s[tag=250kg] run particle minecraft:flame ~ ~1 ~ 3 3 3 0.25 500 force
+execute at @s[tag=60kg] run particle minecraft:flame ~ ~1 ~ 1 1.2 1 0.03 100 force
+
+execute at @s[tag=100kg] run particle minecraft:large_smoke ~ ~1 ~ 1 1 1 0.05 600 force
+execute at @s[tag=100kg] run particle minecraft:flame ~ ~1 ~ 1 1.2 1 0.03 120 force
+
+execute at @s[tag=250kg] run particle minecraft:large_smoke ~ ~1 ~ 2 1 2 0.25 2500 force
+execute at @s[tag=250kg] run particle minecraft:flame ~ ~1 ~ 2 2.4 2 0.25 500 force
+
+execute at @s[tag=500kg] run particle minecraft:large_smoke ~ ~1 ~ 4 2 4 0.25 5000 force
+execute at @s[tag=500kg] run particle minecraft:flame ~ ~1 ~ 4 5 4 0.25 2000 force
+
+execute at @s[tag=800kg] run particle minecraft:large_smoke ~ ~1 ~ 5 1.5 5 0.25 5000 force
+execute at @s[tag=800kg] run particle minecraft:flame ~ ~1 ~ 5 6 5 0.25 2000 force
 
 #音
 execute at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 3 1.2 0

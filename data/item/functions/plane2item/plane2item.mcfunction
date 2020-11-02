@@ -6,16 +6,18 @@ scoreboard players operation #plane-id reg1 = @s plane-id
 execute as @e[tag=plane] if score @s plane-id = #plane-id reg1 run tag @s add plane2item-plane-parts
 
 #個別処理
-execute as @s[tag=a5m-root] at @s run function item:plane2item/a5m-2-item
-execute as @s[tag=ki43-root] at @s run function item:plane2item/ki43-2-item
-execute as @s[tag=ki21-root] at @s run function item:plane2item/ki21-2-item
-execute as @s[tag=d3a-root] at @s run function item:plane2item/d3a-2-item
-execute as @s[tag=a6m2-root] at @s run function item:plane2item/a6m2-2-item
-execute as @s[tag=ki44-root] at @s run function item:plane2item/ki44-2-item
-execute as @s[tag=d4y2-root] at @s run function item:plane2item/d4y2-2-item
-execute as @s[tag=j2m3-root] at @s run function item:plane2item/j2m3-2-item
-execute as @s[tag=g4m1-root] at @s run function item:plane2item/g4m1-2-item
-execute as @s[tag=n1k2-root] at @s run function item:plane2item/n1k2-2-item
+execute as @s[tag=a5m-root] at @s run function plane-data:a5m/a5m-2-item
+execute as @s[tag=ki43-root] at @s run function plane-data:ki-43/ki43-2-item
+execute as @s[tag=ki21-root] at @s run function plane-data:ki-21/ki21-2-item
+execute as @s[tag=d3a-root] at @s run function plane-data:d3a/d3a-2-item
+execute as @s[tag=a6m2-root] at @s run function plane-data:a6m2/a6m2-2-item
+execute as @s[tag=ki44-root] at @s run function plane-data:ki-44/ki44-2-item
+execute as @s[tag=d4y2-root] at @s run function plane-data:d4y2/d4y2-2-item
+execute as @s[tag=j2m3-root] at @s run function plane-data:j2m3/j2m3-2-item
+execute as @s[tag=g4m1-root] at @s run function plane-data:g4m1/g4m1-2-item
+execute as @s[tag=n1k2-root] at @s run function plane-data:n1k2/n1k2-2-item
+execute as @s[tag=a6m5-root] at @s run function plane-data:a6m5/a6m5-2-item
+execute as @s[tag=ki61-root] at @s run function plane-data:ki-61/ki61-2-item
 
 #ロバチェスト内のアイテム放出
 data merge block 0 6 0 {Items:[]}

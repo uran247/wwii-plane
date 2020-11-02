@@ -57,7 +57,6 @@ execute as @s[tag=enemy-tracer,tag=tracer-red] at @s run particle minecraft:dust
 #particle
 execute if score #hit-flag reg1 matches 1.. at @s run particle minecraft:explosion ^ ^ ^ 0 0 0 0 1 force
 
-#execute if score #hit-flag reg1 matches 1 run say 1
 #execute if score #hit-flag reg1 matches 1 run say block
 #execute if score #hit-flag reg1 matches 2 run say entity
 

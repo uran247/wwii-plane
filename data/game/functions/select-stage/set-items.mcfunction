@@ -21,6 +21,7 @@ execute if block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"stag
 execute if block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"stage select page1\"}"} run loot replace block ~ ~ ~ container.6 loot loot:items/stage/stage4
 execute if block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"stage select page1\"}"} run loot replace block ~ ~ ~ container.7 loot loot:items/stage/stage5
 execute if block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"stage select page1\"}"} run loot replace block ~ ~ ~ container.8 loot loot:items/stage/stage6
+execute if entity @p[tag=debug,distance=..6] if block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"stage select page1\"}"} run loot replace block ~ ~ ~ container.17 loot loot:items/stage/debug1
 execute if block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"stage select page1\"}"} run replaceitem block ~ ~ ~ container.18 minecraft:player_head{item-type:stage-select,stage:prev-page,SkullOwner:"MHF_ArrowLeft"}
 execute if block ~ ~ ~ minecraft:yellow_shulker_box{CustomName:"{\"text\":\"stage select page1\"}"} run replaceitem block ~ ~ ~ container.26 minecraft:player_head{item-type:stage-select,stage:next-page,SkullOwner:"MHF_ArrowRight"}
 
